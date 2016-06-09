@@ -14,19 +14,28 @@
 class app_html {
     //put your code here
         //put your code here
-    public function __construct($string = '0000000') {
+    public $core;
+    
+    public function __construct(app_core $core) {
   
+    $this->core = $core;    
+        
+    $this->HTML("DATA");    
+        
     }
     
     public function HTML($DATA){
         
-        
-        
+        //var_dump($DATA);
+        //die('here');
         $doc = new DOMDocument();
+ 
+        
+        $content=file_get_contents($this->core->curPageURL().'html/page/default/html.phtml');
          
         $doc->loadHTML($content);
         
-        
+        echo $doc->saveHTML();
         
     }
     

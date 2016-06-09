@@ -18,11 +18,11 @@ $JSON = new app_json();
 
 $JSON->getDataPath('data');
 
-echo '<br>';
 
-echo "<pre>";
-var_dump($JSON->dataSet);
-echo "</pre>";
+$HTML = new app_html($CORE);
+
+$JSON->dataSet;
+
 
 
 
