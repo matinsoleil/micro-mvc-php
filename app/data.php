@@ -11,6 +11,24 @@
  *
  * @author aromerov
  */
-class data {
+class app_data {
+    
+    public $data;
+    public $cache;
+    
+    public function __construct(app_redis $cache,app_json $json) {
+  
+    $this->data = $json;
+    $this->cache = $cache;
+    
+    
+    $this->data->getDataPath('data');
+    
+    echo "<pre>";
+    var_dump($this->data->dataSet);
+    echo "</pre>";
+    
+        
+    }
     //put your code here
 }

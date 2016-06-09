@@ -16,12 +16,15 @@ $CACHE = new app_redis();
 $JSON = new app_json();
 
 
-$JSON->getDataPath('data');
+$DATA = new app_data($CACHE,$JSON);
 
 
-$HTML = new app_html($CORE);
 
-$JSON->dataSet;
+
+
+$HTML = new app_html($CORE,$DATA);
+
+
 
 
 

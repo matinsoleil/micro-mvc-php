@@ -1,0 +1,12 @@
+{
+    "html":{
+        "head":{
+            "meta":"meta",
+            "script":"script"
+        },
+        "header":{},
+        "content":{},
+        "footer":{}
+        
+    }
+}
