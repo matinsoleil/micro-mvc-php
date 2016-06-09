@@ -11,6 +11,6 @@
  *
  * @author aromerov
  */
-class control {
+class app_control {
     //put your code here
 }
