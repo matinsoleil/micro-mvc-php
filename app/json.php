@@ -18,6 +18,7 @@ class app_json {
     public $dataSet = array();
     public $dataValue = array();
     public $files = array();
+    public $key = array();
     
     //put your code here
     public function __construct($string = '0000000') {
@@ -34,10 +35,7 @@ class app_json {
             foreach($files as $file){
                 
                 if($file!=='.' && $file!=='..'){
-                
-                    
-                    
-                
+       
                 if (strpos($file, '.json') !== FALSE){
                     
                     $stringPart ="";
@@ -65,10 +63,7 @@ class app_json {
                     
                     
                     eval($codeValue);
-                    
-               
-                  
-                    
+     
                 }else{
                     
        
@@ -100,9 +95,50 @@ class app_json {
     }
     
     
-    public function Get($variable){
+    public function Type($variable){
         
         
+        
+        
+    }
+    
+    
+    public function Variable($SET,$variable){
+        
+        $this->Get($SET,$variable);
+        
+        return $this->key[$variable];
+        
+    }
+    
+    
+    
+    public function Get($SET,$variable,$KEY=''){
+        
+   
+      foreach($SET as $key=>$set){
+   
+             if($key===$variable){
+                 
+                   $this->key[$variable][] = $KEY;   
+                 
+             }
+             else{
+                 
+                 if(is_array($set)){
+                   if($KEY!==''){  
+                   $KEY = $KEY.'.'.$key;  
+                   }else{
+                   $KEY = $key;    
+                   }
+                   
+                   $this->Get($set,$variable,$KEY);  
+                     
+                 }
+   
+             }
+          
+      }
         
     }
     

@@ -24,9 +24,13 @@ class app_data {
     
     $this->data->getDataPath('data');
     
-    echo "<pre>";
-    var_dump($this->data->dataSet);
-    echo "</pre>";
+    $SET=$this->data->dataSet;
+    
+   
+    $variable = $this->data->Variable($SET,'css');
+  
+    
+     var_dump($variable);
     
         
     }

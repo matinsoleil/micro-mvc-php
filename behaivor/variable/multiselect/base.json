@@ -1,0 +1,8 @@
+{
+    "url":["*"],
+    "css": ["*.css"],
+    "javascript":["*.js"],
+    "noscript":["*.txt"],
+    "block":["*.phtml","*.html"],
+    "brick":["*.phtml","*.html"]
+}
