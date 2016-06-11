@@ -22,15 +22,26 @@ class app_data {
     $this->cache = $cache;
     
     
-    $this->data->getDataPath('data');
+    //$this->data->getDataPath('data');
     
-    $SET=$this->data->dataSet;
+    //$SET=$this->data->dataSet;
     
-   
+    $SET = $this->data->getSET('data');
+    
+    
+     $this->data->Type('css');
+    
+    
+    
     $variable = $this->data->Variable($SET,'css');
   
+    echo "<pre>";
+    var_dump($variable);
+    echo "</pre>";
     
-     var_dump($variable);
+    echo "<pre>";
+    var_dump($this->data->pool);
+    echo "</pre>";
     
         
     }

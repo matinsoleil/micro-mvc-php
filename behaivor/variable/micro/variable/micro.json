@@ -1,0 +1,13 @@
+{
+    "text":{"type":"text",
+            "expression":["*"],
+            "minLength":18,
+            "value":"*"
+           },
+    "css":{ "type":"multiselect",
+            "name":"css",
+            "values":["micro.css"],
+            "value":["micro.css"]
+          }
+    
+}

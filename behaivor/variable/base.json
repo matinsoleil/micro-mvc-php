@@ -1,0 +1,27 @@
+{
+    "css":{ "type":"multiselect",
+            "name":"css",
+            "values":["summer.css","happy.css","winter.css","default.css"],
+            "value":["default.css"]
+          },
+    "color":{
+           "type":"select",
+           "name":"color",
+           "values":["red","green","blue","white","black"],
+           "value":"white"
+          },
+    "available":{
+           "type":"boolean",
+           "name":"available",
+           "values":["TRUE","FALSE"],
+           "value":"TRUE"
+    },
+    "nick":{
+           "type":"string",
+           "name":"nick",
+           "expression":["*"],
+           "minLength":6,
+           "value":"*"
+    }
+   
+}
