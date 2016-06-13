@@ -389,6 +389,8 @@ class app_json {
                   }  
                }
            
+        }else{
+            return FALSE;
         }
         
   
