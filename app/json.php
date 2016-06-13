@@ -16,11 +16,10 @@ class app_json {
     public $hash;
     public $baseURL;
     public $dataSet = array();
-    public $dataVariable = array();
     public $dataValue = array();
     public $files = array();
     public $key = array();
-    public $types = array();
+    public $type = array();
     public $pool = array();
     public $lastPool = array();
     
@@ -32,12 +31,13 @@ class app_json {
     
     public function getSET($path){
         
+     
         if(!isset($this->dataSet[$path])){
         $this->getDataPath($path);
         }
         
         
-        return $this->dataSet[$path];
+            return $this->dataSet[$path];
         
     }
     
@@ -56,14 +56,19 @@ class app_json {
     
     public function getDataPath($path) {
         
+        $MEDIUM = explode('/',$path);
+        
+        $SET=$MEDIUM[0];
+        
         
         if (file_exists('./'.$path)) {
-       
+
             $files =  scandir($path);
       
             foreach($files as $file){
                 
                 if($file!=='.' && $file!=='..'){
+           
        
                 if (strpos($file, '.json') !== FALSE){
                     
@@ -87,8 +92,15 @@ class app_json {
                    
 
                     $stringPart = $stringPart."['".$fileName[0]."'] = \$dataJson;";
+                           
                     
-                    $codeValue = '$this->dataSet'.$stringPart;
+                   
+                     $codeValue = '$this->dataSet'.$stringPart;
+                    
+                    
+                    
+                    
+                    
                     
                     
                     eval($codeValue);
@@ -171,57 +183,21 @@ class app_json {
         
     }        
     
-    public function Open($path,$file){
+    public function Open($path,$file=NULL){
         
-            
+         if($file!=NULL){   
          $string = file_get_contents( $path."/".$file);
-
+         }else{
+          $string = file_get_contents( $path);
+         }
+         
          $JSON = json_decode($string, true);
          return $JSON;
     
     }
     
     
-    public function Type($variable,$VARIABLES=NULL,$POOL=NULL){
-        
-      if($VARIABLES==NULL){  
-      $VARIABLES = $this->getSET('behaivor');
-      }
-      
-      foreach($VARIABLES['variable'] as $KEY_POOL=>$VARIABLES_POOL){
-          
-       
-          
-          if(isset($VARIABLES_POOL[$variable])){
-              
-            
-              if($POOL==NULL){
-              $this->pool[$variable][]=$KEY_POOL;
-              }else{
-              $this->pool[$variable][]=$KEY_POOL;    
-              }
-                      
-              echo $VARIABLES_POOL[$variable]['type'];
-              
-          }
-          
-          if(is_array($VARIABLES_POOL)){
-              
-              
-              if(isset($VARIABLES_POOL['variable']))
-              {
-                  
-                  
-                  //var_dump($VARIABLES_POOL['variable']);
-                  
-                  $this->Type($variable,$VARIABLES_POOL,$KEY_POOL);
-              }
-            
-              
-          }
-         
-          
-      }
+    
      
       
       
@@ -230,59 +206,255 @@ class app_json {
    
         
         
+    
+    
+    
+    public function TYPE($variable,$ENTITY){
+    $TYPE = array();    
+    $entity = 'behaivor';
+    
+    $SET = $this->getSET($entity);
+   
+    $variablesTypes = $this->Variables($entity,$SET,$variable);
+    
+    
+    foreach($variablesTypes as $key=>$variableType){
+        
+       $pathType = explode('.',$variableType);
+       
+       $PATH='';
+       
+       
+       foreach($pathType as $path){
+           
+       $PATH .='["'.$path.'"]';    
+           
+       }
+       
+ 
+     
+       eval('$TYPE["'.$variableType.'"]=$SET'.$PATH.'["'.$variable.'"];');
+
+       
+    }
+    
+   
+    
+    $types = array();
+    
+    foreach($TYPE as $entities=>$type){
+        
+        
+       foreach($type['entity'] as $typeEntity){
+           
+          if($typeEntity==$ENTITY){
+             $types[$entities]=$type;
+          }
+           
+       }
+        
+       
+        
     }
     
     
-    public function POOL(){
-        
-        
+    return $types;
         
     }
     
     
-    public function Variable($SET,$variable){
+    public function VARIABLE($variable,$ENTITY){
         
-        $this->Get($SET,$variable);
+        $entity = 'data';
         
-        return $this->key[$variable];
+        $VARIABLE = array();
         
+        $SET = $this->getSET($entity);
+   
+  
+        
+        $setVariables = $this->Variables($entity,$SET,$variable);
+        
+        
+        
+        foreach($setVariables as $variables){
+            
+         
+            
+            if($variables==$ENTITY){
+            
+            $setEntity =  explode(".",$variables);
+            
+            $PATH='';
+           
+            foreach($setEntity as $set){
+               
+            $PATH .= '["'.$set.'"]';
+               
+            }
+            eval('$VARIABLE["'.$ENTITY.'"]=$SET'.$PATH.'["'.$variable.'"];');
+            
+            }
+           
+           
+            
+        }
+    
+        
+        return $VARIABLE;
+       
     }
     
     
+    public function Variables($entity,$SET,$variable){
+        
+        $this->Get($entity,$SET,$variable);
+        
+        return $this->key[$entity][$variable];
+        
+    }
     
-    public function Get($SET,$variable,$KEY=''){
+  
+    
+    
+    public function Get($entity,$SET,$variable,$KEY=''){
         
    
       foreach($SET as $key=>$set){
    
              if($key===$variable){
                  
-                   $this->key[$variable][] = $KEY;   
+                   $this->key[$entity][$variable][] = $KEY;   
                  
              }
              else{
                  
                  if(is_array($set)){
                    if($KEY!==''){  
-                   $KEY = $KEY.'.'.$key;  
+                   $KEYS = $KEY.'.'.$key;
+                   $this->Get($entity,$set,$variable,$KEYS);
                    }else{
-                   $KEY = $key;    
+                   $this->Get($entity,$set,$variable,$key);
+                   
                    }
                    
-                   $this->Get($set,$variable,$KEY);  
                      
+                   
                  }
    
              }
           
       }
+        $KEY='';
+    }
+    
+    
+    public function WRITE($variable,$value,$ENTITY,$ENTITY_TYPE){
+        
+     
+        
+       $types = $this->TYPE($variable, $ENTITY);
+        
+       
+       
+       if($types[$ENTITY_TYPE]['type']=='multiselect'){
+       
+        $VALID = $this->MULTISELECT($ENTITY_TYPE,$types[$ENTITY_TYPE],$variable,$value);  
+        
+        var_dump($VALID);
+           
+       }
         
     }
     
     
-    public function Write($variable,$value){
+    
+    public function MULTISELECT($ENTITY_TYPE,$ENTITY_VALUE,$variable,$VALUE){
+        
+        $valueIS = FALSE;
+        
+
+        
+        $valueIN = array();
+        $INvalue = array();
+        
+        if(is_array($VALUE)){
+
+               foreach($VALUE as $value){
+                
+                  if(in_array($value,$ENTITY_VALUE['values'])){
+                     $INvalue[]=$value;
+                  }else{
+                     $valueIN[]=$value; 
+                  }  
+               }
+           
+        }
+        
+  
+        
+        if(count($valueIN)!==0){
+        if($ENTITY_VALUE['write']=='TRUE'){
+        
+           
+          
+          $PATH = "behaivor/".str_replace(".","/",$ENTITY_TYPE).'.json';
+           
+           
+       
+            $contentJSON =$this->Open($PATH);
+            
+            foreach($valueIN as $inval){
+                
+                array_push($contentJSON[$variable]['values'],$inval);
+            }
+            
+           
+           $this->SAVE($PATH,$contentJSON);
+           
+            
+           return TRUE; 
+            
+            
+        }else{
+             
+           return FALSE; 
+        }
+        
+      
+
+        }else{
+         
+               if(count($INvalue)!==0){
+              
+               return TRUE;  
+               }else{
+               return FALSE;   
+              }
+            
+        }
+      
+        
         
     }
     
+    
+    public function SAVE($PATH,$ARRAY){
+        
+       
+        
+     $CONTENT = json_encode($ARRAY,JSON_PRETTY_PRINT);
+        
+        
+        
+     file_put_contents($PATH, $CONTENT);
+        
+        
+    }
+    
+   
+    
+    
+
     
 }

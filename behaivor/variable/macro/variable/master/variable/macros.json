@@ -1,5 +1,6 @@
 {
       "css":{ "type":"multiselect",
+             "entity":["default.theme.summer.summer","default.theme.summer.winter"],
             "name":"css",
             "values":["micro.css"],
             "value":["micro.css"]

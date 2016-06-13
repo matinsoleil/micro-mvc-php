@@ -2,12 +2,14 @@
     "text":{"type":"text",
             "expression":["*"],
             "minLength":18,
-            "value":"*"
+            "value":"*",
+            "entity":["theme.theme.summer.summer","theme.theme.summer.winter"]
            },
     "css":{ "type":"multiselect",
             "name":"css",
             "values":["micro.css"],
-            "value":["micro.css"]
+            "value":["micro.css"],
+            "entity":["theme.theme.summer.summer","theme.theme.summer.winter"]
           }
     
 }

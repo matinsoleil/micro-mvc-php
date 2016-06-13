@@ -1,0 +1,9 @@
+{
+    "summer": {
+               "css":["summer.css","happy.css"],
+               "javascript":["summer.js"]
+              },
+     "winter":{
+               "css":["winter.css"]
+              }         
+}

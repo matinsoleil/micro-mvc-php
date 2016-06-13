@@ -22,28 +22,57 @@ class app_data {
     $this->cache = $cache;
     
     
-    //$this->data->getDataPath('data');
+
+    $this->getData('css');
+
     
-    //$SET=$this->data->dataSet;
+    $this->Write('css',array('new.css')); 
     
-    $SET = $this->data->getSET('data');
+    }
+    
+    public function getData($variable,$ENTITY='default.main'){
+        
+        
+    $entity = 'data';
+    
+
+    
+    //$TYPES = $this->data->TYPE($variable,$ENTITY);
     
     
-     $this->data->Type('css');
+    
+    
+    //echo "<pre>";
+    //var_dump($TYPES[$NUM]);
+    //echo "</pre>";
+    
+    
+    $VARIALBLES = $this->data->VARIABLE($variable,$ENTITY);
+    
+    
+    //echo "<pre>";
+    //var_dump($VARIALBLES[$ENTITY]);
+    //echo "</pre>";
     
     
     
-    $variable = $this->data->Variable($SET,'css');
-  
-    echo "<pre>";
-    var_dump($variable);
-    echo "</pre>";
     
-    echo "<pre>";
-    var_dump($this->data->pool);
-    echo "</pre>";
     
+    
+    }
+    
+    
+    public function Write($variable,$value,$ENTITY='default.main',$ENTITY_TYPE='variable.base'){
+        
+        
+        $this->data->WRITE($variable, $value,$ENTITY,$ENTITY_TYPE);
+        
+        
         
     }
+    
+    
+    
+    
     //put your code here
 }
