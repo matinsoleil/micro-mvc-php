@@ -372,9 +372,36 @@ class app_json {
            var_dump($VARIABLE);
            echo "</pre>";
            
-            echo "<pre>";
-           var_dump($this->files);
-            echo "</pre>";
+           echo "<pre>";
+           var_dump($ENTITY);
+           echo "</pre>";
+           
+           
+           foreach($this->files as $key=>$file){
+               
+               $entity_hard = str_replace('/','.',$file);
+               
+               
+               foreach($entity_hard as $hard){
+                  
+                   $stringHard = $hard.'.'.$key;
+                   $stringHard = str_replace(".json","",$stringHard);
+            
+                   
+                   
+                   $FULLENTITY = "data.".$ENTITY;
+                   
+                   
+                   if (strpos($FULLENTITY, $stringHard) !== false) {
+                      echo $stringHard;
+                      echo "<br>";
+                    }
+                   
+                  
+               }
+               
+           }
+           
         }
            
        }
