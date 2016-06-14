@@ -62,7 +62,7 @@ class app_data {
     }
     
     
-    public function Write($variable,$value,$ENTITY='default.main',$ENTITY_TYPE='variable.base'){
+    public function Write($variable,$value,$ENTITY='default.theme.summer.summer',$ENTITY_TYPE='variable.macro.variable.master.variable.macros'){
         
         
         $this->data->WRITE($variable, $value,$ENTITY,$ENTITY_TYPE);

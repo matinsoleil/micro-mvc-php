@@ -1,8 +1,18 @@
 {
-      "css":{ "type":"multiselect",
-             "entity":["default.theme.summer.summer","default.theme.summer.winter"],
-            "name":"css",
-            "values":["micro.css"],
-            "value":["micro.css"]
-          }
+    "css": {
+        "type": "multiselect",
+        "entity": [
+            "default.theme.summer.summer",
+            "default.theme.summer.winter"
+        ],
+        "write": "TRUE",
+        "name": "css",
+        "values": [
+            "micro.css",
+            "new.css"
+        ],
+        "value": [
+            "micro.css"
+        ]
+    }
 }

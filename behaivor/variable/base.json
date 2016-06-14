@@ -6,12 +6,13 @@
             "default.main"
         ],
         "write": "TRUE",
+        "visibility": "TRUE",
         "values": [
             "summer.css",
             "happy.css",
             "winter.css",
-            "default.css"
-          
+            "default.css",
+            "new.css"
         ],
         "value": [
             "default.css"
@@ -24,6 +25,7 @@
             "default.main"
         ],
         "write": "TRUE",
+        "visibility": "TRUE",
         "values": [
             "red",
             "green",
@@ -36,7 +38,8 @@
     "available": {
         "type": "boolean",
         "name": "available",
-        "write": "true",
+        "write": "TRUE",
+        "visibility": "TRUE",
         "entity": [
             "default.main"
         ],

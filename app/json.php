@@ -242,6 +242,8 @@ class app_json {
     
     $types = array();
     
+  
+    
     foreach($TYPE as $entities=>$type){
         
         
@@ -257,6 +259,7 @@ class app_json {
         
     }
     
+
     
     return $types;
         
@@ -356,12 +359,23 @@ class app_json {
        $types = $this->TYPE($variable, $ENTITY);
         
        
-       
        if($types[$ENTITY_TYPE]['type']=='multiselect'){
        
         $VALID = $this->MULTISELECT($ENTITY_TYPE,$types[$ENTITY_TYPE],$variable,$value);  
         
-        var_dump($VALID);
+        if($VALID){
+            
+            
+           $VARIABLE =  $this->VARIABLE($variable, $ENTITY);
+            
+           echo "<pre>";
+           var_dump($VARIABLE);
+           echo "</pre>";
+           
+            echo "<pre>";
+           var_dump($this->files);
+            echo "</pre>";
+        }
            
        }
         
