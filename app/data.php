@@ -26,7 +26,7 @@ class app_data {
     $this->getData('css');
 
     
-    $this->Write('css',array('new.css')); 
+    $this->Write('css',array('simple.css',"grand.css")); 
     
     }
     

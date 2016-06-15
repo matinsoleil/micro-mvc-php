@@ -9,7 +9,9 @@
         "name": "css",
         "values": [
             "micro.css",
-            "new.css"
+            "new.css",
+            "simple.css",
+            "grand.css"
         ],
         "value": [
             "micro.css"

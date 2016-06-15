@@ -367,15 +367,7 @@ class app_json {
             
             
            $VARIABLE =  $this->VARIABLE($variable, $ENTITY);
-            
-           echo "<pre>";
-           var_dump($VARIABLE);
-           echo "</pre>";
-           
-           echo "<pre>";
-           var_dump($ENTITY);
-           echo "</pre>";
-           
+     
            
            foreach($this->files as $key=>$file){
                
@@ -392,9 +384,51 @@ class app_json {
                    $FULLENTITY = "data.".$ENTITY;
                    
                    
+                   
+                   
                    if (strpos($FULLENTITY, $stringHard) !== false) {
-                      echo $stringHard;
-                      echo "<br>";
+          
+                      $subEntity = str_replace($stringHard.".","",$FULLENTITY);
+                      
+                      $shardEntity = explode(".",$subEntity);
+                      
+                      $route='';
+                      
+                      foreach($shardEntity as $shard){
+                          $route .='["'.$shard.'"]';
+                          
+                      }
+                      
+                      $path = str_replace(".","/",$stringHard);
+                      
+                      
+                      
+                      
+                      $subData = $this->Open($path.'.json');
+                      
+                      
+                      
+                       eval('$VALUES = $subData'.$route.'[$variable];');
+                      
+                      
+                       
+                       foreach($value as $val){
+                            if(!in_array($val,$VALUES)){
+                            array_push($VALUES,$val);
+                            }
+                       }
+                       
+                       
+                      
+                       
+                       eval('$subData'.$route.'[$variable]=$VALUES;');
+                       
+                       echo "<pre>";
+                       var_dump($subData);
+                       echo "</pre>";
+                       
+                       $this->SAVE($path.'.json',$subData);
+                       
                     }
                    
                   
