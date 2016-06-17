@@ -15,18 +15,32 @@ class app_data {
     
     public $data;
     public $cache;
+    public $simple;
     
-    public function __construct(app_redis $cache,app_json $json) {
+    public function __construct(app_redis $cache,app_json $json,app_simple $simple) {
   
     $this->data = $json;
     $this->cache = $cache;
+    $this->simple = $simple;
     
     
+    
+    $this->simple->WRITE_ENTITY('data.heaven.enter.numbers');
+    
+    
+    $this->simple->WRITE_ENTITY_VALUE('data.heaven.enter.numbers','como');
 
-    $this->getData('css');
+    //$this->getData('css');
 
+    $VALUE = $this->simple->READ_ENTITY_VALUE('data.heaven.enter.numbers','como');
     
-    $this->Write('css',array('simple.css',"grand.css")); 
+    var_dump($VALUE);
+    
+    
+    
+    $this->simple->DELETE_ENTITY('data.heaven.enter.numbers');
+    
+    //$this->Write('css',array('simple.css',"grand.css")); 
     
     }
     
