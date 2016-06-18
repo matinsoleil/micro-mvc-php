@@ -11,5 +11,8 @@
     "data.heaven.enter.numbers": [
         "default",
         "como"
+    ],
+    "data.heaven.enter":[
+        "default"
     ]
 }

@@ -34,11 +34,11 @@ class app_data {
 
     $VALUE = $this->simple->READ_ENTITY_VALUE('data.heaven.enter.numbers','como');
     
-    var_dump($VALUE);
+    //var_dump($VALUE);
     
     
     
-    $this->simple->DELETE_ENTITY('data.heaven.enter.numbers');
+    $this->simple->DELETE_ENTITY('data.heaven.enter');
     
     //$this->Write('css',array('simple.css',"grand.css")); 
     

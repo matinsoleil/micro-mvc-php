@@ -14,7 +14,7 @@
 class app_simple {
     
     public $hash;
-
+    public $scan=array();
     
     //put your code here
     public function __construct($string = '0000000') {
@@ -181,23 +181,49 @@ class app_simple {
     }
     
     
-    public function DELETE_ENTITY($ENTITY,$ENTITY_TYPE,$ENTITY_TYPE_VALUE){
+    public function DELETE_ENTITY($ENTITY,$ENTITY_TYPE='behaivor.entities',$ENTITY_TYPE_VALUE='base'){
+        
+         
+        
+            $IS_ENTITY = $this->CHECK_ENTITY($ENTITY,$ENTITY_TYPE,$ENTITY_TYPE_VALUE);
+        
+            if($IS_ENTITY){
+                echo "NOT ENTITY";
+             $ENTITY_TYPE = str_replace('.','/',$ENTITY_TYPE);
+             
+             $objectValues = $this->OPEN('./'.$ENTITY_TYPE.'/'.$ENTITY_TYPE_VALUE.'.json');
+    
+          
+             
+             
+             $ENTITY_PATH = str_replace('.','/',$ENTITY);
+             
+             $ENTITY_PATH = './'.$ENTITY_PATH;
+             
+             echo $ENTITY_PATH;
+             echo "<br>";
+             
+             $IS = $this->IS_DEEP($ENTITY_PATH);
+             
+             if($IS){
+             
+                $HW_DEEP = $this->DEEP($ENTITY,$ENTITY_TYPE,$ENTITY_TYPE_VALUE);
+             
+                 echo "<pre>";
+                 var_dump($HW_DEEP);
+                 echo "</pre>";
+             }
+            }else{
+                 echo "FALSE";
+                 return FALSE;
+            }
+        
+    }
+    
+    
+    public function UNSHARD($UNSHARD,$LAST=''){
         
         
-        
-       $ENTITY_TYPE = str_replace('.','/',$ENTITY_TYPE);
-        
-       $objectValues =  $this->OPEN('./'.$ENTITY_TYPE.'/'.$ENTITY_TYPE_VALUE.'.json');
-        
-       if(isset_($objectValues[$ENTITY])){
-           
-           foreach($objectValues[$ENTITY] as $VALUES){
-               
-               var_dump($VALUES);
-               
-           }
-           
-       }
         
         
     }
@@ -243,6 +269,57 @@ class app_simple {
         
     }
     
+    
+    public function DEEP($ENTITY,$ENTITY_TYPE='behaivor.entities',$ENTITY_TYPE_VALUE='base'){
+        
+   
+        
+    $ENTITY_TYPE = str_replace('.','/',$ENTITY_TYPE);
+ 
+        
+    $objectValues =  $this->OPEN('./'.$ENTITY_TYPE.'/'.$ENTITY_TYPE_VALUE.'.json');
+        
+    echo '<pre>';  
+    var_dump($objectValues);
+    echo '</pre>';
+    echo '<br>';
+    
+    
+    $ENTITY_PATH = str_replace('.','/',$ENTITY);
+   
+    $SCAN = $this->SCAN_ENTITY($ENTITY_PATH);       
+    
+    
+    var_dump($SCAN);
+   
+           
+     return array();
+       
+        
+        
+    }
+    
+    
+    
+    public function IS_DEEP($PATH) {
+    $result = false;
+    if($dh = opendir($PATH)) {
+        while(!$result && ($file = readdir($dh)) !== false) {
+     
+           if(is_dir($PATH.'/'.$file)){
+           
+               $result = $file !== "." && $file !== "..";
+           }else{
+               $result = false;
+           }
+            
+        }
+
+        closedir($dh);
+    }
+
+    return $result;
+    }
   
     
     
@@ -286,5 +363,64 @@ class app_simple {
         return FALSE;    
         }
     }
+    
+    
+    public function SCAN_ENTITY($PATH){
+        
+        $this->SCAN($PATH);
+        
+        $SCAN = $this->scan;
+        
+     
+        $this->SCAN_VALUES($SCAN);
+        
+        
+        
+        
+        return $SCAN;
+        
+        $this->scan = array();
+        
+    }
+    
+    
+    
+    public function SCAN($PATH){
+        
+               
+    $FILES = scandir($PATH);
+    
+    foreach($FILES as $file){
+        
+        if(is_dir($PATH.'/'.$file)){
+            if( $file !== "." && $file !== ".."){
+                
+                 $PATH_NEXT=$PATH."/".$file;
+                
+                 $_ENTITY = str_replace('/','.',$PATH_NEXT);
+                 
+                 $this->scan[$_ENTITY]=1;
+                
+                 $this->SCAN_ENTITY($PATH_NEXT);
+                
+            }
+        }
+        
+    }
+  
+    }
    
+   public function SCAN_VALUES($PATH){
+       
+       foreach($SCAN as $entities){
+           
+           var_dump($entities);
+           echo "<br>";
+           
+       }
+       
+       
+   } 
+    
+    
 }
