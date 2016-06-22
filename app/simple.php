@@ -410,11 +410,11 @@ class app_simple {
   
     }
    
-   public function SCAN_VALUES($PATH){
+   public function SCAN_VALUES($SCAN){
        
-       foreach($SCAN as $entities){
+       foreach($SCAN as $key=>$entities){
            
-           var_dump($entities);
+           var_dump($key);
            echo "<br>";
            
        }
