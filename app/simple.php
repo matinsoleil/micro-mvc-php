@@ -188,7 +188,7 @@ class app_simple {
             $IS_ENTITY = $this->CHECK_ENTITY($ENTITY,$ENTITY_TYPE,$ENTITY_TYPE_VALUE);
         
             if($IS_ENTITY){
-                echo "NOT ENTITY";
+                
              $ENTITY_TYPE = str_replace('.','/',$ENTITY_TYPE);
              
              $objectValues = $this->OPEN('./'.$ENTITY_TYPE.'/'.$ENTITY_TYPE_VALUE.'.json');
@@ -200,18 +200,23 @@ class app_simple {
              
              $ENTITY_PATH = './'.$ENTITY_PATH;
              
-             echo $ENTITY_PATH;
-             echo "<br>";
+     
              
              $IS = $this->IS_DEEP($ENTITY_PATH);
              
              if($IS){
              
-                $HW_DEEP = $this->DEEP($ENTITY,$ENTITY_TYPE,$ENTITY_TYPE_VALUE);
+                $DEEP_FILES = $this->DEEP($ENTITY,$ENTITY_TYPE,$ENTITY_TYPE_VALUE);
              
-                 echo "<pre>";
-                 var_dump($HW_DEEP);
-                 echo "</pre>";
+             
+                foreach($DEEP_FILES as $FILES){
+                    
+                    
+                    
+                    
+                }
+                
+                 
              }
             }else{
                  echo "FALSE";
@@ -277,12 +282,9 @@ class app_simple {
     $ENTITY_TYPE = str_replace('.','/',$ENTITY_TYPE);
  
         
-    $objectValues =  $this->OPEN('./'.$ENTITY_TYPE.'/'.$ENTITY_TYPE_VALUE.'.json');
+    $ENTITY_VALUES =  $this->OPEN('./'.$ENTITY_TYPE.'/'.$ENTITY_TYPE_VALUE.'.json');
         
-    echo '<pre>';  
-    var_dump($objectValues);
-    echo '</pre>';
-    echo '<br>';
+
     
     
     $ENTITY_PATH = str_replace('.','/',$ENTITY);
@@ -290,10 +292,11 @@ class app_simple {
     $SCAN = $this->SCAN_ENTITY($ENTITY_PATH);       
     
     
-    var_dump($SCAN);
+    
+    
    
            
-     return array();
+     return $SCAN;
        
         
         
@@ -369,26 +372,29 @@ class app_simple {
         
         $this->SCAN($PATH);
         
+    
+        
         $SCAN = $this->scan;
         
      
-        $this->SCAN_VALUES($SCAN);
+        $SCAN_VALUES = $this->SCAN_VALUES($SCAN);
         
         
+        //$this->scan = array();
         
-        
-        return $SCAN;
-        
-        $this->scan = array();
-        
+        return $SCAN_VALUES;
+      
     }
     
     
     
     public function SCAN($PATH){
-        
+    
+    
                
     $FILES = scandir($PATH);
+    
+    $_IN_FILES = array();
     
     foreach($FILES as $file){
         
@@ -404,23 +410,69 @@ class app_simple {
                  $this->SCAN_ENTITY($PATH_NEXT);
                 
             }
+        }else{
+            
+               
+                 $PATH_NEXT=$PATH."/".$file;
+                
+                 $_ENTITY = str_replace('/','.',$PATH_NEXT);
+            
+            array_push($_IN_FILES,$file);
+             if(isset($this->scan[$_ENTITY])){
+              
+                 $_files = $this->scan[$_ENTITY];
+                 if(is_array($_files)){
+                     
+                     array_push($_files,$file); 
+                     
+                 }else{
+                    $this->scan[$_ENTITY]=array($file);
+                     
+                 }
+             
+             
+             }
+           
         }
         
     }
   
+      
+    
     }
    
    public function SCAN_VALUES($SCAN){
        
+       $_IN_SCAN = array();
+       
+       
        foreach($SCAN as $key=>$entities){
            
-           var_dump($key);
-           echo "<br>";
-           
+   
+            $PATH = str_replace(".","/",$key);
+            $FILES = scandir('./'.$PATH);
+     
+            
+            $files = array();
+          foreach($FILES as $file){    
+              if(!is_dir($PATH.'/'.$file)){
+                   if( $file !== "." && $file !== ".."){
+            
+               array_push($files,$file);
+                
+                    }
+              }
+                
+          }
+            
+          $_IN_SCAN[$key]=$files;
+    
        }
        
        
+       return $_IN_SCAN;
+       
    } 
     
-    
+       
 }
