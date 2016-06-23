@@ -15,10 +15,10 @@ $CACHE = new app_redis();
 
 $JSON = new app_json();
 
-$SIMPLE = new app_simple();
+$HARD = new app_hard();
 
 
-$DATA = new app_data($CACHE,$JSON,$SIMPLE);
+$DATA = new app_data($CACHE,$JSON,$HARD);
 
 
 

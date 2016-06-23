@@ -43,7 +43,7 @@ class app_simple {
             
             
         }else{
-            return array();
+                   return array();
         }
         
     }
@@ -208,13 +208,34 @@ class app_simple {
              
                 $DEEP_FILES = $this->DEEP($ENTITY,$ENTITY_TYPE,$ENTITY_TYPE_VALUE);
              
-             
-                foreach($DEEP_FILES as $FILES){
+           
+                $ALL = FALSE;
+           
+                
+                foreach($DEEP_FILES as $KEY=>$FILES){
                     
-                    
-                    
-                    
+                       $_PATH = str_replace('.','/',$KEY);
+                       
+                       $_PATH = './'.$_PATH;
+                   
+                     foreach($FILES as $FILE){
+                         
+                         
+                         $_PATH_FILE = $_PATH.'/'.$FILE;
+                        
+                         //echo $_PATH_FILE;
+                         //echo '<br>';
+                      $this->_DELETE($_PATH_FILE);
+                         
+                     }
+                   
+                      $ALL =  $this->_DELETE_ENTITY($_PATH);
+                     
+                      $this->UN_CHECK_ENTITY($ENTITY, $ENTITY_TYPE, $ENTITY_TYPE_VALUE);
                 }
+                
+               
+                
                 
                  
              }
@@ -226,36 +247,55 @@ class app_simple {
     }
     
     
-    public function UNSHARD($UNSHARD,$LAST=''){
+    public function UN_CHECK_ENTITY($ENTITY,$ENTITY_TYPE='behaivor.entities',$ENTITY_TYPE_VALUE='base'){
         
+      $ENTITY_TYPE = str_replace('.','/',$ENTITY_TYPE);
+  
+      $_PATH_ENTITY_TYPE_VALUE = './'.$ENTITY_TYPE.'/'.$ENTITY_TYPE_VALUE.'.json';
+      
+      $objectValues =  $this->OPEN($_PATH_ENTITY_TYPE_VALUE);        
         
+      
+      foreach($objectValues as $key=>$value){
+          
+        if (strpos($key,$ENTITY) !== false) {
+           unset($objectValues[$key]);
+        
+        }
+          
+      }
+      
+      $this->SAVE( $_PATH_ENTITY_TYPE_VALUE,$objectValues);
         
         
     }
     
     
     public function CHECK_ENTITY($ENTITY,$ENTITY_TYPE,$ENTITY_TYPE_VALUE){
-        
-        
-        $ENTITY_TYPE = str_replace('.','/',$ENTITY_TYPE);
- 
-        
+               
+       $ENTITY_TYPE = str_replace('.','/',$ENTITY_TYPE);
+       $CHECK = FALSE;
        $objectValues =  $this->OPEN('./'.$ENTITY_TYPE.'/'.$ENTITY_TYPE_VALUE.'.json');
         
-       if(isset($objectValues[$ENTITY])){
-           return TRUE;
-       }else{
-           return FALSE;
+       foreach($objectValues as $key=>$value){
+           
+           if (strpos($key, $ENTITY) !== false) {
+                  $CHECK = TRUE;
+                  break;
+             }
+           
+           
        }
+       
+       return $CHECK;
+       
         
     }
     
     public function CHECK_ENTITY_VALUE($ENTITY,$ENTITY_VALUE,$ENTITY_TYPE='behaivor.entities',$ENTITY_TYPE_VALUE='base'){
-        
-        
+               
        $ENTITY_TYPE = str_replace('.','/',$ENTITY_TYPE);
- 
-        
+    
        $objectValues =  $this->OPEN('./'.$ENTITY_TYPE.'/'.$ENTITY_TYPE_VALUE.'.json');
         
        $objectValues[$ENTITY];
@@ -267,39 +307,23 @@ class app_simple {
         }else{
             
             return FALSE;
-        }
-       
-       
-       
+        }   
         
     }
     
     
     public function DEEP($ENTITY,$ENTITY_TYPE='behaivor.entities',$ENTITY_TYPE_VALUE='base'){
-        
-   
-        
+              
     $ENTITY_TYPE = str_replace('.','/',$ENTITY_TYPE);
- 
-        
+         
     $ENTITY_VALUES =  $this->OPEN('./'.$ENTITY_TYPE.'/'.$ENTITY_TYPE_VALUE.'.json');
-        
-
-    
-    
+       
     $ENTITY_PATH = str_replace('.','/',$ENTITY);
    
     $SCAN = $this->SCAN_ENTITY($ENTITY_PATH);       
-    
-    
-    
-    
-   
-           
-     return $SCAN;
-       
-        
-        
+            
+    return $SCAN;
+         
     }
     
     
@@ -357,40 +381,42 @@ class app_simple {
         }
     }
     
-    public function _DELETE_ENTITY($PATH){
-        
-        if(is_dir($PATH)){
-        rmdir($PATH);
-        return TRUE;
-        }else{
-        return FALSE;    
-        }
+
+    
+    public function _DELETE_ENTITY($PATH) {
+    
+     if(is_dir($PATH)){    
+    foreach(scandir($PATH) as $file) {
+        if ('.' === $file || '..' === $file) continue;
+        if (is_dir("$PATH/$file")) $this->_DELETE_ENTITY("$PATH/$file");
+        else unlink("$PATH/$file");
     }
+    
+    rmdir($PATH);
+    return TRUE;
+     }else{
+    return FALSE;     
+     }
+    
+}
+    
     
     
     public function SCAN_ENTITY($PATH){
         
-        $this->SCAN($PATH);
-        
-    
+        $this->SCAN($PATH); 
         
         $SCAN = $this->scan;
-        
-     
+          
         $SCAN_VALUES = $this->SCAN_VALUES($SCAN);
-        
-        
-        //$this->scan = array();
-        
+ 
         return $SCAN_VALUES;
       
     }
     
     
     
-    public function SCAN($PATH){
-    
-    
+    public function SCAN($PATH){  
                
     $FILES = scandir($PATH);
     
@@ -399,6 +425,8 @@ class app_simple {
     foreach($FILES as $file){
         
         if(is_dir($PATH.'/'.$file)){
+            
+          
             if( $file !== "." && $file !== ".."){
                 
                  $PATH_NEXT=$PATH."/".$file;
@@ -412,27 +440,24 @@ class app_simple {
             }
         }else{
             
-               
-                 $PATH_NEXT=$PATH."/".$file;
-                
-                 $_ENTITY = str_replace('/','.',$PATH_NEXT);
-            
-            array_push($_IN_FILES,$file);
-             if(isset($this->scan[$_ENTITY])){
-              
-                 $_files = $this->scan[$_ENTITY];
-                 if(is_array($_files)){
+           $_PATH = str_replace('/','.',$PATH);
+          
+                if(isset($this->scan[$_PATH])){
+                     $files = $this->scan[$_PATH];
                      
-                     array_push($_files,$file); 
+                     if(is_array($files)){
+                         
+                         array_push($files,$file);
+                         $this->scan[$_PATH]=$files;
+                         
+                     }else{
+                        $this->scan[$_PATH]=array($file); 
+                     }
                      
-                 }else{
-                    $this->scan[$_ENTITY]=array($file);
-                     
-                 }
-             
-             
-             }
-           
+                    
+                }else{
+                    $this->scan[$_PATH]=array($file);
+                }        
         }
         
     }
