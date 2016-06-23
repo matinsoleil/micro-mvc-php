@@ -54,6 +54,12 @@ class app_hard {
         
         $this->VALUE($VARIABLE,$NAME);    
         
+        $VALUE = $this->value;
+        
+        $this->value = array();
+        
+        return $VALUE;
+        
     }
     
     
@@ -63,8 +69,11 @@ class app_hard {
             
             if($KEY==$NAME){
                
-                var_dump($VAR);
-                echo "<br>";
+                $value = $this->value;
+                
+                array_push($value,$VAR);
+                
+                $this->value=$value;
                 
             }
             
