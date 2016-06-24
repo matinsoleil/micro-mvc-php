@@ -51,27 +51,17 @@ class app_hard {
     }
     
     
-    public function SET_VALUE($VARIABLE,$NAME,$VALUE){
-        
-       $values = $this->VALUE($VARIABLE,$NAME); 
-       
-       $VALUE = array();
-        
-        foreach($values as $key=>$val){
-            
-            if($val==$NAME){
-                
-                $VALUE[$key]=$val;
-                
-            }
-  
-        } 
-        
-        
-        
-        
+    public function SET_VALUE($VARIABLE,$SUB_ENTITY,$VALUE){  
+    
+         $string_array = str_replace('.','"]["',$SUB_ENTITY);
+   
+         eval('$VARIABLE["'.$string_array.'"]=$VALUE;');
+                 
+         return $VARIABLE;
         
     }
+    
+  
     
     
     public function GET_VALUE($VARIABLE,$NAME){
@@ -96,7 +86,7 @@ class app_hard {
     }
     
     
-    public function VALUE($VARIABLE,$NAME){
+    public function VALUE($VARIABLE){
     
         $this->SUB_ENTITY($VARIABLE);
         
@@ -120,7 +110,7 @@ class app_hard {
                 }else{
                 $_KEY =$key;    
                 }
-                
+                $this->subEntity[$_KEY]=$value;
                 $this->SUB_ENTITY($value,$_KEY);
             }else{
                 

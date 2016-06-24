@@ -41,9 +41,16 @@ class app_data {
     
     $VALUE=$this->hard->GET_VALUE($variables,'simple');
     
+    echo '<pre>';
     var_dump($VALUE);
+    echo '</pre>';
     
+     $variables = $this->hard->SET_VALUE($variables,'simple.hard','usefull');
     
+     echo '<pre>';
+     var_dump($variables['simple']['hard']);
+     echo '</pre>';
+     
     }
     
   

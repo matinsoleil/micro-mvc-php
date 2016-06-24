@@ -9,6 +9,7 @@
     },
     "help":{
         "beatles":["paul","george","john"],
-        "goldfinger":["coconut"]
+        "goldfinger":["coconut"],
+        "default":"gold"
     }
 }
