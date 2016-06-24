@@ -2,5 +2,13 @@
     "default": "default",
     "simple":{
         "hard":"simple"
+    },
+    "man":{
+        "wild":"season",
+        "feel":"leap"
+    },
+    "help":{
+        "beatles":["paul","george","john"],
+        "goldfinger":["coconut"]
     }
 }

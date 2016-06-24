@@ -34,15 +34,15 @@ class app_data {
     //echo "</pre>";
     
     
-    $value = $this->hard->GET_VARIABLE_VALUE('data.default','default');
+    $variables = $this->hard->GET_VARIABLE_VALUE('data.default','default');
     
     
     //var_dump($value);
     
-    $VALUE = $this->hard->GET_VALUE($value,'simple');
-    
+    $VALUE=$this->hard->GET_VALUE($variables,'simple');
     
     var_dump($VALUE);
+    
     
     }
     

@@ -17,6 +17,7 @@ class app_hard {
     public $scan=array();
     public $data=array();
     public $value = array();
+    public $subEntity = array();
     
     //put your code here
     public function __construct($string = '0000000') {
@@ -50,13 +51,45 @@ class app_hard {
     }
     
     
+    public function SET_VALUE($VARIABLE,$NAME,$VALUE){
+        
+       $values = $this->VALUE($VARIABLE,$NAME); 
+       
+       $VALUE = array();
+        
+        foreach($values as $key=>$val){
+            
+            if($val==$NAME){
+                
+                $VALUE[$key]=$val;
+                
+            }
+  
+        } 
+        
+        
+        
+        
+        
+    }
+    
+    
     public function GET_VALUE($VARIABLE,$NAME){
         
-        $this->VALUE($VARIABLE,$NAME);    
+        $values = $this->VALUE($VARIABLE,$NAME);    
         
-        $VALUE = $this->value;
+        $VALUE = array();
         
-        $this->value = array();
+        foreach($values as $key=>$val){
+            
+            if($val==$NAME){
+                
+                $VALUE[$key]=$val;
+                
+            }
+  
+        } 
+        
         
         return $VALUE;
         
@@ -65,23 +98,45 @@ class app_hard {
     
     public function VALUE($VARIABLE,$NAME){
     
-        foreach($VARIABLE as $KEY=>$VAR){
+        $this->SUB_ENTITY($VARIABLE);
+        
+        $subEntities = $this->subEntity;
+        
+        $this->subEntity=array();
+        
+        return $subEntities;
+        
+        
+    }
+    
+    public function SUB_ENTITY($VARIABLE,$KEY=''){
+        
+        foreach($VARIABLE as $key=>$value){
             
-            if($KEY==$NAME){
-               
-                $value = $this->value;
+       
+            if(is_array($value)){
+                if($KEY!=''){
+                $_KEY = $KEY.'.'.$key;
+                }else{
+                $_KEY =$key;    
+                }
                 
-                array_push($value,$VAR);
+                $this->SUB_ENTITY($value,$_KEY);
+            }else{
                 
-                $this->value=$value;
+                if($KEY!=''){
+                $_KEY = $KEY.'.'.$key;
+                }else{
+                $_KEY =$key;    
+                }
+                $this->subEntity[$_KEY]=$value;
                 
-            }
-            
-            if(is_array($VAR)){
-                $this->VALUE($VAR,$NAME);
+                
             }
             
         }
+        
+        
         
     }
     
