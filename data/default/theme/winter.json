@@ -1,0 +1,19 @@
+{
+    "summer": {
+        "css": [
+            "summer.css",
+            "happy.css",
+            "new.css",
+            "simple.css",
+            "grand.css"
+        ],
+        "javascript": [
+            "summer.js"
+        ]
+    },
+    "winter": {
+        "css": [
+            "winter.css"
+        ]
+    }
+}

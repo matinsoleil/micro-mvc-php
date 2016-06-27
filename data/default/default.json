@@ -1,15 +1,21 @@
 {
     "default": "default",
-    "simple":{
-        "hard":"simple"
+    "simple": {
+        "hard": "west"
     },
-    "man":{
-        "wild":"season",
-        "feel":"leap"
+    "man": {
+        "wild": "season",
+        "feel": "leap"
     },
-    "help":{
-        "beatles":["paul","george","john"],
-        "goldfinger":["coconut"],
-        "default":"gold"
+    "help": {
+        "beatles": [
+            "paul",
+            "george",
+            "john"
+        ],
+        "goldfinger": [
+            "coconut"
+        ],
+        "default": "gold"
     }
 }

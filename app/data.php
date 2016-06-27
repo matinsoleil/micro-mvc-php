@@ -36,8 +36,8 @@ class app_data {
     
     $variables = $this->hard->GET_VARIABLE_VALUE('data.default','default');
     
+
     
-    //var_dump($value);
     
     $VALUE=$this->hard->GET_VALUE($variables,'simple');
     
@@ -45,11 +45,11 @@ class app_data {
     var_dump($VALUE);
     echo '</pre>';
     
-     $variables = $this->hard->SET_VALUE($variables,'simple.hard','usefull');
+     $variables = $this->hard->SET_VALUE($variables,'simple.hard','west');
     
-     echo '<pre>';
-     var_dump($variables['simple']['hard']);
-     echo '</pre>';
+    
+     
+     $this->hard->SET_VARIABLE_VALUE('data.default','default', $variables);
      
     }
     

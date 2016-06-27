@@ -51,6 +51,29 @@ class app_hard {
     }
     
     
+    
+    public function SET_VARIABLE_VALUE($ENTITY,$VARIABLE,$VALUE){
+        
+        $PATH = $this->ENTITY_TO_PATH($ENTITY);
+        
+        $PATH_FILE =$PATH.'/'.$VARIABLE.'.json';        
+        
+        $this->SAVE($PATH_FILE, $VALUE);
+        
+    }
+    
+    
+    public function DELETE_VARIABLE_VALUE($ENTITY,$VARIABLE){
+        
+        $PATH = $this->ENTITY_TO_PATH($ENTITY);
+        
+        $PATH_FILE =$PATH.'/'.$VARIABLE.'.json';        
+        
+        $this->DELETE($PATH_FILE);
+        
+    }
+    
+    
     public function SET_VALUE($VARIABLE,$SUB_ENTITY,$VALUE){  
     
          $string_array = str_replace('.','"]["',$SUB_ENTITY);
@@ -66,13 +89,16 @@ class app_hard {
     
     public function GET_VALUE($VARIABLE,$NAME){
         
-        $values = $this->VALUE($VARIABLE,$NAME);    
+        $values = $this->VALUE($VARIABLE,$NAME); 
+        
+     
         
         $VALUE = array();
         
         foreach($values as $key=>$val){
+
             
-            if($val==$NAME){
+            if($key==$NAME){
                 
                 $VALUE[$key]=$val;
                 
@@ -259,6 +285,11 @@ class app_hard {
         
     $CONTENT = json_encode($ARRAY,JSON_PRETTY_PRINT);        
     file_put_contents($PATH, $CONTENT);
+        
+    }
+    
+    public function DELETE($PATH){
+        
         
     }
    
