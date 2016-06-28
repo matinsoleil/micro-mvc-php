@@ -66,8 +66,7 @@ class app_hard {
     public function SET_ENTITY($ENTITY){
         
       $SHARD =  $this->ENTITY_TO_ARRAY($ENTITY);
-        
-      var_dump($SHARD);
+  
         
       $this->SHARD($SHARD);
       
@@ -142,6 +141,15 @@ class app_hard {
         
     }
     
+    
+    public function DELETE_SUBENTITY($VARIABLE,$SUB_ENTITY){
+        
+         $string_array = str_replace('.','"]["',$SUB_ENTITY);
+   
+         eval('unset($VARIABLE["'.$string_array.'"])');
+         
+         return $VARIABLE;
+    }
   
     
     
