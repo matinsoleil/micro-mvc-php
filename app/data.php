@@ -51,6 +51,14 @@ class app_data {
      
      $this->hard->SET_VARIABLE_VALUE('data.default','default', $variables);
      
+     
+     $this->hard->SET_ENTITY('data.gold');
+     
+     //$this->hard->SET_ENTITY('data.silver.coin.spanish');
+     
+     $this->hard->DELETE_ENTITY('data.silver');
+     
+     
     }
     
   

@@ -39,6 +39,64 @@ class app_hard {
     }
     
     
+    public function ENTITY_TO_ARRAY($ENTITY){
+        
+    $shardEntity = explode(".",$ENTITY);
+    
+    $SHARD = array();
+    
+    $shard ='';    
+    
+    foreach($shardEntity as $subEntity){
+        
+     $shard .='["'.$subEntity.'"]';   
+        
+        
+    }
+    
+
+    eval('$SHARD'.$shard.'=1;');
+        
+    
+    return $SHARD;
+    
+    
+    }
+    
+    public function SET_ENTITY($ENTITY){
+        
+      $SHARD =  $this->ENTITY_TO_ARRAY($ENTITY);
+        
+      var_dump($SHARD);
+        
+      $this->SHARD($SHARD);
+      
+    }
+    
+    
+    public function DELETE_ENTITY($ENTITY) {
+    
+     $PATH = $this->ENTITY_TO_PATH($ENTITY);   
+        
+     if(is_dir($PATH)){   
+         
+    foreach(scandir($PATH) as $file) {
+        if ('.' === $file || '..' === $file) continue;
+        if (is_dir("$PATH/$file")) $this->DELETE_ENTITY("$PATH/$file");
+        else unlink("$PATH/$file");
+    }
+    
+    rmdir($PATH);
+    return TRUE;
+     }else{
+    return FALSE;     
+     }
+    
+     }
+    
+   
+  
+    
     public function GET_VARIABLE_VALUE($ENTITY,$VARIABLE){
         
         $PATH = $this->ENTITY_TO_PATH($ENTITY);
@@ -290,10 +348,53 @@ class app_hard {
     
     public function DELETE($PATH){
         
+      if(file_exists($PATH)){ 
+        unlink($PATH);
+        return TRUE;
+        }else{
+        return FALSE;    
+     }
         
     }
    
-   
+    
+    public function SHARD($SHARD,$LAST=''){
+        
+        foreach($SHARD as $key=>$shard){
+            
+            
+            if(is_array($shard)){
+                
+                $LAST = $LAST."/".$key;
+                
+                $Directory = $LAST;
+                     
+                if(!file_exists(".".$Directory)){
+                    
+                     mkdir(".".$Directory, 0777);   
+                }
+                    
+                
+                $this->SHARD($shard,$LAST);
+                
+            }else{
+                
+               
+                 $Directory = $LAST."/".$key;
+                 if(!is_dir(".".$Directory)){
+                  mkdir(".".$Directory, 0777);  
+                 }
+                 
+                $CONTENT=array("default"=>array("default"));
+                $this->SAVE(".".$Directory."/default.json",$CONTENT);
+                
+            }
+            
+            
+        }
+        
+        
+    }
    
     
        
