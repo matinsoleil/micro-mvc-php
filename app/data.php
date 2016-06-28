@@ -16,13 +16,14 @@ class app_data {
     public $data;
     public $cache;
     public $hard;
+    public $type;
     
-    public function __construct(app_redis $cache,app_json $json,app_hard $hard) {
+    public function __construct(app_redis $cache,app_hard $hard,app_soft $soft) {
   
-    $this->data = $json;
+ 
     $this->cache = $cache;
     $this->hard = $hard;
-    
+    $this->soft = $soft;
     
     
     $data =   $this->hard->SCANING('data');
@@ -34,31 +35,56 @@ class app_data {
     //echo "</pre>";
     
     
-    $variables = $this->hard->GET_VARIABLE_VALUE('data.default','default');
+   // $variables = $this->hard->GET_ENTITY_VALUE('data.default','default');
     
 
     
     
-    $VALUE=$this->hard->GET_VALUE($variables,'simple');
+   // $VALUE=$this->hard->GET_VALUE($variables,'simple');
     
-    echo '<pre>';
+   // echo '<pre>';
+   // var_dump($VALUE);
+   // echo '</pre>';
+    
+    // $variables = $this->hard->SET_VALUE($variables,'simple.hard','west');
+    
+    
+     
+     //$this->hard->SET_ENTITY_VALUE('data.default','default', $variables);
+     
+     
+     //$this->hard->SET_ENTITY('data.gold.finger.cuper.radio.base');
+     
+    //$VALUE = array("simple"=>array("golden","silver","fate","cuper"));
+    
+    //$this->hard->SET_ENTITY_VALUE('data.gold.finger.cuper.radio.base', $VALUE); 
+    
+    
+    $VALUE = $this->hard->GET_ENTITY_VALUE('data.gold.finger.cuper.radio.base');
+     
+    echo "<pre>";
     var_dump($VALUE);
-    echo '</pre>';
+    echo "</pre>";
     
-     $variables = $this->hard->SET_VALUE($variables,'simple.hard','west');
-    
-    
-     
-     $this->hard->SET_VARIABLE_VALUE('data.default','default', $variables);
-     
-     
-     $this->hard->SET_ENTITY('data.gold');
-     
      //$this->hard->SET_ENTITY('data.silver.coin.spanish');
      
-     $this->hard->DELETE_ENTITY('data.silver');
+    // $this->hard->DELETE_ENTITY('data.silver');
      
      
+    // $this->soft->SET_ENTITY('sun.shine');
+     
+     
+     //$this->soft->SET_ENTITY_VALUE('sun.shine',array('system'=>array("fire"=>"gun","water"=>"plate")),'system');
+     
+    // $this->soft->DELETE_ENTITY('sun.shine');
+     
+   $values = $this->soft->GET_ENTITY_VALUE('sun.shine');
+     
+   
+   echo '<pre>';
+   var_dump($values);
+   echo '</pre>';
+   
     }
     
   

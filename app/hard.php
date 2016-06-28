@@ -18,6 +18,7 @@ class app_hard {
     public $data=array();
     public $value = array();
     public $subEntity = array();
+    public $file;
     
     //put your code here
     public function __construct($string = '0000000') {
@@ -65,6 +66,20 @@ class app_hard {
     
     public function SET_ENTITY($ENTITY){
         
+     $ENTITY_PARTS = explode('.',$ENTITY);
+      
+     $total = count($ENTITY_PARTS)-1; 
+        
+  
+     $this->file = $ENTITY_PARTS[$total];
+      
+     unset($ENTITY_PARTS[$total]);
+      
+     
+     $ENTITY = implode('.',$ENTITY_PARTS);
+     
+     
+     
       $SHARD =  $this->ENTITY_TO_ARRAY($ENTITY);
   
         
@@ -73,7 +88,9 @@ class app_hard {
     }
     
     
-    public function DELETE_ENTITY($ENTITY) {
+    public function DELETE_UP_ENTITY($ENTITY) {
+        
+      
     
      $PATH = $this->ENTITY_TO_PATH($ENTITY);   
         
@@ -96,11 +113,11 @@ class app_hard {
    
   
     
-    public function GET_VARIABLE_VALUE($ENTITY,$VARIABLE){
+    public function GET_ENTITY_VALUE($ENTITY){
         
         $PATH = $this->ENTITY_TO_PATH($ENTITY);
         
-        $PATH_FILE =$PATH.'/'.$VARIABLE.'.json';
+        $PATH_FILE =$PATH.'.json';
         
         $VALUE = $this->OPEN($PATH_FILE);
         
@@ -109,22 +126,22 @@ class app_hard {
     
     
     
-    public function SET_VARIABLE_VALUE($ENTITY,$VARIABLE,$VALUE){
+    public function SET_ENTITY_VALUE($ENTITY,$VALUE){
         
         $PATH = $this->ENTITY_TO_PATH($ENTITY);
         
-        $PATH_FILE =$PATH.'/'.$VARIABLE.'.json';        
+        $PATH_FILE =$PATH.'.json';        
         
         $this->SAVE($PATH_FILE, $VALUE);
         
     }
     
     
-    public function DELETE_VARIABLE_VALUE($ENTITY,$VARIABLE){
+    public function DELETE_ENTITY($ENTITY){
         
         $PATH = $this->ENTITY_TO_PATH($ENTITY);
         
-        $PATH_FILE =$PATH.'/'.$VARIABLE.'.json';        
+        $PATH_FILE =$PATH.'.json';        
         
         $this->DELETE($PATH_FILE);
         
@@ -394,12 +411,21 @@ class app_hard {
                  }
                  
                 $CONTENT=array("default"=>array("default"));
-                $this->SAVE(".".$Directory."/default.json",$CONTENT);
+                $this->SAVE(".".$Directory."/".$this->file.".json",$CONTENT);
                 
             }
             
             
         }
+        
+        
+    }
+    
+    
+    public function GET_TYPE($ENTITY_TYPE,$VARIABLE){
+        
+        
+        
         
         
     }

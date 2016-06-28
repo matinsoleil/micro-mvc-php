@@ -15,12 +15,12 @@ $CORE = new app_core();
 
 $CACHE = new app_redis();
 
-$JSON = new app_json();
 
 $HARD = new app_hard();
 
+$SOFT = new app_soft();
 
-$DATA = new app_data($CACHE,$JSON,$HARD);
+$DATA = new app_data($CACHE,$HARD,$SOFT);
 
 
 
