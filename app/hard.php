@@ -175,13 +175,16 @@ class app_hard {
         $values = $this->VALUE($VARIABLE,$NAME); 
         
      
+  
+        
         
         $VALUE = array();
         
         foreach($values as $key=>$val){
 
-            
-            if($key==$NAME){
+            if (strpos($key,$name) !== false) {
+           
+  
                 
                 $VALUE[$key]=$val;
                 

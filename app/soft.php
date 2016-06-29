@@ -216,5 +216,90 @@ class app_soft {
         return array();   
         }
     }
+    
+    
+    
+    public function GET_VALUE($VARIABLE,$NAME){
+        
+        $values = $this->VALUE($VARIABLE,$NAME); 
+        
+     
+        $VALUE = array();
+        
+        foreach($values as $key=>$val){
+
+            
+            if (strpos($key,$NAME) !== false) {
+                
+                $VALUE[$key]=$val;
+                
+            }
+  
+        } 
+        
+        
+        return $VALUE;
+        
+    }
+    
+    
+    public function SET_VALUE($VARIABLE,$SUB_ENTITY,$VALUE){
+            
+            
+         $string_array = str_replace('.','"]["',$SUB_ENTITY);
+   
+         eval('$VARIABLE["'.$string_array.'"]=$VALUE;');
+                 
+         return $VARIABLE;
+            
+        
+    }
+    
+    
+    public function VALUE($VARIABLE){
+    
+        $this->SUB_ENTITY($VARIABLE);
+        
+        $subEntities = $this->subEntity;
+        
+        $this->subEntity=array();
+        
+        return $subEntities;
+        
+        
+    }
+    
+    
+   public function SUB_ENTITY($VARIABLE,$KEY=''){
+        
+        foreach($VARIABLE as $key=>$value){
+            
+       
+            if(is_array($value)){
+                if($KEY!=''){
+                $_KEY = $KEY.'.'.$key;
+                }else{
+                $_KEY =$key;    
+                }
+                $this->subEntity[$_KEY]=$value;
+                $this->SUB_ENTITY($value,$_KEY);
+            }else{
+                
+                if($KEY!=''){
+                $_KEY = $KEY.'.'.$key;
+                }else{
+                $_KEY =$key;    
+                }
+                $this->subEntity[$_KEY]=$value;
+                
+                
+            }
+            
+        }
+        
+        
+        
+    }
+    
        
 }
