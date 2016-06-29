@@ -130,6 +130,17 @@ class app_data {
     }
     return $string;
 }
+
+
+public function _encode_string_array ($stringArray) {
+    $s = strtr(base64_encode(addslashes(gzcompress(serialize($stringArray),9))), '+/=', '-_,');
+    return $s;
+}
+
+public function _decode_string_array ($stringArray) {
+    $s = unserialize(gzuncompress(stripslashes(base64_decode(strtr($stringArray, '-_,', '+/=')))));
+    return $s;
+}
     
     //put your code here
 }
