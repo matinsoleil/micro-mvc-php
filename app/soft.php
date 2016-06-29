@@ -301,5 +301,58 @@ class app_soft {
         
     }
     
+    
+    public function SEARCH($ENTITY, $searchWord, $limit = 1) {
+        
+        $result = array();
+        $db = $this->DB;
+        
+        
+        $collection = $db->$ENTITY;
+
+$cursor = $collection->find(
+    array(
+        '$text' => array('$search' => "golden")
+    )
+);
+        
+
+       foreach($cursor as $field){
+           
+           $result[] = $field;
+           
+       }
+  
+       
+       return $result;
+
+
+    
+    }
+    
+    
+    public function SEARCH_IN($ENTITY,$FIELDS=array('text','nick')){
+        
+        //db.deals.ensureIndex({ name: "text", description : "text", category : "text" });
+        
+         $db = $this->DB;
+         
+         
+         $collection = $db->$ENTITY;
+         
+         $ENSURE = array();
+         
+         foreach($FIELDS as $FIELD){
+             
+             $ENSURE[$FIELD]='text';
+         }
+         
+        
+        $ENSURE = $collection->ensureIndex($ENSURE);
+     
+        
+        
+    }
+    
        
 }

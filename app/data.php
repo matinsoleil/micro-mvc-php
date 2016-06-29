@@ -75,7 +75,7 @@ class app_data {
      
      
     // $this->soft->SET_ENTITY('sun.shine');
-   $_id= $this->strToHex('su.sh.ni');
+   $_id= $this->strToHex('su.sh.gi');
    
    $_id= '00000000'.$_id;
    
@@ -83,28 +83,30 @@ class app_data {
    
    
      
-   $this->soft->SET_ENTITY_VALUE('sun.shine',array('_id' => new MongoId((string)$_id),"nick"=>"Joehn","data"=>array("text"=>"notre dame of paris")),'nick');
+   //$this->soft->SET_ENTITY_VALUE('sun.shine',array('_id' => new MongoId((string)$_id),"nick"=>"silverhouse","data"=>array("text"=>"ameno")),'nick');
      
    //$this->soft->DELETE_ENTITY('sun.shine');
    
    //$this->soft->UPDATE_ENTITY_VALUE()
      
-   //$values = $this->soft->GET_ENTITY_VALUE('sun.shine');
+   $values = $this->soft->GET_ENTITY_VALUE('sun.shine');
      
    
-   //echo '<pre>';
-   //var_dump($values);
-   //echo '</pre>';
+   echo '<pre>';
+   var_dump($values);
+   echo '</pre>';
    
+   
+   $this->soft->SEARCH_IN('sun.shine',array('nick','text'));
+   
+   $val = $this->soft->SEARCH('sun.shine','golden');
    
    
    //$val = $this->soft->GET_VALUE($values,'golden');
    
    
    
-   //echo "<pre>";
-   //var_dump($val);
-   //echo "</pre>";
+     var_dump($val);
    
    
    
