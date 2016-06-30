@@ -101,13 +101,17 @@ class app_data {
    
    $val = $this->soft->SEARCH('sun.shine','golden');
    
+   echo "<pre>";
+   var_dump($val);
+   echo "</pre>";
    
    //$val = $this->soft->GET_VALUE($values,'golden');
    
    
    
-     var_dump($val);
+   $result=$this->soft->DELETE_VALUE('sun.shine',array('nick'=>'silverhouse'));
    
+   var_dump($result);
    
    
     }

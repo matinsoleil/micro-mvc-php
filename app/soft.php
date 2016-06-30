@@ -354,5 +354,29 @@ $cursor = $collection->find(
         
     }
     
+    
+        public function DELETE_VALUE($ENTITY, $data) {
+
+        $dbname = $this->DB;
+        $collection = $dbname->selectCollection($ENTITY);
+
+        foreach ($data as $index => $value) {
+
+            $find = $collection->find(array($index => array('$in' => array($value))));
+            $counter = 0;
+            foreach ($find as $found) {
+                $counter++;
+            }
+            if ($counter != 0) {
+                try {
+                    $collection->remove(array($index => $value));
+                } catch (MongoCursorException $e) {
+                    echo $this->translate("No puedo Borrar porque no existe");
+                }
+            } else {
+                return FALSE;
+            }
+        }
+    }
        
 }
