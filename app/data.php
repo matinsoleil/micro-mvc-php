@@ -75,7 +75,7 @@ class app_data {
      
      
     // $this->soft->SET_ENTITY('sun.shine');
-   $_id= $this->strToHex('su.sh.gi');
+   $_id= $this->strToHex('su.sh.ma');
    
    $_id= '00000000'.$_id;
    
@@ -83,7 +83,7 @@ class app_data {
    
    
      
-   //$this->soft->SET_ENTITY_VALUE('sun.shine',array('_id' => new MongoId((string)$_id),"nick"=>"silverhouse","data"=>array("text"=>"ameno")),'nick');
+   $this->soft->SET_ENTITY_VALUE('sun.shine',array('_id' => new MongoId((string)$_id),"nick"=>"manet","data"=>array("text"=>"super start")),'nick');
      
    //$this->soft->DELETE_ENTITY('sun.shine');
    
@@ -109,9 +109,9 @@ class app_data {
    
    
    
-   $result=$this->soft->DELETE_VALUE('sun.shine',array('nick'=>'silverhouse'));
+   //$result=$this->soft->DELETE_VALUE('sun.shine',array('nick'=>'silverhouse'));
    
-   var_dump($result);
+   //var_dump($result);
    
    
     }
