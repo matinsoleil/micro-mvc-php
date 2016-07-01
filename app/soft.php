@@ -90,6 +90,18 @@ class app_soft {
         }
     }
     
+    
+    public function GET_ENTITIES() {
+        if($this->mongoActive){
+        $dbname = $this->DB;
+        $collections = $dbname->getCollectionNames();
+        return $collections;
+        }else{
+        return array();    
+        }
+    }
+    
+    
   
     public function SET_ENTITY($ENTITY,$INDEX=FALSE){
        
@@ -350,6 +362,32 @@ $cursor = $collection->find(
         
         $ENSURE = $collection->ensureIndex($ENSURE);
      
+        
+        
+    }
+    
+    
+    public function SEARCH_LIKE($ENTITY, $index, $like) {
+        $dbname = $this->DB;
+
+        $result =array();
+        
+        $collection = $dbname->selectCollection($ENTITY);
+
+        $regularExpression = array($index => new MongoRegex("/" . $like . "/i"));
+
+        $cursor = $collection->find($regularExpression);
+
+        
+        
+          foreach($cursor as $field){
+           
+           $result[] = $field;
+           
+       }
+  
+       
+       return $result;
         
         
     }
