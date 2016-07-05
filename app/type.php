@@ -25,8 +25,26 @@ class app_type {
          
          
          
+       $all_types =  array('constant','boolean','integer','number','null','string','object','coordenate','translate','text','keyword','description');
          
+      
+       
          
+     }
+     
+   
+     
+     
+     public function GET_IS($ENTITY){
+          $is = array('must','must not','required','shall','shall not','should','should not','recommended','may','optional');
+       
+         
+     }
+     
+     public function GET_ORDERS($ENTITY){
+         
+         $orders = array('to','between','forward','go','top','buttom','left','right','on','side');
+       
      }
      
      

@@ -13,6 +13,12 @@
  */
 class app_model {
     //put your code here
+    public function __construct($string = '0000000') {
+  
+    $this->hash = $string;     
+    
+    }
+    
     
     public function GET_MODELS($ENTITY){
         
@@ -21,8 +27,21 @@ class app_model {
         
     }
     
+    public function LOAD_MODEL($ENTITY){
+        
+        
+        
+    }
     
-    public function GET_MODEL(){
+    
+    public function RUN_MODEL($ENTITY){
+        
+        
+        
+    }
+    
+    
+    public function GET_MODEL($ENTITY){
         
         
         
