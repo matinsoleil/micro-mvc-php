@@ -1,0 +1,45 @@
+{
+    "enter":{
+      "type":"in",
+      "out":["main"],
+      "in":["eye"],
+      "reference":{},
+      "data":{
+          
+      },
+      "output":{}
+    },
+    
+    
+    "main": {
+        "type": "system",
+        "in":["enter"],
+        "out":["eye","final"],
+        "input":{},
+        "data":{},
+        "output":{}
+    },
+    
+    "eye":{
+        "type":"sensor",
+        "in":["main"],
+        "out":["enter"],
+        "error":{
+            
+        },
+        "data":{}
+        
+    },
+    
+    "final":{
+        "type":"out",
+        "in":["main"],
+        "output":{"result":"value"}
+        
+        
+    }
+    
+    
+  
+
+}

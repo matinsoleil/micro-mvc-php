@@ -21,29 +21,103 @@ class app_type {
     }
 
     
-     public function GET_ALL_TYPES($ENTITY){
+     public function GET_ALL_TYPES(){
          
          
          
-       $all_types =  array('constant','boolean','integer','number','null','string','object','coordenate','translate','text','keyword','description');
+       $all_types =  array('constant','boolean','integer','number','null','string','object');
          
-      
+       return $all_types;
        
          
+     }
+     
+     
+     public function GET_ALL_SUBTYPES(){
+         
+        $all_subtypes = array('coordenate',
+                                'variable',
+                                'equation',
+                                'matrix',
+                               'translate',
+                               'language',
+                               'hidden',
+                               'private',
+                               'text',
+                               'like',
+                               'nick',
+                               'id',
+                               'entity',
+                               'keyword',
+                               'description',
+                               'status',
+                               'points',
+                               'name',
+                               'bit',
+                               'date',
+                               'time',
+                               'place',
+                               'address',
+                               'image',
+                               'sound',
+                               'music',
+                               'number',
+                               'url',
+                               'video',
+                               'currency',
+                               'color',
+                               'measure',
+                               'quantity',
+                               'distance',
+                               'position',
+                               'height',
+                               'width',
+                               'weight',
+                               'texture',
+                               'ad',
+                               'formula',
+                               'typography',
+                               'password',
+                               'hash',
+                               'cypher',
+                               'comment',
+                               'model',
+                               'path',
+                               'file',
+                               'email',
+                               'movil',
+                               'phone',
+                               'region',
+                               'block',
+                               'html',
+                               'tag',
+                               'xml'
+                            ); 
+         
+         return $all_subtypes;
      }
      
    
      
      
-     public function GET_IS($ENTITY){
-          $is = array('must','must not','required','shall','shall not','should','should not','recommended','may','optional');
-       
+     public function GET_ALL_IS(){
+          $is = array('must',
+                      'must not',
+                      'required',
+                      'shall',
+                      'shall not',
+                      'should',
+                      'should not',
+                      'recommended',
+                      'may',
+                      'optional');
+         return $is;
          
      }
      
-     public function GET_ORDERS($ENTITY){
+     public function GET_ALL_WAYS($ENTITY){
          
-         $orders = array('to','between','forward','go','top','buttom','left','right','on','side');
+         $orders = array('to','between','forward','go','top','buttom','left','right','on','in','out','next','side','front','back','over','above','bellow');
        
      }
      
@@ -60,7 +134,7 @@ class app_type {
          
      }
      
-     public function DELETE_SET_TYPE($VARIABLE,$ENTITY){
+     public function DELETE_TYPE($VARIABLE,$ENTITY){
          
          
          
