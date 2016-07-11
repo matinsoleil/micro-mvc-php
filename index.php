@@ -20,6 +20,8 @@ $HARD = new app_hard();
 
 $SOFT = new app_soft();
 
+$MODEL = new app_model();
+
 $DATA = new app_data($CACHE,$HARD,$SOFT);
 
 

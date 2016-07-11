@@ -1,45 +1,58 @@
 {
-    "enter":{
-      "type":"in",
-      "out":["main"],
-      "in":["eye"],
-      "reference":{},
-      "data":{
-          
-      },
-      "output":{}
-    },
-    
-    
-    "main": {
-        "type": "system",
-        "in":["enter"],
-        "out":["eye","final"],
-        "input":{},
-        "data":{},
-        "output":{}
-    },
-    
-    "eye":{
-        "type":"sensor",
-        "in":["main"],
-        "out":["enter"],
-        "error":{
+   "begin":{
+       "type":"signal",
+       "in":[],
+       "input":[],
+       "out":["compare"],
+       "data":{
+           "reference":{"x":"100"}
+       }
+       
+   },
+   "compare":{
+       "type":"junction",
+       "in":["begin","sensor"],
+        "out":["controller"],
+        "output":{},
+        "data":{
             
-        },
-        "data":{}
-        
-    },
-    
-    "final":{
-        "type":"out",
-        "in":["main"],
-        "output":{"result":"value"}
-        
-        
-    }
-    
-    
-  
+        }
+       
+   }
+   ,
+   "sensor":{
+       "type":"box",
+       "in":["final"],
+       "out":["compare"],
+       "data":{"sensor":{"x":"*"}
+       }
+   },
+   "controller":{
+       "type":"box",
+       "in":["compare"],
+       "out":["system"],
+       "data":{
+           "controller":{
+               "ecuation":{"":""}
+           }
+       }
+       
+   },
+   "system":{
+       "type":"box",
+       "in":["controller"],
+       "out":["final","sensor"],
+       "data":{
+           "system":{}
+       }
+   },
+   "final":{
+       "type":"signal",
+       "in":["system"],
+       "out":[],
+       "data":{
+       }
+   
+   }
 
 }
