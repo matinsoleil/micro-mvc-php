@@ -5,7 +5,11 @@
        "input":[],
        "out":["compare"],
        "data":{
-           "reference":{"x":"100"}
+           "reference":{
+               "EQUAL":{
+                   "x1":"30"
+               }
+           }
        }
        
    },
@@ -33,7 +37,12 @@
        "out":["system"],
        "data":{
            "controller":{
-               "ecuation":{"":""}
+               "ecuation":[
+                   "*",{"Y":"Z"},
+                   "Lisp's S-expressions"
+               ]
+                          
+                     
            }
        }
        
