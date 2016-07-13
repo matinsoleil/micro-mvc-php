@@ -6,9 +6,7 @@
        "out":["compare"],
        "data":{
            "reference":{
-               "EQUAL":{
-                   "x1":"30"
-               }
+                  "z":"20"
            }
        }
        
@@ -19,7 +17,7 @@
         "out":["controller"],
         "output":{},
         "data":{
-            
+            "y":"30"
         }
        
    }
@@ -28,32 +26,22 @@
        "type":"box",
        "in":["final"],
        "out":["compare"],
-       "data":{"sensor":{"x":"*"}
-       }
+       "data":{"sensor":["x"]}
    },
    "controller":{
        "type":"box",
        "in":["compare"],
        "out":["system"],
-       "data":{
-           "controller":{
-               "ecuation":[
-                   "*",{"Y":"Z"},
-                   "Lisp's S-expressions"
-               ]
-                          
-                     
-           }
-       }
+                
+       "data":["AND",{"var1":"value1"},["OR",{"var2":"value2"},{"var3":"value3"}]]
+       
        
    },
    "system":{
        "type":"box",
        "in":["controller"],
        "out":["final","sensor"],
-       "data":{
-           "system":{}
-       }
+       "data":["THEN",["IF",["AND",{"brake temperature":"warm"},{"speed":"not fast"}]],{"brake presure":"drecrement"}]
    },
    "final":{
        "type":"signal",
