@@ -17,6 +17,25 @@ class app_model {
   
     $this->hash = $string;     
     
+    $fuzzyString =  '{"data":["AND",{"var1":"value1"},["OR",{"var2":"value2"},{"var3":"value3"}]]}';
+    
+    $value = json_decode($fuzzyString,true);
+
+    
+    foreach($value['data'] as $eval){
+        
+        echo "<pre>";
+        var_dump($eval);
+        echo "</pre>";
+        
+    }    
+    
+    
+    
+   
+    
+    echo "<br>";
+    
     }
     
     
