@@ -19,27 +19,114 @@ class app_model {
     
     $fuzzyString =  '{"data":["AND",{"var1":"value1"},["OR",{"var2":"value2"},{"var3":"value3"}]]}';
     
-    $value = json_decode($fuzzyString,true);
+    $mathString = '{"equation":["+","2","5","6","7","10",{"data":"file"}]}';
+    
+    
+    $value = json_decode($mathString,true);
 
-    
-    foreach($value['data'] as $eval){
-        
-        echo "<pre>";
-        var_dump($eval);
-        echo "</pre>";
-        
-    }    
+    var_dump($value);
     
     
+    $this->GET_LOGIC($value['equation']);
     
    
-    
-    echo "<br>";
     
     }
     
     
+    public function GET_OPERATOR(){
+        
+        
+        $operators= array(
+        'AND'=>'&&',
+        'OR'=>'||',
+        'NOT' =>'!',
+        'XOR'=>'xor',
+        'EQUAL'=>'==',
+        'IDENTICAL'=>'===',
+        'NOT IDENTICAL'=>'!==',
+        'NOT EQUAL'=>'!=',
+        'GREATER THAN'=>'>',
+        'LESS THAN'=>'<',
+        'ROOT'=>'SQUARE',    
+        'GREATER EQUAL'=>'>=',
+        'LESS EQUAL'=>'<=',
+        'CONCATENATION'=>'.',
+        'CONCATENATION EQUAL'=>'.=',
+        'GO'=>'go',    
+        '*'=>'*',
+        '+'=>'+',
+        '-'=>'-',
+        '/'=>'/',
+        'EXP'=>'**',
+        '++'=>'++',
+        'IF','if',    
+        'THEN'=>'{,}',
+        'IS'=>'='    
+        );
+        
+        
+         return $operators;
+    }
+    
+    
+   
+    public function GET_LOGIC($LOGIC)
+    {
+
+        $OPERATORS = $this->GET_OPERATOR();
+        
+        if(is_array($LOGIC)){
+            
+            $ELEMENTS = array();
+            $OPERATOR ='+';
+            
+            foreach($LOGIC as $KEY=>$ITEMS){
+                
+             if(!is_array($ITEMS)){   
+             
+                 if(array_key_exists($ITEMS,$OPERATORS)){
+                     
+                     $OPERATOR = $OPERATORS[$ITEMS];
+                     
+                 }else{
+                     
+                     $ELEMENTS[]=$ITEMS;
+                     
+                 }     
+             
+             
+             }   
+                
+            }
+            
+            
+            $OPERATORS ='';
+            $TOTAL = count($ELEMENTS);
+            foreach($ELEMENTS as $KEY=>$ELEMENT){
+                
+                if($KEY==$TOTAL-1){
+                $OPERATORS .='$ELEMENTS["'.$KEY.'"]';
+                }else{
+                $OPERATORS .='$ELEMENTS["'.$KEY.'"]'.$OPERATOR;    
+                }
+                
+            }
+            
+            
+            echo $OPERATORS;
+            echo '<br>';
+            
+        }
+        
+        
+    }
+    
+    
+    
+    
     public function GET_MODELS($ENTITY){
+        
         
         
         
