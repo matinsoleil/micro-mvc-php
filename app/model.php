@@ -19,17 +19,19 @@ class app_model {
     
     $fuzzyString =  '{"data":["AND",{"var1":"value1"},["OR",{"var2":"value2"},{"var3":"value3"}]]}';
     
-    $mathString = '{"equation":["+","2","5","6","7","10",{"data":"file"}]}';
+    $mathString = '{"equation":["+","20","85","6","7","10",["*","23","24","9"]]}';
     
     
     $value = json_decode($mathString,true);
 
-    var_dump($value);
+   
     
     
-    $this->GET_LOGIC($value['equation']);
+    $result = $this->GET_LOGIC($value['equation']);
     
    
+    echo $result;
+    echo '<br>';
     
     }
     
@@ -75,7 +77,7 @@ class app_model {
     {
 
         $OPERATORS = $this->GET_OPERATOR();
-        
+        $RESULT = NULL;
         if(is_array($LOGIC)){
             
             $ELEMENTS = array();
@@ -96,6 +98,10 @@ class app_model {
                  }     
              
              
+             }else{
+                 
+                    $ELEMENTS[] = $this->GET_LOGIC($ITEMS);
+                 
              }   
                 
             }
@@ -103,6 +109,7 @@ class app_model {
             
             $OPERATORS ='';
             $TOTAL = count($ELEMENTS);
+           
             foreach($ELEMENTS as $KEY=>$ELEMENT){
                 
                 if($KEY==$TOTAL-1){
@@ -114,8 +121,12 @@ class app_model {
             }
             
             
-            echo $OPERATORS;
-            echo '<br>';
+         
+            
+            eval('$RESULT ='.$OPERATORS.';');
+            
+            return $RESULT;
+            
             
         }
         
