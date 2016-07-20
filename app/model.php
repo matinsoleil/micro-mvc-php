@@ -15,22 +15,26 @@ class app_model {
     //put your code here
     public function __construct($string = '0000000') {
   
-    $this->hash = $string;     
+    $this->hash = $string;    
     
-    $fuzzyString =  '{"data":["AND",{"var1":"value1"},["OR",{"var2":"value2"},{"var3":"value3"}]]}';
+    $variables=array('var1'=>'23','var2'=>'23','var3'=>'80');
+    
+    
+    $fuzzyString =  '{"data":["AND",{"var1":"11"},["OR",{"var2":"23"},{"var3":"87"}]]}';
     
     $mathString = '{"equation":["+","20","85","6","7","10",["*","23","24","9"]]}';
     
     
-    $value = json_decode($mathString,true);
+    //$value = json_decode($mathString,true);
 
+    $value = json_decode($fuzzyString,true);
+    
+    
+    //$result = $this->GET_LOGIC($value['equation']);
+    
+    $result = $this->GET_FUZZY($value['data']);
    
-    
-    
-    $result = $this->GET_LOGIC($value['equation']);
-    
    
-    echo $result;
     echo '<br>';
     
     }
@@ -69,6 +73,60 @@ class app_model {
         
         
          return $operators;
+    }
+    
+    
+    public function GET_FUZZY($LOGIC){
+        
+        $variables=array('var1'=>'23','var2'=>'23','var3'=>'80');
+        
+         $OPERATORS = $this->GET_OPERATOR();
+        $RESULT = NULL;
+         
+            $ELEMENTS = array();
+        
+        if(is_array($LOGIC)){
+            
+           
+            $OPERATOR ='+';
+            
+           foreach($LOGIC as $KEY=>$ITEMS){
+                
+                   if(is_array($ITEMS)){
+                
+                       $this->GET_FUZZY($ITEMS);
+                       
+                   }else{
+                    
+                       
+                    if(is_string($KEY)){
+                        
+                        
+                      
+                       
+                        if($variables[$KEY]==$ITEMS){
+                            echo 'TRUE';
+                        }else{
+                            echo 'FALSE';
+                        }
+                        
+                        
+                        
+                    }
+                    
+                       
+                    
+                       
+                   }
+                
+            }
+            
+            
+            
+            
+            
+        }
+        
     }
     
     
@@ -120,7 +178,8 @@ class app_model {
                 
             }
             
-            
+           echo $OPERATORS;
+           echo "<br>";
          
             
             eval('$RESULT ='.$OPERATORS.';');
