@@ -17,10 +17,13 @@ class app_model {
   
     $this->hash = $string;    
     
-    $variables=array('var1'=>'23','var2'=>'23','var3'=>'80');
+    $variables=array('var1'=>'11','var2'=>'23','var3'=>'87');
     
     
-    $fuzzyString =  '{"data":["AND",{"var1":"11"},["OR",{"var2":"23"},{"var3":"87"}]]}';
+    $fuzzyString = '{"data":["AND",{"var1":"11"},["OR",{"var2":"23"},{"var3":"87"}]]}';
+    
+    
+    $fuzzy = '{"data":["THEN",["IF",["==","var1","var3"]],["==","var2","var4"]]}';
     
     $mathString = '{"equation":["+","20","85","6","7","10",["*","23","24","9"]]}';
     
@@ -28,14 +31,21 @@ class app_model {
     //$value = json_decode($mathString,true);
 
     $value = json_decode($fuzzyString,true);
-    
-    
+  
     //$result = $this->GET_LOGIC($value['equation']);
     
     $result = $this->GET_FUZZY($value['data']);
+    
+     var_dump($result);
+    
+    $rule = json_decode($fuzzy,true);
+    
+    
+    $this->GET_RULE($rule['data']);
    
    
-    echo '<br>';
+    echo "<br>";
+    echo "<br>";
     
     }
     
@@ -72,15 +82,66 @@ class app_model {
         );
         
         
-         return $operators;
+        return $operators;
+    }
+    
+    
+    public function GET_RULE($RULE){
+        
+        $_RULES = array();
+        
+        $THENS = array();
+        
+        $CONDITIONS = array();
+        
+        $ACTIONS= array();
+        
+        $VALUES = array();
+       
+        $ELEMENTS = array();
+        
+        $OPERATORS = $this->GET_OPERATOR();
+        
+        foreach($RULE as $key=>$rule){
+
+            echo "<pre>";
+            var_dump($rule);
+            echo "</pre>";
+            
+            if(is_string($rule)){
+            if(array_key_exists($rule,$OPERATORS)){
+                
+                var_dump($rule);
+                echo "OK";
+                $OPERATOR = $rule;
+                
+            }else{
+                
+                $ELEMENTS[]=$rule;
+                
+            }
+            }else{
+                $ELEMENTS[]=$rule;
+            }
+        
+            
+        }
+        
+        //echo $OPERATOR;
+        echo "<pre>";
+        var_dump($ELEMENTS);
+        echo "</pre>";
+        
+        
     }
     
     
     public function GET_FUZZY($LOGIC){
         
-        $variables=array('var1'=>'23','var2'=>'23','var3'=>'80');
+        $variables=array('var1'=>'11','var2'=>'21','var3'=>'81');
         
-         $OPERATORS = $this->GET_OPERATOR();
+        $OPERATORS = $this->GET_OPERATOR();
+      
         $RESULT = NULL;
          
             $ELEMENTS = array();
@@ -88,16 +149,27 @@ class app_model {
         if(is_array($LOGIC)){
             
            
-            $OPERATOR ='+';
+            $OPERATOR ='&&';
             
            foreach($LOGIC as $KEY=>$ITEMS){
+               
+              
+             
+               
+               
                 
                    if(is_array($ITEMS)){
                 
-                       $this->GET_FUZZY($ITEMS);
-                       
+                       $EVALUATION = $this->GET_FUZZY($ITEMS);
+                           $ELEMENTS[] = $EVALUATION;
+                   
                    }else{
                     
+                     if(array_key_exists($ITEMS,$OPERATORS)){
+                       
+                         $OPERATOR = $OPERATORS[$ITEMS];
+                    }else{   
+                       
                        
                     if(is_string($KEY)){
                         
@@ -105,15 +177,20 @@ class app_model {
                       
                        
                         if($variables[$KEY]==$ITEMS){
-                            echo 'TRUE';
+                            $ELEMENTS[] = 1;
+                        
                         }else{
-                            echo 'FALSE';
+                            $ELEMENTS[] = 0;
+                          
                         }
                         
                         
                         
                     }
                     
+                    }
+                    
+                  
                        
                     
                        
@@ -121,11 +198,30 @@ class app_model {
                 
             }
             
+         
+            $OPERATORS ='';
+            $TOTAL = count($ELEMENTS);
+           
+            foreach($ELEMENTS as $KEY=>$ELEMENT){
+                
+                if($KEY==$TOTAL-1){
+                $OPERATORS .='$ELEMENTS["'.$KEY.'"]';
+                }else{
+                $OPERATORS .='$ELEMENTS["'.$KEY.'"]'.$OPERATOR;    
+                }
+                
+            }
             
+  
             
+            eval('$RESULT ='.$OPERATORS.';');
+       
+            
+            return $RESULT;
             
             
         }
+ 
         
     }
     
@@ -177,11 +273,7 @@ class app_model {
                 }
                 
             }
-            
-           echo $OPERATORS;
-           echo "<br>";
          
-            
             eval('$RESULT ='.$OPERATORS.';');
             
             return $RESULT;
