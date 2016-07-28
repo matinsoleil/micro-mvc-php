@@ -23,7 +23,7 @@ class app_model {
     $fuzzyString = '{"data":["AND",{"var1":"11"},["OR",{"var2":"23"},{"var3":"87"}]]}';
     
     
-    $fuzzy = '{"data":["THEN",["IF",["==","var1","var3"]],["==","var2","var4"]]}';
+    $fuzzy = '{"data":["THEN",["IF",["AND",["EQUAL","var1","var3"],["GREATER THAN","var5","var6"]]],["==","var2","var4"]]}';
     
     $mathString = '{"equation":["+","20","85","6","7","10",["*","23","24","9"]]}';
     
@@ -100,20 +100,18 @@ class app_model {
        
         $ELEMENTS = array();
         
+        $OPERATOR = "OR";
+        
         $OPERATORS = $this->GET_OPERATOR();
         
         foreach($RULE as $key=>$rule){
-
-            echo "<pre>";
-            var_dump($rule);
-            echo "</pre>";
             
             if(is_string($rule)){
             if(array_key_exists($rule,$OPERATORS)){
                 
-                var_dump($rule);
-                echo "OK";
+               echo $rule;
                 $OPERATOR = $rule;
+          
                 
             }else{
                 
@@ -121,16 +119,20 @@ class app_model {
                 
             }
             }else{
-                $ELEMENTS[]=$rule;
+                
+                echo "<pre>";
+                var_dump($rule);
+                echo "</pre>";
             }
         
             
         }
         
-        //echo $OPERATOR;
-        echo "<pre>";
-        var_dump($ELEMENTS);
-        echo "</pre>";
+        
+        
+        
+        
+        return "TRUE";
         
         
     }
