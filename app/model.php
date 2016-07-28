@@ -17,13 +17,17 @@ class app_model {
   
     $this->hash = $string;    
     
-    $variables=array('var1'=>'11','var2'=>'23','var3'=>'87');
+    $variables=array('var1'=>'11','var2'=>'23','var3'=>'87','var4'=>'100','var5'=>'33','var6'=>'66');
     
     
     $fuzzyString = '{"data":["AND",{"var1":"11"},["OR",{"var2":"23"},{"var3":"87"}]]}';
     
     
-    $fuzzy = '{"data":["THEN",["IF",["AND",["EQUAL","var1","var3"],["GREATER THAN","var5","var6"]]],["==","var2","var4"]]}';
+    $fuzzy = '{"data":["THEN",["IF",["AND",["EQUAL","var1","var3"],["GREATER THAN","var5","var6"]]],["EQUAL","var2","var4"]]}';
+    
+    
+    $simple = '{"data":["THEN",["IF",["TRUE"],["EQUAL","var1","var2"]}';
+    
     
     $mathString = '{"equation":["+","20","85","6","7","10",["*","23","24","9"]]}';
     
@@ -77,8 +81,9 @@ class app_model {
         'EXP'=>'**',
         '++'=>'++',
         'IF','if',    
-        'THEN'=>'{,}',
-        'IS'=>'='    
+        'THEN'=>'THEN',
+        'IS'=>'=',
+        'IF'=>'IF'   
         );
         
         
@@ -87,6 +92,9 @@ class app_model {
     
     
     public function GET_RULE($RULE){
+        
+        $variables=array('var1'=>'11','var2'=>'23','var3'=>'87','var4'=>'100','var5'=>'33','var6'=>'66');
+    
         
         $_RULES = array();
         
@@ -109,27 +117,54 @@ class app_model {
             if(is_string($rule)){
             if(array_key_exists($rule,$OPERATORS)){
                 
-               echo $rule;
-                $OPERATOR = $rule;
+               //echo $rule;
+               //echo "<br>";
+                $OPERATOR = $OPERATORS[$rule];
+           
           
                 
             }else{
                 
-                $ELEMENTS[]=$rule;
+         
+       
+                
+              
+               
+                 $value = $variables[$rule];
+              
+               
+                
+              
+                
+                $ELEMENTS[]=$value;
                 
             }
             }else{
+              
                 
-                echo "<pre>";
-                var_dump($rule);
-                echo "</pre>";
+                $ELEMENTS[]= $this->GET_RULE($rule);
+              
             }
         
             
         }
         
         
+                    $OPERATORS ='';
+            $TOTAL = count($ELEMENTS);
+           
+            foreach($ELEMENTS as $KEY=>$ELEMENT){
+                
+             
+                $OPERATORS .='$ELEMENTS["'.$KEY.'"]'.$OPERATOR;    
+                
+                
+            }
         
+            echo "<br>";
+            echo $OPERATORS;
+            echo "<br>";
+            echo "<br>";
         
         
         return "TRUE";
