@@ -26,7 +26,7 @@ class app_model {
     $fuzzy = '{"data":["THEN",["IF",["AND",["EQUAL","var1","var3"],["GREATER THAN","var5","var6"]]],["EQUAL","var2","var4"]]}';
     
     
-    $simple = '{"data":["THEN",["IF",["TRUE"],["EQUAL","var1","var2"]}';
+    $simple = '{"data":["THEN",["IF",["TRUE"],["EQUAL","var1","var2"]]]}';
     
     
     $mathString = '{"equation":["+","20","85","6","7","10",["*","23","24","9"]]}';
@@ -42,7 +42,7 @@ class app_model {
     
      var_dump($result);
     
-    $rule = json_decode($fuzzy,true);
+    $rule = json_decode($simple,true);
     
     
     $this->GET_RULE($rule['data']);
@@ -83,7 +83,8 @@ class app_model {
         'IF','if',    
         'THEN'=>'THEN',
         'IS'=>'=',
-        'IF'=>'IF'   
+        'IF'=>'IF',
+        'TRUE'=>'TRUE'    
         );
         
         
@@ -92,6 +93,8 @@ class app_model {
     
     
     public function GET_RULE($RULE){
+        
+        var_dump($RULE);
         
         $variables=array('var1'=>'11','var2'=>'23','var3'=>'87','var4'=>'100','var5'=>'33','var6'=>'66');
     
@@ -154,10 +157,15 @@ class app_model {
             $TOTAL = count($ELEMENTS);
            
             foreach($ELEMENTS as $KEY=>$ELEMENT){
-                
-             
-                $OPERATORS .='$ELEMENTS["'.$KEY.'"]'.$OPERATOR;    
-                
+
+                if($OPERATOR=='IF' || $OPERATOR=='THEN'){
+                 $OPERATORS .=$OPERATOR.'$ELEMENTS["'.$KEY.'"]';       
+   
+                 
+                }else{
+                   
+                    $OPERATORS .='$ELEMENTS["'.$KEY.'"]'.$OPERATOR;  
+                }
                 
             }
         
