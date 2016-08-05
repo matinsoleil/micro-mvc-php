@@ -17,7 +17,10 @@ class app_model {
   
     $this->hash = $string;    
     
+    $this->rule =array();
+    
     $variables=array('var1'=>'11','var2'=>'23','var3'=>'87','var4'=>'100','var5'=>'33','var6'=>'66');
+    
     
     
     $fuzzyString = '{"data":["AND",{"var1":"11"},["OR",{"var2":"23"},{"var3":"87"}]]}';
@@ -26,7 +29,7 @@ class app_model {
     $fuzzy = '{"data":["THEN",["IF",["AND",["EQUAL","var1","var3"],["GREATER THAN","var5","var6"]]],["EQUAL","var2","var4"]]}';
     
     
-    $simple = '{"data":["THEN",["IF",["TRUE"],["EQUAL","var1","var2"]]]}';
+    $simple = '{"data":["THEN",["IF",["TRUE"]],["EQUAL","var1","var2"],["GREATER THAN","var3","var4"]]}';
     
     
     $mathString = '{"equation":["+","20","85","6","7","10",["*","23","24","9"]]}';
@@ -45,8 +48,11 @@ class app_model {
     $rule = json_decode($simple,true);
     
     
-    $this->GET_RULE($rule['data']);
+    $this->RULE($rule['data']);
    
+     echo "<pre>";
+     var_dump($this->rule);
+     echo "</pre>";
    
     echo "<br>";
     echo "<br>";
@@ -92,9 +98,36 @@ class app_model {
     }
     
     
+    public function RULE($RULE){
+        
+        foreach($RULE as $rule){
+            
+           
+          
+            
+               if(is_string($rule)){
+                   $this->rule[] = $rule;
+               }else{
+                   $this->rule[] = $rule;
+                   
+               }
+               
+        }
+        
+        
+        $shardRule = $this->rule;
+        
+        foreach($shardRule as $rls){
+            
+        }
+        
+        
+    }
+    
+    
     public function GET_RULE($RULE){
         
-        var_dump($RULE);
+        //var_dump($RULE);
         
         $variables=array('var1'=>'11','var2'=>'23','var3'=>'87','var4'=>'100','var5'=>'33','var6'=>'66');
     
@@ -114,6 +147,8 @@ class app_model {
         $OPERATOR = "OR";
         
         $OPERATORS = $this->GET_OPERATOR();
+        
+        
         
         foreach($RULE as $key=>$rule){
             
@@ -159,20 +194,49 @@ class app_model {
             foreach($ELEMENTS as $KEY=>$ELEMENT){
 
                 if($OPERATOR=='IF' || $OPERATOR=='THEN'){
-                 $OPERATORS .=$OPERATOR.'$ELEMENTS["'.$KEY.'"]';       
-   
+                 
+                   
+                    
+               
+                     
+                 $OPERATORS .=$OPERATOR.'$ELEMENTS["'.$KEY.'"]';    
+                  
+                 
                  
                 }else{
                    
-                    $OPERATORS .='$ELEMENTS["'.$KEY.'"]'.$OPERATOR;  
+                    if($KEY==$TOTAL-1){
+                    
+                       $OPERATORS .='$ELEMENTS["'.$KEY.'"]';
+                    
+                    
+                    }else{
+                        
+                        $OPERATORS .='$ELEMENTS["'.$KEY.'"]'.$OPERATOR;
+                        
+                    }
                 }
                 
+            }
+            
+            
+            if (strpos($OPERATORS, 'THEN') !== false) {
+                
+        
+            
+            $THEN = explode('THEN',$OPERATORS);
+          
+            
+            $OPERATORS =  'if('.$THEN[1].'){'.$THEN[2].'}';
+            
             }
         
             echo "<br>";
             echo $OPERATORS;
             echo "<br>";
             echo "<br>";
+            
+
         
         
         return "TRUE";
