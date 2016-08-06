@@ -117,7 +117,22 @@ class app_model {
         
         $shardRule = $this->rule;
         
-        foreach($shardRule as $rls){
+        
+        foreach($shardRule as $key=>$rls){
+            
+            if($key==0){
+            //Tipe of Rule
+                if($rls=='THEN'){
+                
+                        
+                    
+                }
+            
+            }{
+                
+                
+                
+            }
             
         }
         
