@@ -32,6 +32,8 @@ class app_model {
     $simple = '{"data":["THEN",["IF",["TRUE"]],["EQUAL","var1","var2"],["GREATER THAN","var3","var4"]]}';
     
     
+    $great = '{"data":["THEN",["IF",["OR",["AND",["EQUAL","var1","var3"],["EQUAL","var1","var4"]],["GREATER THAN","var5","var6"]]],["EQUAL","var2","var4"]]}';
+    
     $mathString = '{"equation":["+","20","85","6","7","10",["*","23","24","9"]]}';
     
     
@@ -43,16 +45,17 @@ class app_model {
     
     $result = $this->GET_FUZZY($value['data']);
     
-     var_dump($result);
+     //var_dump($result);
     
-    $rule = json_decode($simple,true);
+    $rule = json_decode($great,true);
     
     
-    $this->RULE($rule['data']);
+    $resulta = $this->IN_RULE($rule['data']);
    
-     echo "<pre>";
-     var_dump($this->rule);
-     echo "</pre>";
+    
+   
+    
+    
    
     echo "<br>";
     echo "<br>";
@@ -98,46 +101,89 @@ class app_model {
     }
     
     
+    
+       public function IN_RULE($RULE){
+           
+     
+           
+           $result=$this->RULE($RULE);
+           
+           //$result = substr($result, 1);
+           
+           var_dump($result);
+           
+        
+        
+      }    
+    
     public function RULE($RULE){
+        
+        $_RULE = array();
         
         foreach($RULE as $rule){
             
-           
-          
-            
-               if(is_string($rule)){
-                   $this->rule[] = $rule;
-               }else{
-                   $this->rule[] = $rule;
-                   
-               }
+           if(is_string($rule)){
+                    $_RULE[]=$rule;
+           }else{
                
+                    $_RULE[] = $this->RULE($rule);
+               
+           }   
+            
+            
+        }
+        
+      
+       
+        
+        
+        $IS ='';
+        
+        foreach($_RULE as $key=>$SENTENCE){
+            
+              if($key==0){
+              if($SENTENCE=='THEN'){
+                  $LimitA = '+';
+                  $LimitB = '+';
+              }elseif($SENTENCE=='IF'){
+                  $LimitA = '(';
+                  $LimitB = ')';
+              }elseif($SENTENCE=='TRUE' || $SENTENCE=='FALSE'){
+                  $LimitA = '|';
+                  $LimitB = '|';
+                  
+              }else{
+                  $LimitA = '[';
+                  $LimitB = ']';
+              }
+              $IS.=$SENTENCE; 
+              
+              }else{
+              $IS.=' '.$SENTENCE;
+              }
         }
         
         
-        $shardRule = $this->rule;
+         if($LimitA=='['){
         
-        
-        foreach($shardRule as $key=>$rls){
-            
-            if($key==0){
-            //Tipe of Rule
-                if($rls=='THEN'){
-                
-                        
-                    
-                }
-            
-            }{
-                
-                
-                
-            }
-            
+         $IS='['.$IS.']';
+         }elseif ($LimitA=='(') {
+       
+         $IS ='('.$IS.')';    
+             
+        }elseif($LimitA=='|'){
+          $IS ='|'.$IS.'|';     
+        }elseif($LimitA=='+'){
+          $IS ='+'.$IS.'+';  
         }
+        
+        return $IS; 
         
         
     }
+    
+
+    
     
     
     public function GET_RULE($RULE){
@@ -235,21 +281,14 @@ class app_model {
             }
             
             
-            if (strpos($OPERATORS, 'THEN') !== false) {
-                
-        
-            
-            $THEN = explode('THEN',$OPERATORS);
           
-            
-            $OPERATORS =  'if('.$THEN[1].'){'.$THEN[2].'}';
-            
-            }
         
             echo "<br>";
-            echo $OPERATORS;
+            echo "IO:".$OPERATORS;
             echo "<br>";
             echo "<br>";
+            
+            
             
 
         
@@ -258,6 +297,9 @@ class app_model {
         
         
     }
+    
+    
+ 
     
     
     public function GET_FUZZY($LOGIC){
