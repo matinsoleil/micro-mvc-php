@@ -13,6 +13,10 @@
  */
 class app_model {
     //put your code here
+    
+    
+    public $rule = array();
+    
     public function __construct($string = '0000000') {
   
     $this->hash = $string;    
@@ -32,7 +36,7 @@ class app_model {
     $simple = '{"data":["THEN",["IF",["TRUE"]],["EQUAL","var1","var2"],["GREATER THAN","var3","var4"]]}';
     
     
-    $great = '{"data":["THEN",["IF",["OR",["AND",["EQUAL","var1","var3"],["EQUAL","var1","var4"]],["GREATER THAN","var5","var6"]]],["EQUAL","var2","var4"]]}';
+    $great = '{"data":["THEN",["IF",["OR",["AND",["EQUAL","var1","var3"],["EQUAL","var1","var4"]],["GREATER THAN","var5","var6"]]],["IS EQUAL","real","var4"],["IS EQUAL","false","var1"]]}';
     
     $mathString = '{"equation":["+","20","85","6","7","10",["*","23","24","9"]]}';
     
@@ -53,12 +57,7 @@ class app_model {
     $resulta = $this->IN_RULE($rule['data']);
    
     
-   
-    
-    
-   
-    echo "<br>";
-    echo "<br>";
+
     
     }
     
@@ -108,9 +107,16 @@ class app_model {
            
            $result=$this->RULE($RULE);
            
+          
+           var_dump($result);
+           
+           eval($result);
+           
+           
+           echo $real;
            //$result = substr($result, 1);
            
-           var_dump($result);
+           //explode(" ",$result);
            
         
         
@@ -118,66 +124,197 @@ class app_model {
     
     public function RULE($RULE){
         
-        $_RULE = array();
         
-        foreach($RULE as $rule){
+        $variables=array('var1'=>'11','var2'=>'11','var3'=>'11','var4'=>'11','var5'=>'100','var6'=>'66');
+        
+       
+        $Sentence='';
+       
+        $CurrentRule='';
+               
+        foreach($RULE as $key=>$rule){
+            
+        
+            
             
            if(is_string($rule)){
-                    $_RULE[]=$rule;
+               
+             
+               
+               if($rule=='IF'){
+               $Sentence .= 'if(';
+               $CurrentRule = $rule;
+               }elseif($rule=='THEN'){
+               
+               $CurrentRule = $rule;    
+               }
+               elseif($rule=='IS EQUAL'){
+                   
+               $CurrentRule = '=';    
+               }
+               elseif($rule=='EQUAL'){
+                   
+               $CurrentRule = '==';    
+               }elseif($rule=='GREATER THAN'){
+                
+               $CurrentRule ='>';     
+               }
+               elseif($rule=='AND'){
+               $CurrentRule ='AND';
+               $Sentence .=$rule.'';
+              
+               }
+               elseif($rule=='OR'){
+               $CurrentRule ='OR';
+               $Sentence .=$rule.'';
+              
+               }               
+               else{
+                
+                 
+                   
+               $Sentence .= $rule;
+               }
+               
+               if(isset($variables[$rule])){
+                   
+                   $rule = $variables[$rule];
+                   
+               }else{
+                   $rule = '$'.$rule;
+               }
+               
+               $RULE[$key] = $rule;
+               
            }else{
                
-                    $_RULE[] = $this->RULE($rule);
+                $Sentence .= $this->RULE($rule);
+                
+                $RULE[$key] = $this->RULE($rule);
                
            }   
             
             
         }
         
-      
-       
         
-        
-        $IS ='';
-        
-        foreach($_RULE as $key=>$SENTENCE){
+        if($CurrentRule=='IF'){
+            $Sentence .= '){';
+        }elseif($CurrentRule=='THEN'){
+            echo "<pre>";
+            var_dump($RULE);
+            echo "</pre>";
+            $Sentence .= '}';
             
-              if($key==0){
-              if($SENTENCE=='THEN'){
-                  $LimitA = '+';
-                  $LimitB = '+';
-              }elseif($SENTENCE=='IF'){
-                  $LimitA = '(';
-                  $LimitB = ')';
-              }elseif($SENTENCE=='TRUE' || $SENTENCE=='FALSE'){
-                  $LimitA = '|';
-                  $LimitB = '|';
-                  
-              }else{
-                  $LimitA = '[';
-                  $LimitB = ']';
-              }
-              $IS.=$SENTENCE; 
-              
-              }else{
-              $IS.=' '.$SENTENCE;
-              }
-        }
-        
-        
-         if($LimitA=='['){
-        
-         $IS='['.$IS.']';
-         }elseif ($LimitA=='(') {
-       
-         $IS ='('.$IS.')';    
+        }elseif($CurrentRule=='=='){
+           
+          
+            
+            $total = count($RULE) - 2;
+
+            
+            $final = count($RULE) -1;
+            
+            
+            for($i=1;$i<=$total;$i++){
              
-        }elseif($LimitA=='|'){
-          $IS ='|'.$IS.'|';     
-        }elseif($LimitA=='+'){
-          $IS ='+'.$IS.'+';  
+                $Sentence = $RULE[$i].'==';
+                
+            }
+            
+              $Sentence .= $RULE[$final];
+            
+            
+            $Sentence = ' '.$Sentence;
+        }elseif($CurrentRule=='='){
+           
+          
+            
+            $total = count($RULE) - 2;
+
+            
+            $final = count($RULE) -1;
+            
+            
+            for($i=1;$i<=$total;$i++){
+             
+                $Sentence = $RULE[$i].'=';
+                
+            }
+            
+              $Sentence .= $RULE[$final];
+            
+            
+            $Sentence = ' '.$Sentence;
         }
+        elseif($CurrentRule=='>'){
+            
+                       
+            
+            $total = count($RULE) - 2;
+
+            
+            $final = count($RULE) -1;
+            
+            
+            for($i=1;$i<=$total;$i++){
+             
+                $Sentence = $RULE[$i].'>';
+                
+            }
+            
+              $Sentence .= $RULE[$final];
+            
+            
+            $Sentence .=' ';
+            
+            
+        }elseif($CurrentRule=='AND'){
+            
+            $total = count($RULE) - 2;
+
+            
+            $final = count($RULE) -1;
+            
+            
+            for($i=1;$i<=$total;$i++){
+             
+                $Sentence = $RULE[$i].' &&';
+                
+            }
+            
+              $Sentence .= $RULE[$final];
+            
+            
+            $Sentence = '('.$Sentence.')';
+            
+              
+        }elseif($CurrentRule=='OR'){
+            
+            $total = count($RULE) - 2;
+
+            
+            $final = count($RULE) -1;
+            
+            
+            for($i=1;$i<=$total;$i++){
+             
+                $Sentence = $RULE[$i].'|| ';
+                
+            }
+            
+              $Sentence .= $RULE[$final];
+            
+            
+            $Sentence = '('.$Sentence.')';
+            
+              
+        }
+                
+    
         
-        return $IS; 
+        return $Sentence;
+        
         
         
     }
