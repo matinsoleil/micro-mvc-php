@@ -33,10 +33,10 @@ class app_model {
     $fuzzy = '{"data":["THEN",["IF",["AND",["EQUAL","var1","var3"],["GREATER THAN","var5","var6"]]],["EQUAL","var2","var4"]]}';
     
     
-    $simple = '{"data":["THEN",["IF",["TRUE"]],["EQUAL","var1","var2"],["GREATER THAN","var3","var4"]]}';
+    $simple = '{"data":["THEN",["IF",["AND",["TRUE"],["TRUE"]]],["IS EQUAL","real","var2"],["GREATER THAN","false","var4"]]}';
     
     
-    $great = '{"data":["THEN",["IF",["OR",["AND",["EQUAL","var1","var3"],["EQUAL","var1","var4"]],["GREATER THAN","var5","var6"]]],["IS EQUAL","real","var4"],["IS EQUAL","false","var1"]]}';
+    $great = '{"data":["THEN",["IF",["OR",["AND",["EQUAL","var3","var1"],["EQUAL","var1","var3"],["EQUAL","var1","var4"]],["GREATER THAN","var5","var6"]]],["IS EQUAL","real","var4"],["IS EQUAL","false","var1"]]}';
     
     $mathString = '{"equation":["+","20","85","6","7","10",["*","23","24","9"]]}';
     
@@ -51,7 +51,7 @@ class app_model {
     
      //var_dump($result);
     
-    $rule = json_decode($great,true);
+    $rule = json_decode($simple,true);
     
     
     $resulta = $this->IN_RULE($rule['data']);
@@ -107,13 +107,16 @@ class app_model {
            
            $result=$this->RULE($RULE);
            
-          
+           $false=100;
+           $real =200;
+           
            var_dump($result);
            
            eval($result);
            
            
            echo $real;
+           echo "<br>";
            //$result = substr($result, 1);
            
            //explode(" ",$result);
@@ -127,6 +130,7 @@ class app_model {
         
         $variables=array('var1'=>'11','var2'=>'11','var3'=>'11','var4'=>'11','var5'=>'100','var6'=>'66');
         
+        $rule =100;
        
         $Sentence='';
        
@@ -201,10 +205,31 @@ class app_model {
         if($CurrentRule=='IF'){
             $Sentence .= '){';
         }elseif($CurrentRule=='THEN'){
-            echo "<pre>";
-            var_dump($RULE);
-            echo "</pre>";
-            $Sentence .= '}';
+            
+            
+            
+               
+            $total = count($RULE)-1;
+
+            
+            $final = count($RULE) -1;
+            
+            $_SENTENCE='';
+            
+            for($i=1;$i<=$total;$i++){
+                
+                  if($i==1){
+                  $_SENTENCE .=$RULE[$i];
+                  }else{
+                  $_SENTENCE .=$RULE[$i].';';    
+                  }
+            }
+            
+            
+        
+          
+            
+            $Sentence = $_SENTENCE.'}';
             
         }elseif($CurrentRule=='=='){
            
@@ -249,41 +274,53 @@ class app_model {
         }
         elseif($CurrentRule=='>'){
             
-                       
-            
-            $total = count($RULE) - 2;
+                      $total = count($RULE) - 1;
 
             
             $final = count($RULE) -1;
             
+            $Sentence ='';
             
             for($i=1;$i<=$total;$i++){
              
-                $Sentence = $RULE[$i].'>';
+              
+                if($i==$total){
+                $Sentence .= $RULE[$i];    
+                }else{
+                $Sentence .= $RULE[$i].' >';
+                }
                 
             }
             
-              $Sentence .= $RULE[$final];
+               
             
             
-            $Sentence .=' ';
+                      
+            
+    
             
             
         }elseif($CurrentRule=='AND'){
             
-            $total = count($RULE) - 2;
+            $total = count($RULE) - 1;
 
             
             $final = count($RULE) -1;
             
+            $Sentence ='';
             
             for($i=1;$i<=$total;$i++){
              
-                $Sentence = $RULE[$i].' &&';
+              
+                if($i==$total){
+                $Sentence .= $RULE[$i];    
+                }else{
+                $Sentence .= $RULE[$i].' &&';
+                }
                 
             }
             
-              $Sentence .= $RULE[$final];
+               
             
             
             $Sentence = '('.$Sentence.')';
@@ -291,22 +328,28 @@ class app_model {
               
         }elseif($CurrentRule=='OR'){
             
-            $total = count($RULE) - 2;
+         $total = count($RULE) - 1;
 
             
             $final = count($RULE) -1;
             
+            $Sentence ='';
             
             for($i=1;$i<=$total;$i++){
              
-                $Sentence = $RULE[$i].'|| ';
+             
+                if($i==$total){
+                $Sentence .= $RULE[$i];    
+                }else{
+                $Sentence .= $RULE[$i].' ||';
+                }
                 
             }
             
-              $Sentence .= $RULE[$final];
+               
             
             
-            $Sentence = '('.$Sentence.')';
+            $Sentence = '('.$Sentence.')';           
             
               
         }
