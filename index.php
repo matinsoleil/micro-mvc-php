@@ -22,13 +22,16 @@ $SOFT = new app_soft();
 
 $MODEL = new app_model();
 
-$DATA = new app_data($CACHE,$HARD,$SOFT);
+$TYPE = new app_type();
+
+
+$DATA = new app_data($CACHE,$HARD,$SOFT,$MODEL,$TYPE);
 
 
 
 
 
-$HTML = new app_html($CORE,$DATA);
+$ACTION = new app_action($CORE,$DATA);
 
 
 

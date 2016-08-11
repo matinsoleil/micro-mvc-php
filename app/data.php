@@ -18,12 +18,14 @@ class app_data {
     public $hard;
     public $type;
     
-    public function __construct(app_redis $cache,app_hard $hard,app_soft $soft) {
+    public function __construct(app_redis $cache,app_hard $hard,app_soft $soft,app_model $model,app_type $type) {
   
  
     $this->cache = $cache;
     $this->hard = $hard;
     $this->soft = $soft;
+    $this->model = $model;
+    $this->type = $type;
     
     
     $data =   $this->hard->SCANING('data');

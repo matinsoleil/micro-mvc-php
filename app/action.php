@@ -11,7 +11,7 @@
  *
  * @author aromerov
  */
-class app_html {
+class app_action {
     //put your code here
         //put your code here
     public $core;
@@ -38,6 +38,12 @@ class app_html {
         $doc->loadHTML($content);
         
         echo $doc->saveHTML();
+        
+    }
+    
+    
+    public function JSON($DATA){
+        
         
     }
     
