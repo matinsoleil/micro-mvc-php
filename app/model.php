@@ -40,7 +40,7 @@ class app_model {
     
     $mathString = '{"equation":["+","20","85","6","7","10",["*","23","24","9"]]}';
     
-    $diagram = '{"data":{"step1":["generate","show"],"step2":["hidde","enable","render"],"step3":["stop"]}  }';
+    $diagram = '{"data":{"step1":["generate","show",{"data":"update"}],"step2":["hidde","enable","render"],"step3":["stop"]}  }';
     
     
     //$value = json_decode($mathString,true);
@@ -59,7 +59,7 @@ class app_model {
     $resulta = $this->IN_RULE($rule['data']);
    
     
-    $myDiagram = json_decode($diagram);
+    $myDiagram = json_decode($diagram,true);
 
     
     $this->DIAGRAM($myDiagram);
