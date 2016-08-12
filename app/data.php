@@ -18,18 +18,27 @@ class app_data {
     public $hard;
     public $type;
     
-    public function __construct(app_redis $cache,app_hard $hard,app_soft $soft,app_model $model,app_type $type) {
+    public function __construct(app_redis $cache,app_hard $hard,app_soft $soft,app_model $model,app_type $type,app_load $network) {
   
- 
+  
     $this->cache = $cache;
     $this->hard = $hard;
     $this->soft = $soft;
     $this->model = $model;
     $this->type = $type;
-    
+    $this->network = $network;  
     
     $data =   $this->hard->SCANING('data');
 
+    
+    
+    
+    
+    
+    echo $this->network->NET['net']['object']['section']->IMAGINE();
+    
+    
+    
     
     
     //echo "<pre>";

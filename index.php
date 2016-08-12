@@ -5,10 +5,9 @@ ini_set("display_errors", 1);
 
 header('ETag:"123456789"');
 
-foreach (glob("./*/*.php") as $filename)
-{
-include $filename;
-}
+include('./app/load.php');
+
+$LOAD = new app_load();
 
 
 $CORE = new app_core();
@@ -25,7 +24,11 @@ $MODEL = new app_model();
 $TYPE = new app_type();
 
 
-$DATA = new app_data($CACHE,$HARD,$SOFT,$MODEL,$TYPE);
+$NETWORK = new app_load(0);
+
+
+$DATA = new app_data($CACHE,$HARD,$SOFT,$MODEL,$TYPE,$NETWORK);
+
 
 
 
