@@ -94,7 +94,7 @@ class app_data {
    
    
      
-   $this->soft->SET_ENTITY_VALUE('sun.shine',array('_id' => new MongoId((string)$_id),"nick"=>"boticelli","data"=>array("text"=>"venus born")),'nick');
+   //$this->soft->SET_ENTITY_VALUE('sun.shine',array('_id' => new MongoId((string)$_id),"nick"=>"boticelli","data"=>array("text"=>"venus born")),'nick');
      
    //$this->soft->DELETE_ENTITY('sun.shine');
    

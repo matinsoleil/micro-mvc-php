@@ -40,7 +40,7 @@ class app_model {
     
     $mathString = '{"equation":["+","20","85","6","7","10",["*","23","24","9"]]}';
     
-    $diagram = '{"data":{"step1":["generate","show",{"data":"update"}],"step2":["hidde","enable","render"],"step3":["stop"]}  }';
+    $diagram = '{"map":{"0":{ "0":"generate","1":"show","state":"false","in":{"0":"0"},"out":{"0":"1","1":"2"}},"1":{"0":"hidde","1":"enable","2":"render","state":"false"},"2":{"0":"render","state":"false"}}  }';
     
     
     //$value = json_decode($mathString,true);
