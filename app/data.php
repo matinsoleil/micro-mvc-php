@@ -17,8 +17,9 @@ class app_data {
     public $cache;
     public $hard;
     public $type;
+    public $dns;
     
-    public function __construct(app_redis $cache,app_hard $hard,app_soft $soft,app_model $model,app_type $type,app_load $network) {
+    public function __construct(app_redis $cache,app_hard $hard,app_soft $soft,app_model $model,app_type $type,app_load $network,app_dns $dns) {
   
   
     $this->cache = $cache;
@@ -26,7 +27,8 @@ class app_data {
     $this->soft = $soft;
     $this->model = $model;
     $this->type = $type;
-    $this->network = $network;  
+    $this->network = $network;
+    $this->dns = $dns;
     
     $data =   $this->hard->SCANING('data');
 
@@ -45,6 +47,29 @@ class app_data {
     //var_dump($data);
     //echo "</pre>";
     
+    
+   $getModel = $this->hard->GET_ENTITY_VALUE('data.model.rule.general');
+   
+   $getMap = $this->hard->GET_ENTITY_VALUE('data.model.system.base');
+   
+   $getMath = $this->hard->GET_ENTITY_VALUE('data.model.math.general');
+   
+   $getSet = $this->hard->GET_ENTITY_VALUE('data.default.default');
+   
+   
+   $result = $this->model->GET_LOGIC($getMath['equation']);
+   
+   var_dump($result);
+   
+   $this->model->DIAGRAM($getMap);
+    
+   
+   $variables_process = $this->model->IN_RULE($getModel['data'],$getSet);
+   
+   
+   echo "<pre>";
+   var_dump($variables_process['real']);
+   echo "</pre>";
     
    // $variables = $this->hard->GET_ENTITY_VALUE('data.default','default');
     

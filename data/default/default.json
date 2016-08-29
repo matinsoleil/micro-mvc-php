@@ -1,5 +1,17 @@
 {
-    "default": "default",
+    "tex":"hola como estas",
+    "var1":"11",
+    "var2":"11",
+    "var3":"11",
+    "var4":"11",
+    "var5":"11",
+    "var6":"100",
+    "var7":"66",
+    "var8":"110",
+    "real":"0",
+    "false":"0",
+    "x":"0",
+    "default": "x",
     "simple": {
         "hard": "west"
     },

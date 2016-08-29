@@ -1,0 +1,42 @@
+{
+ "data":["THEN",
+            ["IF",["OR",
+                       ["AND",
+                             ["EQUAL","var3","var1"],
+                             ["EQUAL","var1","var3"],
+                             ["EQUAL","var1","var4"]
+                       ],
+                   ["GREATER THAN","var5","var6"]
+                   ]
+            ],
+            ["IS EQUAL","real","var4"],
+            ["IS EQUAL","false","var1"]
+        ],
+  "simple":["THEN",
+                 ["IF",
+                      ["AND",
+                            ["TRUE"],
+                            ["TRUE"]
+                      ]
+                 ],
+                 ["IS EQUAL","real","var2"],
+                 ["GREATER THAN","false","var4"]
+        ],
+   "logic":["AND",
+                 {"var1":"11"},
+                 ["OR",
+                     {"var2":"23"},
+                     {"var3":"87"}
+                 ]
+           ],
+    "fuzzy":["THEN",
+                   ["IF",
+                        ["AND",
+                               ["EQUAL","var1","var3"],
+                               ["GREATER THAN","var5","var6"]
+                        ]
+                   ],
+                   ["EQUAL","var2","var4"]
+            ]    
+           
+}

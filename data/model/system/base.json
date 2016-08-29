@@ -1,55 +1,23 @@
 {
-   "begin":{
-       "type":"signal",
-       "in":[],
-       "input":[],
-       "out":["compare"],
-       "data":{
-           "reference":{
-                  "z":"20"
-           }
+  "0":{
+      "state":{
+               "name":["inicio","/"],
+               "status":["TRUE"],
+               "in":["inicio"],
+               "out":["inicio"],
+               "domain":["publicidad"]
+               },
+       "dynamic":{
+           "cache":["GENERAL"],
+           "space":["GENERAL","CAPTURE_VARIABLES"],
+           "set":["GENERAL","ALL_VARIABLES"],
+           "actions":["GENERAL","CAPTURE"]
+           
+       },
+       "static":{
+           "layers":["A"],
+           "set":["DESIGN"],
+           "space":["GENERAL","SKIN"]
        }
-       
-   },
-   "compare":{
-       "type":"junction",
-       "in":["begin","sensor"],
-        "out":["controller"],
-        "output":{},
-        "data":{
-            "y":"30"
-        }
-       
-   }
-   ,
-   "sensor":{
-       "type":"box",
-       "in":["final"],
-       "out":["compare"],
-       "data":{"sensor":["x"]}
-   },
-   "controller":{
-       "type":"box",
-       "in":["compare"],
-       "out":["system"],
-                
-       "data":["AND",{"var1":"value1"},["OR",{"var2":"value2"},{"var3":"value3"}]]
-       
-       
-   },
-   "system":{
-       "type":"box",
-       "in":["controller"],
-       "out":["final","sensor"],
-       "data":["THEN",["IF",["AND",{"brake temperature":"warm"},{"speed":"not fast"}]],{"brake presure":"drecrement"}]
-   },
-   "final":{
-       "type":"signal",
-       "in":["system"],
-       "out":[],
-       "data":{
-       }
-   
-   }
-
+      }
 }

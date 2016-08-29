@@ -22,47 +22,7 @@ class app_model {
     $this->hash = $string;    
     
     $this->rule =array();
-    
-    $variables=array('var1'=>'11','var2'=>'23','var3'=>'87','var4'=>'100','var5'=>'33','var6'=>'66');
-    
-    
-    
-    $fuzzyString = '{"data":["AND",{"var1":"11"},["OR",{"var2":"23"},{"var3":"87"}]]}';
-    
-    
-    $fuzzy = '{"data":["THEN",["IF",["AND",["EQUAL","var1","var3"],["GREATER THAN","var5","var6"]]],["EQUAL","var2","var4"]]}';
-    
-    
-    $simple = '{"data":["THEN",["IF",["AND",["TRUE"],["TRUE"]]],["IS EQUAL","real","var2"],["GREATER THAN","false","var4"]]}';
-    
-    
-    $great = '{"data":["THEN",["IF",["OR",["AND",["EQUAL","var3","var1"],["EQUAL","var1","var3"],["EQUAL","var1","var4"]],["GREATER THAN","var5","var6"]]],["IS EQUAL","real","var4"],["IS EQUAL","false","var1"]]}';
-    
-    $mathString = '{"equation":["+","20","85","6","7","10",["*","23","24","9"]]}';
-    
-    $diagram = '{"map":{"0":{"state":"true","in":{"action":"url"}},"1":{"state":"null","in":{"":""}},"2":{"state":"null","in":{}}}';
-    
-    
-    //$value = json_decode($mathString,true);
 
-    $value = json_decode($fuzzyString,true);
-  
-    //$result = $this->GET_LOGIC($value['equation']);
-    
-    $result = $this->GET_FUZZY($value['data']);
-    
-     //var_dump($result);
-    
-    $rule = json_decode($simple,true);
-    
-    
-    $resulta = $this->IN_RULE($rule['data']);
-   
-    
-    $myDiagram = json_decode($diagram,true);
-
-    
-    $this->DIAGRAM($myDiagram);
     
     }
     
@@ -70,9 +30,22 @@ class app_model {
     public function DIAGRAM($diagram){
         
         
-        echo "<pre>";
-        var_dump($diagram);
-        echo "</pre>";
+        foreach($diagram as $steps){
+            
+            echo "<pre>";
+            var_dump($steps['dynamic']);
+            echo "</pre>";
+            
+            echo "<pre>";
+            var_dump($steps['state']);
+            echo "</pre>";
+            
+            echo "<pre>";
+            var_dump($steps['static']);
+            echo "</pre>";
+            
+            
+        }
         
         
         
@@ -118,36 +91,54 @@ class app_model {
     
     
     
-       public function IN_RULE($RULE){
+       public function IN_RULE($RULE,$VARIABLES){
            
-     
+           $_VARIABLES=array();
            
-           $result=$this->RULE($RULE);
+           $result=$this->RULE($RULE,$VARIABLES);
            
-           $false=100;
-           $real =200;
            
-           var_dump($result);
+          foreach($VARIABLES as $variable=>$value){
+              
+              if(!is_array($value)){
+                
+                   if(!is_numeric($value)){
+                       $value = "'".$value."'";
+                   }
+               
+              eval('$'.$variable.'='.$value.';');
+              }
+              
+          }
+ 
+           
+
            
            eval($result);
+ 
+           $_set_value = FALSE;
+           
+     
+           foreach($VARIABLES as $variable=>$value){
+              
+               eval('if(isset($'.$variable.')){ $_set_value = TRUE;}else{ $_set_value = FALSE; }');
+              
+               eval('if($_set_value==TRUE){ $_VARIABLES["'.$variable.'"]= $'.$variable.';  }');
+              
+               
+               
+           }
            
            
-           echo $real;
-           echo "<br>";
-           //$result = substr($result, 1);
-           
-           //explode(" ",$result);
-           
+
+          return $_VARIABLES; 
         
         
       }    
     
-    public function RULE($RULE){
+    public function RULE($RULE,$variables){
         
-        
-        $variables=array('var1'=>'11','var2'=>'11','var3'=>'11','var4'=>'11','var5'=>'100','var6'=>'66');
-        
-        $rule =100;
+
        
         $Sentence='';
        
@@ -199,19 +190,25 @@ class app_model {
                
                if(isset($variables[$rule])){
                    
+                   if(is_numeric($rule)){
                    $rule = $variables[$rule];
+                   }else{
+                   $rule = '$'.$rule;    
+                   }
                    
                }else{
+                  
                    $rule = '$'.$rule;
+                  
                }
                
                $RULE[$key] = $rule;
                
            }else{
                
-                $Sentence .= $this->RULE($rule);
+                $Sentence .= $this->RULE($rule,$variables);
                 
-                $RULE[$key] = $this->RULE($rule);
+                $RULE[$key] = $this->RULE($rule,$variables);
                
            }   
             
@@ -575,8 +572,12 @@ class app_model {
                 
             }
             
-  
+            if($OPERATORS==''){
+               $OPERATORS .='NULL'; 
+            }
             
+            echo '$RESULT ='.$OPERATORS.';';
+            echo "<br>";
             eval('$RESULT ='.$OPERATORS.';');
        
             

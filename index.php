@@ -9,11 +9,9 @@ include('./app/load.php');
 
 $LOAD = new app_load();
 
-
 $CORE = new app_core();
 
 $CACHE = new app_redis();
-
 
 $HARD = new app_hard();
 
@@ -23,11 +21,12 @@ $MODEL = new app_model();
 
 $TYPE = new app_type();
 
+$DNS = new app_dns();
 
 $NETWORK = new app_load(0);
 
 
-$DATA = new app_data($CACHE,$HARD,$SOFT,$MODEL,$TYPE,$NETWORK);
+$DATA = new app_data($CACHE,$HARD,$SOFT,$MODEL,$TYPE,$NETWORK,$DNS);
 
 
 
