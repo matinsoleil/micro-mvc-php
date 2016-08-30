@@ -68,7 +68,7 @@ class app_data {
    
    
    echo "<pre>";
-   var_dump($variables_process);
+   var_dump($variables_process['help']);
    echo "</pre>";
     
    // $variables = $this->hard->GET_ENTITY_VALUE('data.default','default');

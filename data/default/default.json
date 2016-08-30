@@ -29,6 +29,10 @@
         "goldfinger": [
             "coconut"
         ],
-        "default": "gold"
+        "blues":{
+                "yos":["jose"],
+                "ust":["napoleon"],
+                "russ":["ukter"]
+                }
     }
 }
