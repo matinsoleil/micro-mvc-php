@@ -107,6 +107,12 @@ class app_model {
                    }
                
               eval('$'.$variable.'='.$value.';');
+              }else{
+                  
+               $this->TO_CODE($value);
+                  
+              eval('$'.$variable.'=$value;');
+
               }
               
           }
@@ -134,7 +140,50 @@ class app_model {
           return $_VARIABLES; 
         
         
-      }    
+      }  
+      
+    public function TO_CODE($variables){
+        
+        $this->TO_STRING($variables);
+        
+        
+    }  
+    
+    public function TO_STRING($variables,$key_set=''){
+        
+           echo "<pre>";
+           var_dump($variables);
+           echo "</pre>";
+        
+         foreach($variables as $key=>$value){
+
+               if(is_string($value)){
+                   
+                 
+                  
+                   if(!is_numeric($key)){
+                   eval("$".$key."='".$value."';");
+                     echo "$".$key."='".$value."';";
+                     echo "<br>";
+                   }else{
+                  
+                   eval('if(!isset($'.$key_set.')){ $'.$key_set.'= array(); }');    
+                       
+                   eval("$".$key_set."[".$key."]='".$value."';");
+                     echo "$".$key_set."['".$key."']='".$value."';";
+                     echo "<br>";
+                   }
+                   
+               }else{
+      
+                       $this->TO_STRING($value,$key);
+                   
+               }              
+             
+         }
+        
+    }
+    
     
     public function RULE($RULE,$variables){
         
@@ -648,7 +697,7 @@ class app_model {
         
     }
     
-    
+ 
     
     
     public function GET_MODELS($ENTITY){
