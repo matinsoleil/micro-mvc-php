@@ -32,17 +32,17 @@ class app_model {
         
         foreach($diagram as $steps){
             
-            echo "<pre>";
-            var_dump($steps['dynamic']);
-            echo "</pre>";
+            //echo "<pre>";
+            //var_dump($steps['dynamic']);
+            //echo "</pre>";
             
             echo "<pre>";
             var_dump($steps['state']);
             echo "</pre>";
             
-            echo "<pre>";
-            var_dump($steps['static']);
-            echo "</pre>";
+            //echo "<pre>";
+            //var_dump($steps['static']);
+            //echo "</pre>";
             
             
         }
@@ -117,7 +117,7 @@ class app_model {
               
           }
  
-           
+           echo $result;
 
            
            eval($result);
@@ -151,9 +151,9 @@ class app_model {
     
     public function TO_STRING($variables,$key_set=''){
         
-           echo "<pre>";
-           var_dump($variables);
-           echo "</pre>";
+           //echo "<pre>";
+           //var_dump($variables);
+           //echo "</pre>";
         
          foreach($variables as $key=>$value){
 
@@ -163,18 +163,28 @@ class app_model {
                   
                    if(!is_numeric($key)){
                    eval("$".$key."='".$value."';");
-                     echo "$".$key."='".$value."';";
-                     echo "<br>";
+                  
                    }else{
                   
                    eval('if(!isset($'.$key_set.')){ $'.$key_set.'= array(); }');    
                        
                    eval("$".$key_set."[".$key."]='".$value."';");
-                     echo "$".$key_set."['".$key."']='".$value."';";
-                     echo "<br>";
+                 
                    }
                    
                }else{
+                   
+                        
+                   
+                       foreach($value as $k=>$v){
+                          
+                          eval('if(!isset($'.$key.')){ $'.$key.'= array(); }'); 
+                       
+                          eval('$'.$key.'["'.$k.'"]=$v;');
+                           
+                       }
+                       
+             
       
                        $this->TO_STRING($value,$key);
                    
@@ -194,10 +204,7 @@ class app_model {
         $CurrentRule='';
                
         foreach($RULE as $key=>$rule){
-            
         
-            
-            
            if(is_string($rule)){
                
              

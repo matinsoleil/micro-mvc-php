@@ -59,7 +59,7 @@ class app_data {
    
    $result = $this->model->GET_LOGIC($getMath['equation']);
    
-   var_dump($result);
+   //var_dump($result);
    
    $this->model->DIAGRAM($getMap);
     
@@ -68,7 +68,7 @@ class app_data {
    
    
    echo "<pre>";
-   var_dump($variables_process['help']);
+   var_dump($variables_process);
    echo "</pre>";
     
    // $variables = $this->hard->GET_ENTITY_VALUE('data.default','default');
@@ -128,26 +128,26 @@ class app_data {
    $values = $this->soft->GET_ENTITY_VALUE('sun.shine');
      
    
-   echo '<pre>';
-   var_dump($values);
-   echo '</pre>';
+   //echo '<pre>';
+   //var_dump($values);
+   //echo '</pre>';
    
    
    $this->soft->SEARCH_IN('sun.shine',array('nick','text'));
    
    $val = $this->soft->SEARCH('sun.shine','golden');
    
-   echo "<pre>";
-   var_dump($val);
-   echo "</pre>";
+   //echo "<pre>";
+   //var_dump($val);
+   //echo "</pre>";
    
    
    $like = $this->soft->SEARCH_LIKE('sun.shine','nick','man');
    
    
-   echo '<br>';
-   var_dump($like);
-   echo '</br>';
+   //echo '<br>';
+   //var_dump($like);
+   //echo '</br>';
    //$val = $this->soft->GET_VALUE($values,'golden');
    
    

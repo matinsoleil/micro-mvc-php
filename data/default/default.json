@@ -30,7 +30,7 @@
             "coconut"
         ],
         "blues":{
-                "yos":["jose"],
+                "yos":{"jose":"intro","all":"jedi"},
                 "ust":["napoleon"],
                 "russ":["ukter"]
                 }
