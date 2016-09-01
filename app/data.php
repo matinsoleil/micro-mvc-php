@@ -29,7 +29,7 @@ class app_data {
     $this->type = $type;
     $this->network = $network;
     $this->dns = $dns;
-    
+  
     $data =   $this->hard->SCANING('data');
 
     
@@ -37,7 +37,7 @@ class app_data {
     
     
     
-    echo $this->network->NET['net']['object']['section']->IMAGINE();
+    //echo $this->network->NET['net']['object']['section']->IMAGINE();
     
     
     
@@ -61,11 +61,26 @@ class app_data {
    
    //var_dump($result);
    
-   $this->model->DIAGRAM($getMap);
+   
+   
+   $this->model->SET_VARIABLES($getSet);
+   
+   
+   
+   
+   
+   
+   
+   
+   //$this->model->DIAGRAM($getMap);
     
    
    $variables_process = $this->model->IN_RULE($getModel['data'],$getSet);
    
+   
+   echo "<pre>";
+   var_dump($this->model->false);
+   echo "</pre>";
    
    echo "<pre>";
    var_dump($variables_process);
@@ -96,26 +111,26 @@ class app_data {
     //$this->hard->SET_ENTITY_VALUE('data.gold.finger.cuper.radio.base', $VALUE); 
     
     
-    $VALUE = $this->hard->GET_ENTITY_VALUE('data.gold.finger.cuper.radio.base');
+  //  $VALUE = $this->hard->GET_ENTITY_VALUE('data.gold.finger.cuper.radio.base');
      
     //echo "<pre>";
     //var_dump($VALUE);
     //echo "</pre>";
     
-    $NEW_VALUE=array('dagger'=>array("simple"=>"oil","hard"=>"carbon"));
+  //  $NEW_VALUE=array('dagger'=>array("simple"=>"oil","hard"=>"carbon"));
     
-    $this->hard->SET_ENTITY_VALUE('data.gold.finger.cuper.radio.base', $NEW_VALUE);
+  //  $this->hard->SET_ENTITY_VALUE('data.gold.finger.cuper.radio.base', $NEW_VALUE);
      //$this->hard->SET_ENTITY('data.silver.coin.spanish');
      
     // $this->hard->DELETE_ENTITY('data.silver');
      
      
     // $this->soft->SET_ENTITY('sun.shine');
-   $_id= $this->strToHex('su.sh.bo');
+   //$_id= $this->strToHex('su.sh.bo');
    
-   $_id= '00000000'.$_id;
+   //$_id= '00000000'.$_id;
    
-   echo strlen($_id);
+   //echo strlen($_id);
    
    
      
@@ -125,7 +140,7 @@ class app_data {
    
    //$this->soft->UPDATE_ENTITY_VALUE()
      
-   $values = $this->soft->GET_ENTITY_VALUE('sun.shine');
+  // $values = $this->soft->GET_ENTITY_VALUE('sun.shine');
      
    
    //echo '<pre>';
@@ -133,16 +148,16 @@ class app_data {
    //echo '</pre>';
    
    
-   $this->soft->SEARCH_IN('sun.shine',array('nick','text'));
+   //$this->soft->SEARCH_IN('sun.shine',array('nick','text'));
    
-   $val = $this->soft->SEARCH('sun.shine','golden');
+   //$val = $this->soft->SEARCH('sun.shine','golden');
    
    //echo "<pre>";
    //var_dump($val);
    //echo "</pre>";
    
    
-   $like = $this->soft->SEARCH_LIKE('sun.shine','nick','man');
+   //$like = $this->soft->SEARCH_LIKE('sun.shine','nick','man');
    
    
    //echo '<br>';

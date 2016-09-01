@@ -16,7 +16,7 @@ class net_object_section {
    
  public function __construct($origin=1) {
 
-     echo "SECTION";
+     //"SECTION";
      
  }
 

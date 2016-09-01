@@ -27,6 +27,41 @@ class app_model {
     }
     
     
+    public function SET_VARIABLES($variables,$key=''){
+     
+        
+        foreach($variables as $variable=>$value){
+            
+            
+           if(is_numeric($variable)){
+              
+           eval('if(!isset($this->'.$key.')){  $this->'.$key.'['.$variable.']=$value; }');    
+               
+           }else{
+                 
+           eval('if(!isset($this->'.$variable.')){  $this->'.$variable.'=$value;  }');
+            
+           }
+       
+           
+           
+           if(is_array($value)){
+               
+               $this->SET_VARIABLES($value,$variable);
+               
+           }
+//               
+//               
+//               
+           }
+            
+            
+        }
+        
+        
+    
+    
+    
     public function DIAGRAM($diagram){
         
         
@@ -127,9 +162,9 @@ class app_model {
      
            foreach($VARIABLES as $variable=>$value){
               
-               eval('if(isset($'.$variable.')){ $_set_value = TRUE;}else{ $_set_value = FALSE; }');
+               eval('if(isset($this->'.$variable.')){ $_set_value = TRUE;}else{ $_set_value = FALSE; }');
               
-               eval('if($_set_value==TRUE){ $_VARIABLES["'.$variable.'"]= $'.$variable.';  }');
+               eval('if($_set_value==TRUE){ $_VARIABLES["'.$variable.'"]= $this->'.$variable.';  }');
               
                
                
@@ -249,12 +284,12 @@ class app_model {
                    if(is_numeric($rule)){
                    $rule = $variables[$rule];
                    }else{
-                   $rule = '$'.$rule;    
+                   $rule = '$this->'.$rule;    
                    }
                    
                }else{
                   
-                   $rule = '$'.$rule;
+                   $rule = '$this->'.$rule;
                   
                }
                
