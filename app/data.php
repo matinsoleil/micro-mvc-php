@@ -56,11 +56,13 @@ class app_data {
    
    $getSet = $this->hard->GET_ENTITY_VALUE('data.default.default');
    
+   $getSpace = $this->hard->GET_ENTITY_VALUE('data.space.publicidad.default');
    
    $result = $this->model->GET_LOGIC($getMath['equation']);
    
-   //var_dump($result);
-   
+   echo "<pre>";
+   var_dump($getSpace);
+   echo "</pre>";
    
    
    $this->model->SET_VARIABLES($getSet);
