@@ -1,3 +1,9 @@
-{
-    "name": "aromerov"
+{    
+    
+    "menu":["home","about","services","search","users","works"],   
+    "features": ["benefits","pricing","plans"],
+    "get_started":["register","upload_work","apreciate_work","contact_clients"],
+    "resources":["help","history","status"],
+    "feet":["copyright","security","privacy","terms","site_map"],
+    "adshighway":["about","contact","press","company"]
 }
