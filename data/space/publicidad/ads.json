@@ -2,5 +2,5 @@
     "id":["key_name"],
     "work":["name","description","type","category","tags","format","rank","users","comments","related"],
     "detail":["files","long_description","collection","format","size","state","status"],
-    "files":["n_file","n_url_file"]
+    "files":["name","location","url","visible","owners","service","lock"]
 }
