@@ -8,10 +8,10 @@
                "domain":["publicidad"]
                },
        "dynamic":{
-           "cache":["GENERAL"],
-           "space":["GENERAL","CAPTURE_VARIABLES"],
-           "set":["GENERAL","ALL_VARIABLES"],
-           "actions":["GENERAL","CAPTURE"]
+           "cache":["data.general"],
+           "space":["data.space.publicidad.default"],
+           "set":["data.default.default"],
+           "actions":["model.rule.general"]
            
        },
        "static":{

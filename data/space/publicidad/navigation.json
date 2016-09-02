@@ -1,6 +1,6 @@
 {    
     
-    "menu":["home","about","services","search","users","works"],   
+    "menu":["home","about","services","search","users","works","login"],   
     "features": ["benefits","pricing","plans"],
     "get_started":["register","upload_work","apreciate_work","contact_clients"],
     "resources":["help","history","status"],

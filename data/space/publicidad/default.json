@@ -6,6 +6,6 @@
     "users":["nick","name","second_name","url","rank","flows","works","references","work_budget","geo"],
     "geo":["city","region","language","country","currency","conections"],
     "contact":["email","date","message","duration","status","budget","url","payment"],
-    "popup":["register","message",{"media":["content","update"]},"duration","status"]
+    "popup":["register","offert",{"media":["content","update"]},"duration","status"]
  
 }
