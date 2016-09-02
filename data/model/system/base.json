@@ -5,7 +5,8 @@
                "status":["TRUE"],
                "in":["inicio"],
                "out":["inicio"],
-               "domain":["publicidad"]
+               "domain":["publicidad"],
+               "type":["html","json"]
                },
        "dynamic":{
            "cache":["data.general"],
@@ -13,11 +14,11 @@
            "set":["data.default.default"],
            "actions":["model.rule.general"]
            
-       },
+                },
        "static":{
-           "layers":["A"],
-           "set":["DESIGN"],
-           "space":["GENERAL","SKIN"]
-       }
+           "layers":["main"],
+           "set":["rule_visual"],
+           "space":["main","skin"]
+               }
       }
 }

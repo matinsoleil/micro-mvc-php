@@ -61,7 +61,7 @@ class app_data {
    $result = $this->model->GET_LOGIC($getMath['equation']);
    
    echo "<pre>";
-   var_dump($getSpace);
+   var_dump($getMap);
    echo "</pre>";
    
    
@@ -80,13 +80,13 @@ class app_data {
    $variables_process = $this->model->IN_RULE($getModel['data'],$getSet);
    
    
-   echo "<pre>";
-   var_dump($this->model->false);
-   echo "</pre>";
+   //echo "<pre>";
+   //var_dump($this->model->false);
+   //echo "</pre>";
    
-   echo "<pre>";
-   var_dump($variables_process);
-   echo "</pre>";
+   //echo "<pre>";
+   //var_dump($variables_process);
+   //echo "</pre>";
     
    // $variables = $this->hard->GET_ENTITY_VALUE('data.default','default');
     
