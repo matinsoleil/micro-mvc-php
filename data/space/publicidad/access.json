@@ -1,0 +1,6 @@
+{
+    "id":["key_name"],
+    "user_access":["nick","name","password","email","ip","region","section","language","time","forgot","register","access","status","login"],
+    "system":["state","status","date","check"],
+    "section":["all","administer"]
+}
