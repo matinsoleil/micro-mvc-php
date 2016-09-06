@@ -130,6 +130,18 @@ class app_dns {
     
         
     }
+    
+    public function RELATED(){
+        
+        
+        
+    }
+    
+    public function SECURITY(){
+        
+        
+        
+    }
  
        
 }
