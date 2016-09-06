@@ -19,7 +19,8 @@ class app_data {
     public $type;
     public $dns;
     public $step;
-    
+    public $currentStep='';
+            
     public function __construct(app_redis $cache,app_hard $hard,app_soft $soft,app_model $model,app_type $type,app_load $network,app_dns $dns) {
   
   
@@ -30,6 +31,7 @@ class app_data {
     $this->type = $type;
     $this->network = $network;
     $this->dns = $dns;
+    
     
     $this->step = array();
   
@@ -53,22 +55,77 @@ class app_data {
     //
     //echo "</pre>";
     
+
+    
    $getMap = $this->hard->GET_ENTITY_VALUE('data.model.system.base'); 
-    
   
-   foreach($getMap as $step){
+   $stepName = '/';
+  
+   foreach($getMap as $key=>$step){
+     
+    foreach($step['state']['name'] as $name){
    
-    $stepName = $step['state']['name'][0];  
-    
-    var_dump($stepName);
-       
-    $this->step[$stepName] = $stepName;
-       
+        if($this->dns->action==$name){
+           
+            $this->currentStep=$key;
+            break;
+        }      
+    }          
        
    }
    
    
+   if($this->currentStep==''){
+       
+      $this->step = $getMap[0];
+       
+   }else{
+      $this->step = $getMap[$this->currentStep];
+       
+   }
+   
+   
+ 
+ 
+   
+   foreach($this->step['state'] as $key=>$properties){
+       
+      
+        foreach($properties as $key=>$propertie){
+            
+           
+            $this->step['state'][$key]= $propertie;
+            
+            
+        }
+   
+       
+   }
+   
+   foreach($this->step['dynamic'] as $key=>$actions){
+       
+        foreach($actions as $num=>$action){
+            
+              $this->step['dynamic'][$key][$num] = $this->hard->GET_ENTITY_VALUE($action);
+            
+        }
+       
+   }
+   
+   
+   foreach($this->step['static'] as $key=>$statics){
+       
+        foreach($statics as $num=>$static){
+            
+              $this->step['static'][$key][$num] = $this->hard->GET_ENTITY_VALUE($static);
+        }
+       
+   }
+   
+   
+   echo "<pre>";
    var_dump($this->step);
+   echo "</pre>";
    
    $getModel = $this->hard->GET_ENTITY_VALUE($getMap[0]['dynamic']['actions'][0]);
    

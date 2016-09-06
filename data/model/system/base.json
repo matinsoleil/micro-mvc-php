@@ -9,7 +9,7 @@
                "type":["html","json"]
                },
        "dynamic":{
-           "cache":["data.general"],
+           "cache":["data.set"],
            "space":["data.space.publicidad.default"],
            "set":["data.default.default"],
            "actions":["data.model.rule.general"]
