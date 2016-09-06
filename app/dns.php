@@ -113,6 +113,18 @@ class app_dns {
     }
     
     
+    public function STRING_TO_JSON(){
+        
+        
+        
+    }
+    
+    public function UPDATE(){
+        
+        
+        
+    }
+    
     
     public function SEARCH(){
     

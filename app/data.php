@@ -124,7 +124,7 @@ class app_data {
    
    
    echo "<pre>";
-   var_dump($this->step);
+   var_dump($this->step['dynamic']['set']);
    echo "</pre>";
    
    $getModel = $this->hard->GET_ENTITY_VALUE($getMap[0]['dynamic']['actions'][0]);

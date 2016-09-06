@@ -124,6 +124,7 @@ class app_model {
         return $operators;
     }
     
+
     
     
        public function IN_RULE($RULE,$VARIABLES){
