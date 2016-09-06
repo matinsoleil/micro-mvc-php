@@ -18,6 +18,7 @@ class app_data {
     public $hard;
     public $type;
     public $dns;
+    public $step;
     
     public function __construct(app_redis $cache,app_hard $hard,app_soft $soft,app_model $model,app_type $type,app_load $network,app_dns $dns) {
   
@@ -29,6 +30,8 @@ class app_data {
     $this->type = $type;
     $this->network = $network;
     $this->dns = $dns;
+    
+    $this->step = array();
   
     $data =   $this->hard->SCANING('data');
 
@@ -45,24 +48,41 @@ class app_data {
     
     //echo "<pre>";
     //var_dump($data);
+    //
+    //
+    //
     //echo "</pre>";
     
+   $getMap = $this->hard->GET_ENTITY_VALUE('data.model.system.base'); 
     
-   $getModel = $this->hard->GET_ENTITY_VALUE('data.model.rule.general');
+  
+   foreach($getMap as $step){
    
-   $getMap = $this->hard->GET_ENTITY_VALUE('data.model.system.base');
+    $stepName = $step['state']['name'][0];  
+    
+    var_dump($stepName);
+       
+    $this->step[$stepName] = $stepName;
+       
+       
+   }
+   
+   
+   var_dump($this->step);
+   
+   $getModel = $this->hard->GET_ENTITY_VALUE($getMap[0]['dynamic']['actions'][0]);
+   
+
    
    $getMath = $this->hard->GET_ENTITY_VALUE('data.model.math.general');
    
-   $getSet = $this->hard->GET_ENTITY_VALUE('data.default.default');
+   $getSet = $this->hard->GET_ENTITY_VALUE($getMap[0]['dynamic']['set'][0]);
    
-   $getSpace = $this->hard->GET_ENTITY_VALUE('data.space.publicidad.default');
+   $getSpace = $this->hard->GET_ENTITY_VALUE($getMap[0]['dynamic']['space'][0]);
    
    $result = $this->model->GET_LOGIC($getMath['equation']);
    
-   echo "<pre>";
-   var_dump($getMap);
-   echo "</pre>";
+ 
    
    
    $this->model->SET_VARIABLES($getSet);

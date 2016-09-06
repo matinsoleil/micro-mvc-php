@@ -152,7 +152,7 @@ class app_model {
               
           }
  
-           echo $result;
+           //echo $result;
 
            
            eval($result);

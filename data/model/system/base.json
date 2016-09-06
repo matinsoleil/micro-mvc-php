@@ -12,13 +12,13 @@
            "cache":["data.general"],
            "space":["data.space.publicidad.default"],
            "set":["data.default.default"],
-           "actions":["model.rule.general"]
+           "actions":["data.model.rule.general"]
            
                 },
        "static":{
-           "layers":["main"],
-           "set":["rule_visual"],
-           "space":["main","skin"]
+           "layers":["data.static.main"],
+           "set":["data.static.set.main"],
+           "space":["data.static.space"]
                }
       }
 }
