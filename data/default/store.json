@@ -2,5 +2,6 @@
     "season": ["atum"],
     "skin":["default","publicidad"],
     "ad":["openning"],
-    "media":{"video":["start"],"images":["a.jpg","b.jpg"]}
+    "media":{"video":["start"],"images":["a.jpg","b.jpg"]},
+    "simple":{"adrian":"rules"}
 }

@@ -96,7 +96,10 @@ class app_data {
         foreach($actions as $num=>$action){
             
               if(!is_array($action)){
+                  
                  $this->step['dynamic'][$key][$num] = $this->hard->GET_ENTITY_VALUE($action);
+              
+                 
               }else{
                   $this->step['dynamic'][$key][$num] = $actions;   
               }
@@ -142,26 +145,45 @@ class app_data {
    
    
    
-   
-   
+   echo "<pre>";
+   var_dump($this->step['dynamic']['operations']);
+   echo "</pre>";
    
    //$this->model->SET_VARIABLES($getSet);
    
    
+   $union = array();
    
-   foreach($this->step['dynamic']['set'] as $set){
+   
+   foreach($this->step['dynamic']['set'] as $key=>$set){
        
-         echo "<pre>";
-         var_dump($set);
-         echo "</pre>";
-       
+        
+       foreach($set as $key=>$st){
+           
+           if(isset($union[$key])){
+             $before = $union[$key];
+             
+             $after =  array_merge($before,$st);
+             
+            $union[$key] = $after;
+           }else{
+               
+             $union[$key] = $st; 
+               
+               
+           }
+           
+           
+       }
        
        
        
    }
    
    
-   
+   echo "<pre>";
+   var_dump($union);
+   echo "</pre>";
    
    //$this->model->DIAGRAM($getMap);
     
