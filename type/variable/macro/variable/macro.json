@@ -1,8 +1,0 @@
-{
-      "css":{ "type":"multiselect",
-              "entity":["theme.main"],
-            "name":"css",
-            "values":["micro.css"],
-            "value":["micro.css"]
-          }
-}

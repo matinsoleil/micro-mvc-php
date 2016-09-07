@@ -20,9 +20,15 @@ class app_action {
     public function __construct(app_core $core,app_data $data) {
   
     $this->data= $data;    
-    $this->core = $core;    
-        
-    $this->HTML("DATA");    
+    $this->core = $core;  
+    
+    
+    
+    if($this->data->dns->format=='json'){    
+    $this->JSON($this->data->step);
+    }else{
+    $this->HTML($this->data->step);    
+    }    
         
     }
     
@@ -44,6 +50,10 @@ class app_action {
     
     public function JSON($DATA){
         
+        header('Content-Type: application/json');
+        
+       
+        echo json_encode($DATA,JSON_PRETTY_PRINT);
         
     }
     

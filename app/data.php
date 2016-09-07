@@ -37,16 +37,7 @@ class app_data {
   
     $data =   $this->hard->SCANING('data');
 
-    
-    
-    
-    
-    
     //echo $this->network->NET['net']['object']['section']->IMAGINE();
-    
-    
-    
-    
     
     //echo "<pre>";
     //var_dump($data);
@@ -54,8 +45,6 @@ class app_data {
     //
     //
     //echo "</pre>";
-    
-
     
    $getMap = $this->hard->GET_ENTITY_VALUE('data.model.system.base'); 
   
@@ -106,47 +95,70 @@ class app_data {
        
         foreach($actions as $num=>$action){
             
-              $this->step['dynamic'][$key][$num] = $this->hard->GET_ENTITY_VALUE($action);
-            
+              if(!is_array($action)){
+                 $this->step['dynamic'][$key][$num] = $this->hard->GET_ENTITY_VALUE($action);
+              }else{
+                  $this->step['dynamic'][$key][$num] = $actions;   
+              }
         }
        
    }
+   
+   
+             $this->step['dynamic']['listen'] = $this->dns->listen;
    
    
    foreach($this->step['static'] as $key=>$statics){
        
         foreach($statics as $num=>$static){
             
-              $this->step['static'][$key][$num] = $this->hard->GET_ENTITY_VALUE($static);
+               if(!is_array($action)){
+                 $this->step['static'][$key][$num] = $this->hard->GET_ENTITY_VALUE($static);
+               }else{
+                 $this->step['static'][$key][$num] = $static;  
+               }
         }
        
    }
    
    
-   echo "<pre>";
-   var_dump($this->step['dynamic']['set']);
-   echo "</pre>";
+//   echo "<pre>";
+//   var_dump($this->step['dynamic']['set']);
+//   echo "</pre>";
    
-   $getModel = $this->hard->GET_ENTITY_VALUE($getMap[0]['dynamic']['actions'][0]);
+   //$getModel = $this->hard->GET_ENTITY_VALUE($getMap[0]['dynamic']['actions'][0]);
    
 
    
    $getMath = $this->hard->GET_ENTITY_VALUE('data.model.math.general');
    
-   $getSet = $this->hard->GET_ENTITY_VALUE($getMap[0]['dynamic']['set'][0]);
+  // $getSet = $this->hard->GET_ENTITY_VALUE($getMap[0]['dynamic']['set'][0]);
    
-   $getSpace = $this->hard->GET_ENTITY_VALUE($getMap[0]['dynamic']['space'][0]);
+  // $getSpace = $this->hard->GET_ENTITY_VALUE($getMap[0]['dynamic']['space'][0]);
    
    $result = $this->model->GET_LOGIC($getMath['equation']);
    
  
    
    
-   $this->model->SET_VARIABLES($getSet);
    
    
    
    
+   //$this->model->SET_VARIABLES($getSet);
+   
+   
+   
+   foreach($this->step['dynamic']['set'] as $set){
+       
+         echo "<pre>";
+         var_dump($set);
+         echo "</pre>";
+       
+       
+       
+       
+   }
    
    
    
@@ -154,7 +166,7 @@ class app_data {
    //$this->model->DIAGRAM($getMap);
     
    
-   $variables_process = $this->model->IN_RULE($getModel['data'],$getSet);
+  // $variables_process = $this->model->IN_RULE($getModel['data'],$getSet);
    
    
    //echo "<pre>";

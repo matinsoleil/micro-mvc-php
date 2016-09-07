@@ -1,15 +1,22 @@
 {
-    "data.simple": [
-        "default"
+    "data.default":["default"],
+    "data.space.publicidad": [
+        "access","account","ads","default","navigation","publicity"
     ],
-    "data.simple.enter.data.review": [
-        "default"
+    "data.static.layer": [
+        "main"
     ],
-    "data.hell.enter.numbers": [
-        "default"
+    "data.static.set": [
+        "main"
     ],
-    "data.heaven.enter.numbers": [
-        "default",
-        "como"
+    "data.static.space": [
+        "main"
+    ],
+    "data.model.rule":[
+        "general"
+    ],
+    "data.model.system":[
+        "base"
     ]
+    
 }

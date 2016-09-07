@@ -11,13 +11,15 @@
        "dynamic":{
            "cache":["data.set"],
            "space":["data.space.publicidad.default"],
-           "set":["data.default.default"],
+           "set":["data.default.default","data.default.store"],
+           "operations":["data.operations.sets.default"],
            "actions":["data.model.rule.general"]
            
                 },
        "static":{
            "layers":["data.static.main"],
            "set":["data.static.set.main"],
+           "operations":["data.static.operations.default"],
            "space":["data.static.space"]
                }
       }

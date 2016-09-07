@@ -23,6 +23,8 @@ class app_dns {
     public $session;
     public $baseURL;
     public $currentURL;
+    public $listen = array();
+    public $format;
    
     
     //put your code here
@@ -31,6 +33,8 @@ class app_dns {
     $this->hash = $string;     
     
     $this->Action();
+    
+    $this->Listen();
     
     
     }
@@ -113,6 +117,40 @@ class app_dns {
     }
     
     
+    public function LISTEN(){
+        
+    
+        
+        foreach($_GET as $key=>$value){
+            
+            if($this->IS_JSON($value)){
+                
+                $_GET[$key] =  json_decode($value);
+                
+            }
+            
+            if($key=='format'){
+                
+                if($value=='json'){
+                   
+                    $this->format = 'json';
+                    
+                }else{
+                    $this->format = 'html';
+                }
+                
+            }
+            
+            
+        }
+        
+        
+       $this->listen = $_GET;
+        
+        
+    }
+    
+    
     public function STRING_TO_JSON(){
         
         
@@ -142,6 +180,11 @@ class app_dns {
         
         
     }
+    
+    public function IS_JSON($string) {
+     json_decode($string);
+     return (json_last_error() == JSON_ERROR_NONE);
+   }
  
        
 }
