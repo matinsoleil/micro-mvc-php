@@ -27,6 +27,9 @@ class app_model {
     }
     
     
+
+    
+    
     public function SET_VARIABLES($variables,$key=''){
      
         

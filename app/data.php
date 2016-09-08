@@ -21,6 +21,13 @@ class app_data {
     public $step;
     public $currentStep='';
     public $sets = array();
+    public $union = array();
+    public $intersection = array();
+    public $difference = array();
+    public $complement = array();
+    public $symetric_difference = array();
+    public $cartesian_product = array();
+    public $power_set = array();
             
     public function __construct(app_redis $cache,app_hard $hard,app_soft $soft,app_model $model,app_type $type,app_load $network,app_dns $dns) {
   
@@ -101,7 +108,7 @@ class app_data {
                  $this->step['dynamic'][$key][$num] = $this->hard->GET_ENTITY_VALUE($action);
                  
                  if($key =='set'){
-                 $this->sets[$num] = $action;
+                 $this->sets['dynamic'][$num] = $action;
                  }
                  
               }else{
@@ -121,6 +128,9 @@ class app_data {
             
                if(!is_array($action)){
                  $this->step['static'][$key][$num] = $this->hard->GET_ENTITY_VALUE($static);
+                if($key =='set'){
+                 $this->sets['static'][$num] = $static;
+                 }
                }else{
                  $this->step['static'][$key][$num] = $static;  
                }
@@ -149,53 +159,59 @@ class app_data {
    
     foreach($this->step['dynamic']['operations'] as $key=>$set){
         
-           echo "<pre>";
-           var_dump($set);
-           echo "</pre>";
+ 
+           foreach($set as $name_set=>$process_set){
+               
+                  $this->RULES_SETS($process_set);
+               
+           }
         
     }
    
    
+ 
+    
+    
    
-   echo "<pre>";
-   var_dump($this->sets);
-   echo "</pre>";
+   //echo "<pre>";
+   //var_dump($this->sets);
+   //echo "</pre>";
    
    //$this->model->SET_VARIABLES($getSet);
    
    
-   $union = array();
+//   $union = array();
+//   
+//   
+//   foreach($this->step['dynamic']['set'] as $key=>$set){
+//       
+//        
+//       foreach($set as $key=>$st){
+//           
+//           if(isset($union[$key])){
+//             $before = $union[$key];
+//             
+//             $after =  array_merge($before,$st);
+//             
+//            $union[$key] = $after;
+//           }else{
+//               
+//             $union[$key] = $st; 
+//               
+//               
+//           }
+//           
+//           
+//       }
+//       
+//       
+//       
+//   }
    
    
-   foreach($this->step['dynamic']['set'] as $key=>$set){
-       
-        
-       foreach($set as $key=>$st){
-           
-           if(isset($union[$key])){
-             $before = $union[$key];
-             
-             $after =  array_merge($before,$st);
-             
-            $union[$key] = $after;
-           }else{
-               
-             $union[$key] = $st; 
-               
-               
-           }
-           
-           
-       }
-       
-       
-       
-   }
-   
-   
-   echo "<pre>";
-   var_dump($union);
-   echo "</pre>";
+   //echo "<pre>";
+   //var_dump($union);
+   //echo "</pre>";
    
    //$this->model->DIAGRAM($getMap);
     
@@ -297,6 +313,87 @@ class app_data {
    //var_dump($result);
    
    
+    }
+    
+    
+    public function RULES_SETS($rules){
+        
+        
+             $this->IN_SET($rules);
+         
+        
+    }
+    
+    
+    public function IN_SET($rules){
+        
+//        echo "<pre>";
+//         var_dump($rules);
+//        echo "</pre>"; 
+        
+          $_sets_in_operation = array();
+          $type ='union';
+          
+          foreach($rules as $key=>$instructions){
+              
+              if($key==0){
+                  $type = $instructions;
+              }else{
+                  if(is_array($instructions)){
+                     $this->IN_SET($instructions);
+                  }else{
+                     $_sets_in_operation[$key]=$instructions; 
+                  }
+              }
+              
+          }
+          
+
+          
+          
+          
+          if($type=='union'){
+              
+              $this->SET_UNION($_sets_in_operation);
+              
+          }
+          
+          
+          if($type=='difference'){
+              
+              $this->SET_DIFFERENCE($_sets_in_operation);
+              
+          }
+          
+          
+        
+        
+    }
+    
+    
+    
+    
+    public function SET_UNION($sets){
+    
+         
+          //var_dump($sets);
+        
+        
+    }
+    
+    
+    
+    
+    
+    public function SET_DIFFERENCE($sets){
+        
+        
+          var_dump($this->sets);
+         
+          var_dump($sets);
+        
+        
+        
     }
     
   
