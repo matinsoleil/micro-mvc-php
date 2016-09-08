@@ -20,6 +20,7 @@ class app_data {
     public $dns;
     public $step;
     public $currentStep='';
+    public $sets = array();
             
     public function __construct(app_redis $cache,app_hard $hard,app_soft $soft,app_model $model,app_type $type,app_load $network,app_dns $dns) {
   
@@ -96,9 +97,12 @@ class app_data {
         foreach($actions as $num=>$action){
             
               if(!is_array($action)){
-                  
+           
                  $this->step['dynamic'][$key][$num] = $this->hard->GET_ENTITY_VALUE($action);
-              
+                 
+                 if($key =='set'){
+                 $this->sets[$num] = $action;
+                 }
                  
               }else{
                   $this->step['dynamic'][$key][$num] = $actions;   
@@ -143,10 +147,18 @@ class app_data {
    
  
    
+    foreach($this->step['dynamic']['operations'] as $key=>$set){
+        
+           echo "<pre>";
+           var_dump($set);
+           echo "</pre>";
+        
+    }
+   
    
    
    echo "<pre>";
-   var_dump($this->step['dynamic']['operations']);
+   var_dump($this->sets);
    echo "</pre>";
    
    //$this->model->SET_VARIABLES($getSet);
