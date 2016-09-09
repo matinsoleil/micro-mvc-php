@@ -11,7 +11,7 @@
        "dynamic":{
            "cache":["data.set"],
            "space":["data.space.publicidad.default"],
-           "set":["data.default.default","data.default.store"],
+           "set":["data.default.default","data.default.store","data.default.service"],
            "operations":["data.operations.sets.default"],
            "actions":["data.model.rule.general"]
            

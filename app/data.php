@@ -21,6 +21,7 @@ class app_data {
     public $step;
     public $currentStep='';
     public $sets = array();
+    public $key_sets = array();
     public $union = array();
     public $intersection = array();
     public $difference = array();
@@ -385,18 +386,96 @@ class app_data {
     public function SET_DIFFERENCE($sets){
         
         
-          echo "<pre>";
-          var_dump($this->step['dynamic']['set']);
-          echo "</pre>";
+          $difference =  array();
+          $sets_differences = array();         
+          $sets_keys = array();
           
-          echo "<pre>";
-          var_dump($this->sets['dynamic']);
-          echo "</pre>";
+          
+          foreach($sets as $set){
+              
+                foreach($this->sets['dynamic'] as $key=>$set_entity){
+                    
+                       if($set==$set_entity){
+                           
+                          $sets_differences[] =$this->step['dynamic']['set'][$key];
+                           
+                       }
+                    
+                }
+              
+          }
          
-          echo "<pre>";
-          var_dump($sets);
-          echo "</pre>";
+          
+          
+          $this->KEY_SET($sets_differences);
+ 
+          
+     
+          
+          
+          foreach($this->key_sets as $set_key){
+              
+             $keys = explode('.',$set_key);
+              
+          
+             
+             array_shift($keys);
+              
+             
+             $real_set_key = implode('.',$keys);
+             
+             echo "<pre>";
+             var_dump($real_set_key);
+             echo "</pre>";
+          }
+          
+      
+    }
+    
+    
+    
+    
+    
+    
+    public function KEY_SET($sets_differences,$KEY=''){
         
+                 //echo "<pre>";
+                 //var_dump($sets_differences);
+                 //echo "</pre>";
+        
+                 foreach($sets_differences as $key=>$differences){
+              
+                     
+                    
+                    
+                   if(is_array($differences)){
+                       
+                       if($KEY===''){
+                       $this->KEY_SET($differences,$key);
+                       }
+                       else{
+                        $this->KEY_SET($differences,$KEY.'.'.$key);    
+                       }
+                       
+                   }else{
+                       if($KEY===''){
+                       $this->key_sets[] = $key;
+                       
+                       }else{
+                       $this->key_sets[]= $KEY.'.'.$key;
+                    
+                       }
+                       
+                   }
+                     
+                     
+                     //echo "<pre>";   
+                     //var_dump($differences);
+                     //echo "</pre>";
+                  
+              
+                  }
+
         
     }
     
