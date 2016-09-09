@@ -347,10 +347,7 @@ class app_data {
               }
               
           }
-          
-
-          
-          
+                  
           
           if($type=='union'){
               
@@ -388,10 +385,17 @@ class app_data {
     public function SET_DIFFERENCE($sets){
         
         
-          var_dump($this->sets);
+          echo "<pre>";
+          var_dump($this->step['dynamic']['set']);
+          echo "</pre>";
+          
+          echo "<pre>";
+          var_dump($this->sets['dynamic']);
+          echo "</pre>";
          
+          echo "<pre>";
           var_dump($sets);
-        
+          echo "</pre>";
         
         
     }
