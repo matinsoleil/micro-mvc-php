@@ -323,6 +323,9 @@ class app_data {
         
         
            $result_set = $this->IN_SET($rules);
+           
+           
+           var_dump($result_set);
          
         
     }
@@ -353,10 +356,7 @@ class app_data {
                   
           
           if($type=='union'){
-              
-              echo "<pre>";
-              var_dump($_sets_in_operation);
-              echo "</pre>";
+  
               
               
             $result_sets  =$this->SET_UNION($_sets_in_operation);
@@ -432,11 +432,7 @@ class app_data {
              
               
           }
-        
-          echo "<pre>";
-          var_dump($this->result_key);
-          echo "</pre>";
-          
+ 
           
           foreach($sets_union as $key=>$set_in_union){
               
@@ -463,9 +459,7 @@ class app_data {
           }
           
           
-          echo "<pre>";
-          var_dump($result_set);
-          echo "</pre>";
+ 
           
           $this->hard->SET_ENTITY_VALUE('data.default.union', $result_set);
           
@@ -559,9 +553,7 @@ class app_data {
             
           }
           
-          echo "<pre>";
-          var_dump($result_set);
-          echo "</pre>";
+
           
           $this->hard->SET_ENTITY_VALUE('data.default.difference', $result_set);
           
