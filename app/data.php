@@ -29,7 +29,9 @@ class app_data {
     public $symetric_difference = array();
     public $cartesian_product = array();
     public $power_set = array();
-            
+    public $result_key = array();
+    public $result_set = array();
+    
     public function __construct(app_redis $cache,app_hard $hard,app_soft $soft,app_model $model,app_type $type,app_load $network,app_dns $dns) {
   
   
@@ -320,7 +322,7 @@ class app_data {
     public function RULES_SETS($rules){
         
         
-             $this->IN_SET($rules);
+           $result_set = $this->IN_SET($rules);
          
         
     }
@@ -341,7 +343,7 @@ class app_data {
                   $type = $instructions;
               }else{
                   if(is_array($instructions)){
-                     $this->IN_SET($instructions);
+                     $_sets_in_operation[$key] = $this->IN_SET($instructions);
                   }else{
                      $_sets_in_operation[$key]=$instructions; 
                   }
@@ -352,18 +354,27 @@ class app_data {
           
           if($type=='union'){
               
-              $this->SET_UNION($_sets_in_operation);
+              echo "<pre>";
+              var_dump($_sets_in_operation);
+              echo "</pre>";
+              
+              
+            $result_sets  =$this->SET_UNION($_sets_in_operation);
               
           }
           
           
           if($type=='difference'){
               
-              $this->SET_DIFFERENCE($_sets_in_operation);
+           
+              
+             $result_sets =$this->SET_DIFFERENCE($_sets_in_operation);
               
           }
           
           
+          
+          return $result_sets;
         
         
     }
@@ -373,10 +384,93 @@ class app_data {
     
     public function SET_UNION($sets){
     
-         
-          //var_dump($sets);
+
         
+        $union = array();
         
+        $sets_union = array();
+        
+        $result_set = array();
+        
+    
+        
+        foreach($sets as $set){
+            
+            $sets_union[] =  $this->hard->GET_ENTITY_VALUE($set);
+            
+        }  
+        
+        $this->KEY_SET($sets_union);  
+        
+           foreach($this->key_sets as $set_key){
+              
+             $keys = explode('.',$set_key);
+              
+          
+             $value= $keys[0];
+             
+             array_shift($keys);
+              
+             
+             $real_set_key = implode('.',$keys);
+             
+  
+             
+             
+             if(!isset($this->union[$real_set_key])){
+             $this->union[$real_set_key]= 1;
+             }else{
+             $this->union[$real_set_key]= 1 + $this->union[$real_set_key];
+             }
+             
+          }
+          
+         foreach($this->union as $keys=>$uni){
+              
+            
+                 $this->result_key[]=$keys;
+             
+              
+          }
+        
+          echo "<pre>";
+          var_dump($this->result_key);
+          echo "</pre>";
+          
+          
+          foreach($sets_union as $key=>$set_in_union){
+              
+              
+                     foreach($this->result_key as $result){
+                         
+                                      $shards = explode('.',$result);
+                
+                $in_operation ='';
+                
+                foreach($shards as $shard){
+                    
+                   $in_operation .='["'.$shard.'"]';
+                    
+                    
+                }
+                     
+                     eval('if(isset($sets_union["'.$key.'"]'.$in_operation.')){  $result_set'.$in_operation.'  =$sets_union["'.$key.'"]'.$in_operation.';  }');
+           
+                
+                
+                     }
+              
+          }
+          
+          
+          echo "<pre>";
+          var_dump($result_set);
+          echo "</pre>";
+          
+          $this->hard->SET_ENTITY_VALUE('data.default.union', $result_set);
+          
+           return 'data.default.union';
+          
     }
     
     
@@ -389,47 +483,93 @@ class app_data {
           $difference =  array();
           $sets_differences = array();         
           $sets_keys = array();
+          $result_set = array();
           
-          
-          foreach($sets as $set){
-              
-                foreach($this->sets['dynamic'] as $key=>$set_entity){
-                    
-                       if($set==$set_entity){
+                 foreach($sets as $set){
                            
-                          $sets_differences[] =$this->step['dynamic']['set'][$key];
-                           
-                       }
-                    
-                }
-              
-          }
-         
+                       $sets_differences[] = $this->hard->GET_ENTITY_VALUE($set);  
+       
+                 }
           
           
           $this->KEY_SET($sets_differences);
  
-          
-     
-          
+       
           
           foreach($this->key_sets as $set_key){
               
              $keys = explode('.',$set_key);
               
           
+             $value= $keys[0];
              
              array_shift($keys);
               
              
              $real_set_key = implode('.',$keys);
              
-             echo "<pre>";
-             var_dump($real_set_key);
-             echo "</pre>";
+  
+             
+             
+             if(!isset($this->difference[$real_set_key])){
+             $this->difference[$real_set_key]= 1;
+             }else{
+             $this->difference[$real_set_key]= 1 + $this->difference[$real_set_key];
+             }
+             
           }
           
+          
+         
+          foreach($this->difference as $keys=>$diff){
+              
+              if($diff==1){
+                 $this->result_key[]=$keys;
+              }
+              
+          }
+          
+          
+       
       
+          
+          
+          foreach($sets_differences as $key=>$set_in_difference){
+              
+              foreach($this->result_key as $result){
+                  
+                $shards = explode('.',$result);
+                
+                $in_operation ='';
+                
+                foreach($shards as $shard){
+                    
+                   $in_operation .='["'.$shard.'"]';
+                    
+                    
+                }
+                
+                
+                eval('if(isset($sets_differences["'.$key.'"]'.$in_operation.')){  $result_set'.$in_operation.'  =$sets_differences["'.$key.'"]'.$in_operation.';  }');
+           
+                
+                  
+              }
+              
+            
+          }
+          
+          echo "<pre>";
+          var_dump($result_set);
+          echo "</pre>";
+          
+          $this->hard->SET_ENTITY_VALUE('data.default.difference', $result_set);
+          
+       
+                 
+                 
+          return 'data.default.difference';
+          
     }
     
     
@@ -510,6 +650,20 @@ public function _decode_string_array ($stringArray) {
     $s = unserialize(gzuncompress(stripslashes(base64_decode(strtr($stringArray, '-_,', '+/=')))));
     return $s;
 }
-    
+
+
+public function check_diff_multi($array1, $array2){
+    $result = array();
+    foreach($array1 as $key => $val) {
+        if(array_key_exists($key,$array2)){
+            if(is_array($val) && is_array($array2[$key]) && !empty($val)){
+                $result[$key] = $this->check_diff_multi($val, $array2[$key]);
+            }
+        } else {
+            $result[$key] = $val;
+        }
+    }
+    return $result;
+}
     //put your code here
 }

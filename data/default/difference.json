@@ -1,0 +1,23 @@
+{
+    "season": {
+        "1": "winter"
+    },
+    "skin": {
+        "1": "publicidad"
+    },
+    "ad": [
+        "openning"
+    ],
+    "media": {
+        "video": [
+            "start"
+        ],
+        "images": [
+            "a.jpg",
+            "b.jpg"
+        ]
+    },
+    "simple": {
+        "jose_juan": "rules"
+    }
+}
