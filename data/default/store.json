@@ -1,7 +1,7 @@
 {
-    "season": ["atum"],
-    "skin":["default","publicidad"],
-    "ad":["openning"],
+    "season": {"region":"australia"},
+    "skin":{"css":"default"},
+    "ad":{"opening":"openning"},
     "media":{"video":["start"],"images":["a.jpg","b.jpg"]},
     "simple":{"jose_juan":"rules"}
 }

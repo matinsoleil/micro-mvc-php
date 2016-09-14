@@ -1,13 +1,10 @@
 {
     "season": {
-        "1": "winter"
+        "climate": "winter"
     },
-    "skin": {
-        "1": "publicidad"
+    "ad": {
+        "opening": "openning"
     },
-    "ad": [
-        "openning"
-    ],
     "media": {
         "video": [
             "start"

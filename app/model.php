@@ -58,6 +58,8 @@ class app_model {
 //               
            }
             
+           
+           
             
         }
         
@@ -189,10 +191,7 @@ class app_model {
     }  
     
     public function TO_STRING($variables,$key_set=''){
-        
-           //echo "<pre>";
-           //var_dump($variables);
-           //echo "</pre>";
+ 
         
          foreach($variables as $key=>$value){
 
@@ -201,12 +200,15 @@ class app_model {
                  
                   
                    if(!is_numeric($key)){
+                  
                    eval("$".$key."='".$value."';");
                   
                    }else{
                   
+             
                    eval('if(!isset($'.$key_set.')){ $'.$key_set.'= array(); }');    
-                       
+                   
+              
                    eval("$".$key_set."[".$key."]='".$value."';");
                  
                    }

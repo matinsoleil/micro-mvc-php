@@ -1,4 +1,4 @@
 {
-    "season": ["atum","winter"],
-    "skin":["default"]
+    "season": {"region":"australia","climate":"winter"},
+    "skin":{"css":"default"}
 }

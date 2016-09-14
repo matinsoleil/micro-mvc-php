@@ -31,6 +31,9 @@ class app_data {
     public $power_set = array();
     public $result_key = array();
     public $result_set = array();
+    public $dynamic_sets = array();
+    public $static_sets = array();
+    public $process_sets = array();
     
     public function __construct(app_redis $cache,app_hard $hard,app_soft $soft,app_model $model,app_type $type,app_load $network,app_dns $dns) {
   
@@ -63,93 +66,41 @@ class app_data {
    $getMap = $this->GRAPH('data.model.system.base');
    
    
-   echo "<pre>";
-   var_dump($getMap);
-   echo "</pre>";
+   
+   $this->NODE_ACTION('data.model.system.base',0);
+   
+   ///echo "<pre>";
+   //var_dump($getMap);
+   //echo "</pre>";
    
    
    $stepName = '/';
   
-   foreach($getMap as $key=>$step){
-     
-    foreach($step['state']['name'] as $name){
+
    
-        if($this->dns->action==$name){
+       $this->dns->action;
            
-            $this->currentStep=$key;
-            break;
-        }      
-    }          
-       
-   }
+            $this->currentStep;
+
+   
+  
    
    
-   if($this->currentStep==''){
-       
-      $this->step = $getMap[0];
-       
-   }else{
-      $this->step = $getMap[$this->currentStep];
-       
-   }
+
+
    
    
- 
- 
+           $this->dns->listen;
    
-   foreach($this->step['state'] as $key=>$properties){
-       
-      
-        foreach($properties as $key=>$propertie){
-            
-           
-            $this->step['state'][$key]= $propertie;
-            
-            
-        }
-   
-       
-   }
-   
-   foreach($this->step['dynamic'] as $key=>$actions){
-       
-        foreach($actions as $num=>$action){
-            
-              if(!is_array($action)){
-           
-                 $this->step['dynamic'][$key][$num] = $this->hard->GET_ENTITY_VALUE($action);
-                 
-                 if($key =='set'){
-                 $this->sets['dynamic'][$num] = $action;
-                 }
-                 
-              }else{
-                  $this->step['dynamic'][$key][$num] = $actions;   
-              }
-        }
-       
-   }
-   
-   
-             $this->step['dynamic']['listen'] = $this->dns->listen;
-   
-   
-   foreach($this->step['static'] as $key=>$statics){
-       
-        foreach($statics as $num=>$static){
-            
-               if(!is_array($action)){
-                 $this->step['static'][$key][$num] = $this->hard->GET_ENTITY_VALUE($static);
-                if($key =='set'){
-                 $this->sets['static'][$num] = $static;
-                 }
-               }else{
-                 $this->step['static'][$key][$num] = $static;  
-               }
-        }
-       
-   }
-   
+    echo "<pre>";
+    var_dump($this->dynamic_sets);
+    echo "</pre>";
+    
+    
+    echo "<pre>";
+    var_dump($this->process_sets['a']);
+    echo "</pre>";
+    
    
 //   echo "<pre>";
 //   var_dump($this->step['dynamic']['set']);
@@ -169,24 +120,12 @@ class app_data {
    
  
    
-    echo "<pre>";
-    var_dump($this->step['dynamic']['operations']);
+   
+   
     
-    echo "</pre>";
    
    
-    foreach($this->step['dynamic']['operations'] as $key=>$set){
-        
- 
-           foreach($set as $name_set=>$process_set){
-               
-                  $this->RULES_SETS($process_set);
-               
-           }
-        
-    }
-   
-   
+
  
     
     
@@ -334,10 +273,102 @@ class app_data {
     }
     
     
+    public function NODE_ACTION($ENTITY_GRAPH,$NODE){
+        
+        $getMap =  $this->hard->GET_ENTITY_VALUE($ENTITY_GRAPH);
+        
+        
+        $this->model->SET_VARIABLES($this->dynamic_sets['a']);
+         
+        $ACTIONS = $getMap[$NODE]['dynamic']['actions'];
+        
+        foreach($ACTIONS as $ACTION){
+            
+            $ACTION_IN = $this->hard->GET_ENTITY_VALUE($ACTION);
+            
+            
+       
+                
+               $this->process_sets['a'] =  $this->model->IN_RULE($ACTION_IN['data'],$this->dynamic_sets['a']);
+                
+          
+          
+       
+          
+                
+         
+            
+        }
+        
+        
+    }
+    
+    
     public function GRAPH($ENTITY_GRAPH){
         
         
-        return  $this->hard->GET_ENTITY_VALUE($ENTITY_GRAPH);
+       $getMap =  $this->hard->GET_ENTITY_VALUE($ENTITY_GRAPH);
+       
+       $result_sets=array();
+       
+       foreach($getMap as $k=>$nodes){
+           
+              
+           $this->state[$nodes['state']['name'][0]] = $nodes['state'];
+           
+           
+           
+           foreach($nodes['dynamic']['sets'] as $operations){
+               
+               if(is_string($operations)){
+               $operation_sets = $this->hard->GET_ENTITY_VALUE($operations);
+               
+               foreach($operation_sets as $key=>$operation){
+                   
+                   
+                   $this->dynamic_sets[$key] = $this->RULES_SETS($operation);
+                   
+                   
+               }
+               
+               }else{
+               $operation_sets = $operations;    
+               }
+           }
+           
+           
+           
+           
+           
+           
+           
+         foreach($nodes['static']['sets'] as $operations){
+               
+               if(is_string($operations)){
+               $operation_sets = $this->hard->GET_ENTITY_VALUE($operations);
+               
+               foreach($operation_sets as $key=>$operation){
+                   
+                   
+                   $this->static_sets[$key] = $this->RULES_SETS($operation);
+                   
+                   
+               }
+               
+               }else{
+               $operation_sets = $operations;    
+               }
+           }
+           
+           
+           
+       }
+       
+       
+    
+    
+        return $getMap;
+        
         
     }
     
@@ -348,7 +379,7 @@ class app_data {
            $result_set = $this->IN_SET($rules);
            
            
-           var_dump($result_set);
+           return $this->hard->GET_ENTITY_VALUE($result_set);
          
         
     }
