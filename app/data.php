@@ -57,8 +57,17 @@ class app_data {
     //
     //echo "</pre>";
     
-   $getMap = $this->hard->GET_ENTITY_VALUE('data.model.system.base'); 
+
   
+   
+   $getMap = $this->GRAPH('data.model.system.base');
+   
+   
+   echo "<pre>";
+   var_dump($getMap);
+   echo "</pre>";
+   
+   
    $stepName = '/';
   
    foreach($getMap as $key=>$step){
@@ -159,6 +168,12 @@ class app_data {
    $result = $this->model->GET_LOGIC($getMath['equation']);
    
  
+   
+    echo "<pre>";
+    var_dump($this->step['dynamic']['operations']);
+    
+    echo "</pre>";
+   
    
     foreach($this->step['dynamic']['operations'] as $key=>$set){
         
@@ -316,6 +331,14 @@ class app_data {
    //var_dump($result);
    
    
+    }
+    
+    
+    public function GRAPH($ENTITY_GRAPH){
+        
+        
+        return  $this->hard->GET_ENTITY_VALUE($ENTITY_GRAPH);
+        
     }
     
     
