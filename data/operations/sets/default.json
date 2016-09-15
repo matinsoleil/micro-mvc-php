@@ -1,3 +1,4 @@
 {
-    "a":["union","data.default.default",["difference","data.default.service","data.default.store"]]
+    "a":["union","data.default.default",["difference","data.default.service","data.default.store"]],
+    "b":["union","data.default.service","data.default.store"]
 }

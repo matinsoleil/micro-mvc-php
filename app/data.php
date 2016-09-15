@@ -93,7 +93,7 @@ class app_data {
            $this->dns->listen;
    
     echo "<pre>";
-    var_dump($this->dynamic_sets);
+    var_dump($this->dynamic_sets['a']);
     echo "</pre>";
     
     
@@ -287,11 +287,12 @@ class app_data {
             $ACTION_IN = $this->hard->GET_ENTITY_VALUE($ACTION);
             
             
-       
+               foreach($ACTION_IN as $KEY=>$AXION){
                 
-               $this->process_sets['a'] =  $this->model->IN_RULE($ACTION_IN['data'],$this->dynamic_sets['a']);
-                
-          
+               if(isset($this->dynamic_sets[$KEY])){    
+               $this->process_sets[$KEY] =  $this->model->IN_RULE($AXION,$this->dynamic_sets[$KEY]);
+               } 
+               }
           
        
           
