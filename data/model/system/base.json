@@ -16,7 +16,7 @@
        "sets":["data.operations.sets.edit"],
        "actions":["data.model.rule.edit"],
        "input":["data.two.input"],
-       "output":["data.two.edit"],
+       "output":["data.two.output"],
        "model":["data.model.operations"]
       
   }    
