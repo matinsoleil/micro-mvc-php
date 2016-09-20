@@ -1,0 +1,10 @@
+{
+    "name": ["inicio","/"],
+    "status":["TRUE"],
+    "in":["inicio"],
+    "out":["inicio"],
+    "domain":["publicidad"],
+    "type":["html","json"]
+}
+        
+               

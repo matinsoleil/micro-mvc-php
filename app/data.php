@@ -67,7 +67,7 @@ class app_data {
    
    
    
-   $this->NODE_ACTION('data.model.system.base',0);
+   $this->NODE_ACTION('data.model.system.base',1);
    
    ///echo "<pre>";
    //var_dump($getMap);
@@ -78,7 +78,7 @@ class app_data {
   
 
    
-       $this->dns->action;
+     
            
             $this->currentStep;
 
@@ -90,15 +90,17 @@ class app_data {
 
    
    
-           $this->dns->listen;
+    
+    
+    
    
     echo "<pre>";
-    var_dump($this->dynamic_sets['a']);
+    var_dump($this->dynamic_sets['c']);
     echo "</pre>";
     
     
     echo "<pre>";
-    var_dump($this->process_sets['a']);
+    var_dump($this->process_sets['c']);
     echo "</pre>";
     
    
@@ -280,7 +282,7 @@ class app_data {
         
         $this->model->SET_VARIABLES($this->dynamic_sets['a']);
          
-        $ACTIONS = $getMap[$NODE]['dynamic']['actions'];
+        $ACTIONS = $getMap[$NODE]['actions'];
         
         foreach($ACTIONS as $ACTION){
             
@@ -300,7 +302,7 @@ class app_data {
          
             
         }
-        
+      
         
     }
     
@@ -314,12 +316,16 @@ class app_data {
        
        foreach($getMap as $k=>$nodes){
            
-              
-           $this->state[$nodes['state']['name'][0]] = $nodes['state'];
+ 
+            foreach($nodes['input'] as $listen){
+
+               $this->hard->SET_ENTITY_VALUE($listen, $this->dns->listen);
+               
+           }
            
            
            
-           foreach($nodes['dynamic']['sets'] as $operations){
+           foreach($nodes['sets'] as $operations){
                
                if(is_string($operations)){
                $operation_sets = $this->hard->GET_ENTITY_VALUE($operations);
@@ -338,28 +344,14 @@ class app_data {
            }
            
            
+  
            
            
            
            
            
-         foreach($nodes['static']['sets'] as $operations){
-               
-               if(is_string($operations)){
-               $operation_sets = $this->hard->GET_ENTITY_VALUE($operations);
-               
-               foreach($operation_sets as $key=>$operation){
-                   
-                   
-                   $this->static_sets[$key] = $this->RULES_SETS($operation);
-                   
-                   
-               }
-               
-               }else{
-               $operation_sets = $operations;    
-               }
-           }
+           
+
            
            
            
@@ -434,7 +426,12 @@ class app_data {
         
     }
     
-    
+    public function UPDATE_SET($ENTITY,$VALUE){
+        
+        
+        
+        
+    }
     
     
     public function SET_UNION($sets){

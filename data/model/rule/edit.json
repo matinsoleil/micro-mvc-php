@@ -1,0 +1,9 @@
+{
+ "c":["THEN",
+       [
+         "IF",["EQUAL","var1","var6"]  
+       ],
+       ["IS EQUAL","var1","var2"]
+ ]
+           
+}

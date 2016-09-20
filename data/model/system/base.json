@@ -1,24 +1,24 @@
 {
   "0":{
-      "state":{
-               "name":["inicio","/"],
-               "status":["TRUE"],
-               "in":["inicio"],
-               "out":["inicio"],
-               "domain":["publicidad"],
-               "type":["html","json"]
-               },
-       "dynamic":{
-           "cache":["data.set"],
-           "space":["data.space.publicidad.default"],
-           "sets":["data.operations.sets.default"],
-           "actions":["data.model.rule.general"]
-           
-                },
-       "static":{
-           "layers":["data.static.main"],
-           "sets":["data.static.operations.default"],
-           "space":["data.static.space"]
-               }
-      }
+       "state":["data.state.inicio"],
+       "cache":["data.set"],
+       "space":["data.space.publicidad.default"],
+       "sets":["data.operations.sets.default"],
+       "actions":["data.model.rule.general"],
+       "input":["data.one.input"],
+       "output":["data.one.output"],
+       "model":["data.model.operations"]
+      },
+  "1":{
+       "state":["data.state.edit"],
+       "cache":["data.set"],
+       "space":["data.space.publicidad.edit"],
+       "sets":["data.operations.sets.edit"],
+       "actions":["data.model.rule.edit"],
+       "input":["data.two.input"],
+       "output":["data.two.edit"],
+       "model":["data.model.operations"]
+      
+  }    
+
 }

@@ -1,0 +1,10 @@
+{
+    "name": ["edit"],
+    "status":["NULL"],
+    "in":["inicio"],
+    "out":["edit","inicio"],
+    "domain":["publicidad"],
+    "type":["html","json"]
+}
+        
+               

@@ -197,7 +197,7 @@ class app_model {
 
                if(is_string($value)){
                    
-                 
+                   
                   
                    if(!is_numeric($key)){
                   
@@ -205,12 +205,19 @@ class app_model {
                   
                    }else{
                   
-             
+                 
+                   
+                   if($key_set!==''){
                    eval('if(!isset($'.$key_set.')){ $'.$key_set.'= array(); }');    
                    
               
                    eval("$".$key_set."[".$key."]='".$value."';");
-                 
+                   }else{
+   
+                       
+                   eval("$".$value.'="'.$value.'";');    
+                   }
+                   
                    }
                    
                }else{
