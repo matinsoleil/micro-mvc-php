@@ -48,6 +48,7 @@ class app_data {
     
     
     $this->step = array();
+
   
     $data =   $this->hard->SCANING('data');
 
@@ -94,14 +95,14 @@ class app_data {
     
     
    
-    echo "<pre>";
-    var_dump($this->dynamic_sets['c']);
-    echo "</pre>";
+    //echo "<pre>";
+    //var_dump($this->dynamic_sets['c']);
+    //echo "</pre>";
     
     
-    echo "<pre>";
-    var_dump($this->process_sets['c']);
-    echo "</pre>";
+    //echo "<pre>";
+    //var_dump($this->process_sets['c']);
+    //echo "</pre>";
     
    
 //   echo "<pre>";
@@ -324,6 +325,8 @@ class app_data {
            }
            
            
+        
+           
            
            foreach($nodes['sets'] as $operations){
                
@@ -368,8 +371,13 @@ class app_data {
     
     public function RULES_SETS($rules){
         
+      
+        
         
            $result_set = $this->IN_SET($rules);
+           
+           
+                        
            
            
            return $this->hard->GET_ENTITY_VALUE($result_set);
@@ -400,10 +408,17 @@ class app_data {
               }
               
           }
+          
+          
+          
+          
+          $this->UPDATE_SETS($_sets_in_operation);
+        
                   
           
           if($type=='union'){
   
+            
               
               
             $result_sets  =$this->SET_UNION($_sets_in_operation);
@@ -420,18 +435,66 @@ class app_data {
           }
           
           
+        
           
           return $result_sets;
         
         
     }
     
-    public function UPDATE_SET($ENTITY,$VALUE){
-        
-        
+    
+    public function UPDATE_SETS($sets){
+       
+        foreach($sets as $set){
+            
+            $this->UPDATE_SET($set);
+           
+            
+        }
         
         
     }
+    
+    
+    
+    public function UPDATE_SET($ENTITY){
+        
+        
+      
+        
+         $_LISTEN_SET = $this->dns->listen;
+        
+     
+         
+         $ENTITY_POST = str_replace('.','_',$ENTITY);
+         
+         
+         if(isset($_LISTEN_SET[$ENTITY_POST])){
+             
+              $_SET = $this->hard->GET_ENTITY_VALUE($ENTITY);
+              
+              $_UPDATE_SET = $_LISTEN_SET[$ENTITY_POST];
+              
+            
+              
+             
+              $this->IN_VALUE($_UPDATE_SET);
+              
+         }
+        
+        
+    }
+    
+    
+    public function IN_VALUE($SET_IN){
+        
+        
+           echo "<pre>";
+           var_dump($SET_IN);
+           echo "</pre>";
+        
+    }
+    
     
     
     public function SET_UNION($sets){

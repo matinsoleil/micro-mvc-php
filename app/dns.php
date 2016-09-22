@@ -125,7 +125,7 @@ class app_dns {
             
             if($this->IS_JSON($value)){
                 
-                $_GET[$key] =  json_decode($value);
+                $_GET[$key] =  json_decode($value,true);
                 
             }
             
