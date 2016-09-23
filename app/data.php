@@ -474,11 +474,9 @@ class app_data {
               $_SET = $this->hard->GET_ENTITY_VALUE($ENTITY);
               
               $_UPDATE_SET = $_LISTEN_SET[$ENTITY_POST];
-              
-            
-              
+                                 
              
-              $this->IN_VALUE($_UPDATE_SET);
+              $this->IN_VALUE($_UPDATE_SET,$_SET);
               
          }
         
@@ -486,12 +484,17 @@ class app_data {
     }
     
     
-    public function IN_VALUE($SET_IN){
+    public function IN_VALUE($SET_UPDATE,$SET){
         
         
+           
+        
+          
+        
+
            echo "<pre>";
-           var_dump($SET_IN);
-           echo "</pre>";
+           var_dump($SET);
+           echo "</pre>";           
         
     }
     
