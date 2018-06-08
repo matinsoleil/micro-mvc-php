@@ -28,5 +28,17 @@ public $net;
 
 
     }
+    public function getNet($entity){
+
+    $net = (array) $this->net;
+
+    if(isset($net[$entity])){
+
+    return $net[$entity];
+    }else{
+    return array('error'=>'fail');
+    }
+
+    }
 }
 ?>
