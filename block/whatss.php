@@ -51,8 +51,8 @@ file_put_contents('./data/request.txt', $string);
 </span>
 <br>
 <span>
-<p>Mensaje</p>
-<input name="text" value="" />
+<p>Image</p>
+<input name="url" value="" />
 </span>
 <br>
 

@@ -2,15 +2,19 @@
 class factory
 {
 public $entity;
-public $net;
+public $net=array();
 public $set=array();
-function __construct($net,$entity) {
-$this->net=$net;
+public $action;
+function __construct($action,$entity) {
+
+
+$this->net['action']=$action;
+
 $entities = explode('.',$entity);
 foreach($entities as $key=>$entity){
 include('./factory/'.$entity.'.php');
 $this->set[$key]=$entity;
-eval('$this->'.$entity.'= new '.$entity.'($net);');
+eval('$this->net["'.$entity.'"]= new '.$entity.'($this->net);');
 }
 
 $this->follow();

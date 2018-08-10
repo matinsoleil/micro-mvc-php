@@ -51,6 +51,15 @@ class action{
 
    return $ipaddress;
  }
+
+public function direct($url){
+
+
+$map=array(array('id'=>'','model'=>'','view'=>''),array('id'=>'','model'=>'','view'=>''));
+
+return array('id'=>'','model'=>'','view'=>'');
+}
+
  public function data(){
 
    $method = $_SERVER['REQUEST_METHOD'];

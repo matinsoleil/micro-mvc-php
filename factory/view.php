@@ -7,18 +7,20 @@ public $net;
     }
     function render($entity){
 
-      $net = (array) $this->net;
+
+     $action=$this->net['action']->uri;
 
 
-
-     if($net['uri']==""){
+     if($action==""){
      $doc = new DOMDocument();
 
-     $doc->loadHTML("<html><body>Test<br></body></html>");
+     $doc->loadHTML("<html><body>Help Test<br></body></html>");
      echo $doc->saveHTML();
-       }elseif($net['uri']=="whatss"){
+       }elseif(isset($net['uri'])){
+        echo "here";
+        echo $net['uri'];
+        include('./block/'.$net['uri'].'.php');
 
-        include('./block/whatss.php');
 
      }else{
         include('./block/'.$entity.'.php');
