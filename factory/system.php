@@ -10,18 +10,22 @@ class system {
 
      $parameters  =  $this->net['action']->parameters;
 
+     $inputAttributes = $parameters["request"];
+
+     $inputType = $parameters["type"];
+
      $defaultAttribute = $this->read('attribute.default');
      $systemAttribute =  $this->read('attribute.system');
 
      $attributes = array_merge($defaultAttribute,$systemAttribute);
 
-
+     if(is_array($attributes)){
      foreach($attributes as $attribute){
 
+     //   var_dump($attribute);
 
      }
-
-
+     }
 
 
     }
@@ -35,5 +39,10 @@ class system {
 
     return $this->system;
     }
+
+    function listen(){
+
+    }
+
 }
 ?>

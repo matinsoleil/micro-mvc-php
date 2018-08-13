@@ -32,7 +32,6 @@ class action{
  }
  public function writeUrl(){}
  public function readUrl(){}
- public function redirect(){}
  public function getIP()
  {
    $ipaddress = '';
@@ -57,7 +56,6 @@ class action{
 public function rewrite($url){
 
 $urls=$this->read('url.rewrite');
-
 
 if(is_array($urls)){
 foreach($urls as $key=>$value){
@@ -92,12 +90,53 @@ public function read($entity){
 
 }
 
+ public function redirect($url,$permanent = false){
+
+    if (headers_sent() === false)
+    {
+    	header('Location: ' . $url, true, ($permanent === true) ? 301 : 302);
+    }
+    exit();
+
+ }
+
+ public function generateRandomString($length = 10) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+ }
+
+ public function cookie($uri){
+
+            if($uri=='admin'){
+                if (session_status() == PHP_SESSION_NONE) {
+                session_start();
+                $cookie_name = "key";
+                $key = $this->generateRandomString(12);
+                setcookie($cookie_name,$key,NULL, "/"); // 86400 = 1 day
+                $_SESSION['key'] = $key;
+                }
+            }else{
+                if (session_status() == PHP_SESSION_NONE) {
+                session_start();
+                $cookie_name = "key";
+                $key = $this->generateRandomString(12);
+                setcookie($cookie_name,$key,NULL, "/"); // 86400 = 1 day
+                $_SESSION['key'] = $key;
+                }
+
+            }
+}
 
 
  public function data(){
 
    $method = $_SERVER['REQUEST_METHOD'];
-   $request = explode("/", substr(@$_SERVER['PATH_INFO'], 1));
+$request = explode("/", substr(@$_SERVER['PATH_INFO'], 1));
 
  switch ($method) {
   case 'PUT':

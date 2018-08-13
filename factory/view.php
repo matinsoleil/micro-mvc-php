@@ -10,21 +10,11 @@ public $net;
 
      $action=$this->net['action']->uri;
 
-
-     if($action==""){
      $doc = new DOMDocument();
 
      $doc->loadHTML("<html><body>Help Test<br></body></html>");
      echo $doc->saveHTML();
-       }elseif(isset($net['uri'])){
-        echo "here";
-        echo $net['uri'];
-        include('./block/'.$net['uri'].'.php');
 
-
-     }else{
-        include('./block/'.$entity.'.php');
-     }
     }
     public function block($entity){
 
