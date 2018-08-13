@@ -6,7 +6,11 @@ error_reporting(E_ALL);
 include ('action.php');
 include ('factory.php');
 $action = new action();
+
 $action->getUrl();
-$start = new factory($action,'system.model.view');
+
+$module = $action->rewrite($action->uri);
+
+$start = new factory($action,$module['module']);
 
 ?>

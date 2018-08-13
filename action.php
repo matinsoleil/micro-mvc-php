@@ -10,6 +10,8 @@ class action{
  public $parameters = array();
  public $ip;
  public $entity;
+ public $module;
+ public $notfound;
 
  public function getUrl (){
 
@@ -52,13 +54,45 @@ class action{
    return $ipaddress;
  }
 
-public function direct($url){
+public function rewrite($url){
+
+$urls=$this->read('url.rewrite');
 
 
-$map=array(array('id'=>'','model'=>'','view'=>''),array('id'=>'','model'=>'','view'=>''));
+if(is_array($urls)){
+foreach($urls as $key=>$value){
 
-return array('id'=>'','model'=>'','view'=>'');
+   if($value["id"]==$url){
+   $this->module = $value;
+   }
+   if($value["id"]=="404"){
+   $this->notfound = $value;
+   }
+
+                   }
 }
+
+if($this->module!=NULL){
+return $this->module;
+}else{
+return $this->notfound;
+}
+
+}
+
+public function read($entity){
+
+
+    $entity=str_replace('.','/',$entity);
+    $str=file_get_contents("./".$entity.".json");
+
+    $this->system=json_decode($str,true);
+
+    return $this->system;
+
+}
+
+
 
  public function data(){
 

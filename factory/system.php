@@ -7,17 +7,23 @@ class system {
     $this->start();
     }
     function start(){
-    $data=$this->read('data.system');
+
+     $parameters  =  $this->net['action']->parameters;
+
+     $defaultAttribute = $this->read('attribute.default');
+     $systemAttribute =  $this->read('attribute.system');
+
+     $attributes = array_merge($defaultAttribute,$systemAttribute);
+
+
+     foreach($attributes as $attribute){
+
+
+     }
 
 
 
-    foreach($data as $key=>$box){
 
-         foreach($box as $key=>$pieze){
-            // var_dump($key);
-         }
-
-    }
     }
 
     function read($entity){

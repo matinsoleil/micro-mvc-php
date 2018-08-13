@@ -1,0 +1,10 @@
+{
+ "0":{
+     "id":"username",
+     "action":["register","login","manage","edit"],
+     },
+ "1":{
+     "id":"service",
+     "action":["respose","request"]
+     }
+}
