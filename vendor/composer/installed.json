@@ -1,0 +1,328 @@
+[
+    {
+        "name": "conekta/conekta-php",
+        "version": "v3.0.0",
+        "version_normalized": "3.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/conekta/conekta-php.git",
+            "reference": "2fa07fa75fc528ccbf33060322ad8efe85e6277f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/conekta/conekta-php/zipball/2fa07fa75fc528ccbf33060322ad8efe85e6277f",
+            "reference": "2fa07fa75fc528ccbf33060322ad8efe85e6277f",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "ext-json": "*",
+            "ext-mbstring": "*",
+            "php": ">=5.2"
+        },
+        "require-dev": {
+            "simpletest/simpletest": "*"
+        },
+        "time": "2016-11-16T18:54:14+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "lib/Conekta/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Conekta  and contributors",
+                "homepage": "https://github.com/conekta/conekta-php/contributors"
+            }
+        ],
+        "description": "Conekta PHP Library",
+        "homepage": "https://www.conekta.io/",
+        "keywords": [
+            "api",
+            "conekta",
+            "payment processing"
+        ]
+    },
+    {
+        "name": "sendgrid/php-http-client",
+        "version": "3.7.0",
+        "version_normalized": "3.7.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sendgrid/php-http-client.git",
+            "reference": "bec48e0e2e41331438ba7872805b86c45387178d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/sendgrid/php-http-client/zipball/bec48e0e2e41331438ba7872805b86c45387178d",
+            "reference": "bec48e0e2e41331438ba7872805b86c45387178d",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.4",
+            "squizlabs/php_codesniffer": "~2.0"
+        },
+        "time": "2017-05-05T06:15:41+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "SendGrid\\": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Matt Bernier",
+                "email": "dx@sendgrid.com"
+            },
+            {
+                "name": "Elmer Thomas",
+                "email": "elmer@thinkingserious.com"
+            }
+        ],
+        "description": "HTTP REST client, simplified for PHP",
+        "homepage": "http://github.com/sendgrid/php-http-client",
+        "keywords": [
+            "api",
+            "fluent",
+            "http",
+            "rest",
+            "sendgrid"
+        ]
+    },
+    {
+        "name": "sendgrid/sendgrid",
+        "version": "5.6.2",
+        "version_normalized": "5.6.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sendgrid/sendgrid-php.git",
+            "reference": "bed6a418706b09188fad2755de2e1c231ba74e69"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/sendgrid/sendgrid-php/zipball/bed6a418706b09188fad2755de2e1c231ba74e69",
+            "reference": "bed6a418706b09188fad2755de2e1c231ba74e69",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6",
+            "sendgrid/php-http-client": "~3.7"
+        },
+        "replace": {
+            "sendgrid/sendgrid-php": "*"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.*",
+            "squizlabs/php_codesniffer": "2.*"
+        },
+        "time": "2017-06-30T04:48:44+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "lib/SendGrid.php",
+                "lib/helpers/mail/Mail.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "This library allows you to quickly and easily send emails through SendGrid using PHP.",
+        "homepage": "http://github.com/sendgrid/sendgrid-php",
+        "keywords": [
+            "email",
+            "grid",
+            "send",
+            "sendgrid"
+        ]
+    },
+    {
+        "name": "facebook/graph-sdk",
+        "version": "5.6.1",
+        "version_normalized": "5.6.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/facebook/php-graph-sdk.git",
+            "reference": "2f9639c15ae043911f40ffe44080b32bac2c5280"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/facebook/php-graph-sdk/zipball/2f9639c15ae043911f40ffe44080b32bac2c5280",
+            "reference": "2f9639c15ae043911f40ffe44080b32bac2c5280",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^5.4|^7.0"
+        },
+        "require-dev": {
+            "guzzlehttp/guzzle": "~5.0",
+            "mockery/mockery": "~0.8",
+            "phpunit/phpunit": "~4.0"
+        },
+        "suggest": {
+            "guzzlehttp/guzzle": "Allows for implementation of the Guzzle HTTP client",
+            "paragonie/random_compat": "Provides a better CSPRNG option in PHP 5"
+        },
+        "time": "2017-08-16T17:28:07+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Facebook\\": "src/Facebook/"
+            },
+            "files": [
+                "src/Facebook/polyfills.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Facebook Platform"
+        ],
+        "authors": [
+            {
+                "name": "Facebook",
+                "homepage": "https://github.com/facebook/php-graph-sdk/contributors"
+            }
+        ],
+        "description": "Facebook SDK for PHP",
+        "homepage": "https://github.com/facebook/php-graph-sdk",
+        "keywords": [
+            "facebook",
+            "sdk"
+        ]
+    },
+    {
+        "name": "mongodb/mongodb",
+        "version": "1.1.2",
+        "version_normalized": "1.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/mongodb/mongo-php-library.git",
+            "reference": "a307dd60e71e1291c60927ea4f3a1905146063f5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/mongodb/mongo-php-library/zipball/a307dd60e71e1291c60927ea4f3a1905146063f5",
+            "reference": "a307dd60e71e1291c60927ea4f3a1905146063f5",
+            "shasum": ""
+        },
+        "require": {
+            "ext-mongodb": "^1.2.0",
+            "php": ">=5.4"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.8"
+        },
+        "time": "2017-02-16T18:40:32+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "MongoDB\\": "src/"
+            },
+            "files": [
+                "src/functions.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "Jeremy Mikola",
+                "email": "jmikola@gmail.com"
+            },
+            {
+                "name": "Hannes Magnusson",
+                "email": "bjori@mongodb.com"
+            },
+            {
+                "name": "Derick Rethans",
+                "email": "github@derickrethans.nl"
+            }
+        ],
+        "description": "MongoDB driver library",
+        "homepage": "https://jira.mongodb.org/browse/PHPLIB",
+        "keywords": [
+            "database",
+            "driver",
+            "mongodb",
+            "persistence"
+        ]
+    },
+    {
+        "name": "cloudinary/cloudinary_php",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/cloudinary/cloudinary_php.git",
+            "reference": "2800f0f1d53b4d7d4cc8c86bdba1d42bb4f3e6af"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/cloudinary/cloudinary_php/zipball/2800f0f1d53b4d7d4cc8c86bdba1d42bb4f3e6af",
+            "reference": "2800f0f1d53b4d7d4cc8c86bdba1d42bb4f3e6af",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "ext-json": "*",
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "5.7.*"
+        },
+        "time": "2017-06-20T13:15:14+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "classmap": [
+                "src"
+            ],
+            "files": [
+                "src/Helpers.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Cloudinary",
+                "homepage": "https://github.com/cloudinary/cloudinary_php/graphs/contributors"
+            }
+        ],
+        "description": "Cloudinary PHP SDK",
+        "homepage": "https://github.com/cloudinary/cloudinary_php",
+        "keywords": [
+            "cdn",
+            "cloud",
+            "cloudinary",
+            "image management",
+            "sdk"
+        ]
+    }
+]

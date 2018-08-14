@@ -1,11 +1,11 @@
 <?php
-class model
+include('data.php');
+
+class model extends data
 {
 public $entity;
 public $net;
-function __construct($net){
-$this->net=$net;
-}
+
 function setCollection(){}
 function getCollection(){}
 function popCollection(){}
