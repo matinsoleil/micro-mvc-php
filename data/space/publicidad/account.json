@@ -1,9 +1,0 @@
-{
-    "id":["key_name"],
-    "menu":["account","news","services","search","contacts","works"],
-    "account":["nick","type","name","second_name","about","password","new_password","status","state","payment","address","contact"],
-    "address":["street","number","internal_number","neighbor","city","county","state","country"],
-    "contact":["address","tel","mobile","url","social"],
-    "payment":["balance","card_type","card_number","card_name","valid","security_number","tax","total","status","state","bank","account_number","references"]
- 
-}
