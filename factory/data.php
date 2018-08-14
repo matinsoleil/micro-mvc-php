@@ -248,7 +248,7 @@ class data {
         }
     }
 
-    publid function SET_EAV($collection,$entity,$attribute,$value){
+    public function SET_EAV($collection,$entity,$attribute,$value){
     if($this->mongoActive){
      }
     }
