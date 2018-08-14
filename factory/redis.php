@@ -1,13 +1,13 @@
 <?php
 
-
 require ('./lib/redis/Autoloader.php');
 
-
-class app_redis {
+class redis {
 
     public $db;
     public $object;
+    public $hard;
+    public $directory = 0;
     public $numeric = 0;
     public $history;
     public $current = array();
@@ -25,23 +25,22 @@ class app_redis {
      *
      */
 
-    public function __construct() {
+    public function startCache() {
 
-        $keyhash = md5($data->hash);
-        $this->hash = $keyhash;
+
         $status = $this->getConnection();
 
+
         if($status){
+        $this->hard = FALSE;
 
         $redis = $this->db;
 
         if(!$redis->exists('data')){
-        $string = file_get_contents("./model/install/default/initial.json");
+        $string = '{"version":"start"}';
         $json= json_decode($string, true);
 
-        //echo "<pre>";
-        //var_dump($json);
-        //echo "</pre>";
+
         $this->setData('data',$json);
         }else{
         //$this->delete('data');
@@ -50,8 +49,34 @@ class app_redis {
         $object = $this->getData('data');
 
         $this->set = $object;
+        }else{
+        $this->hard = TRUE;
+         if($this->directory==0){
+         $this->directory = rand(1,20);
+         }
         }
-    }
+   }
+
+   public function getHard($entity){
+    $entity=str_replace('.','/',$entity);
+    $str=file_get_contents("./cache/".$this->directory."/".$entity.".json");
+    return json_decode($str,true);
+   }
+
+   public function setHard($entity,$object){
+    $entity=str_replace('.','/',$entity);
+    $pathFile="./cache/".$this->directory."/".$entity.".json";
+    $file = fopen($pathFile,"w");
+    $string = json_encode($object,JSON_PRETTY_PRINT);
+    fwrite($file,$string);
+    fclose($file);
+   }
+
+   public function deleteHard($entity){
+    $entity=str_replace('.','/',$entity);
+    $pathFile="./cache/".$this->directory."/".$entity.".json";
+    unlink($pathFile);
+   }
 
    public function getConnection() {
 
@@ -110,6 +135,9 @@ class app_redis {
      */
 
     public function getData($keyRedis){
+              if($this->hard==TRUE){
+                  return $this->getHard($keyRedis);
+              }
               if($this->redisActive){
               $redis =$this->db;
               $object = array();
@@ -230,7 +258,9 @@ class app_redis {
         */
 
     public function setData($KEY,$OBJECT){
-
+        if($this->hard==TRUE){
+             return $this->setHard($KEY,$OBJECT);
+        }
         $redis =$this->db;
 
         foreach($OBJECT as $key=>$data){
@@ -249,7 +279,9 @@ class app_redis {
     }
 
     public function delete($KEY){
-
+        if($this->hard==TRUE){
+        return $this->deleteHard($KEY);
+        }
         $redis = $this->db;
         $this->lookData($KEY);
         $deltes = $this->toLook;
@@ -258,6 +290,7 @@ class app_redis {
             $redis->del($delte);
 
         }
+
 
     }
 

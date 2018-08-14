@@ -7,91 +7,99 @@ namespace Composer\Autoload;
 class ComposerStaticInit691da471a852454d152ebd50227c6437
 {
     public static $files = array (
-        '3f8bdd3b35094c73a26f0106e3c0f8b2' => __DIR__ . '/..' . '/sendgrid/sendgrid/lib/SendGrid.php',
-        '9dda55337a76a24e949fbcc5d905a2c7' => __DIR__ . '/..' . '/sendgrid/sendgrid/lib/helpers/mail/Mail.php',
-        'c65d09b6820da036953a371c8c73a9b1' => __DIR__ . '/..' . '/facebook/graph-sdk/src/Facebook/polyfills.php',
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
         '3a37ebac017bc098e9a86b35401e7a68' => __DIR__ . '/..' . '/mongodb/mongodb/src/functions.php',
-        'c15243c55ab4c20eff78d1e24be20dac' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/Helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
         'S' => 
         array (
-            'SendGrid\\' => 9,
+            'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Component\\Translation\\' => 30,
+        ),
+        'P' => 
+        array (
+            'Psr\\SimpleCache\\' => 16,
+            'Psr\\Container\\' => 14,
         ),
         'M' => 
         array (
             'MongoDB\\' => 8,
         ),
-        'F' => 
+        'I' => 
         array (
-            'Facebook\\' => 9,
+            'Illuminate\\Support\\' => 19,
+            'Illuminate\\Events\\' => 18,
+            'Illuminate\\Database\\' => 20,
+            'Illuminate\\Contracts\\' => 21,
+            'Illuminate\\Container\\' => 21,
+        ),
+        'D' => 
+        array (
+            'Doctrine\\Common\\Inflector\\' => 26,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'SendGrid\\' => 
+        'Symfony\\Polyfill\\Mbstring\\' => 
         array (
-            0 => __DIR__ . '/..' . '/sendgrid/php-http-client/lib',
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Component\\Translation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/translation',
+        ),
+        'Psr\\SimpleCache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/simple-cache/src',
+        ),
+        'Psr\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/container/src',
         ),
         'MongoDB\\' => 
         array (
             0 => __DIR__ . '/..' . '/mongodb/mongodb/src',
         ),
-        'Facebook\\' => 
+        'Illuminate\\Support\\' => 
         array (
-            0 => __DIR__ . '/..' . '/facebook/graph-sdk/src/Facebook',
+            0 => __DIR__ . '/..' . '/illuminate/support',
+        ),
+        'Illuminate\\Events\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/events',
+        ),
+        'Illuminate\\Database\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/database',
+        ),
+        'Illuminate\\Contracts\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/contracts',
+        ),
+        'Illuminate\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/container',
+        ),
+        'Doctrine\\Common\\Inflector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
         ),
     );
 
-    public static $classMap = array (
-        'Cloudinary' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/Cloudinary.php',
-        'CloudinaryField' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/CloudinaryField.php',
-        'Cloudinary\\Api' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/Api.php',
-        'Cloudinary\\Api\\AlreadyExists' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/Api.php',
-        'Cloudinary\\Api\\AuthorizationRequired' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/Api.php',
-        'Cloudinary\\Api\\BadRequest' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/Api.php',
-        'Cloudinary\\Api\\Error' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/Api.php',
-        'Cloudinary\\Api\\GeneralError' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/Api.php',
-        'Cloudinary\\Api\\NotAllowed' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/Api.php',
-        'Cloudinary\\Api\\NotFound' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/Api.php',
-        'Cloudinary\\Api\\RateLimited' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/Api.php',
-        'Cloudinary\\Api\\Response' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/Api.php',
-        'Cloudinary\\AuthToken' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/AuthToken.php',
-        'Cloudinary\\Error' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/Uploader.php',
-        'Cloudinary\\PreloadedFile' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/PreloadedFile.php',
-        'Cloudinary\\Search' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/Search.php',
-        'Cloudinary\\Uploader' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/Uploader.php',
-        'Conekta\\Address' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/Address.php',
-        'Conekta\\ApiError' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/Error.php',
-        'Conekta\\AuthenticationError' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/Error.php',
-        'Conekta\\Card' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/Card.php',
-        'Conekta\\Charge' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/Charge.php',
-        'Conekta\\Conekta' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/Conekta.php',
-        'Conekta\\Customer' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/Customer.php',
-        'Conekta\\Error' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/Error.php',
-        'Conekta\\Event' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/Event.php',
-        'Conekta\\Lang' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/Lang.php',
-        'Conekta\\Log' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/Log.php',
-        'Conekta\\MalformedRequestError' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/Error.php',
-        'Conekta\\Method' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/Method.php',
-        'Conekta\\NoConnectionError' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/Error.php',
-        'Conekta\\Object' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/Object.php',
-        'Conekta\\ParameterValidationError' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/Error.php',
-        'Conekta\\Payee' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/Payee.php',
-        'Conekta\\PaymentMethod' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/PaymentMethod.php',
-        'Conekta\\Payout' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/Payout.php',
-        'Conekta\\PayoutMethod' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/PayoutMethod.php',
-        'Conekta\\Plan' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/Plan.php',
-        'Conekta\\ProcessingError' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/Error.php',
-        'Conekta\\Requestor' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/Requestor.php',
-        'Conekta\\Resource' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/Resource.php',
-        'Conekta\\ResourceNotFoundError' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/Error.php',
-        'Conekta\\Subscription' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/Subscription.php',
-        'Conekta\\Token' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/Token.php',
-        'Conekta\\Util' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/Util.php',
-        'Conekta\\Webhook' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/Webhook.php',
-        'Conekta\\WebhookLog' => __DIR__ . '/..' . '/conekta/conekta-php/lib/Conekta/WebhookLog.php',
+    public static $fallbackDirsPsr4 = array (
+        0 => __DIR__ . '/..' . '/nesbot/carbon/src',
+    );
+
+    public static $prefixesPsr0 = array (
+        'J' => 
+        array (
+            'Jenssegers\\Mongodb' => 
+            array (
+                0 => __DIR__ . '/..' . '/jenssegers/mongodb/src',
+            ),
+        ),
     );
 
     public static function getInitializer(ClassLoader $loader)
@@ -99,7 +107,8 @@ class ComposerStaticInit691da471a852454d152ebd50227c6437
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit691da471a852454d152ebd50227c6437::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit691da471a852454d152ebd50227c6437::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit691da471a852454d152ebd50227c6437::$classMap;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit691da471a852454d152ebd50227c6437::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit691da471a852454d152ebd50227c6437::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }

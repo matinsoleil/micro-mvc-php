@@ -5,7 +5,12 @@ class model extends data
 {
 public $entity;
 public $net;
+function __construct($net) {
+$this->net = $net;
+$this->startDataBase();
+$this->entity="match";
 
+}
 function setCollection(){}
 function getCollection(){}
 function popCollection(){}

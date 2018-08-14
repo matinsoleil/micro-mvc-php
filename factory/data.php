@@ -1,7 +1,6 @@
 <?php
 
 require 'vendor/autoload.php';
-
 use MongoDB\Driver\Manager;
 use MongoDB\Database;
 
@@ -22,8 +21,7 @@ class data {
     private $weight = array();
     public $error;
 
-    public function __construct() {
-        
+    public function startDataBase() {
         if (isset($_SERVER['SERVER_ADDR'])) {
             $currentHost = $_SERVER['SERVER_ADDR'];
         } else {
@@ -42,7 +40,7 @@ class data {
                     "port"=>"53123",
                     "database"=>"heroku_6fn1b5km",
                     "username"=>"general",
-                    "password"=>"papa700"  
+                    "password"=>"papa700" 
             )
         );
         if ($currentHost == '127.0.0.1') {
@@ -120,6 +118,7 @@ class data {
     }
 
     public function COLLECTIONS($database) {
+        if($this->mongoActive){
         try {
             if ($this->mongoActive) {
                 $dbname = $this->DB;
@@ -134,77 +133,64 @@ class data {
         } catch (Error $e) {
             return array("exist" => "false");
         }
-    }
-
-    public function GET_INDEX($DATABASE, $ENTITY) {
-        $COLLECTION = (new MongoDB\Client)->$DATABASE->$ENTITY;
-        foreach ($COLLECTION->listIndexes() as $index) {
-            var_dump($index);
         }
     }
 
-    public function ENTITY($entity) {
-        
+    public function GET_INDEX($DATABASE, $ENTITY) {
+          if($this->mongoActive){
+            $COLLECTION = (new MongoDB\Client)->$DATABASE->$ENTITY;
+            foreach ($COLLECTION->listIndexes() as $index) {
+            var_dump($index);
+            }
+         }
     }
 
-    public function SET($entity, $variables) {
-        
+    public function GET_VARIABLE($variable) {
+           if($this->mongoActive){
+           }
+    }
+
+    public function SET_VARIABLE($variable,$value) {
+           if($this->mongoActive){
+           }
     }
 
     public function GET($collection,$entity, $value) {
+        if($this->mongoActive){
         $filter = [$entity=>$value];
-$options = [];
-$query = new MongoDB\Driver\Query($filter, $options);
- $manager = $this->DB;
- $database = $this->host['database'];
-$rows = $manager->executeQuery($database.'.'.$collection, $query); // $mongo contains the connection object to MongoDB
- $result = iterator_to_array($rows);
-$result = json_decode(json_encode($result), True);
- 
- return $result;
+	$options = [];
+	$query = new MongoDB\Driver\Query($filter, $options);
+	$manager = $this->DB;
+	$database = $this->host['database'];
+	$rows = $manager->executeQuery($database.'.'.$collection, $query); // $mongo contains the connection object to MongoDB
+	$result = iterator_to_array($rows);
+	$result = json_decode(json_encode($result), True);
+	return $result;
+        }
+    }
 
-    }
-    
-    
-    
-   
-    
     public function GET_COLLECTIONS(){
-        
-        
-        
-        
+       if($this->mongoActive){
+       }
     }
-    
-    
+
     public function SET_COLLECTIONS(){
-        
-        
-        
+      if($this->mongoActive){
+       }
     }
-    
-    
-    public function GET_VARIABLE(){
-        
-        
-        
+
+    public function GET_VARIABLES($entity){
+      if($this->mongoActive){
+       }
     }
-    
-    
-    public function SET_VARIABLE(){
-        
-        
-        
+    public function SET_VARIABLES($entity,$variables){
+      if($this->mongoActive){
+      }
     }
-    
-    
-    
-    
-    
-    
+
     public function GET_ENTITIES($collection,$attribute){
-        
-                $filter = ['attribute'=>$attribute];
+        if($this->mongoActive){
+        $filter = ['attribute'=>$attribute];
         $options = [];
         $query = new MongoDB\Driver\Query($filter, $options);
         $manager = $this->DB;
@@ -212,19 +198,13 @@ $result = json_decode(json_encode($result), True);
         $rows = $manager->executeQuery($database.'.'.$collection, $query); // $mongo contains the connection object to MongoDB
         $result = iterator_to_array($rows);
         $result = json_decode(json_encode($result), True);
- 
         unset($result[0]['_id']);
-        
         return $result[0];
-        
-        
+        }
     }
-    
-    
+
     public function GET_VALUES($collection,$variable,$value){
-        
-       
-        
+        if($this->mongoActive){
         $filter = ['entity'=>'store'];
         $options = [];
         $query = new MongoDB\Driver\Query($filter, $options);
@@ -233,20 +213,13 @@ $result = json_decode(json_encode($result), True);
         $rows = $manager->executeQuery($database.'.'.$collection, $query); // $mongo contains the connection object to MongoDB
         $result = iterator_to_array($rows);
         $result = json_decode(json_encode($result), True);
- 
-        
         unset($result[0]['_id']);
-        
         return $result[0];
-        
-        
+        }
     }
-    
-    
-    
+
     public function GET_ATTRIBUTES($collection,$entity){
-        
-        
+        if($this->mongoActive){
         $filter = ['entity'=>$entity];
         $options = [];
         $query = new MongoDB\Driver\Query($filter, $options);
@@ -255,17 +228,13 @@ $result = json_decode(json_encode($result), True);
         $rows = $manager->executeQuery($database.'.'.$collection, $query); // $mongo contains the connection object to MongoDB
         $result = iterator_to_array($rows);
         $result = json_decode(json_encode($result), True);
- 
         unset($result[0]['_id']);
-        
         return $result[0];
-        
-        
+        }
     }
-    
-    public function EAV($collection,$entity,$attribute){
-        
-        
+
+    public function GET_EAV($collection,$entity,$attribute){
+        if($this->mongoActive){
         $filter = ['attribute'=>$attribute,'entity'=>$entity];
         $options = [];
         $query = new MongoDB\Driver\Query($filter, $options);
@@ -274,40 +243,38 @@ $result = json_decode(json_encode($result), True);
         $rows = $manager->executeQuery($database.'.'.$collection, $query); // $mongo contains the connection object to MongoDB
         $result = iterator_to_array($rows);
         $result = json_decode(json_encode($result), True);
- 
         unset($result[0]['_id']);
-        
         return $result[0];
-        
-        
+        }
     }
-    
-    
-    public function GET_AND($collection,$entities){
-        
- // $filter = ['$and'=>array(array('state'=>'Distrito Federal'),array($entity=>$value))];
-        
-         $filter = ['$and'=>$entities];
-        
-$options = [];
-$query = new MongoDB\Driver\Query($filter, $options);
- $manager = $this->DB;
- $database = $this->host['database'];
-$rows = $manager->executeQuery($database.'.'.$collection, $query); // $mongo contains the connection object to MongoDB
- $result = iterator_to_array($rows);
-$result = json_decode(json_encode($result), True);
- 
- return $result;
-        
-    }
-    
-    
 
-    public function COLLECTION($entity) {
+    publid function SET_EAV($collection,$entity,$attribute,$value){
+    if($this->mongoActive){
+     }
+    }
+
+    public function GET_AND($collection,$entities){
+         if($this->mongoActive){
+         // $filter = ['$and'=>array(array('state'=>'Distrito Federal'),array($entity=>$value))];
+         $filter = ['$and'=>$entities];
+         $options = [];
+         $query = new MongoDB\Driver\Query($filter, $options);
+         $manager = $this->DB;
+         $database = $this->host['database'];
+         $rows = $manager->executeQuery($database.'.'.$collection, $query); // $mongo contains the connection object to MongoDB
+         $result = iterator_to_array($rows);
+         $result = json_decode(json_encode($result), True);
+         return $result;
+         }
+    }
+
+
+    public function COLLECTION($collection) {
+      if($this->mongoActive){
         $result = array("error" => "TRUE");
         $manager = $this->DB;
         $collections = $this->COLLECTIONS($this->host["database"]);
-        if (in_array($entity, $collections)) {
+        if (in_array($collection, $collections)) {
             $query = new MongoDB\Driver\Query([], []);
             $database = $this->host['database'];
             $rows = $manager->executeQuery($database . "." . $entity, $query);
@@ -317,19 +284,20 @@ $result = json_decode(json_encode($result), True);
                 $result = array("error" => "empty");
             }
             return $result;
-        } else {
-            if ($this->mongoActive) {
-// $command = new MongoDB\Driver\Command([
-//  "create" => $entity
-//  ]);
-// $result = $manager->executeCommand("veterinarica", $command);
-// $result = array("error"=>"created");
-            }
+         } else {
+
+            $command = new MongoDB\Driver\Command([
+            "create" => $collection
+            ]);
+            $result = $manager->executeCommand($database, $command);
+            $result = array("error"=>"created");
             return $result;
-        }
+         }
+      }
     }
 
-    public function PUSH($collectionId, $entities = array()) {
+    public function PUSH($collection, $entities = array()) {
+        if($this->mongoActive){
         $response = array();
         $bulk = new MongoDB\Driver\BulkWrite(['ordered' => true]);
         foreach ($entities as $entity) {
@@ -338,7 +306,7 @@ $result = json_decode(json_encode($result), True);
         $manager = $this->DB;
         $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 1000);
         try {
-            $result = $manager->executeBulkWrite($this->host['database'] . '.' . $collectionId, $bulk, $writeConcern);
+            $result = $manager->executeBulkWrite($this->host['database'] . '.' . $collection, $bulk, $writeConcern);
         } catch (MongoDB\Driver\Exception\BulkWriteException $e) {
             $result = $e->getWriteResult();
             if ($writeConcernError = $result->getWriteConcernError()) {
@@ -354,9 +322,11 @@ $result = json_decode(json_encode($result), True);
         $response["result"] = $result->getInsertedCount();
         $response["total"] = $result->getModifiedCount();
         return $response;
+        }
     }
 
-    public function POP($collectionId, $entitiesIds = array()) {
+    public function POP($collection, $entitiesIds = array()) {
+        if($this->mongoActive){
         $pop = null;
         $filter = array();
         $options = [];
@@ -365,17 +335,18 @@ $result = json_decode(json_encode($result), True);
             $filter = ['id' => $ids];
             $query = new MongoDB\Driver\Query($filter, $options);
             $database = $this->host['database'];
-            $rows = $manager->executeQuery($database . "." . $collectionId, $query); // $mongo contains the connection object to MongoDB
+            $rows = $manager->executeQuery($database . "." . $collection, $query); // $mongo contains the connection object to MongoDB
             $array = json_decode(json_encode($rows), True);
             foreach ($rows as $r) {
                 $pop[] = json_decode(json_encode($r), True);
             }
         }
         return $pop;
+        }
     }
 
-    public function SEARCH($collectionId, $variable = "word", $like, $num, $page) {
-       
+    public function SEARCH($collection, $variable = "word", $like, $num, $page) {
+        if($this->mongoActive){
         $like = str_replace(array('/'), array('.'), $like);
         $limit = $num;
         $skip = ($page - 1) * $limit;
@@ -385,12 +356,10 @@ $result = json_decode(json_encode($result), True);
         $filter = array($variable => $regex);
         $options = ["sort" => array($variable => 1), "skip" => $skip, "limit" => $limit];
         $query = new MongoDB\Driver\Query($filter, $options);
-        
-        $rows = $manager->executeQuery($database . "." . $collectionId, $query); // $mongo contains the connection object to MongoDB
+        $rows = $manager->executeQuery($database . "." . $collection, $query); // $mongo contains the connection object to MongoDB
         $rows = iterator_to_array($rows);
-        $command = new \MongoDB\Driver\Command(['count' => $collectionId, 'query' => $filter]);
+        $command = new \MongoDB\Driver\Command(['count' => $collection, 'query' => $filter]);
         $total = $manager->executeCommand($database, $command);
-     
         $total = iterator_to_array($total);
         $total = (array) $total[0];
         $total["page"] = $page;
@@ -401,7 +370,6 @@ $result = json_decode(json_encode($result), True);
         array_unshift($rows, $total);
         $total = json_decode(json_encode($rows), True);
         return $total;
+        }
     }
-
 }
-

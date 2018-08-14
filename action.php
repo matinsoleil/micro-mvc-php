@@ -26,11 +26,21 @@ class action{
  $uri = $_SERVER['REQUEST_URI'];
  $uri= ltrim($uri, '/');
  $_uri= explode('?',$uri);
+
  $this->uri = $_uri[0];
  $this->parameters= $this->data();
  $this->ip=$this->getIP();
  }
- public function writeUrl(){}
+
+public function reservado($uri){
+$reserv = array("data","factory","eav","entity","cache","history","attribute","block","js","style","lib","url","vendor","nbproject");
+if(in_array($uri,$reserv)){
+ http_response_code(404);
+ include('404.php');
+ die();
+}
+
+}
  public function readUrl(){}
  public function getIP()
  {
@@ -80,15 +90,23 @@ return $this->notfound;
 
 public function read($entity){
 
-
     $entity=str_replace('.','/',$entity);
     $str=file_get_contents("./".$entity.".json");
-
     $this->system=json_decode($str,true);
-
     return $this->system;
 
 }
+
+public function write($entity,$object){
+
+    $entity=str_replace('.','/',$entity);
+    $pathFile="./".$entity.".json";
+    $file = fopen($pathFile,"w");
+    $string = json_encode($object,JSON_PRETTY_PRINT);
+    fwrite($file,$string);
+    fclose($file);
+}
+
 
  public function redirect($url,$permanent = false){
 

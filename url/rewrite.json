@@ -9,7 +9,7 @@
    "id":"request",
    "type":"200",
    "canonical":"request",
-   "module":"system.model.json"
+   "module":"system.trigger.api"
    },
 "2":{
    "id":"response",
@@ -40,6 +40,5 @@
   "type":"200",
   "canonical":"store",
   "module":"system.model.view"
-
   }
 }

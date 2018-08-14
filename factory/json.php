@@ -1,5 +1,6 @@
 <?php
-class json {
+include('redis.php');
+class json extends redis {
 public $net;
     function __construct($net) {
     $this->net=$net;
@@ -10,7 +11,7 @@ public $net;
 
      $action=$this->net['action']->uri;
 
-     $data = array("id"=>"-1","response"=>"ok");
+     $data = array("id"=>"2","request"=>"true");
      header('Content-Type: application/json');
      echo json_encode($data);
 
