@@ -1,0 +1,45 @@
+{
+"0":{
+   "id":"",
+   "type":"200",
+   "canonical":"",
+   "module":"system.model.view"
+   },
+"1":{
+   "id":"request",
+   "type":"200",
+   "canonical":"request",
+   "module":"system.model.json"
+   },
+"2":{
+   "id":"response",
+   "type":"200",
+   "canonical":"response",
+   "module":"system.model.json"
+   },
+"3":{
+   "id":"404",
+   "type":"404",
+   "canonical":"404",
+   "module":"system.model.not"
+   },
+"4":{
+   "id":"service",
+   "type":"200",
+   "canonical":"service",
+   "module":"system.service.json"
+   },
+"5":{
+   "id":"blockHeaderDefault",
+   "type":"200",
+   "canonical":"blockHeaderDefault",
+   "module":"system.model.header"
+  },
+"6":{
+  "id":"store",
+  "type":"200",
+  "canonical":"store",
+  "module":"system.model.view"
+
+  }
+}
