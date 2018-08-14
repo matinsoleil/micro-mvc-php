@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html  lang="es-ES">
+<head id="Head">
+<!--*********************************************-->
+<!-- DNN Platform - http://www.dnnsoftware.com   -->
+<!-- Copyright (c) 2002-2018, by DNN Corporation -->
+<!--*********************************************-->
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-8">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"><title>
+	Contacto
+</title><meta id="MetaKeywords" name="KEYWORDS" content=",DotNetNuke,DNN" /><meta id="MetaGenerator" name="GENERATOR" content="DotNetNuke " /><meta id="MetaRobots" name="ROBOTS" content="INDEX, FOLLOW" /><link href="/Resources/Shared/stylesheets/dnndefault/7.0.0/default.css?cdv=200" type="text/css" rel="stylesheet"/><link href="/DesktopModules/MVC/DnnPtContacto/module.css?cdv=200" type="text/css" rel="stylesheet"/><link href="/Resources/Search/SearchSkinObjectPreview.css?cdv=200" type="text/css" rel="stylesheet"/><link href="/Portals/_default/skins/20043-unlimitedcolorpack-029/skin.css?cdv=200" type="text/css" rel="stylesheet"/><link href="/Portals/_default/skins/20043-unlimitedcolorpack-029/insidepage.css?cdv=200" type="text/css" rel="stylesheet"/><link href="/Portals/_default/containers/20043-unlimitedcolorpack-029/container.css?cdv=200" type="text/css" rel="stylesheet"/><link href="/Portals/0/portal.css?cdv=200" type="text/css" rel="stylesheet"/><link href="/Portals/0/home.css?cdv=200" type="text/css" rel="stylesheet"/><script src="/Resources/libraries/jQuery/03_02_01/jquery.js?cdv=200" type="text/javascript"></script><script src="/Resources/libraries/jQuery-Migrate/03_00_00/jquery-migrate.js?cdv=200" type="text/javascript"></script><script src="/Resources/libraries/jQuery-UI/01_12_01/jquery-ui.js?cdv=200" type="text/javascript"></script><link  rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" /><link  rel="stylesheet" type="text/css" href="/DesktopModules/DNNGo_xPlugin/Resource/css/jquery.mmenu.css?cdv=20180814.200" /><!--[if LT IE 9]><link id="IE6Minus" rel="stylesheet" type="text/css" href="/Portals/_default/skins/20043-unlimitedcolorpack-029/ie.css" /><![endif]--><link rel='SHORTCUT ICON' href='/Portals/0/cmc.ico?ver=2018-06-18-220415-907' type='image/x-icon' /><link href="https://cmc-pt.azurewebsites.net/Contacto" rel="canonical" /><meta name="viewport" content="width=device-width,height=device-height, minimum-scale=1.0, maximum-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /></head>
+<body id="Body">
+    
+    <form method="post" action="/Contacto" id="Form" enctype="multipart/form-data">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+
+
+<script type="text/javascript">
+//<![CDATA[
+var __cultureInfo = {"name":"es-ES","numberFormat":{"CurrencyDecimalDigits":2,"CurrencyDecimalSeparator":",","IsReadOnly":false,"CurrencyGroupSizes":[3],"NumberGroupSizes":[3],"PercentGroupSizes":[3],"CurrencyGroupSeparator":".","CurrencySymbol":"€","NaNSymbol":"NaN","CurrencyNegativePattern":8,"NumberNegativePattern":1,"PercentPositivePattern":0,"PercentNegativePattern":0,"NegativeInfinitySymbol":"-Infinito","NegativeSign":"-","NumberDecimalDigits":2,"NumberDecimalSeparator":",","NumberGroupSeparator":".","CurrencyPositivePattern":3,"PositiveInfinitySymbol":"Infinito","PositiveSign":"+","PercentDecimalDigits":2,"PercentDecimalSeparator":",","PercentGroupSeparator":".","PercentSymbol":"%","PerMilleSymbol":"‰","NativeDigits":["0","1","2","3","4","5","6","7","8","9"],"DigitSubstitution":1},"dateTimeFormat":{"AMDesignator":"","Calendar":{"MinSupportedDateTime":"\/Date(-62135571600000)\/","MaxSupportedDateTime":"\/Date(253402300799999)\/","AlgorithmType":1,"CalendarType":1,"Eras":[1],"TwoDigitYearMax":2029,"IsReadOnly":false},"DateSeparator":"/","FirstDayOfWeek":1,"CalendarWeekRule":2,"FullDateTimePattern":"dddd, d\u0027 de \u0027MMMM\u0027 de \u0027yyyy H:mm:ss","LongDatePattern":"dddd, d\u0027 de \u0027MMMM\u0027 de \u0027yyyy","LongTimePattern":"H:mm:ss","MonthDayPattern":"d\u0027 de \u0027MMMM","PMDesignator":"","RFC1123Pattern":"ddd, dd MMM yyyy HH\u0027:\u0027mm\u0027:\u0027ss \u0027GMT\u0027","ShortDatePattern":"dd/MM/yyyy","ShortTimePattern":"H:mm","SortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd\u0027T\u0027HH\u0027:\u0027mm\u0027:\u0027ss","TimeSeparator":":","UniversalSortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd HH\u0027:\u0027mm\u0027:\u0027ss\u0027Z\u0027","YearMonthPattern":"MMMM\u0027 de \u0027yyyy","AbbreviatedDayNames":["do.","lu.","ma.","mi.","ju.","vi.","sá."],"ShortestDayNames":["D","L","M","X","J","V","S"],"DayNames":["domingo","lunes","martes","miércoles","jueves","viernes","sábado"],"AbbreviatedMonthNames":["ene.","feb.","mar.","abr.","may.","jun.","jul.","ago.","sep.","oct.","nov.","dic.",""],"MonthNames":["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre",""],"IsReadOnly":false,"NativeCalendarName":"calendario gregoriano","AbbreviatedMonthGenitiveNames":["ene.","feb.","mar.","abr.","may.","jun.","jul.","ago.","sep.","oct.","nov.","dic.",""],"MonthGenitiveNames":["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre",""]},"eras":[1,"d. C.",null,0]};//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=uHIkleVeDJf88sCVloDInAg0r7wnlIbdMd3dIBs6H6U4vtUFLzTD_LIH-STHu5qbmMGsi5FvMmm13vahMNholwkRT2tBisFWnu8eCOmWIdgk1RdZywYhuRF6p-BM2SUiB6BvKQ2&amp;t=ffffffffcd368728" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Jw6tUGWnA17qGp_N3LrWuhkegupDLhNBVUsbMlCjI0HinqcHKpY4tuQApOCMsHeUSdzC2KK3EZLmA0pDG6lyTi_2xtgy7yQ4CJd2UbhFVDa3ORCPuq4FGnIVcXbbZmyIRkFntYehrNmeyIME0&amp;t=ffffffffcd368728" type="text/javascript"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="v8OckkkJT6vOxaj1vhXKda6PJvPM4uuB+N5JCxfO3bt3ISkvhC5ciY6O2UMVzCWZRGfuCigqswuwBVZKXoNsrXUD5OOMQ+MUKku7SefGGyYpjV8j7hG6CBH8ZLk6YHUbtiVYhjkT7lGw06qHGIuTNk0OvixiV4AHzvRbOI9g3hHLWJNaGT3VD8lCtmdAbkxogp5TFA==" /><script src="/js/dnn.js?cdv=200" type="text/javascript"></script><script src="/js/dnn.modalpopup.js?cdv=200" type="text/javascript"></script><script src="/Portals/_default/skins/20043-unlimitedcolorpack-029/scripts/pace.min.js?cdv=200" type="text/javascript"></script><script src="/js/dnncore.js?cdv=200" type="text/javascript"></script><script src="/Resources/Search/SearchSkinObjectPreview.js?cdv=200" type="text/javascript"></script><script src="/js/dnn.servicesframework.js?cdv=200" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [], 90, '');
+//]]>
+</script>
+
+        
+        
+        
+
+
+ 
+
+
+<!--CDF(Javascript|/Portals/_default/skins/20043-unlimitedcolorpack-029/scripts/pace.min.js?cdv=200)-->
+<div class="pace_bg"></div>
+<!--[if lt IE 9]>
+<script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<div class="body_bg full">   <div id="dnn_wrapper">
+    <div class="wrapper">
+      <div class="visible-xs"> 
+        <!-- mobile header --> 
+        
+<header>
+  <div class=" phoneHeadTop clearfix   ">
+  <div class=" ">
+    <a id="dnn_dnnLOGO3_hypLogo" title="CMC" href="https://www.consejomexcardio.org/"><img id="dnn_dnnLOGO3_imgLogo" class=" " src="/Portals/0/cmc.png?ver=2018-06-18-220309-380" alt="CMC" border="0" /></a>
+  </div>  
+    <span class="fa fa-search  " id="mobile_search"></span>
+    
+<a href="#gomenu51203b5d54" class="mobilemenu_close">X</a>
+<div id="gomenu51203b5d54" class="mobile_menu ">
+    <ul  class="menu_list"><li class="   first-item Item-1 "><a href="https://www.consejomexcardio.org/"   title="Consejo Nacional de Cardiología"  ><span>Inicio</span></a></li><li class="   Item-2 "><a href="https://www.consejomexcardio.org/Historia"   title="Historia"  ><span>Historia</span></a></li><li class="   Item-3 "><a href="https://www.consejomexcardio.org/Cursos"   title="Cursos"  ><span>Cursos</span></a></li><li class="   Item-4 "><a href="https://www.consejomexcardio.org/Regulacion"   title="Regulación"  ><span>Regulacion</span></a></li><li class="   Item-5 "><a href="https://www.consejomexcardio.org/Certificacion"   title="Certificación"  ><span>Certificación</span></a></li><li class="   Item-6 "><a href="https://www.consejomexcardio.org/Directorio"   title="Directorio"  ><span>Directorio</span></a></li><li class="   Item-7 "><a href="https://www.consejomexcardio.org/Avisos"   title="Avisos"  ><span>Avisos</span></a></li><li class="  current  last-item Item-8  mm-selected"><a href="https://www.consejomexcardio.org/Contacto" class="acurrent"  title="Contacto"  ><span>Contacto</span></a></li></ul>
+</div>
+ 
+ <script type="text/javascript">
+     jQuery(document).ready(function ($) {
+
+
+		 $('#gomenu51203b5d54').find(".dir.mm-selected").removeClass("mm-selected").parent().parent().addClass("mm-selected")
+		 
+         $('#gomenu51203b5d54').mobile_menu({
+             slidingSubmenus: true,
+             counters: true,
+             navbartitle: "Menu",
+             headerbox: ".menu_header",
+             footerbox: ".menu_footer"			 
+         });
+		 
+		  $('#gomenu51203b5d54').find("a[href='javascript:;']").on("click",function (e) {
+			  e.preventDefault();
+			  $(this).siblings(".mm-next").click();
+		  })
+     });
+</script>
+
+
+ 
+  </div>
+  <div class="phoneHeadBottom  ">
+    <div class="HeadPane_mobile menu_header   " ></div>
+    <div class="searchBox2   " id="search2" >
+      <span id="dnn_dnnSEARCH5_ClassicSearch">
+    
+    
+    <span class="searchInputContainer" data-moreresults="Ver más resultados" data-noresult="No se han encontrado resultados">
+        <input name="dnn$dnnSEARCH5$txtSearch" type="text" maxlength="255" size="20" id="dnn_dnnSEARCH5_txtSearch" class="NormalTextBox" aria-label="Search" autocomplete="off" placeholder="Buscar..." />
+        <a class="dnnSearchBoxClearText" title="Limpiar texto de búsqueda"></a>
+    </span>
+    <a id="dnn_dnnSEARCH5_cmdSearch" class="search" href="javascript:__doPostBack(&#39;dnn$dnnSEARCH5$cmdSearch&#39;,&#39;&#39;)">GO</a>
+</span>
+
+
+<script type="text/javascript">
+    $(function() {
+        if (typeof dnn != "undefined" && typeof dnn.searchSkinObject != "undefined") {
+            var searchSkinObject = new dnn.searchSkinObject({
+                delayTriggerAutoSearch : 400,
+                minCharRequiredTriggerAutoSearch : 2,
+                searchType: 'S',
+                enableWildSearch: true,
+                cultureCode: 'es-ES',
+                portalId: -1
+                }
+            );
+            searchSkinObject.init();
+            
+            
+            // attach classic search
+            var siteBtn = $('#dnn_dnnSEARCH5_SiteRadioButton');
+            var webBtn = $('#dnn_dnnSEARCH5_WebRadioButton');
+            var clickHandler = function() {
+                if (siteBtn.is(':checked')) searchSkinObject.settings.searchType = 'S';
+                else searchSkinObject.settings.searchType = 'W';
+            };
+            siteBtn.on('change', clickHandler);
+            webBtn.on('change', clickHandler);
+            
+            
+        }
+    });
+</script>
+
+    </div>
+    <div class="Login  ElementHide-xs ElementHide-sm ElementHide-md ElementHide-lg">
+      
+<div id="dnn_dnnUser3_registerGroup" class="registerGroup">
+    <ul class="buttonGroup">
+        
+        
+    	<li class="userDisplayName"><a id="dnn_dnnUser3_enhancedRegisterLink" title="Registro" rel="nofollow" onclick="return dnnModal.show(&#39;https://www.consejomexcardio.org/Register?returnurl=https%253a%252f%252fwww.consejomexcardio.org%252fContacto&amp;popUp=true&#39;,/*showReturn*/true,600,950,true,&#39;&#39;)" href="https://www.consejomexcardio.org/Register?returnurl=https%3a%2f%2fwww.consejomexcardio.org%2fContacto">Registro</a></li>
+                                               
+    </ul>
+</div>
+      <span class="sep">|</span>
+      
+<div id="dnn_dnnLogin3_loginGroup" class="loginGroup">
+    <a id="dnn_dnnLogin3_enhancedLoginLink" title="Iniciar" class="LoginLink" rel="nofollow" onclick="return dnnModal.show(&#39;https://www.consejomexcardio.org/Login?returnurl=/Contacto&amp;popUp=true&#39;,/*showReturn*/true,300,650,true,&#39;&#39;)" href="https://www.consejomexcardio.org/Login?returnurl=%2fContacto">Iniciar</a>
+</div>
+    </div>
+    <div class="languageBox  ">
+      <div class="language-object" >
+
+
+</div>
+    </div>
+  </div>
+</header>
+
+
+
+
+
+        <!-- mobile end --> 
+      </div>
+      <div class="hidden-xs  light-model "> 
+        <!-- header --> 
+        <!-- header1 -->
+<div id="header1">
+  <header>
+    <div class="header_top  ">
+      <div class="dnn_layout">
+        <div class="head_mid clearfix">
+          <div class="languageBox  ">
+            <div class="language-object" >
+
+
+</div>
+          </div>
+          <div class="Login ElementHide-xs ElementHide-sm ElementHide-md ElementHide-lg">
+            
+<div id="dnn_dnnUser_registerGroup" class="registerGroup">
+    <ul class="buttonGroup">
+        
+        
+    	<li class="userDisplayName"><a id="dnn_dnnUser_enhancedRegisterLink" title="Registro" rel="nofollow" onclick="return dnnModal.show(&#39;https://www.consejomexcardio.org/Register?returnurl=https%253a%252f%252fwww.consejomexcardio.org%252fContacto&amp;popUp=true&#39;,/*showReturn*/true,600,950,true,&#39;&#39;)" href="https://www.consejomexcardio.org/Register?returnurl=https%3a%2f%2fwww.consejomexcardio.org%2fContacto">Registro</a></li>
+                                               
+    </ul>
+</div>
+            <span class="sep">|</span>
+            
+<div id="dnn_dnnLogin_loginGroup" class="loginGroup">
+    <a id="dnn_dnnLogin_enhancedLoginLink" title="Iniciar" class="LoginLink" rel="nofollow" onclick="return dnnModal.show(&#39;https://www.consejomexcardio.org/Login?returnurl=/Contacto&amp;popUp=true&#39;,/*showReturn*/true,300,650,true,&#39;&#39;)" href="https://www.consejomexcardio.org/Login?returnurl=%2fContacto">Iniciar</a>
+</div>
+          </div>
+          <div id="dnn_HeadPane" class="HeadPane   DNNEmptyPane"></div>
+        </div>
+      </div>
+    </div>
+    <div class="roll_menu  ">
+      <div class="dnn_layout  ">
+        <div class="head_mid clearfix">
+          <div class="dnn_logo    ">
+            <a id="dnn_dnnLOGO_hypLogo" title="CMC" href="https://www.consejomexcardio.org/"><img id="dnn_dnnLOGO_imgLogo" src="/Portals/0/cmc.png?ver=2018-06-18-220309-380" alt="CMC" border="0" /></a>
+          </div>
+          <div class="phone_box">
+            <div class="pulldownsearch  hidden-xs   ">
+              <div class="searchbut"><span class="fa fa-search"></span></div>
+              <div class="searchBox" id="search" style="display:none;"> <span class="searchArrow"> </span>
+                <span id="dnn_dnnSEARCH_ClassicSearch">
+    
+    
+    <span class="searchInputContainer" data-moreresults="Ver más resultados" data-noresult="No se han encontrado resultados">
+        <input name="dnn$dnnSEARCH$txtSearch" type="text" maxlength="255" size="20" id="dnn_dnnSEARCH_txtSearch" class="NormalTextBox" aria-label="Search" autocomplete="off" placeholder="Buscar..." />
+        <a class="dnnSearchBoxClearText" title="Limpiar texto de búsqueda"></a>
+    </span>
+    <a id="dnn_dnnSEARCH_cmdSearch" class="search" href="javascript:__doPostBack(&#39;dnn$dnnSEARCH$cmdSearch&#39;,&#39;&#39;)">GO</a>
+</span>
+
+
+<script type="text/javascript">
+    $(function() {
+        if (typeof dnn != "undefined" && typeof dnn.searchSkinObject != "undefined") {
+            var searchSkinObject = new dnn.searchSkinObject({
+                delayTriggerAutoSearch : 400,
+                minCharRequiredTriggerAutoSearch : 2,
+                searchType: 'S',
+                enableWildSearch: true,
+                cultureCode: 'es-ES',
+                portalId: -1
+                }
+            );
+            searchSkinObject.init();
+            
+            
+            // attach classic search
+            var siteBtn = $('#dnn_dnnSEARCH_SiteRadioButton');
+            var webBtn = $('#dnn_dnnSEARCH_WebRadioButton');
+            var clickHandler = function() {
+                if (siteBtn.is(':checked')) searchSkinObject.settings.searchType = 'S';
+                else searchSkinObject.settings.searchType = 'W';
+            };
+            siteBtn.on('change', clickHandler);
+            webBtn.on('change', clickHandler);
+            
+            
+        }
+    });
+</script>
+
+              </div>
+            </div>
+          </div>
+          <div class="Head_right">
+            <nav>
+              <div class="dnn_menu ">
+                <div id="dnngo_megamenu" class="IHide-sm IHide-md">
+                  
+    <div class="dnngo_gomenu" id="dnngo_megamenu88788674eb">
+      
+         <ul class="primary_structure">
+ <li class=" ">
+<a href="https://www.consejomexcardio.org/"   title="Consejo Nacional de Cardiología"  ><span>Inicio</span></a>
+</li>
+ <li class=" ">
+<a href="https://www.consejomexcardio.org/Historia"   title="Historia"  ><span>Historia</span></a>
+</li>
+ <li class=" ">
+<a href="https://www.consejomexcardio.org/Cursos"   title="Cursos"  ><span>Cursos</span></a>
+</li>
+ <li class=" ">
+<a href="https://www.consejomexcardio.org/Regulacion"   title="Regulación"  ><span>Regulacion</span></a>
+</li>
+ <li class=" ">
+<a href="https://www.consejomexcardio.org/Certificacion"   title="Certificación"  ><span>Certificación</span></a>
+</li>
+ <li class=" ">
+<a href="https://www.consejomexcardio.org/Directorio"   title="Directorio"  ><span>Directorio</span></a>
+</li>
+ <li class=" ">
+<a href="https://www.consejomexcardio.org/Avisos"   title="Avisos"  ><span>Avisos</span></a>
+</li>
+ <li class=" current">
+<a href="https://www.consejomexcardio.org/Contacto"   title="Contacto"  ><span>Contacto</span></a>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $("#dnngo_megamenu88788674eb").dnngomegamenu({
+            slide_speed: 200,
+            delay_disappear: 500,
+            popUp: "vertical",//level
+			delay_show:150,
+			direction:"ltr",//rtl ltr
+			megamenuwidth:"box",//full box
+			WidthBoxClassName:".dnn_layout"
+        });
+    });
+
+
+	jQuery(document).ready(function () {
+		jQuery("#dnngo_megamenu88788674eb").has("ul").find(".dir > a").attr("aria-haspopup", "true");
+	}); 
+
+</script>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+<!-- header1 End --> 
+
+ 
+
+ 
+
+                  
+                 
+ 
+
+
+
+        <!-- header end -->         
+      </div>
+      
+<div class="breadcrumb_bg_new">
+  <div class="breadcrumbBox  ">
+    <div class="dnn_layout">
+      <div class="content_mid clearfix">
+        <div class="breadcrumbborder">
+          <h3>Contacto </h3>
+          <div class="breadcrumbRight"> <a href="https://www.consejomexcardio.org/" > <span class="fa fa-home"></span></a> 
+            <span id="dnn_dnnBREADCRUMB_lblBreadCrumb" itemprop="breadcrumb" itemscope="" itemtype="https://schema.org/breadcrumb"><span itemscope itemtype="http://schema.org/BreadcrumbList"><span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="https://www.consejomexcardio.org/Contacto" class="breadcrumb" itemprop="item"><span itemprop="name">Contacto</span></a><meta itemprop="position" content="1" /></span></span></span>
+          </div>
+          <div class="clear"></div>
+          <div id="dnn_breadcrumb_Pane" class="breadcrumb_Pane DNNEmptyPane"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+   </div>
+
+
+
+
+
+
+      <section id="dnn_content"> 
+        <!-- content pane --> 
+        <div id="dnn_Full_Screen_PaneA" class="Full_Screen_PaneA DNNEmptyPane"></div>
+<div class="dnn_layout">
+  <div class="content_mid clearfix">
+    <div class="pane_layout">
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="dnn_TopPane" class="TopPane"><div class="DnnModule DnnModule-DnnPtContacto DnnModule-593"><a name="593"></a>
+<div class="White">
+     <div id="dnn_ctr593_ContentPane" class="contentpane"><!-- Start_Module_593 --><div id="dnn_ctr593_ModuleContent" class="DNNModuleContent ModDnnPtContactoC">
+	<div id="mvcContainer-593">
+    
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="Lead">
+                <img alt="" src="/Portals/0/ConsejoNacionalDeCardiologia/Imagenes/contacto.jpg" class="img-responsive" title="" />
+            </div>
+        </div>
+    </div>
+    <div class="row" style="padding-top: 50px;">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="row">
+                <div class="col-xs-12 col-md-12 col-md-12 col-lg-12">
+                    <strong>Dinos tu opini&oacute;n</strong>
+                </div>
+            </div>
+            <div class="row" style="padding-top: 10px">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="nombre" placeholder="Nombre" required="required" />
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="apellidos" placeholder="Apellidos" required="required" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="correo" placeholder="Correo Electónico" required="required" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <textarea class="form-control" placeholder="Mensaje" name="mensaje" rows="15" required="required"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <div class="g-recaptcha" data-sitekey="6Lc6uWcUAAAAAE7u9dlpSGHJZCmxYK9KO58c8Pld" style="padding-top: 20px; padding-bottom: 20px;"></div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-right" style="padding-top: 20px;">
+                    <input type="submit" class="btn btn-danger" style="width: 60%; background-color: #D2021B;" value="Enviar" />
+
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <!-- Maps -->
+            <script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBlzAcEsQ91QDm1tRc-jmoP-xmnWqXKdE8'></script>
+            <div style='overflow:hidden;height:491px;width:535px;'>
+                <div id='gmap_canvas' style='height:491px;width:535px;'></div>
+                <style>
+                    #gmap_canvas img {
+                        max-width: none !important;
+                        background: none !important
+                    }
+                </style>
+            </div>
+            <a href='https://embedmap.org/'>.</a>
+            <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=444bce267fb58828b13057a1caa15619eb01bc3c'></script>
+            <script type='text/javascript'>
+                function init_map() {
+                    var myOptions = {
+                        zoom: 15,
+                        center: new google.maps.LatLng(19.2912545, -99.15362099999999),
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    };
+                    map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+                    marker = new google.maps.Marker({
+                        map: map,
+                        position: new google.maps.LatLng(19.2912545, -99.15362099999999)
+                    });
+                    infowindow = new google.maps.InfoWindow({
+                        content: 'Consejo Mexicano de Cardiología'
+                    });
+                    google.maps.event.addListener(marker, 'click', function () {
+                        infowindow.open(map, marker);
+                    });
+                    infowindow.open(map, marker);
+                }
+                google.maps.event.addDomListener(window, 'load', init_map);
+            </script>
+            <!-- Fin maps -->
+            <br />
+            <p>
+                <span class="fa fa-map-marker"></span> Calle: Juan Badiano No. 1, Edif. Santiago Galas 1er piso, Col. Sección XVI, Delegación Tlalpan, C.P. 14080, México, D.F.
+            </p>
+            <p>
+                <span class="fa fa-phone"></span> Tels: 5485•1405, 5513•2192
+            </p>
+            <p>
+                <span class="fa fa-clock-o"></span> Horario de atención es de 9:00 a 17:00 hrs.
+            </p>
+            <p>
+                <ul style="list-style: none; margin-left: 0px;">
+                    <li>
+                        <span class="fa fa-envelope"></span> certificacion@consejomexcardio.org
+                    </li>
+                    <li>
+                        <span class="fa fa-envelope"></span> vigencia@consejomexcardio.org
+                    </li>
+                    <li>
+                        <span class="fa fa-envelope"></span> consejo@consejomexcardio.org
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </div>
+</div>
+
+    
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+</div>
+
+
+
+</div><!-- End_Module_593 --></div>
+</div>
+
+
+</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="dnn_Full_Screen_PaneB" class="Full_Screen_PaneB DNNEmptyPane"></div>
+<div class="dnn_layout">
+  <div class="content_mid clearfix">
+    <div class="pane_layout">
+      <div class="row">
+        <div class="col-sm-3">
+          <div id="dnn_RowOne_Grid3_Pane" class="RowOne_Grid3_Pane DNNEmptyPane"></div>
+        </div>
+        <div class="col-sm-9">
+          <div id="dnn_RowOne_Grid9_Pane" class="RowOne_Grid9_Pane DNNEmptyPane"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div id="dnn_RowTwo_Grid4_Pane" class="RowTwo_Grid4_Pane DNNEmptyPane"></div>
+        </div>
+        <div class="col-sm-8">
+          <div id="dnn_RowTwo_Grid8_Pane" class="RowTwo_Grid8_Pane DNNEmptyPane"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-5">
+          <div id="dnn_RowThree_Grid5_Pane" class="RowThree_Grid5_Pane DNNEmptyPane"></div>
+        </div>
+        <div class="col-sm-7">
+          <div id="dnn_RowThree_Grid7_Pane" class="RowThree_Grid7_Pane DNNEmptyPane"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div id="dnn_RowFour_Grid6_Pane1" class="RowFour_Grid6_Pane1 DNNEmptyPane"></div>
+        </div>
+        <div class="col-sm-6">
+          <div id="dnn_RowFour_Grid6_Pane2" class="RowFour_Grid6_Pane2 DNNEmptyPane"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-7">
+          <div id="dnn_RowFive_Grid7_Pane" class="RowFive_Grid7_Pane DNNEmptyPane"></div>
+        </div>
+        <div class="col-sm-5">
+          <div id="dnn_RowFive_Grid5_Pane" class="RowFive_Grid5_Pane DNNEmptyPane"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <div id="dnn_RowSix_Grid8_Pane" class="RowSix_Grid8_Pane DNNEmptyPane"></div>
+        </div>
+        <div class="col-sm-4">
+          <div id="dnn_RowSix_Grid4_Pane" class="RowSix_Grid4_Pane DNNEmptyPane"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-9">
+          <div id="dnn_RowSeven_Grid9_Pane" class="RowSeven_Grid9_Pane DNNEmptyPane"></div>
+        </div>
+        <div class="col-sm-3">
+          <div id="dnn_RowSeven_Grid3_Pane" class="RowSeven_Grid3_Pane DNNEmptyPane"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="dnn_Full_Screen_PaneC" class="Full_Screen_PaneC DNNEmptyPane"></div>
+<div class="dnn_layout">
+  <div class="content_mid clearfix">
+    <div class="pane_layout">
+      <div class="row">
+        <div class="col-sm-4">
+          <div id="dnn_RowEight_Grid4_Pane1" class="RowEight_Grid4_Pane1 DNNEmptyPane"></div>
+        </div>
+        <div class="col-sm-4">
+          <div id="dnn_RowEight_Grid4_Pane2" class="RowEight_Grid4_Pane2 DNNEmptyPane"></div>
+        </div>
+        <div class="col-sm-4">
+          <div id="dnn_RowEight_Grid4_Pane3" class="RowEight_Grid4_Pane3 DNNEmptyPane"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div id="dnn_RowNine_Grid3_Pane1" class="RowNine_Grid3_Pane1 DNNEmptyPane"></div>
+        </div>
+        <div class="col-sm-6">
+          <div id="dnn_RowNine_Grid6_Pane" class="RowNine_Grid6_Pane DNNEmptyPane"></div>
+        </div>
+        <div class="col-sm-3">
+          <div id="dnn_RowNine_Grid3_Pane2" class="RowNine_Grid3_Pane2 DNNEmptyPane"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div id="dnn_RownTen_Grid3_Pane1" class="RownTen_Grid3_Pane1 DNNEmptyPane"></div>
+        </div>
+        <div class="col-sm-3">
+          <div id="dnn_RowTen_Grid3_Pane2" class="RowTen_Grid3_Pane2 DNNEmptyPane"></div>
+        </div>
+        <div class="col-sm-3">
+          <div id="dnn_RowTen_Grid3_Pane3" class="RowTen_Grid3_Pane3 DNNEmptyPane"></div>
+        </div>
+        <div class="col-sm-3">
+          <div id="dnn_RowTen_Grid3_Pane4" class="RowTen_Grid3_Pane4 DNNEmptyPane"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="dnn_Full_Screen_PaneD" class="Full_Screen_PaneD DNNEmptyPane"></div>
+<div class="dnn_layout">
+  <div class="content_mid clearfix">
+    <div class="pane_layout">
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="dnn_ContentPane" class="ContentPane DNNEmptyPane"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="dnn_Full_Screen_PaneE" class="Full_Screen_PaneE DNNEmptyPane"></div>
+<div class="dnn_layout">
+  <div class="content_mid clearfix">
+    <div class="pane_layout">
+      <div class="row">
+        <div class="col-sm-3">
+          <div id="dnn_RownEleven_Grid3_Pane1" class="RownEleven_Grid3_Pane1 DNNEmptyPane"></div>
+        </div>
+        <div class="col-sm-3">
+          <div id="dnn_RowEleven_Grid3_Pane2" class="RowEleven_Grid3_Pane2 DNNEmptyPane"></div>
+        </div>
+        <div class="col-sm-3">
+          <div id="dnn_RowEleven_Grid3_Pane3" class="RowEleven_Grid3_Pane3 DNNEmptyPane"></div>
+        </div>
+        <div class="col-sm-3">
+          <div id="dnn_RowEleven_Grid3_Pane4" class="RowEleven_Grid3_Pane4 DNNEmptyPane"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div id="dnn_RowTwelve_Grid3_Pane1" class="RowTwelve_Grid3_Pane1 DNNEmptyPane"></div>
+        </div>
+        <div class="col-sm-6">
+          <div id="dnn_RowTwelve_Grid6_Pane" class="RowTwelve_Grid6_Pane DNNEmptyPane"></div>
+        </div>
+        <div class="col-sm-3">
+          <div id="dnn_RowTwelve_Grid3_Pane2" class="RowTwelve_Grid3_Pane2 DNNEmptyPane"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div id="dnn_RowThirteen_Grid4_Pane1" class="RowThirteen_Grid4_Pane1 DNNEmptyPane"></div>
+        </div>
+        <div class="col-sm-4">
+          <div id="dnn_RowThirteen_Grid4_Pane2" class="RowThirteen_Grid4_Pane2 DNNEmptyPane"></div>
+        </div>
+        <div class="col-sm-4">
+          <div id="dnn_RowThirteen_Grid4_Pane3" class="RowThirteen_Grid4_Pane3 DNNEmptyPane"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="dnn_Full_Screen_PaneF" class="Full_Screen_PaneF DNNEmptyPane"></div>
+<div class="dnn_layout">
+  <div class="content_mid clearfix">
+    <div class="pane_layout">
+      <div class="row">
+        <div class="col-sm-9">
+          <div id="dnn_RowFourteen_Grid9_Pane" class="RowFourteen_Grid9_Pane DNNEmptyPane"></div>
+        </div>
+        <div class="col-sm-3">
+          <div id="dnn_RowFourteen_Grid3_Pane" class="RowFourteen_Grid3_Pane DNNEmptyPane"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <div id="dnn_RowFifteen_Grid8_Pane" class="RowFifteen_Grid8_Pane DNNEmptyPane"></div>
+        </div>
+        <div class="col-sm-4">
+          <div id="dnn_RowFifteen_Grid4_Pane" class="RowFifteen_Grid4_Pane DNNEmptyPane"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-7">
+          <div id="dnn_RowSixteen_Grid7_Pane" class="RowSixteen_Grid7_Pane DNNEmptyPane"></div>
+        </div>
+        <div class="col-sm-5">
+          <div id="dnn_RowSixteen_Grid5_Pane" class="RowSixteen_Grid5_Pane DNNEmptyPane"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div id="dnn_RowSeventeen_Grid6_Pane1" class="RowSeventeen_Grid6_Pane1 DNNEmptyPane"></div>
+        </div>
+        <div class="col-sm-6">
+          <div id="dnn_RowSeventeen_Grid6_Pane2" class="RowSeventeen_Grid6_Pane2 DNNEmptyPane"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-5">
+          <div id="dnn_RowEighteen_Grid5_Pane" class="RowEighteen_Grid5_Pane DNNEmptyPane"></div>
+        </div>
+        <div class="col-sm-7">
+          <div id="dnn_RowEighteen_Grid7_Pane" class="RowEighteen_Grid7_Pane DNNEmptyPane"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div id="dnn_RowNineteen_Grid4_Pane" class="RowNineteen_Grid4_Pane DNNEmptyPane"></div>
+        </div>
+        <div class="col-sm-8">
+          <div id="dnn_RowNineteen_Grid8_Pane" class="RowNineteen_Grid8_Pane DNNEmptyPane"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div id="dnn_RowTwenty_Grid3_Pane" class="RowTwenty_Grid3_Pane DNNEmptyPane"></div>
+        </div>
+        <div class="col-sm-9">
+          <div id="dnn_RowTwenty_Grid9_Pane" class="RowTwenty_Grid9_Pane DNNEmptyPane"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="dnn_Full_Screen_PaneG" class="Full_Screen_PaneG DNNEmptyPane"></div>
+<div class="dnn_layout">
+  <div class="content_mid clearfix">
+    <div class="pane_layout">
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="dnn_BottomPane" class="BottomPane DNNEmptyPane"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="dnn_Full_Screen_PaneH" class="Full_Screen_PaneH DNNEmptyPane"></div>
+
+
+
+
+
+
+        <!-- content pane end --> 
+      </section>
+      <!-- Footer --> 
+      
+<div id="footer1">
+  <footer>
+    <div class="Footer_Topbg   ">
+      <div class="dnn_layout">
+        <div class="footer_mid clearfix">
+          <div id="dnn_FooterOutPane" class="FooterOutPane DNNEmptyPane"></div>
+        </div>
+      </div>
+    </div>
+    <div class="Footer_Contentbg   ">
+      <div class="dnn_layout">
+        <div class="footer_mid clearfix">
+          <div class="row">
+            <div class="col-sm-3">
+              <div id="dnn_FootPaneA" class="FootPaneA ElementHide-xs ElementHide-sm ElementHide-md ElementHide-lg DNNEmptyPane"></div>
+            </div>
+            <div class="col-sm-3">
+              <div id="dnn_FootPaneB" class="FootPaneB ElementHide-xs ElementHide-sm ElementHide-md ElementHide-lg"><div class="DnnModule DnnModule-DNN_HTML DnnModule-604"><a name="604"></a>
+<div class="White">
+     <div id="dnn_ctr604_ContentPane" class="contentpane"><!-- Start_Module_604 --><div id="dnn_ctr604_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr604_HtmlModule_lblContent" class="Normal">
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123138764-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-123138764-1');
+</script>
+
+</div>
+
+</div><!-- End_Module_604 --></div>
+</div>
+
+
+</div></div>
+            </div>
+            <div class="col-sm-3">
+              <div id="dnn_FootPaneC" class="FootPaneC ElementHide-xs ElementHide-sm ElementHide-md ElementHide-lg DNNEmptyPane"></div>
+            </div>
+            <div class="col-sm-3">
+              <div id="dnn_FootPaneD" class="FootPaneD ElementHide-xs ElementHide-sm ElementHide-md ElementHide-lg DNNEmptyPane"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <div id="dnn_FootPaneE" class="FootPaneE   DNNEmptyPane"></div>
+            </div>
+            <div class="col-sm-4">
+              <div id="dnn_FootPaneF" class="FootPaneF   DNNEmptyPane"></div>
+            </div>
+            <div class="col-sm-4">
+              <div id="dnn_FootPaneG" class="FootPaneG   DNNEmptyPane"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Footer_Bottombg   ">
+      <div class="dnn_layout">
+        <div class="footer_mid clearfix">
+          <div class="copyright_style">
+            <span id="dnn_dnnCOPYRIGHT_lblCopyright" class="footer  ElementHide-xs ElementHide-sm ElementHide-md ElementHide-lg">Copyright 2018.  Todos los derechos reservados - Consejo Mexicano de Cardiología A.C.</span>
+
+            <span class="sep ElementHide-xs ElementHide-sm ElementHide-md ElementHide-lg">|</span>
+            <a id="dnn_dnnPRIVACY_hypPrivacy" class="terms ElementHide-xs ElementHide-sm ElementHide-md ElementHide-lg" rel="nofollow" href="https://www.consejomexcardio.org/Privacy">Política de privacidad</a>
+            <span class="sep ElementHide-xs ElementHide-sm ElementHide-md ElementHide-lg ElementHide-xs ElementHide-sm ElementHide-md ElementHide-lg">|</span>
+            <a id="dnn_dnnTERMS_hypTerms" class="terms ElementHide-xs ElementHide-sm ElementHide-md ElementHide-lg" rel="nofollow" href="https://www.consejomexcardio.org/Terms">Términos de uso</a>
+            
+          </div>
+          <div id="dnn_FooterPane" class="FooterPane  "><div class="DnnModule DnnModule-DNN_HTML DnnModule-612"><a name="612"></a>
+<div class="White">
+     <div id="dnn_ctr612_ContentPane" class="contentpane"><!-- Start_Module_612 --><div id="dnn_ctr612_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr612_HtmlModule_lblContent" class="Normal">
+	<div style="display:block; width:100%;text-align:center;">
+<p>Copyright 2018. Todos los derechos reservados - Consejo Mexicano de Cardiología A.C.&nbsp; | <a href="/Privacy" style="color:#BBBBBb; text-decoration:underline;" target="_blank"> Política de Privacidad</a> |&nbsp; Crafted by Pleed Tech</p>
+</div>
+
+</div>
+
+</div><!-- End_Module_612 --></div>
+</div>
+
+
+</div></div>
+          <div id="to_top" class=" "><span> </span></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+
+
+
+
+      <!-- Footer End --> 
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="/Portals/_default/skins/20043-unlimitedcolorpack-029/scripts/script.js"></script> 
+<script type="text/javascript" src="/Portals/_default/skins/20043-unlimitedcolorpack-029/scripts/custom.js"></script> 
+<script type="text/javascript">
+
+if(mapapikey && mapapikey!=""){
+}else{
+	var mapapikey="";
+}
+
+	function customMap() {
+		
+				
+					$('#gmap01').gmap3({
+			  marker:{
+				values:[{
+				  address:'Juan Badiano No. 1, Edif. Santiago Galas 1er piso, Col. Sección XVI, Delegación Tlalpan, C.P. 14080, México, D.F.', 
+				  data:'Map 01 Markers',
+				  options:{
+												icon: "/Portals/_default/skins/20043-unlimitedcolorpack-029/Thumbnails/mapicon02.png"
+																	  }
+				  }],
+				options:{
+				  draggable: false
+				},
+				events:{
+				  click: function(marker, event, context){
+					var map = $(this).gmap3("get"),
+					  infowindow = $(this).gmap3({get:{name:"infowindow"}});
+					if (infowindow){
+					  infowindow.open(map, marker);
+					  infowindow.setContent(context.data);
+					} else {
+					  $(this).gmap3({
+						infowindow:{
+						  anchor:marker, 
+						  options:{content: context.data}
+						}
+					  });
+					}
+				  },
+				  closeclick: function(){
+					var infowindow = $(this).gmap3({get:{name:"infowindow"}});
+					if (infowindow){
+					  infowindow.close();
+					}
+				  }
+				}
+			  },
+			  map:{
+				options:{
+					mapTypeId: google.maps.MapTypeId.ROADMAP,
+					mapTypeControl: true,
+					mapTypeControlOptions: {
+					  style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+					},
+					navigationControl: true ,
+				  zoom: 15,
+				  scrollwheel: true
+				}
+			  }
+			});
+				
+				
+					$('#gmap02').gmap3({
+			  marker:{
+				values:[{
+				  address:'Bear city, ny', 
+				  data:'Map 02 Markers',
+				  options:{
+												icon: "/Portals/_default/skins/20043-unlimitedcolorpack-029/Thumbnails/mapicon01.png"
+																	  }
+				  }],
+				options:{
+				  draggable: false
+				},
+				events:{
+				  click: function(marker, event, context){
+					var map = $(this).gmap3("get"),
+					  infowindow = $(this).gmap3({get:{name:"infowindow"}});
+					if (infowindow){
+					  infowindow.open(map, marker);
+					  infowindow.setContent(context.data);
+					} else {
+					  $(this).gmap3({
+						infowindow:{
+						  anchor:marker, 
+						  options:{content: context.data}
+						}
+					  });
+					}
+				  },
+				  closeclick: function(){
+					var infowindow = $(this).gmap3({get:{name:"infowindow"}});
+					if (infowindow){
+					  infowindow.close();
+					}
+				  }
+				}
+			  },
+			  map:{
+				options:{
+					mapTypeId: google.maps.MapTypeId.HYBRID,
+					mapTypeControl: true,
+					mapTypeControlOptions: {
+					  style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+					},
+					navigationControl: true ,
+				  zoom: 8,
+				  scrollwheel: true
+				}
+			  }
+			});
+				
+				
+				
+				
+				
+				
+				}
+</script>
+
+
+
+
+
+
+
+
+
+
+        <input name="ScrollTop" type="hidden" id="ScrollTop" />
+        <input name="__dnnVariable" type="hidden" id="__dnnVariable" autocomplete="off" value="`{`__scdoff`:`1`,`dnn.scripts.js.resx`:`/WebResource.axd?d=DKiEc2s7S-76aXiADsH2Oh6mKXO0atrg-vhIxyEL8Jp9Kab0AZtRsopYkhO52Fyg8u47v_5zwFXGvTQNBeNomM6bYAU1\u0026t=636694836182369474`,`sf_siteRoot`:`/`,`sf_tabId`:`85`}" />
+        <input name="__RequestVerificationToken" type="hidden" value="ow-4HOmO7m7aVWx44jrwBoTlwSYlEoPSf8Q78YgOU1PFjO3wZOfLYuEsjv0FbBoywcWWog2" />
+    
+<script type="text/javascript" src="/DesktopModules/DNNGo_xPlugin/Resource/js/dnngo-xplugin.js?cdv=20180814.200"></script></form>
+    <!--CDF(Javascript|/js/dnncore.js?cdv=200)--><!--CDF(Css|/Portals/0/home.css?cdv=200)--><!--CDF(Javascript|/js/dnn.modalpopup.js?cdv=200)--><!--CDF(Css|/Resources/Shared/stylesheets/dnndefault/7.0.0/default.css?cdv=200)--><!--CDF(Css|/Portals/_default/skins/20043-unlimitedcolorpack-029/skin.css?cdv=200)--><!--CDF(Css|/Portals/_default/skins/20043-unlimitedcolorpack-029/insidepage.css?cdv=200)--><!--CDF(Css|/Portals/_default/containers/20043-unlimitedcolorpack-029/container.css?cdv=200)--><!--CDF(Css|/Portals/_default/containers/20043-unlimitedcolorpack-029/container.css?cdv=200)--><!--CDF(Css|/Portals/_default/containers/20043-unlimitedcolorpack-029/container.css?cdv=200)--><!--CDF(Css|/DesktopModules/MVC/DnnPtContacto/module.css?cdv=200)--><!--CDF(Css|/Portals/0/portal.css?cdv=200)--><!--CDF(Css|/Resources/Search/SearchSkinObjectPreview.css?cdv=200)--><!--CDF(Javascript|/Resources/Search/SearchSkinObjectPreview.js?cdv=200)--><!--CDF(Css|/Resources/Search/SearchSkinObjectPreview.css?cdv=200)--><!--CDF(Javascript|/Resources/Search/SearchSkinObjectPreview.js?cdv=200)--><!--CDF(Javascript|/js/dnn.js?cdv=200)--><!--CDF(Javascript|/js/dnn.servicesframework.js?cdv=200)--><!--CDF(Javascript|/Resources/libraries/jQuery/03_02_01/jquery.js?cdv=200)--><!--CDF(Javascript|/Resources/libraries/jQuery-Migrate/03_00_00/jquery-migrate.js?cdv=200)--><!--CDF(Javascript|/Resources/libraries/jQuery-UI/01_12_01/jquery-ui.js?cdv=200)-->
+    
+</body>
+</html>
