@@ -1,6 +1,6 @@
 <?php
-include('redis.php');
-class api extends redis {
+include('cache.php');
+class api extends cache {
 public $net;
     function __construct($net) {
     $this->net=$net;
@@ -14,21 +14,14 @@ public $net;
      $data = array("id"=>"2","request"=>"true");
      header('Content-Type: application/json');
      echo json_encode($data);
-     $this->check();
+
 
 
     }
     public function check(){
 
 	$urls= array(
-	"https://www.consejomexcardio.org/",
-	"https://www.consejomexcardio.org/Historia",
-	"https://www.consejomexcardio.org/Cursos",
-	"https://www.consejomexcardio.org/Regulacion",
-	"https://www.consejomexcardio.org/Certificacion",
-	"https://www.consejomexcardio.org/Directorio",
-	"https://www.consejomexcardio.org/Avisos",
-	"https://www.consejomexcardio.org/Contacto"
+
 	);
 
       foreach($urls as $url){

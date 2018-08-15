@@ -1,6 +1,6 @@
 <?php
-include('redis.php');
-class json extends redis {
+include('cache.php');
+class json extends cache {
 public $net;
     function __construct($net) {
     $this->net=$net;
