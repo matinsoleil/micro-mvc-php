@@ -2,7 +2,7 @@
 
 require ('./lib/redis/Autoloader.php');
 
-class redis {
+class cache {
 
     public $db;
     public $object;
