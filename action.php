@@ -176,12 +176,14 @@ $request = explode("/", substr(@$_SERVER['PATH_INFO'], 1));
 $post = filter_input_array(INPUT_POST);
 
 
+
+
  switch ($method) {
   case 'PUT':
     return array("type"=>"PUT","request"=>$request);
     break;
   case 'POST':
-    return array("type"=>"POST","request"=>array('body'=>$post,'parameters'=>$this->input));
+    return array("type"=>"POST","request"=>array('body'=>$request,'parameters'=>$this->input));
     break;
   case 'GET':
     return array("type"=>"GET","request"=>$_GET);
