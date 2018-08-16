@@ -12,6 +12,7 @@ class action{
  public $entity;
  public $module;
  public $notfound;
+ public $input;
 
  public function getUrl (){
 
@@ -28,6 +29,11 @@ class action{
  $_uri= explode('?',$uri);
 
  $this->uri = $_uri[0];
+ $_input = $_uri[1];
+
+ $match=explode('=',$_input);
+
+ $this->input = $match;
  $this->parameters= $this->data();
  $this->ip=$this->getIP();
  }
@@ -161,7 +167,7 @@ $request = explode("/", substr(@$_SERVER['PATH_INFO'], 1));
     return array("type"=>"PUT","request"=>$request);
     break;
   case 'POST':
-    return array("type"=>"POST","request"=>$request);
+    return array("type"=>"POST","request"=>array('body'=>$_POST,'parameters'=>$this->input));
     break;
   case 'GET':
     return array("type"=>"GET","request"=>$_GET);

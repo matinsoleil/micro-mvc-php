@@ -11,6 +11,7 @@ public $net;
 
      $action=$this->net['action']->parameters;
 
+
      $string = json_encode($action, JSON_PRETTY_PRINT);
 
      $fp = fopen('./cache/input.txt', 'w');

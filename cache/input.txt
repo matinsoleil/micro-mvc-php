@@ -1,6 +1,9 @@
 {
-    "type": "GET",
+    "type": "POST",
     "request": {
-        "help": "1"
+        "body": {
+            "urls": "http:\/\/www.yahoo.com.mx"
+        },
+        "parameters": "urls=http:\/\/www.google.com"
     }
 }
