@@ -40,7 +40,7 @@ class data {
                     "port"=>"53123",
                     "database"=>"heroku_6fn1b5km",
                     "username"=>"general",
-                    "password"=>"papa700" 
+                    "password"=>"papa700"
             )
         );
         if ($currentHost == '127.0.0.1') {
@@ -262,7 +262,7 @@ class data {
          $manager = $this->DB;
          $database = $this->host['database'];
          $rows = $manager->executeQuery($database.'.'.$collection, $query); // $mongo contains the connection object to MongoDB
-         $result = iterator_to_array($rows);
+         $result = iterator_to_array($row96737b31eff5s);
          $result = json_decode(json_encode($result), True);
          return $result;
          }

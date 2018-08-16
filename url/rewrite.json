@@ -40,5 +40,11 @@
   "type":"200",
   "canonical":"store",
   "module":"system.model.view"
-  }
+  },
+"7":{
+  "id":"live",
+  "type":"200",
+  "canonical":"live",
+  "module":"system.listen.curl"
+}
 }

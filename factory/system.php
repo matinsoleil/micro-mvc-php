@@ -2,6 +2,8 @@
 class system {
     public $system;
     public $net;
+    public $src;
+    public $attribute;
     function __construct($net) {
     $this->net=$net;
     $this->start();
@@ -20,13 +22,19 @@ class system {
      $attributes = array_merge($defaultAttribute,$systemAttribute);
 
      if(is_array($attributes)){
-     foreach($attributes as $attribute){
+     foreach($attributes as $key=> $attribute){
 
-     //   var_dump($attribute);
+      if(isset($attribute['src'])){
+         include($attribute['src'].".php");
+         eval('$src= new '.$attribute['src'].'();');
+          $value =$src->src();
+          $attributes[$key]['value'] = $value;
+         }
 
+       }
      }
-     }
 
+    $this->attribute=$attributes;
 
     }
 

@@ -1,0 +1,9 @@
+{
+    "type": "POST",
+    "request": {
+        "body": {
+            "urls": "http:\/\/www.yahoo.com.mx"
+        },
+        "parameters": "urls=http:\/\/www.google.com"
+    }
+}

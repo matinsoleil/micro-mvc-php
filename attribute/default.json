@@ -1,34 +1,18 @@
 {
 "0":{
-    "id":"name",
-    "tag":"Name",
-    "label":"",
-    "type":"string",
+    "id":"session",
+    "tag":"Session",
+    "label":"Session",
+    "type":"structure",
     "value":"",
-    "src":""
+    "src":"session"
     },
 "1":{
-    "id":"password",
-    "tag":"Password",
-    "label":"",
-    "type":"password",
-    "value":"",
-    "src":""
-    },
-"2":{
-    "id":"id",
-    "tag":"Id",
-    "label":"",
-    "type":"string",
-    "value":"",
-    "src":""
-    },
-"3":{
-    "id":"key",
-    "tag":"Key",
-    "label":"",
-    "type":"string",
-    "value":"",
-    "src":""
+   "id":"now",
+   "tag":"Now Date",
+   "label":"Now Date",
+   "type":"date",
+   "value":"",
+   "src":"date"
 }
 }

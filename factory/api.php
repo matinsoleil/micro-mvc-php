@@ -8,13 +8,10 @@ public $net;
     }
     function render($entity){
 
-
      $action=$this->net['action']->uri;
-
      $data = array("id"=>"2","request"=>"true");
      header('Content-Type: application/json');
      echo json_encode($data);
-
 
 
     }
