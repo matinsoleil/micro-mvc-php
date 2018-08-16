@@ -161,7 +161,7 @@ $request = explode("/", substr(@$_SERVER['PATH_INFO'], 1));
     return array("type"=>"PUT","request"=>$request);
     break;
   case 'POST':
-    return array("type"=>"POST","request"=>$_POST);
+    return array("type"=>"POST","request"=>$request);
     break;
   case 'GET':
     return array("type"=>"GET","request"=>$_GET);
