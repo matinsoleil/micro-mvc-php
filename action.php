@@ -173,9 +173,11 @@ public function write($entity,$object){
    $method = $_SERVER['REQUEST_METHOD'];
 $request = explode("/", substr(@$_SERVER['PATH_INFO'], 1));
 
-$post = filter_input_array(INPUT_POST);
+$inputJSON = file_get_contents('php://input');
+$input = json_decode($inputJSON, TRUE); //convert JSON into array
 
 
+//$post=json_decode($request);
 
 
  switch ($method) {
@@ -183,7 +185,7 @@ $post = filter_input_array(INPUT_POST);
     return array("type"=>"PUT","request"=>$request);
     break;
   case 'POST':
-    return array("type"=>"POST","request"=>array('body'=>$request,'parameters'=>$this->input));
+    return array("type"=>"POST","request"=>array('body'=>$input,'parameters'=>$this->input));
     break;
   case 'GET':
     return array("type"=>"GET","request"=>$_GET);
