@@ -48,7 +48,7 @@
   "module":"system.listen.curl"
 },
 "8":{
-    "id":"input",
+    "id":"blockInputInput",
     "type":"200",
     "canonical":"input",
     "module":"system.variable.input"

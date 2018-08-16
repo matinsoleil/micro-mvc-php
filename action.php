@@ -23,7 +23,7 @@ class action{
  if(isset($_URL)){
  $this->url = $_URL[0];
  }
- 
+
  $this->host = $_SERVER['HTTP_HOST'];
 
  $uri = $_SERVER['REQUEST_URI'];
@@ -33,12 +33,11 @@ class action{
  if(isset($_uri[0])){
  $this->uri = $_uri[0];
  }
- 
+
  if(isset($_uri[1])){
-     
      $_input = $_uri[1];
      $match=explode('=',$_input);
-     
+
  }else{
      $match= array();
  }
@@ -174,12 +173,14 @@ public function write($entity,$object){
    $method = $_SERVER['REQUEST_METHOD'];
 $request = explode("/", substr(@$_SERVER['PATH_INFO'], 1));
 
+$post = file_get_contents('php://input');
+
  switch ($method) {
   case 'PUT':
     return array("type"=>"PUT","request"=>$request);
     break;
   case 'POST':
-    return array("type"=>"POST","request"=>array('body'=>$_POST,'parameters'=>$this->input));
+    return array("type"=>"POST","request"=>array('body'=>$post,'parameters'=>$this->input));
     break;
   case 'GET':
     return array("type"=>"GET","request"=>$_GET);

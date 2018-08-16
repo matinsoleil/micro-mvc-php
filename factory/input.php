@@ -9,7 +9,6 @@ public $net;
     function render($entity){
 
 
-    
        $action=$this->net['action']->uri;
 
         preg_match_all('/((?:^|[A-Z])[a-z]+)/',$action,$matches);
@@ -19,11 +18,12 @@ public $net;
         $path =  strtolower($Path);
 
        if(file_exists('./'.$path.'.php')){
+
         include('./'.$path.'.php');
+
        }else{
         include('./block/box/default.php');
        }
-
 
     }
     public function block($entity){
