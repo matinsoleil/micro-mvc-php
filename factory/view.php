@@ -1,8 +1,8 @@
 <?php
 
-include('redis.php');
+include('cache.php');
 
-class view extends redis {
+class view extends cache {
 public $net;
     function __construct($net) {
     $this->net=$net;

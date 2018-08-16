@@ -1,9 +1,93 @@
 {
 "0":{
-    "id":"request",
-    "tag":"Request",
-    "label":"",
-    "type":"boolean",
-    "value":"false"
-    }
+    "id":"entity",
+    "tag":"Entity",
+    "label":"Entity",
+    "type":"string",
+    "value":""
+},
+"1":{
+    "id":"variable",
+    "tag":"Variable",
+    "label":"Variable",
+    "type":"string",
+    "value":""
+},
+"2":{
+    "id":"value",
+    "tag":"Value",
+    "label":"Value",
+    "type":"*",
+    "value":""
+},
+"3":{
+    "id":"status",
+    "tag":"Status",
+    "label":"Statis",
+    "type":"string",
+    "value":""
+},
+"4":{
+    "id":"attribute",
+    "tag":"Attribute",
+    "label":"Attribute",
+    "type":"string",
+    "value":""
+},
+"5":{
+    "id":"category",
+    "tag":"Category",
+    "label":"Category",
+    "type":"string",
+    "value":""
+},
+"6":{
+    "id":"group",
+    "tag":"Group",
+    "label":"Group",
+    "type":"string",
+    "value":"default"
+},
+"7":{
+    "id":"section",
+    "tag":"Section",
+    "label":"Section",
+    "type":"string",
+    "value":"default"
+},
+"8":{
+    "id":"collection",
+    "tag":"Collection",
+    "label":"Collection",
+    "type":"structure",
+    "value":""
+},
+"9":{
+  "id":"operation",
+  "tag":"Operation",
+  "label":"Operation",
+  "type":"structure",
+  "value":"default"
+},
+"10":{
+  "id":"action",
+  "tag":"Action",
+  "label":"Action",
+  "type":"string",
+  "value":"default"
+},
+"11":{
+  "id":"language",
+  "tag":"Language",
+  "label":"Language",
+  "type":"string",
+  "value":"en"
+},
+"12":{
+  "id":"region",
+  "tag":"Region",
+  "label":"Region",
+  "type":"string",
+  "value":"us"
+}
 }

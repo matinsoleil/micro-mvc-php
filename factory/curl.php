@@ -1,6 +1,6 @@
 <?php
 include('cache.php');
-class json extends cache {
+class curl extends cache {
 public $net;
     function __construct($net) {
     $this->net=$net;
@@ -9,9 +9,16 @@ public $net;
     function render($entity){
 
 
-     $action=$this->net['action']->uri;
+     $action=$this->net['action']->parameters;
 
-     $data = array("id"=>"2","request"=>"true");
+     $string = json_encode($action, JSON_PRETTY_PRINT);
+
+     $fp = fopen('./cache/input.txt', 'w');
+     fwrite($fp, $string);
+     fclose($fp);
+
+
+     $data = array("live"=>"true","id"=>"4");
      header('Content-Type: application/json');
      echo json_encode($data);
 

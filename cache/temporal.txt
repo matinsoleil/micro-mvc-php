@@ -10,11 +10,11 @@
 <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-8">
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"><title>
 	Contacto
-</title><meta id="MetaKeywords" name="KEYWORDS" content=",DotNetNuke,DNN" /><meta id="MetaGenerator" name="GENERATOR" content="DotNetNuke " /><meta id="MetaRobots" name="ROBOTS" content="INDEX, FOLLOW" /><link href="/Resources/Shared/stylesheets/dnndefault/7.0.0/default.css?cdv=200" type="text/css" rel="stylesheet"/><link href="/DesktopModules/MVC/DnnPtContacto/module.css?cdv=200" type="text/css" rel="stylesheet"/><link href="/Resources/Search/SearchSkinObjectPreview.css?cdv=200" type="text/css" rel="stylesheet"/><link href="/Portals/_default/skins/20043-unlimitedcolorpack-029/skin.css?cdv=200" type="text/css" rel="stylesheet"/><link href="/Portals/_default/skins/20043-unlimitedcolorpack-029/insidepage.css?cdv=200" type="text/css" rel="stylesheet"/><link href="/Portals/_default/containers/20043-unlimitedcolorpack-029/container.css?cdv=200" type="text/css" rel="stylesheet"/><link href="/Portals/0/portal.css?cdv=200" type="text/css" rel="stylesheet"/><link href="/Portals/0/home.css?cdv=200" type="text/css" rel="stylesheet"/><script src="/Resources/libraries/jQuery/03_02_01/jquery.js?cdv=200" type="text/javascript"></script><script src="/Resources/libraries/jQuery-Migrate/03_00_00/jquery-migrate.js?cdv=200" type="text/javascript"></script><script src="/Resources/libraries/jQuery-UI/01_12_01/jquery-ui.js?cdv=200" type="text/javascript"></script><link  rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" /><link  rel="stylesheet" type="text/css" href="/DesktopModules/DNNGo_xPlugin/Resource/css/jquery.mmenu.css?cdv=20180814.200" /><!--[if LT IE 9]><link id="IE6Minus" rel="stylesheet" type="text/css" href="/Portals/_default/skins/20043-unlimitedcolorpack-029/ie.css" /><![endif]--><link rel='SHORTCUT ICON' href='/Portals/0/cmc.ico?ver=2018-06-18-220415-907' type='image/x-icon' /><link href="https://cmc-pt.azurewebsites.net/Contacto" rel="canonical" /><meta name="viewport" content="width=device-width,height=device-height, minimum-scale=1.0, maximum-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /></head>
+</title><meta id="MetaKeywords" name="KEYWORDS" content=",DotNetNuke,DNN" /><meta id="MetaGenerator" name="GENERATOR" content="DotNetNuke " /><meta id="MetaRobots" name="ROBOTS" content="INDEX, FOLLOW" /><link href="/Resources/Shared/stylesheets/dnndefault/7.0.0/default.css?cdv=200" type="text/css" rel="stylesheet"/><link href="/DesktopModules/MVC/DnnPtContacto/module.css?cdv=200" type="text/css" rel="stylesheet"/><link href="/Resources/Search/SearchSkinObjectPreview.css?cdv=200" type="text/css" rel="stylesheet"/><link href="/Portals/_default/skins/20043-unlimitedcolorpack-029/skin.css?cdv=200" type="text/css" rel="stylesheet"/><link href="/Portals/_default/skins/20043-unlimitedcolorpack-029/insidepage.css?cdv=200" type="text/css" rel="stylesheet"/><link href="/Portals/_default/containers/20043-unlimitedcolorpack-029/container.css?cdv=200" type="text/css" rel="stylesheet"/><link href="/Portals/0/portal.css?cdv=200" type="text/css" rel="stylesheet"/><link href="/Portals/0/home.css?cdv=200" type="text/css" rel="stylesheet"/><script src="/Resources/libraries/jQuery/03_02_01/jquery.js?cdv=200" type="text/javascript"></script><script src="/Resources/libraries/jQuery-Migrate/03_00_00/jquery-migrate.js?cdv=200" type="text/javascript"></script><script src="/Resources/libraries/jQuery-UI/01_12_01/jquery-ui.js?cdv=200" type="text/javascript"></script><link  rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" /><link  rel="stylesheet" type="text/css" href="/DesktopModules/DNNGo_xPlugin/Resource/css/jquery.mmenu.css?cdv=20180815.200" /><!--[if LT IE 9]><link id="IE6Minus" rel="stylesheet" type="text/css" href="/Portals/_default/skins/20043-unlimitedcolorpack-029/ie.css" /><![endif]--><link rel='SHORTCUT ICON' href='/Portals/0/cmc.ico?ver=2018-06-18-220415-907' type='image/x-icon' /><link href="https://cmc-pt.azurewebsites.net/Contacto" rel="canonical" /><meta name="viewport" content="width=device-width,height=device-height, minimum-scale=1.0, maximum-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /></head>
 <body id="Body">
     
     <form method="post" action="/Contacto" id="Form" enctype="multipart/form-data">
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
 
 
 <script type="text/javascript">
@@ -26,7 +26,7 @@ var __cultureInfo = {"name":"es-ES","numberFormat":{"CurrencyDecimalDigits":2,"C
 <script src="/ScriptResource.axd?d=Jw6tUGWnA17qGp_N3LrWuhkegupDLhNBVUsbMlCjI0HinqcHKpY4tuQApOCMsHeUSdzC2KK3EZLmA0pDG6lyTi_2xtgy7yQ4CJd2UbhFVDa3ORCPuq4FGnIVcXbbZmyIRkFntYehrNmeyIME0&amp;t=ffffffffcd368728" type="text/javascript"></script>
 <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
 <input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
-<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="v8OckkkJT6vOxaj1vhXKda6PJvPM4uuB+N5JCxfO3bt3ISkvhC5ciY6O2UMVzCWZRGfuCigqswuwBVZKXoNsrXUD5OOMQ+MUKku7SefGGyYpjV8j7hG6CBH8ZLk6YHUbtiVYhjkT7lGw06qHGIuTNk0OvixiV4AHzvRbOI9g3hHLWJNaGT3VD8lCtmdAbkxogp5TFA==" /><script src="/js/dnn.js?cdv=200" type="text/javascript"></script><script src="/js/dnn.modalpopup.js?cdv=200" type="text/javascript"></script><script src="/Portals/_default/skins/20043-unlimitedcolorpack-029/scripts/pace.min.js?cdv=200" type="text/javascript"></script><script src="/js/dnncore.js?cdv=200" type="text/javascript"></script><script src="/Resources/Search/SearchSkinObjectPreview.js?cdv=200" type="text/javascript"></script><script src="/js/dnn.servicesframework.js?cdv=200" type="text/javascript"></script>
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/NglnqaxAX+1KhHSXdQnrCR/iA5+bPDOYAkW0qiLbTrbv1Y7XuIPuKOnuq50fkeo3Y6A7DPSkWAnXDuvFT7uJ2gtsk4QwPHd4DyT/PuNeC+6iEGMYPGv/4KVO9uFXAi2jMjLoHiCpRC1obeztJYyg0tphqfiOLeQSWrry/DGAJ7qJiorY3d0H7cYaZVlrD1vIizTQg==" /><script src="/js/dnn.js?cdv=200" type="text/javascript"></script><script src="/js/dnn.modalpopup.js?cdv=200" type="text/javascript"></script><script src="/Portals/_default/skins/20043-unlimitedcolorpack-029/scripts/pace.min.js?cdv=200" type="text/javascript"></script><script src="/js/dnncore.js?cdv=200" type="text/javascript"></script><script src="/Resources/Search/SearchSkinObjectPreview.js?cdv=200" type="text/javascript"></script><script src="/js/dnn.servicesframework.js?cdv=200" type="text/javascript"></script>
 <script type="text/javascript">
 //<![CDATA[
 Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [], 90, '');
@@ -58,8 +58,8 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [],
   </div>  
     <span class="fa fa-search  " id="mobile_search"></span>
     
-<a href="#gomenu51203b5d54" class="mobilemenu_close">X</a>
-<div id="gomenu51203b5d54" class="mobile_menu ">
+<a href="#gomenu536157ce0b" class="mobilemenu_close">X</a>
+<div id="gomenu536157ce0b" class="mobile_menu ">
     <ul  class="menu_list"><li class="   first-item Item-1 "><a href="https://www.consejomexcardio.org/"   title="Consejo Nacional de Cardiología"  ><span>Inicio</span></a></li><li class="   Item-2 "><a href="https://www.consejomexcardio.org/Historia"   title="Historia"  ><span>Historia</span></a></li><li class="   Item-3 "><a href="https://www.consejomexcardio.org/Cursos"   title="Cursos"  ><span>Cursos</span></a></li><li class="   Item-4 "><a href="https://www.consejomexcardio.org/Regulacion"   title="Regulación"  ><span>Regulacion</span></a></li><li class="   Item-5 "><a href="https://www.consejomexcardio.org/Certificacion"   title="Certificación"  ><span>Certificación</span></a></li><li class="   Item-6 "><a href="https://www.consejomexcardio.org/Directorio"   title="Directorio"  ><span>Directorio</span></a></li><li class="   Item-7 "><a href="https://www.consejomexcardio.org/Avisos"   title="Avisos"  ><span>Avisos</span></a></li><li class="  current  last-item Item-8  mm-selected"><a href="https://www.consejomexcardio.org/Contacto" class="acurrent"  title="Contacto"  ><span>Contacto</span></a></li></ul>
 </div>
  
@@ -67,9 +67,9 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [],
      jQuery(document).ready(function ($) {
 
 
-		 $('#gomenu51203b5d54').find(".dir.mm-selected").removeClass("mm-selected").parent().parent().addClass("mm-selected")
+		 $('#gomenu536157ce0b').find(".dir.mm-selected").removeClass("mm-selected").parent().parent().addClass("mm-selected")
 		 
-         $('#gomenu51203b5d54').mobile_menu({
+         $('#gomenu536157ce0b').mobile_menu({
              slidingSubmenus: true,
              counters: true,
              navbartitle: "Menu",
@@ -77,7 +77,7 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [],
              footerbox: ".menu_footer"			 
          });
 		 
-		  $('#gomenu51203b5d54').find("a[href='javascript:;']").on("click",function (e) {
+		  $('#gomenu536157ce0b').find("a[href='javascript:;']").on("click",function (e) {
 			  e.preventDefault();
 			  $(this).siblings(".mm-next").click();
 		  })
@@ -256,7 +256,7 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [],
               <div class="dnn_menu ">
                 <div id="dnngo_megamenu" class="IHide-sm IHide-md">
                   
-    <div class="dnngo_gomenu" id="dnngo_megamenu88788674eb">
+    <div class="dnngo_gomenu" id="dnngo_megamenu792d8034d2">
       
          <ul class="primary_structure">
  <li class=" ">
@@ -291,7 +291,7 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [],
     
 <script type="text/javascript">
     jQuery(document).ready(function ($) {
-        $("#dnngo_megamenu88788674eb").dnngomegamenu({
+        $("#dnngo_megamenu792d8034d2").dnngomegamenu({
             slide_speed: 200,
             delay_disappear: 500,
             popUp: "vertical",//level
@@ -304,7 +304,7 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [],
 
 
 	jQuery(document).ready(function () {
-		jQuery("#dnngo_megamenu88788674eb").has("ul").find(".dir > a").attr("aria-haspopup", "true");
+		jQuery("#dnngo_megamenu792d8034d2").has("ul").find(".dir > a").attr("aria-haspopup", "true");
 	}); 
 
 </script>
@@ -984,9 +984,9 @@ if(mapapikey && mapapikey!=""){
 
         <input name="ScrollTop" type="hidden" id="ScrollTop" />
         <input name="__dnnVariable" type="hidden" id="__dnnVariable" autocomplete="off" value="`{`__scdoff`:`1`,`dnn.scripts.js.resx`:`/WebResource.axd?d=DKiEc2s7S-76aXiADsH2Oh6mKXO0atrg-vhIxyEL8Jp9Kab0AZtRsopYkhO52Fyg8u47v_5zwFXGvTQNBeNomM6bYAU1\u0026t=636694836182369474`,`sf_siteRoot`:`/`,`sf_tabId`:`85`}" />
-        <input name="__RequestVerificationToken" type="hidden" value="ow-4HOmO7m7aVWx44jrwBoTlwSYlEoPSf8Q78YgOU1PFjO3wZOfLYuEsjv0FbBoywcWWog2" />
+        <input name="__RequestVerificationToken" type="hidden" value="TG01x3RByC1AKqlIZYj38sxwNSHfBXrxHllGmPDIsMVxO4MDdXV8ijkv0TTVdr8W6y9k-A2" />
     
-<script type="text/javascript" src="/DesktopModules/DNNGo_xPlugin/Resource/js/dnngo-xplugin.js?cdv=20180814.200"></script></form>
+<script type="text/javascript" src="/DesktopModules/DNNGo_xPlugin/Resource/js/dnngo-xplugin.js?cdv=20180815.200"></script></form>
     <!--CDF(Javascript|/js/dnncore.js?cdv=200)--><!--CDF(Css|/Portals/0/home.css?cdv=200)--><!--CDF(Javascript|/js/dnn.modalpopup.js?cdv=200)--><!--CDF(Css|/Resources/Shared/stylesheets/dnndefault/7.0.0/default.css?cdv=200)--><!--CDF(Css|/Portals/_default/skins/20043-unlimitedcolorpack-029/skin.css?cdv=200)--><!--CDF(Css|/Portals/_default/skins/20043-unlimitedcolorpack-029/insidepage.css?cdv=200)--><!--CDF(Css|/Portals/_default/containers/20043-unlimitedcolorpack-029/container.css?cdv=200)--><!--CDF(Css|/Portals/_default/containers/20043-unlimitedcolorpack-029/container.css?cdv=200)--><!--CDF(Css|/Portals/_default/containers/20043-unlimitedcolorpack-029/container.css?cdv=200)--><!--CDF(Css|/DesktopModules/MVC/DnnPtContacto/module.css?cdv=200)--><!--CDF(Css|/Portals/0/portal.css?cdv=200)--><!--CDF(Css|/Resources/Search/SearchSkinObjectPreview.css?cdv=200)--><!--CDF(Javascript|/Resources/Search/SearchSkinObjectPreview.js?cdv=200)--><!--CDF(Css|/Resources/Search/SearchSkinObjectPreview.css?cdv=200)--><!--CDF(Javascript|/Resources/Search/SearchSkinObjectPreview.js?cdv=200)--><!--CDF(Javascript|/js/dnn.js?cdv=200)--><!--CDF(Javascript|/js/dnn.servicesframework.js?cdv=200)--><!--CDF(Javascript|/Resources/libraries/jQuery/03_02_01/jquery.js?cdv=200)--><!--CDF(Javascript|/Resources/libraries/jQuery-Migrate/03_00_00/jquery-migrate.js?cdv=200)--><!--CDF(Javascript|/Resources/libraries/jQuery-UI/01_12_01/jquery-ui.js?cdv=200)-->
     
 </body>
