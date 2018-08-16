@@ -173,7 +173,8 @@ public function write($entity,$object){
    $method = $_SERVER['REQUEST_METHOD'];
 $request = explode("/", substr(@$_SERVER['PATH_INFO'], 1));
 
-$post = file_get_contents('php://input');
+$post = filter_input_array(INPUT_POST);
+
 
  switch ($method) {
   case 'PUT':
