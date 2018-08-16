@@ -20,18 +20,30 @@ class action{
 
  $_URL=  explode('?',$this->URL);
 
+ if(isset($_URL)){
  $this->url = $_URL[0];
-
+ }
+ 
  $this->host = $_SERVER['HTTP_HOST'];
 
  $uri = $_SERVER['REQUEST_URI'];
  $uri= ltrim($uri, '/');
  $_uri= explode('?',$uri);
 
+ if(isset($_uri[0])){
  $this->uri = $_uri[0];
- $_input = $_uri[1];
+ }
+ 
+ if(isset($_uri[1])){
+     
+     $_input = $_uri[1];
+     $match=explode('=',$_input);
+     
+ }else{
+     $match= array();
+ }
 
- $match=explode('=',$_input);
+
 
  $this->input = $match;
  $this->parameters= $this->data();

@@ -46,5 +46,12 @@
   "type":"200",
   "canonical":"live",
   "module":"system.listen.curl"
+},
+"8":{
+    "id":"input",
+    "type":"200",
+    "canonical":"input",
+    "module":"system.variable.input"
 }
 }
+
