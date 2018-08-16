@@ -2,8 +2,14 @@
     "type": "POST",
     "request": {
         "body": {
-            "urls": "http:\/\/www.yahoo.com.mx"
+            "urls": [
+                "help",
+                "masterCombo"
+            ]
         },
-        "parameters": "urls=http:\/\/www.google.com"
+        "parameters": [
+            "url",
+            "helpMaster"
+        ]
     }
 }

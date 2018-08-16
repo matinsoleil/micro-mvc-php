@@ -8,9 +8,12 @@ public $net;
     }
     function render($entity){
 
-
      $action=$this->net['action']->parameters;
-
+     if(isset($action["request"])){
+     $urls =  $action["request"]["body"]["urls"];
+     }else{
+     $urls = array("http://www.google.com");
+     }
 
      $string = json_encode($action, JSON_PRETTY_PRINT);
 
@@ -18,15 +21,25 @@ public $net;
      fwrite($fp, $string);
      fclose($fp);
 
+     $this->CURL($urls);
 
      $data = array("live"=>"true","id"=>"4");
      header('Content-Type: application/json');
      echo json_encode($data);
 
-
     }
-    public function block($entity){
 
+    public function CURL($URLS){
+
+	foreach($URLS as $URL){
+	$ch = curl_init($URL);
+	$fp = fopen("./cache/temporal.txt", "w");
+	curl_setopt($ch, CURLOPT_FILE, $fp);
+	curl_setopt($ch, CURLOPT_HEADER, 0);
+	curl_exec($ch);
+	curl_close($ch);
+	fclose($fp);
+	}
 
     }
     public function getNet($entity){
