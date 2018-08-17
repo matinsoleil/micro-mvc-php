@@ -1,9 +1,9 @@
 var imported = document.createElement('script');
-imported.src = 'https://unpkg.com/react@16/umd/react.development.js';
+imported.src = './js/react.development.js';
 document.head.appendChild(imported);
 
 var property = document.createElement('script');
-property.src = 'https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.6.2/prop-types.min.js';
+property.src = './js/prop-types.min.js';
 document.head.appendChild(property);
 
 class AdminMenu extends React.Component {
