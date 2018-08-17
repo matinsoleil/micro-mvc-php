@@ -1,3 +1,4 @@
+<?php
 class entity {
     function __construct() {
     }
