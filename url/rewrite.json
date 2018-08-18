@@ -52,6 +52,12 @@
     "type":"200",
     "canonical":"input",
     "module":"system.variable.input"
+},
+"9":{
+    "id":"blockGridDefault",
+    "type":"200",
+    "canonical":"input",
+    "module":"system.variable.grid"
 }
 }
 

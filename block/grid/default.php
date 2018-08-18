@@ -1,39 +1,58 @@
 <?php
 
-?>
-<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-
-<?php
+$grid = array('master','combo','top','helper','build','task');
 
 ?>
+<?php ?>
+<script src="./js/react.development.js"></script>
+<script src="./js/react-dom.development.js"></script>
+<script src="./js/babel.min.js"></script>
+<script src="./js/prop-types.min.js"></script>
+<?php ?>
 <div id="root"></div>
 <div id="tree"></div>
-<script type="text/jsx" >
+<script type="text/jsx">
 
-
-
-
-    
-class Clock extends React.Component {
+class Item extends React.Component {
   render() {
     return (
-      <div>
-        <h1>Hello, world!</h1>
-        <h2>It is {this.props.date.toLocaleTimeString()}.</h2>
-        <Card name='master' attribute='combo' />
+      [<div key={this.props.title}  className="title">Name</div>,
+      <div key={this.props.item} className="item" >
+          CHILD
+      </div>]
+    );
+  }
+}
+
+  Item.propTypes = {
+  title: PropTypes.string,
+  item: PropTypes.string
+};
+
+
+
+</script>
+<script type="text/jsx" >
+
+class Grid extends React.Component {
+  render() {
+    return (
+      <div className="grid" >
+        <?php foreach($grid as $key=>$item): ?>
+                 <Item item='<?php echo $key ?>tm' title='<?php echo $key ?>tl'  />
+                 <span><?php echo $item; ?></span>
+        <?php endforeach; ?>
       </div>
     );
   }
 }
 
-function tick() {
+ var format="horizontal";
+
   ReactDOM.render(
-    <Clock date={new Date()} />,
+    <Grid key='start' type={format} />,
     document.getElementById('root')
   );
-}
 
-setInterval(tick, 1000);
+
 </script>
