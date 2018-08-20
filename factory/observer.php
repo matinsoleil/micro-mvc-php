@@ -1,33 +1,16 @@
 <?php
 include('data.php');
 
-class listen extends data
+class observer extends data
 {
 public $entity;
 public $net;
-public $data;
-public $attribute;
-public $variable;
-public $show;
-
 function __construct($net) {
 $this->net = $net;
-$this->startDataBase();
-$urls = $this->read();
-$this->net['action']->data=array("urls"=>$urls);
 $this->entity="match";
+$attribute = $this->net['system']->attribute;
+
 }
-
-
-public function read($entity='url.cron'){
-
-    $entity=str_replace('.','/',$entity);
-    $str=file_get_contents("./".$entity.".json");
-    $this->show=json_decode($str,true);
-    return $this->show;
-}
-
-
 function setCollection(){}
 function getCollection(){}
 function popCollection(){}

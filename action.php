@@ -9,6 +9,7 @@ class action{
  public $data = array();
  public $parameters = array();
  public $ip;
+ public $clientName;
  public $entity;
  public $module;
  public $notfound;
@@ -47,6 +48,7 @@ class action{
  $this->input = $match;
  $this->parameters= $this->data();
  $this->ip=$this->getIP();
+ $this->clientName= gethostbyaddr($this->ip);
  }
 
 public function reservado($uri){

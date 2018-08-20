@@ -4,21 +4,17 @@ class json extends cache {
 public $net;
     function __construct($net) {
     $this->net=$net;
-    $this->render('content');
+     $this->render('content');
     }
     function render($entity){
 
-
      $action=$this->net['action']->uri;
-
-     $data = array("id"=>"2","request"=>"true");
+     $data =  $this->net['action']->data;
      header('Content-Type: application/json');
-     echo json_encode($data);
-
+     echo json_encode($data,JSON_PRETTY_PRINT);
 
     }
     public function block($entity){
-
 
     }
     public function getNet($entity){

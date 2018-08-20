@@ -5,10 +5,12 @@ class trigger extends data
 {
 public $entity;
 public $net;
+public $data;
+
 function __construct($net) {
 $this->net = $net;
+$this->net['action']->data=array("id"=>"1","response"=>"true");
 $this->entity="match";
-
 }
 function setCollection(){}
 function getCollection(){}

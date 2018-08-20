@@ -1,15 +1,4 @@
 {
-    "type": "POST",
-    "request": {
-        "body": {
-            "urls": [
-                "help",
-                "masterCombo"
-            ]
-        },
-        "parameters": [
-            "url",
-            "helpMaster"
-        ]
-    }
+    "type": "GET",
+    "request": []
 }

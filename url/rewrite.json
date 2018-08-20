@@ -3,68 +3,196 @@
    "id":"",
    "type":"200",
    "canonical":"",
-   "module":"system.model.view"
+   "module":"system.model.view",
+   "observer":{
+              "after":"*",
+              "before":"*"
+              },
+   "trigger":{
+              "after":"*",
+              "before":"*"
+             }
    },
 "1":{
    "id":"request",
    "type":"200",
    "canonical":"request",
-   "module":"system.trigger.api"
+   "module":"system.trigger.json",
+   "observer":{
+              "after":"*",
+              "before":"*"
+              },
+    "trigger":{
+              "after":"*",
+              "before":"*"
+             }
    },
 "2":{
    "id":"response",
    "type":"200",
    "canonical":"response",
-   "module":"system.model.json"
+   "module":"system.model.json",
+   "observer":{
+              "after":"*",
+              "before":"*"
+              },
+   "trigger":{
+              "after":"*",
+              "before":"*"
+             }
    },
 "3":{
    "id":"404",
    "type":"404",
    "canonical":"404",
-   "module":"system.model.not"
+   "module":"system.model.not",
+   "observer":{
+              "after":"*",
+              "before":"*"
+              },
+   "trigger":{
+              "after":"*",
+              "before":"*"
+             }
    },
 "4":{
    "id":"service",
    "type":"200",
    "canonical":"service",
-   "module":"system.service.json"
+   "module":"system.service.json",
+   "observer":{
+              "after":"*",
+              "before":"*"
+              },
+   "trigger":{
+              "after":"*",
+              "before":"*"
+             }
    },
 "5":{
    "id":"blockHeaderDefault",
    "type":"200",
    "canonical":"blockHeaderDefault",
-   "module":"system.model.header"
+   "module":"system.model.header",
+   "observer":{
+              "after":"*",
+              "before":"*"
+              },
+   "trigger":{
+              "after":"*",
+              "before":"*"
+             }
   },
 "6":{
   "id":"store",
   "type":"200",
   "canonical":"store",
-  "module":"system.model.view"
+  "module":"system.model.view",
+  "observer":{
+              "after":"*",
+              "before":"*"
+              },
+  "trigger":{
+              "after":"*",
+              "before":"*"
+             }
   },
 "7":{
   "id":"live",
   "type":"200",
   "canonical":"live",
-  "module":"system.listen.curl"
+  "module":"system.listen.curl",
+  "observer":{
+              "after":"*",
+              "before":"*"
+              },
+  "trigger":{
+              "after":"*",
+              "before":"*"
+             }
 },
 "8":{
     "id":"blockInputInput",
     "type":"200",
     "canonical":"input",
-    "module":"system.variable.input"
+    "module":"system.variable.input",
+    "observer":{
+              "after":"*",
+              "before":"*"
+              },
+    "trigger":{
+              "after":"*",
+              "before":"*"
+             }
 },
 "9":{
     "id":"blockGridDefault",
     "type":"200",
     "canonical":"input",
-    "module":"system.variable.grid"
+    "module":"system.variable.grid",
+    "observer":{
+              "after":"*",
+              "before":"*"
+              },
+    "trigger":{
+              "after":"*",
+              "before":"*"
+             }
 },
 "10":{
    "id":"job",
    "type":"200",
    "canonical":"job",
-   "module":"system.model.job"
+   "module":"system.listen.curl",
+   "observer":{
+              "after":"*",
+              "before":"*"
+              },
+   "trigger":{
+              "after":"*",
+              "before":"*"
+             }
+},
+"11":{
+   "id":"make_job",
+   "type":"200",
+   "canonical":"make_task",
+   "module":"system.prepare.job",
+   "observer":{
+              "after":"*",
+              "before":"*"
+              },
+   "trigger":{
+              "after":"*",
+              "before":"*"
+             }
+},
+"12":{
+  "id":"show_job",
+  "type":"200",
+  "module":"system.show.job",
+  "observer":{
+              "after":"*",
+              "before":"*"
+              },
+  "trigger":{
+              "after":"*",
+              "before":"*"
+             }
+ },
+"13":{
+  "id":"input",
+  "type":"200",
+  "module":"system.entity.json",
+  "observer":{
+              "after":"*",
+              "before":"*"
+              },
+  "trigger":{
+              "after":"*",
+              "before":"*"
+             }
 
-}
+ }
 }
 

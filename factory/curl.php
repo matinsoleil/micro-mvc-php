@@ -9,10 +9,10 @@ public $net;
     function render($entity){
 
      $action=$this->net['action']->parameters;
-     if(isset($action["request"])){
+     if(isset($action["request"]["body"]["urls"])){
      $urls =  $action["request"]["body"]["urls"];
      }else{
-     $urls = array("http://www.google.com");
+     $urls = $this->net['action']->data['urls'];
      }
 
      $string = json_encode($action, JSON_PRETTY_PRINT);
@@ -31,6 +31,7 @@ public $net;
 
     public function CURL($URLS){
 
+        if(is_array($URLS)){
 	foreach($URLS as $URL){
 	$ch = curl_init($URL);
 	$fp = fopen("./cache/temporal.txt", "w");
@@ -40,6 +41,7 @@ public $net;
 	curl_close($ch);
 	fclose($fp);
 	}
+        }
 
     }
     public function getNet($entity){

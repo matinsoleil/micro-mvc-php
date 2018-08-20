@@ -4,6 +4,7 @@ class system {
     public $net;
     public $src;
     public $attribute;
+    public $data= array();
     function __construct($net) {
     $this->net=$net;
     $this->start();
@@ -30,7 +31,6 @@ class system {
           $value =$src->src();
           $attributes[$key]['value'] = $value;
          }
-
        }
      }
 
@@ -46,6 +46,17 @@ class system {
     $this->system=json_decode($str,true);
 
     return $this->system;
+    }
+
+    function exist($entity){
+    $entity=str_replace('.','/',$entity);
+    $pathFile= "./".$entity.".json";
+
+    if(file_exists($pathFile)){
+    return true;
+    }else{
+    return false;
+    }
     }
 
     function listen(){

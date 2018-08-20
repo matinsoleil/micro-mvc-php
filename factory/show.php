@@ -1,7 +1,7 @@
 <?php
 include('data.php');
 
-class listen extends data
+class show extends data
 {
 public $entity;
 public $net;
@@ -14,6 +14,8 @@ function __construct($net) {
 $this->net = $net;
 $this->startDataBase();
 $urls = $this->read();
+var_dump($urls);
+die();
 $this->net['action']->data=array("urls"=>$urls);
 $this->entity="match";
 }
