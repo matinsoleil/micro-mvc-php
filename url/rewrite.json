@@ -58,6 +58,13 @@
     "type":"200",
     "canonical":"input",
     "module":"system.variable.grid"
+},
+"10":{
+   "id":"job",
+   "type":"200",
+   "canonical":"job",
+   "module":"system.model.job"
+
 }
 }
 
