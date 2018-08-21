@@ -1,17 +1,18 @@
 <?php
 
+$parameters =$this->parameters();
+if(!isset($parameters['request']['block'])):
 ?>
 <script src="./js/react.development.js"></script>
 <script src="./js/react-dom.development.js"></script>
 <script src="./js/babel.min.js"></script>
 <script src="./js/prop-types.min.js"></script>
-<script type="text/jsx" src="./js/AdminMenu.jsx" ></script>
-<?php
-
-?>
 <div id="root"></div>
-<div id="tree"></div>
-<script type="text/jsx" >
+<?php
+endif;
+?>
+<script id="adminMenu" type="text/jsx" src="./js/AdminMenu.jsx" ></script>
+<script id="input" type="text/jsx" >
 
 class Clock extends React.Component {
   render() {
@@ -33,3 +34,4 @@ function tick() {
 
 setInterval(tick, 1000);
 </script>
+

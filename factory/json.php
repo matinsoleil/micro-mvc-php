@@ -12,7 +12,8 @@ public $net;
      $data =  $this->net['action']->data;
      header('Content-Type: application/json');
      echo json_encode($data,JSON_PRETTY_PRINT);
-
+     $this->log(); 
+     
     }
     public function block($entity){
 
@@ -29,5 +30,17 @@ public $net;
     }
 
     }
+    
+     public function log(){
+     
+     $action=$this->net['action']->parameters;   
+     
+     $string = json_encode($action, JSON_PRETTY_PRINT);
+
+     $fp = fopen('./cache/input.txt', 'w');
+     fwrite($fp, $string);
+     fclose($fp);
+     
+ }  
 }
 ?>

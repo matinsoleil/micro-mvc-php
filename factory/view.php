@@ -11,17 +11,59 @@ public $net;
     }
     function render($entity){
 
+   
+     $this->log();   
+        
 
+     $entity = $this->net['model']->entity;
+     
+    
+      
+        
      $action=$this->net['action']->uri;
 
      $doc = new DOMDocument();
-     $entity = $this->net['model']->entity;
-     $doc->loadHTML("<html id='html' ><head id='head' ></head><body id='body' >Help Test ".$entity."<br></body></html>");
+    
+     $doc->validateOnParse = true; 
+     $doc->loadHTML(
+             "<html id='html' >"
+             . "<head id='head' >"
+             . "<script src='./js/react.development.js'></script>
+                <script src='./js/react-dom.development.js'></script>
+                <script src='./js/babel.min.js'></script>
+                <script src='./js/prop-types.min.js'></script>"
+             . "</head>"
+             . "<body id='body' >"
+             . "<div id='root'></div>"
+             . "</body>"
+             . "</html>"
+             
+             );
+     
+     $doc->preserveWhiteSpace = false;
+     
+    
+     $body = $doc->getElementById("body");
+    
+     
+     
+     
      echo $doc->saveHTML();
 
     }
-    public function block($entity){
+    public function block(){
 
+        $content=$this->get_post('http://macrocomer.mx/blockInputInput?block=true',array("master","combo"));
+        
+        $block = new DOMDocument();
+        
+        $block->validateOnParse = true; 
+        $block->loadHTML($content);
+        $block->preserveWhiteSpace = false;
+        
+        $block->getElementById('input');
+        
+        
 
     }
     public function getNet($entity){
@@ -36,62 +78,40 @@ public $net;
     }
 
     }
- public function get_remote_data($url, $post_paramtrs=false)
- {
-    $c = curl_init();
-    curl_setopt($c, CURLOPT_URL, $url);
-    curl_setopt($c, CURLOPT_RETURNTRANSFER, 1);
-    if($post_paramtrs)
-    {
-        curl_setopt($c, CURLOPT_POST,TRUE);
-        curl_setopt($c, CURLOPT_POSTFIELDS, "var1=bla&".$post_paramtrs );
-    }
-    curl_setopt($c, CURLOPT_SSL_VERIFYHOST,false);
-    curl_setopt($c, CURLOPT_SSL_VERIFYPEER,false);
-    curl_setopt($c, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; rv:33.0) Gecko/20100101 Firefox/33.0");
-    curl_setopt($c, CURLOPT_COOKIE, 'CookieName1=Value;');
-    curl_setopt($c, CURLOPT_MAXREDIRS, 10);
-    $follow_allowed= ( ini_get('open_basedir') || ini_get('safe_mode')) ? false:true;
-    if ($follow_allowed)
-    {
-        curl_setopt($c, CURLOPT_FOLLOWLOCATION, 1);
-    }
-    curl_setopt($c, CURLOPT_CONNECTTIMEOUT, 9);
-    curl_setopt($c, CURLOPT_REFERER, $url);
-    curl_setopt($c, CURLOPT_TIMEOUT, 60);
-    curl_setopt($c, CURLOPT_AUTOREFERER, true);
-    curl_setopt($c, CURLOPT_ENCODING, 'gzip,deflate');
-    $data=curl_exec($c);
-    $status=curl_getinfo($c);
-    curl_close($c);
-    preg_match('/(http(|s)):\/\/(.*?)\/(.*\/|)/si',  $status['url'],$link); $data=preg_replace('/(src|href|action)=(\'|\")((?!(http|https|javascript:|\/\/|\/)).*?)(\'|\")/si','$1=$2'.$link[0].'$3$4$5', $data);   $data=preg_replace('/(src|href|action)=(\'|\")((?!(http|https|javascript:|\/\/)).*?)(\'|\")/si','$1=$2'.$link[1].'://'.$link[3].'$3$4$5', $data);
-    if($status['http_code']==200)
-    {
-        return $data;
-    }
-    elseif($status['http_code']==301 || $status['http_code']==302)
-    {
-        if (!$follow_allowed)
-        {
-            if (!empty($status['redirect_url']))
-            {
-                $redirURL=$status['redirect_url'];
-            }
-            else
-            {
-                preg_match('/href\=\"(.*?)\"/si',$data,$m);
-                if (!empty($m[1]))
-                {
-                    $redirURL=$m[1];
-                }
-            }
-            if(!empty($redirURL))
-            {
-                return  call_user_func( __FUNCTION__, $redirURL, $post_paramtrs);
-            }
-        }
-    }
-    return "ERRORCODE22 with $url!!<br/>Last status codes<b/>:".json_encode($status)."<br/><br/>Last data got<br/>:$data";
+    
+ public function log(){
+     
+     $action=$this->net['action']->parameters;   
+     
+     $string = json_encode($action, JSON_PRETTY_PRINT);
+
+     $fp = fopen('./cache/input.txt', 'w');
+     fwrite($fp, $string);
+     fclose($fp);
+     
+ }   
+    
+ public function get_post($url,$data){
+
+//Initiate cURL.
+$ch = curl_init($url);
+//Encode the array into JSON.
+$jsonDataEncoded = json_encode($data);
+ 
+//Tell cURL that we want to send a POST request.
+curl_setopt($ch, CURLOPT_POST, 1);
+ 
+//Attach our encoded JSON string to the POST fields.
+curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonDataEncoded);
+ 
+//Set the content type to application/json
+curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json')); 
+
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+//Execute the request
+curl_exec($ch);
+     
  }
 }
 ?>
