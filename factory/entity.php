@@ -8,9 +8,11 @@ class entity extends data {
 
     $this->startDataBase();
 
-    $databases = $this->GET_COLLECTIONS();
+    //$databases = $this->GET_COLLECTION();
     
-    $this->net['action']->data = array('databases'=>$databases,'soft'=>$this->mongoActive);
+    $this->net['action']->data = array();
+      
+     //array('databases'=>$databases,'soft'=>$this->mongoActive);
     
     
 
