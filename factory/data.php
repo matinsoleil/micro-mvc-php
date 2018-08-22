@@ -31,9 +31,9 @@ class data {
             "H" => array(
                      "host"=>"127.0.0.1",
                      "port"=>"27017",
-                     "database"=>"profesion",
-                     "username"=>"general",
-                     "password"=>"papa700"
+                     "database"=>"macrocomer",
+                     "username"=>"commerce",
+                     "password"=>"commerce"
             ),
             "0" => array(
                     "host"=>"ds153123.mlab.com",
@@ -114,6 +114,10 @@ class data {
                 var_dump($e);
             }
             return $this->databases;
+        }else{
+            
+            return $this->READ('data.databases');
+            
         }
     }
 
@@ -133,6 +137,8 @@ class data {
         } catch (Error $e) {
             return array("exist" => "false");
         }
+        }else{
+           return $this->READ('data.collections');   
         }
     }
 
@@ -142,17 +148,9 @@ class data {
             foreach ($COLLECTION->listIndexes() as $index) {
             var_dump($index);
             }
+         }else{
+             return $this->READ('data.index');
          }
-    }
-
-    public function GET_VARIABLE($variable) {
-           if($this->mongoActive){
-           }
-    }
-
-    public function SET_VARIABLE($variable,$value) {
-           if($this->mongoActive){
-           }
     }
 
     public function GET($collection,$entity, $value) {
@@ -169,26 +167,65 @@ class data {
         }
     }
 
-    public function GET_COLLECTIONS(){
+    public function GET_COLLECTION($entity){
        if($this->mongoActive){
-       }
+           
+            $query = new MongoDB\Driver\Query([], []);
+            $database = $this->host['database'];
+            $rows = $manager->executeQuery($database . "." ."collection". $query);
+            $result = iterator_to_array($rows);
+            $result = json_decode(json_encode($result), True);
+            if (count($result) == 0) {
+                $result = array("error" => "empty");
+            }
+            return $result;
+           
+           
+       }else{
+           return $this->READ('data.collection');   
+        }
     }
 
-    public function SET_COLLECTIONS(){
+    public function SET_COLLECTION($entities){
+         
+        if($this->mongoActive){
+        $response = array();
+        $bulk = new MongoDB\Driver\BulkWrite(['ordered' => true]);
+        foreach ($entities as $entity) {
+            $bulk->insert($entity);
+        }
+        $manager = $this->DB;
+        $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 1000);
+        try {
+            $result = $manager->executeBulkWrite($this->host['database'] . '.' .'collection', $bulk, $writeConcern);
+        } catch (MongoDB\Driver\Exception\BulkWriteException $e) {
+            $result = $e->getWriteResult();
+            if ($writeConcernError = $result->getWriteConcernError()) {
+                return $this->ERROR($writeConcernError);
+            }
+            foreach ($result->getWriteErrors() as $writeError) {
+                $this->ERROR($writeError);
+            }
+        } catch (MongoDB\Driver\Exception\Exception $e) {
+            $this->ERROR($e->getMessage());
+            exit;
+        }
+        $response["result"] = $result->getInsertedCount();
+        $response["total"] = $result->getModifiedCount();
+        return $response;
+        }
+    }
+
+    public function GET_VARIABLE($entity){
       if($this->mongoActive){
        }
     }
-
-    public function GET_VARIABLES($entity){
-      if($this->mongoActive){
-       }
-    }
-    public function SET_VARIABLES($entity,$variables){
+    public function SET_VARIABLE($entity,$variables){
       if($this->mongoActive){
       }
     }
 
-    public function GET_ENTITIES($collection,$attribute){
+    public function GET_ENTITY($collection,$attribute){
         if($this->mongoActive){
         $filter = ['attribute'=>$attribute];
         $options = [];
@@ -203,7 +240,7 @@ class data {
         }
     }
 
-    public function GET_VALUES($collection,$variable,$value){
+    public function GET_VALUE($collection,$variable,$value){
         if($this->mongoActive){
         $filter = ['entity'=>'store'];
         $options = [];
@@ -218,7 +255,7 @@ class data {
         }
     }
 
-    public function GET_ATTRIBUTES($collection,$entity){
+    public function GET_ATTRIBUTE($collection,$entity){
         if($this->mongoActive){
         $filter = ['entity'=>$entity];
         $options = [];
@@ -372,4 +409,36 @@ class data {
         return $total;
         }
     }
+    
+    public function READ($collection){
+
+      $collection=str_replace('.','/',$collection);
+      $str=file_get_contents("./".$collection.".json");
+      return json_decode($str,true);
+
+    }
+    
+    public function WRITE($collection,$object){
+
+       $collection=str_replace('.','/',$collection);
+       $pathFile="./".$collection.".json";
+       $file = fopen($pathFile,"w");
+       $string = json_encode($object,JSON_PRETTY_PRINT);
+       fwrite($file,$string);
+       fclose($file);
+    
+     }
+     
+    public function MATCH($collection,$variable,$value){
+        
+         $collection =$this->READ($collection);
+        
+         foreach($collection as $item){
+             
+             
+             
+         }
+        
+    } 
+    
 }

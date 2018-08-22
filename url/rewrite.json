@@ -3,43 +3,19 @@
    "id":"",
    "type":"200",
    "canonical":"",
-   "module":"system.model.view",
-   "observer":{
-              "after":"*",
-              "before":"*"
-              },
-   "trigger":{
-              "after":"*",
-              "before":"*"
-             }
+   "module":"system.model.view"
    },
 "1":{
    "id":"request",
    "type":"200",
    "canonical":"request",
-   "module":"system.trigger.json",
-   "observer":{
-              "after":"*",
-              "before":"*"
-              },
-    "trigger":{
-              "after":"*",
-              "before":"*"
-             }
+   "module":"system.trigger.json"
    },
 "2":{
    "id":"response",
    "type":"200",
    "canonical":"response",
-   "module":"system.model.json",
-   "observer":{
-              "after":"*",
-              "before":"*"
-              },
-   "trigger":{
-              "after":"*",
-              "before":"*"
-             }
+   "module":"system.model.json"
    },
 "3":{
    "id":"404",
@@ -73,29 +49,13 @@
    "id":"blockHeaderDefault",
    "type":"200",
    "canonical":"blockHeaderDefault",
-   "module":"system.model.header",
-   "observer":{
-              "after":"*",
-              "before":"*"
-              },
-   "trigger":{
-              "after":"*",
-              "before":"*"
-             }
+   "module":"system.model.header"
   },
 "6":{
   "id":"store",
   "type":"200",
   "canonical":"store",
-  "module":"system.model.view",
-  "observer":{
-              "after":"*",
-              "before":"*"
-              },
-  "trigger":{
-              "after":"*",
-              "before":"*"
-             }
+  "module":"system.model.view"
   },
 "7":{
   "id":"live",
@@ -183,15 +143,7 @@
 "13":{
   "id":"input",
   "type":"200",
-  "module":"system.entity.json",
-  "observer":{
-              "after":"*",
-              "before":"*"
-              },
-  "trigger":{
-              "after":"*",
-              "before":"*"
-             }
+  "module":"system.entity.json"
 
  },
 "14":{

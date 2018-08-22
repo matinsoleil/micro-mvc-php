@@ -1,0 +1,12 @@
+{
+     "0":{
+        "entity":"name",
+        "attribute":"variable",
+        "value":"",
+        "type":"string",
+        "group":"",
+        "rwx":"666",
+        "state":"true",
+        "in":[]
+     }   
+}

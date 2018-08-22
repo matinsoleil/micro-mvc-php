@@ -1,0 +1,19 @@
+{
+   "0":{
+        "entity":"self",
+        "attribute":"collection",
+        "value":"",
+        "type":"data",
+        "group":"database",
+        "rwx":"666",
+        "state":"true",
+        "in":[
+              "data.collection",
+              "data.entity",
+              "data.attribute",
+              "data.variable",
+              "data.user",
+              "data.url"
+             ]
+     }
+}
