@@ -1,0 +1,85 @@
+{
+  "bienvenida":{
+         "pregunta":{
+                 "0":""
+                 },
+         "respuesta":{
+                 "0":""
+                 },
+         "objecion":{
+                 "0":""
+         },
+         "afirmacion":{
+
+         },
+         "solucion":{
+                 "0":{
+
+                     }
+         },
+         "nose":{
+
+         },
+         "si":{
+
+         },
+         "no":{
+                "0":{
+                     "value":"",
+                     "node":"",
+                     "state":"",
+                     "status":""
+                     }
+         }
+
+  },
+  "problema":{
+
+  },
+  "requisito":{
+
+  },
+  "requerimiento":{
+
+  },
+  "peticion":{
+
+  },
+  "solucion":{
+
+  },
+  "objecion":{
+
+  },
+  "acuerdo":{
+
+  },
+  "resolucion":{
+
+  }
+  "despedida":{
+
+  },
+  "conversacion":{
+
+ },
+  "humor":{
+
+  },
+  "el":{
+
+  },
+  "ellos":{
+
+  },
+  "eso":{
+
+
+  },
+  "yo":{
+
+  },
+  "nosotros":{
+
+  }
+}

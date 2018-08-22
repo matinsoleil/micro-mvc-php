@@ -9,6 +9,7 @@ class action{
  public $data = array();
  public $parameters = array();
  public $ip;
+ public $port;
  public $clientName;
  public $entity;
  public $module;
@@ -17,7 +18,14 @@ class action{
 
  public function getUrl (){
 
- $this->URL = "http://" . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+ $PORT = $_SERVER['SERVER_PORT'];
+
+ $this->port = $PORT;
+ if($PORT!='80'){
+ $this->URL = "http://" . $_SERVER['SERVER_NAME'].":".$PORT . $_SERVER['REQUEST_URI'];
+ }else{
+ $this->URL = "http://" . $_SERVER['SERVER_NAME']. $_SERVER['REQUEST_URI'];
+ }
 
  $_URL=  explode('?',$this->URL);
 

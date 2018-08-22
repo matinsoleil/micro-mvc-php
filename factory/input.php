@@ -10,8 +10,7 @@ public $net;
 
 
        $action=$this->net['action']->uri;
-       
-       
+
 
         preg_match_all('/((?:^|[A-Z])[a-z]+)/',$action,$matches);
 
@@ -31,7 +30,6 @@ public $net;
     public function parameters(){
 
       return $this->net['action']->parameters;
-         
 
     }
     public function getNet($entity){

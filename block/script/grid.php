@@ -1,11 +1,3 @@
-<?php
-//<script id="adminMenu" type="text/jsx" src="./js/AdminMenu.jsx" ></script>
-if($this->scripts()):
-include('./block/script/default.php');
-endif;
-?>
-<script id="input" type="text/jsx" >
-
 class Clock extends React.Component {
   constructor(props) {
     super(props);
@@ -39,9 +31,8 @@ class Clock extends React.Component {
   }
 }
 
-</script>
-<?php if($this->scripts()):?>
-<script  type="text/jsx" >
-ReactDOM.render(<Clock/>,document.getElementById('root'));
-</script>
-<?php endif; ?>
+ReactDOM.render(
+  <Clock />,
+  document.getElementById('root')
+);
+

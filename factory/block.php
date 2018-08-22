@@ -1,13 +1,16 @@
 <?php
-class block {
+include('cache.php');
+class block extends cache {
 public $net;
     function __construct($net) {
     $this->net=$net;
-    $this->render('default');
+    $this->render('content');
     }
     function render($entity){
 
+
        $action=$this->net['action']->uri;
+
 
         preg_match_all('/((?:^|[A-Z])[a-z]+)/',$action,$matches);
 
@@ -16,28 +19,22 @@ public $net;
         $path =  strtolower($Path);
 
        if(file_exists('./'.$path.'.php')){
+
         include('./'.$path.'.php');
+
        }else{
         include('./block/box/default.php');
        }
 
     }
-    public function variable($variable){
 
+    public function scripts(){
+    return TRUE;
     }
 
-    public function attribute($attribute){
+    public function parameters(){
 
-
-    }
-
-    public function entity($entity){
-
-
-    }
-
-    public function block($entity){
-
+      return $this->net['action']->parameters;
 
     }
     public function getNet($entity){

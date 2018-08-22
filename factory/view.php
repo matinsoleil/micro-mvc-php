@@ -4,68 +4,48 @@ include('cache.php');
 
 class view extends cache {
 public $net;
+public $url;
+public $uri;
     function __construct($net) {
     $this->net=$net;
-    $this->render('content');
+    $this->url = $this->net['action']->url;
+    $this->uri = $this->net['action']->uri;
     $this->startCache();
+    $this->render('content');
     }
+
     function render($entity){
 
-   
-     $this->log();   
-        
+    $html = $this->get_post($this->url.'blockViewDefault',array('nothing'));
+    $doc = new DOMDocument();
+    //libxml_use_internal_errors(true);
+    $doc->preserveWhiteSpace = true; // needs to be before loading, to have any effect
+    $doc->loadHTML((string)$html);
+    $doc->formatOutput = true;
+    print $doc->saveHTML();
 
-     $entity = $this->net['model']->entity;
-     
-    
-      
-        
-     $action=$this->net['action']->uri;
+    }
 
-     $doc = new DOMDocument();
-    
-     $doc->validateOnParse = true; 
-     $doc->loadHTML(
-             "<html id='html' >"
-             . "<head id='head' >"
-             . "<script src='./js/react.development.js'></script>
-                <script src='./js/react-dom.development.js'></script>
-                <script src='./js/babel.min.js'></script>
-                <script src='./js/prop-types.min.js'></script>"
-             . "</head>"
-             . "<body id='body' >"
-             . "<div id='root'></div>"
-             . "</body>"
-             . "</html>"
-             
-             );
-     
-     $doc->preserveWhiteSpace = false;
-     
-    
-     $body = $doc->getElementById("body");
-    
-     
-     
-     
-     echo $doc->saveHTML();
+    function old($entity){
+
+    include('./block/script/default.php');
+    include('./block/input/input.php');
+    include('./block/grid/default.php');
 
     }
     public function block(){
 
-        $content=$this->get_post('http://macrocomer.mx/blockInputInput?block=true',array("master","combo"));
-        
-        $block = new DOMDocument();
-        
-        $block->validateOnParse = true; 
-        $block->loadHTML($content);
-        $block->preserveWhiteSpace = false;
-        
-        $block->getElementById('input');
-        
-        
+    }
+
+    public function scripts(){
+    return FALSE;
+    }
+    public function parameters(){
+
+    return $this->net['action']->parameters;
 
     }
+
     public function getNet($entity){
 
     $net = (array) $this->net;
@@ -78,40 +58,41 @@ public $net;
     }
 
     }
-    
  public function log(){
-     
-     $action=$this->net['action']->parameters;   
-     
+
+     $action=$this->net['action']->parameters;
      $string = json_encode($action, JSON_PRETTY_PRINT);
 
      $fp = fopen('./cache/input.txt', 'w');
      fwrite($fp, $string);
      fclose($fp);
-     
- }   
-    
+
+ }
+
  public function get_post($url,$data){
 
 //Initiate cURL.
 $ch = curl_init($url);
 //Encode the array into JSON.
 $jsonDataEncoded = json_encode($data);
- 
+
 //Tell cURL that we want to send a POST request.
 curl_setopt($ch, CURLOPT_POST, 1);
- 
+
 //Attach our encoded JSON string to the POST fields.
 curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonDataEncoded);
- 
+
 //Set the content type to application/json
 curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json')); 
 
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
 //Execute the request
-curl_exec($ch);
-     
+return curl_exec($ch);
+
  }
+
+
+
 }
 ?>

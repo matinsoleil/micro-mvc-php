@@ -1,4 +1,6 @@
 {
     "type": "GET",
-    "request": []
+    "request": {
+        "q": "que tal"
+    }
 }

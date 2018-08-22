@@ -115,7 +115,7 @@
     "id":"blockInputInput",
     "type":"200",
     "canonical":"input",
-    "module":"system.variable.input",
+    "module":"system.variable.block",
     "observer":{
               "after":"*",
               "before":"*"
@@ -129,7 +129,7 @@
     "id":"blockGridDefault",
     "type":"200",
     "canonical":"input",
-    "module":"system.variable.grid",
+    "module":"system.variable.block",
     "observer":{
               "after":"*",
               "before":"*"
@@ -193,6 +193,16 @@
               "before":"*"
              }
 
- }
+ },
+"14":{
+ "id":"blockViewDefault",
+  "type":"200",
+  "module":"system.entity.block"
+},
+"15":{
+  "id":"bot",
+  "type":"200",
+  "module":"system.bot.json"
+}
 }
 

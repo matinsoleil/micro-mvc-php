@@ -3,14 +3,14 @@
 $grid = array('master','combo','top','helper','build','task');
 
 ?>
-<?php ?>
+<?php if($this->scripts()): ?>
 <script src="./js/react.development.js"></script>
 <script src="./js/react-dom.development.js"></script>
 <script src="./js/babel.min.js"></script>
 <script src="./js/prop-types.min.js"></script>
-<?php ?>
 <div id="root"></div>
-<div id="tree"></div>
+<?php endif; ?>
+
 <script type="text/jsx">
 
 class Item extends React.Component {
@@ -30,7 +30,6 @@ class Item extends React.Component {
 };
 
 
-
 </script>
 <script type="text/jsx" >
 
@@ -42,17 +41,24 @@ class Grid extends React.Component {
                  <Item item='<?php echo $key ?>tm' title='<?php echo $key ?>tl'  />
                  <span><?php echo $item; ?></span>
         <?php endforeach; ?>
+      <Clock/>
       </div>
     );
   }
 }
 
- var format="horizontal";
+var format="horizontal";
+
+</script>
+
+<?php if(TRUE): ?>
+
+<script  type="text/jsx" >
 
   ReactDOM.render(
     <Grid key='start' type={format} />,
     document.getElementById('root')
   );
 
-
 </script>
+<?php endif; ?>
