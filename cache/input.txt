@@ -1,6 +1,4 @@
 {
     "type": "GET",
-    "request": {
-        "q": "me apoyas para encontrar mis credenciales"
-    }
+    "request": []
 }
