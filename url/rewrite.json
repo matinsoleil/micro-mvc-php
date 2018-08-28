@@ -155,6 +155,12 @@
   "id":"bot",
   "type":"200",
   "module":"system.bot.json"
+},
+"16":{
+   "id":"open",
+  "type":"200",
+  "module":"system.open.json" 
+    
 }
 }
 

@@ -2,6 +2,7 @@
     "require": {
         "jenssegers/mongodb": "^3.4",
         "bramus/router": "dev-master",
-        "auth0/auth0-php": "~5.0"
+        "auth0/auth0-php": "~5.0",
+        "bshaffer/oauth2-server-php": "^1.10"
     }
 }

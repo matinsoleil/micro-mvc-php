@@ -95,6 +95,31 @@ class data {
             }
         }
     }
+    
+    public function CLIENT(){
+        
+         $m = new MongoDB\Client('mongodb://localhost', [
+    'username' => 'commerce',
+    'password' => 'commerce',
+    'db'       => 'macrocomer'
+    ]);
+        
+        return $m;
+    }
+    
+    
+    public function DRIVER(){
+        
+      $driver = new MongoDB\Driver\Manager('mongodb://localhost', [
+    'username' => 'commerce',
+    'password' => 'commerce',
+    'db'       => 'macrocomer'
+    ]);
+        
+      return $driver;
+      
+    }
+    
 
     public function DATABASES() {
         if ($this->mongoActive) {
