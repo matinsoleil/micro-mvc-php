@@ -8,6 +8,7 @@ $grid = array('master','combo','top','helper','build','task');
 <script src="./js/react-dom.development.js"></script>
 <script src="./js/babel.min.js"></script>
 <script src="./js/prop-types.min.js"></script>
+<script type="text/jsx" src="./js/AdminMenu.jsx"></script>
 <div id="root"></div>
 <?php endif; ?>
 
@@ -41,7 +42,6 @@ class Grid extends React.Component {
                  <Item item='<?php echo $key ?>tm' title='<?php echo $key ?>tl'  />
                  <span><?php echo $item; ?></span>
         <?php endforeach; ?>
-      <Clock/>
       </div>
     );
   }
@@ -56,7 +56,7 @@ var format="horizontal";
 <script  type="text/jsx" >
 
   ReactDOM.render(
-    <Grid key='start' type={format} />,
+    <div><Grid key='start' type={format} /><AdminMenu name='master' attribute='help' /></div>,
     document.getElementById('root')
   );
 
