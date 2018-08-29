@@ -98,13 +98,12 @@ class data {
     
     public function CLIENT(){
         
-         $m = new MongoDB\Client('mongodb://localhost', [
-    'username' => 'commerce',
-    'password' => 'commerce',
-    'db'       => 'macrocomer'
-    ]);
+         $client = new MongoDB\Client();
         
-        return $m;
+         
+         
+         
+        return $client;
     }
     
     
@@ -112,8 +111,7 @@ class data {
         
       $driver = new MongoDB\Driver\Manager('mongodb://localhost', [
     'username' => 'commerce',
-    'password' => 'commerce',
-    'db'       => 'macrocomer'
+    'password' => 'commerce'
     ]);
         
       return $driver;
