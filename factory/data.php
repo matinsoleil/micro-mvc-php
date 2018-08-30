@@ -239,8 +239,18 @@ class data {
         }
     }
 
-    public function GET_VARIABLE($entity){
+    public function GET_VARIABLE(){
       if($this->mongoActive){
+        $filter = ['attribute'=>$attribute];
+        $options = [];
+        $query = new MongoDB\Driver\Query($filter, $options);
+        $manager = $this->DB;
+        $database = $this->host['database'];
+        $rows = $manager->executeQuery($database.'.'.'variable', $query); // $mongo contains the connection object to MongoDB
+        $result = iterator_to_array($rows);
+        $result = json_decode(json_encode($result), True);
+        unset($result[0]['_id']);
+        return $result[0];
        }
     }
     public function SET_VARIABLE($entity,$variables){
