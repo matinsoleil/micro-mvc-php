@@ -8,7 +8,9 @@ class entity extends data {
 
     $this->startDataBase();
 
-    $this->GET_VARIABLE();
+    $variables=$this->GET_VARIABLE("variable");
+    
+    var_dump($variables);
     
     //$databases = $this->GET_COLLECTION();
     

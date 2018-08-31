@@ -239,7 +239,7 @@ class data {
         }
     }
 
-    public function GET_VARIABLE(){
+    public function GET_VARIABLE($attribute){
       if($this->mongoActive){
         $filter = ['attribute'=>$attribute];
         $options = [];
@@ -249,8 +249,13 @@ class data {
         $rows = $manager->executeQuery($database.'.'.'variable', $query); // $mongo contains the connection object to MongoDB
         $result = iterator_to_array($rows);
         $result = json_decode(json_encode($result), True);
-        unset($result[0]['_id']);
+        if(isset($result[0])){
         return $result[0];
+        }else{
+        return array();    
+        }
+        unset($result[0]['_id']);
+        
        }
     }
     public function SET_VARIABLE($entity,$variables){
