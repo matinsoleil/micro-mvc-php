@@ -258,9 +258,33 @@ class data {
         
        }
     }
-    public function SET_VARIABLE($entity,$variables){
+    public function SET_VARIABLE($name,$label,$type){
+        
+    $variable = 
+       array(
+        "entity"=>'variable',
+        "attribute"=>$name,
+        "value:default"=>'',
+        "label:en:us"=>$label, 
+        "type:default"=>$type,
+        "src:default"=>'',
+        "group:default"=>'user',   
+        "rwx:default"=>'777',
+        "state:true"=>'true',
+        "state:false"=>'false',   
+        "in:default"=>array()
+         );  
+        
       if($this->mongoActive){
+          
       }
+    }
+    
+    
+    public function GET_VARIABLE_TYPE(){
+        
+        array("image","video","sound","text","number","map","keyword","email","password","token","secret","url","select","miltiselect","list","group","category");
+        
     }
 
     public function GET_ENTITY($collection,$attribute){
