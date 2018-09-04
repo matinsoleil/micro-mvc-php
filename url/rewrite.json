@@ -159,8 +159,12 @@
 "16":{
    "id":"open",
   "type":"200",
-  "module":"system.open.json" 
-    
+  "module":"system.open.json"
+},
+"17":{
+   "id":"yo",
+  "type":"200",
+  "module":"system.yo.json"
 }
 }
 
