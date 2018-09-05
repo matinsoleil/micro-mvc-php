@@ -239,17 +239,18 @@ class data {
         }
     }
 
-    public function GET_VARIABLE($attribute){
+    public function GET_VARIABLE($name){
       if($this->mongoActive){
-        $filter = ['attribute'=>$attribute];
+        $filter = ['attribute'=>$name];
         $options = [];
         $query = new MongoDB\Driver\Query($filter, $options);
         $manager = $this->DB;
         $database = $this->host['database'];
-        $rows = $manager->executeQuery($database.'.'.'variable', $query); // $mongo contains the connection object to MongoDB
+        $rows = $manager->executeQuery($database.'.'.'default', $query); // $mongo contains the connection object to MongoDB
         $result = iterator_to_array($rows);
         $result = json_decode(json_encode($result), True);
         if(isset($result[0])){
+        unset($result[0]['_id']);    
         return $result[0];
         }else{
         return array();    
@@ -259,6 +260,10 @@ class data {
        }
     }
     public function SET_VARIABLE($name,$label,$type){
+        
+      $exist=$this->GET_VARIABLE($name);
+        
+      if(0!=(count($exist))){
         
     $variable = 
        array(
@@ -277,7 +282,13 @@ class data {
         
       if($this->mongoActive){
           
+          $response = $this->PUSH('default',array($variable));
+          
+          
       }
+      
+      }
+      return array('exist'=>'TRUE');
     }
     
     
@@ -347,8 +358,36 @@ class data {
         }
     }
 
-    public function SET_EAV($collection,$entity,$attribute,$value){
+    public function SET_EAV($collection,$entity,$attribute,$values,$in=array()){
     if($this->mongoActive){
+        
+        
+        
+        
+       $eav = array(
+        "entity"=>$entity,
+        "attribute"=>$attribute,
+        "value:default"=>'',
+        "label:en:us"=>'', 
+        "type:default"=>'sample',
+        "src:default"=>'',
+        "group:default"=>'user',   
+        "rwx:default"=>'777',
+        "state:true"=>'true',
+        "state:false"=>'false',   
+        "in:default"=>''
+         );  
+        
+       
+         $values=array_merge($values,$in);
+       
+         $eav=array_merge($eav,$values);
+         
+         
+         
+        $result = $this->PUSH($collection,array($eav));
+        
+        return $result;
      }
     }
 
