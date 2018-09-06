@@ -15,7 +15,7 @@ class entity extends data {
     $collection='variable';
     $entity='sample';
     $attribute='sample';
-    
+    $result = array();
     //$result=$this->SET_EAV($collection, $entity, $attribute, $values);
     
     //$result = $this->GET_EAV($collection, $entity, $attribute);
