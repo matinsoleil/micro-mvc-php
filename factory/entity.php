@@ -8,6 +8,48 @@ class entity extends data {
 
     $this->startDataBase();
 
+    $parameters=$this->net['action']->parameters;
+    
+    $_value = array();
+    
+    $values= $parameters['request'];
+    
+    $attribute='default';
+    $entity = 'default';
+    $collection = 'default';
+            
+    
+    
+    foreach($values as $key=>$value){
+        
+        $k = explode(':',$key);
+        
+        $n= $k[0];
+        
+        if($k[1]=='collection' && $k[2]=='attribute'){
+         
+            $attribute=$value;
+         
+        }elseif($k[1]=='collection' && $k[2]=='name'){
+            
+            $collection= $value;
+            
+        }elseif($k[1]=='collection' && $k[2]=='entity'){
+            
+            $entity=$value;
+            
+        }else{
+
+        $v= $k[1].':'.$k[2];
+        
+        $_value[$n][$v]=$value;
+  
+        }
+        
+    }
+    
+
+    
     //$variables=$this->GET_VARIABLE("variable");
     
     $values=array('value:default'=>'sample','value:standard'=>'sample');
@@ -23,7 +65,7 @@ class entity extends data {
     //$result = $this->SET_VARIABLE('number','Number','number');
     
   
-   // $number = $this->GET_VARIABLE('number');
+   //$result = $this->GET_VARIABLE('number');
     
     
     
@@ -32,7 +74,7 @@ class entity extends data {
     
     
     
-    $this->net['action']->data = array("number"=>$result);
+    $this->net['action']->data = array("eav"=>$_value,"parammeters"=>$parameters);
     
     
     
