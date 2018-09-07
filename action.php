@@ -195,7 +195,7 @@ $input = json_decode($inputJSON, TRUE); //convert JSON into array
     return array("type"=>"PUT","request"=>$request);
     break;
   case 'POST':
-    return array("type"=>"POST","request"=>array('body'=>$input,'parameters'=>$this->input,'request'=>$request);
+    return array("type"=>"POST","request"=>array('body'=>$input,'parameters'=>$this->input,'request'=>$request));
     break;
   case 'GET':
     return array("type"=>"GET","request"=>$_GET);
