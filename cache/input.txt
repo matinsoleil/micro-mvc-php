@@ -1,8 +1,9 @@
 {
     "type": "GET",
     "request": {
-        "0:value:help": "nothing",
-        "0:value:master": "task",
-        "0:value:task": "reat"
+        "0:collection:default": "default",
+        "0:entity:default": "service",
+        "0:attribute:default": "password",
+        "0:value:time": "50"
     }
 }

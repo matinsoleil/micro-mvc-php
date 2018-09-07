@@ -10,55 +10,67 @@ class entity extends data {
 
     $parameters=$this->net['action']->parameters;
     
+    $totalParameters = count($parameters['request']);
+
+   
     $_value = array();
+    
+   
+    
+    $attribute='';
+    $entity = '';
+    $collection = '';
+    $full = 0;        
+    
+    if($totalParameters!=0){
     
     $values= $parameters['request'];
     
-    $attribute='default';
-    $entity = 'default';
-    $collection = 'default';
-            
-    
-    
+   
+        
     foreach($values as $key=>$value){
         
         $k = explode(':',$key);
         
-        $n= $k[0];
         
-        if($k[1]=='collection' && $k[2]=='attribute'){
-         
-            $attribute=$value;
-         
-        }elseif($k[1]=='collection' && $k[2]=='name'){
-            
-            $collection= $value;
-            
-        }elseif($k[1]=='collection' && $k[2]=='entity'){
-            
-            $entity=$value;
-            
-        }else{
+     
+        
+    
 
+        $n = $k[0];    
         $v= $k[1].':'.$k[2];
-        
-        $_value[$n][$v]=$value;
   
-        }
+        $_value[$n][$v]=$value;
+ 
+   
+        
+       
+           
+    
+ 
+    
+ 
+
+        
+     
+       
+    
         
     }
     
+     $collection = 'default';
 
+     $result=$this->SET_EAV($collection,$_value); 
+    
+    
+    }
+
+    
+   
     
     //$variables=$this->GET_VARIABLE("variable");
     
-    $values=array('value:default'=>'sample','value:standard'=>'sample');
-    
-    $collection='variable';
-    $entity='sample';
-    $attribute='sample';
-    $result = array();
-    //$result=$this->SET_EAV($collection, $entity, $attribute, $values);
+
     
     //$result = $this->GET_EAV($collection, $entity, $attribute);
     
@@ -67,20 +79,12 @@ class entity extends data {
   
    //$result = $this->GET_VARIABLE('number');
     
-    
-    
-    
+  
     //$databases = $this->GET_COLLECTION();
-    
-    
-    
-    $this->net['action']->data = array("eav"=>$_value,"parammeters"=>$parameters);
-    
-    
-    
+
+     $this->net['action']->data = array("eav"=>$_value,"parammeters"=>$parameters);
+
      //array('databases'=>$databases,'soft'=>$this->mongoActive);
-    
-    
 
     }
    

@@ -315,7 +315,7 @@ class data {
 
     public function GET_VALUE($collection,$variable,$value){
         if($this->mongoActive){
-        $filter = ['entity'=>'store'];
+        $filter = ['entity:default'=>'store'];
         $options = [];
         $query = new MongoDB\Driver\Query($filter, $options);
         $manager = $this->DB;
@@ -330,7 +330,7 @@ class data {
 
     public function GET_ATTRIBUTE($collection,$entity){
         if($this->mongoActive){
-        $filter = ['entity'=>$entity];
+        $filter = ['entity:default'=>$entity];
         $options = [];
         $query = new MongoDB\Driver\Query($filter, $options);
         $manager = $this->DB;
@@ -345,7 +345,7 @@ class data {
 
     public function GET_EAV($collection,$entity,$attribute){
         if($this->mongoActive){
-        $filter = ['attribute'=>$attribute,'entity'=>$entity];
+        $filter = ['attribute:default'=>$attribute,'entity:default'=>$entity];
         $options = [];
         $query = new MongoDB\Driver\Query($filter, $options);
         $manager = $this->DB;
@@ -353,20 +353,33 @@ class data {
         $rows = $manager->executeQuery($database.'.'.$collection, $query); // $mongo contains the connection object to MongoDB
         $result = iterator_to_array($rows);
         $result = json_decode(json_encode($result), True);
+        
+        if(isset($result[0])){
         unset($result[0]['_id']);
         return $result[0];
+        }else{
+        return array();    
+        }
+        
         }
     }
 
-    public function SET_EAV($collection,$entity,$attribute,$values,$in=array()){
+    public function SET_EAV($collection,$values){
+        
     if($this->mongoActive){
         
+        $EAV = array();
+        
+        foreach($values as $value){
         
         
+            
+        //$exist = $this->GET_EAV($collection, $entity, $attribute);
+        
+       
         
        $eav = array(
-        "entity"=>$entity,
-        "attribute"=>$attribute,
+        "collection:default"=>'',
         "value:default"=>'',
         "label:en:us"=>'', 
         "type:default"=>'sample',
@@ -377,17 +390,21 @@ class data {
         "state:false"=>'false',   
         "in:default"=>''
          );  
-        
        
-         $values=array_merge($values,$in);
+      
        
-         $eav=array_merge($eav,$values);
-         
-         
-         
-        $result = $this->PUSH($collection,array($eav));
-        
-        return $result;
+       
+        $eav = array_merge($value,$eav);
+       
+       
+         array_push($EAV,$eav);
+       
+        }
+       
+
+  
+        $result = $this->PUSH($collection,$EAV);
+       
      }
     }
 
