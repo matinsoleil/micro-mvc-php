@@ -25,7 +25,10 @@ $this->net['action']->data =array("random"=>$random);
 
 }
 
+function VerbTime(){
 
+
+}
 function Mind(){
 
 
@@ -103,6 +106,15 @@ for($i = 1; $i < $id_length; $i ++) {
 
 }
 return $token;
+}
+
+public function read($entity){
+
+    $entity=str_replace('.','/',$entity);
+    $str=file_get_contents("./".$entity.".json");
+    $this->system=json_decode($str,true);
+    return $this->system;
+
 }
 
 

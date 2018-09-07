@@ -1,0 +1,161 @@
+{
+ "1":{
+     "verb":"ser",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"1":{
+     "verb":"andar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+
+ "1":{
+     "verb":"soñar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"1":{
+     "verb":"pasar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+ "0":{
+     "verb":"estar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    }
+"1":{
+     "verb":"recordar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"1":{
+     "verb":"pensar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"1":{
+     "verb":"confundir",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"1":{
+     "verb":"visualizar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"1":{
+     "verb":"imaginar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"1":{
+     "verb":"idear",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"1":{
+     "verb":"razonar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+
+"1":{
+     "verb":"comprender",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+
+"1":{
+     "verb":"aprender",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"1":{
+     "verb":"entender",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"1":{
+     "verb":"probar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"1":{
+     "verb":"gustar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+
+"1":{
+     "verb":"disgustar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+
+"1":{
+     "verb":"hacer",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"1":{
+     "verb":"realizar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"1":{
+     "verb":"emocionar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    }
+"1":{
+     "verb":"enfadar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    }
+}

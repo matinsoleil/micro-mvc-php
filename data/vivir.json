@@ -1,0 +1,108 @@
+{
+"0":{
+     "verb":"nacer",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"1":{
+     "verb":"sentir",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"1":{
+     "verb":"alimentar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"2":{
+     "verb":"crecer",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"3":{
+     "verb":"vivir",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+
+"4":{
+     "verb":"estar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"5":{
+     "verb":"hacer",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"6":{
+     "verb":"andar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"7":{
+     "verb":"relacionar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"8":{
+     "verb":"accidentar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"9":{
+     "verb":"reproducir",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"10":{
+     "verb":"enfermar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"11":{
+     "verb":"curar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"1":{
+     "verb":"evejecer",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"12":{
+     "verb":"morir",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+     }
+}
