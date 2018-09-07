@@ -115,6 +115,20 @@
      "way":""
     },
 "1":{
+     "verb":"opinar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"1":{
+     "verb":"decicir",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"1":{
      "verb":"gustar",
      "value":"",
      "frecuency":"",
@@ -150,9 +164,37 @@
      "frecuency":"",
      "direction":"",
      "way":""
-    }
+    },
+"1":{
+     "verb":"disfrutar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"1":{
+     "verb":"reir",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
 "1":{
      "verb":"enfadar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"1":{
+     "verb":"odiar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"1":{
+     "verb":"entristecer",
      "value":"",
      "frecuency":"",
      "direction":"",
