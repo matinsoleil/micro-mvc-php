@@ -1,9 +1,6 @@
 {
     "type": "GET",
     "request": {
-        "0:collection:default": "default",
-        "0:entity:default": "service",
-        "0:attribute:default": "password",
-        "0:value:time": "50"
+        "war": "1"
     }
 }

@@ -1,6 +1,6 @@
 <?php
 include('cache.php');
-class json extends cache {
+class write extends cache {
 public $net;
     function __construct($net) {
     $this->net=$net;
@@ -37,7 +37,7 @@ public $net;
 
      $string = json_encode($action, JSON_PRETTY_PRINT);
 
-     $fp = fopen('./cache/input.txt', 'w');
+     $fp = fopen('./cache/chat.txt', 'w');
      fwrite($fp, $string);
      fclose($fp);
 

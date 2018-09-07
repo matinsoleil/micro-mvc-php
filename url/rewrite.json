@@ -157,11 +157,16 @@
   "module":"system.bot.json"
 },
 "16":{
+  "id":"whatss",
+  "type":"200",
+  "module":"system.whatss.write"
+},
+"17":{
    "id":"open",
   "type":"200",
   "module":"system.open.json"
 },
-"17":{
+"18":{
    "id":"yo",
   "type":"200",
   "module":"system.yo.json"
