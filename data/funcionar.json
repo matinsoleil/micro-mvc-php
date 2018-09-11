@@ -1,14 +1,20 @@
 {
-"1":{
-     "verb":"mandar",
+ "1":{
+     "verb":"dar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
-    },
-
+    },    
+"25":{
+     "verb":"pedir",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },     
 "2":{
-     "verb":"dar",
+     "verb":"mandar",
      "value":"",
      "frecuency":"",
      "direction":"",
@@ -84,7 +90,13 @@
      "direction":"",
      "way":""
     },
-
+"25":{
+     "verb":"descomponer",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },    
 "13":{
      "verb":"tomar",
      "value":"",
@@ -109,7 +121,7 @@
      "way":""
     },     
 "16":{
-     "verb":"eceptar",
+     "verb":"aceptar",
      "value":"",
      "frecuency":"",
      "direction":"",
@@ -174,13 +186,7 @@
      "direction":"",
      "way":""
     },
-"25":{
-     "verb":"pedir",
-     "value":"",
-     "frecuency":"",
-     "direction":"",
-     "way":""
-    },
+
 "26":{
      "verb":"dejar",
      "value":"",
