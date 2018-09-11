@@ -246,6 +246,12 @@
      "direction":"",
      "way":""
     },
+ "29":{
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
  "23":{
      "verb":"asignar",
      "value":"",
@@ -460,6 +466,13 @@
      "direction":"",
      "way":""
     },
+ "29":{
+     "verb":"recorrer",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
 "27":{
      "verb":"poner",
      "value":"",
@@ -469,6 +482,13 @@
     },
 "30":{
      "verb":"agregar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+ "29":{
+     "verb":"copiar",
      "value":"",
      "frecuency":"",
      "direction":"",
@@ -488,6 +508,36 @@
      "direction":"",
      "way":""
     },
+ "29":{
+     "verb":"centrar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+  "29":{
+     "verb":"concentrar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+ "29":{
+     "verb":"distribuir",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+ 
+ "29":{
+     "verb":"repartir",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+ 
 "30":{
      "verb":"igualar",
      "value":"",
@@ -497,6 +547,13 @@
     },
 "29":{
      "verb":"sustituir",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+ "29":{
+     "verb":"restutir",
      "value":"",
      "frecuency":"",
      "direction":"",
@@ -603,6 +660,13 @@
     },
 "40":{
      "verb":"intentar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+ "29":{
+     "verb":"obligar",
      "value":"",
      "frecuency":"",
      "direction":"",
