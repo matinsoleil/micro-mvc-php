@@ -14,7 +14,7 @@
      "way":""
     },
  
- "30":{
+ "2":{
      "verb":"sostener",
      "value":"",
      "frecuency":"",
@@ -22,7 +22,7 @@
      "way":""
     },
  
- "30":{
+ "3":{
      "verb":"aguantar",
      "value":"",
      "frecuency":"",
@@ -30,7 +30,7 @@
      "way":""
     },
  
- "30":{
+ "4":{
      "verb":"quitar",
      "value":"",
      "frecuency":"",
@@ -40,7 +40,7 @@
  
  
  
- "30":{
+ "5":{
      "verb":"querer",
      "value":"",
      "frecuency":"",
@@ -48,7 +48,7 @@
      "way":""
     },
  
-  "30":{
+  "6":{
      "verb":"requerir",
      "value":"",
      "frecuency":"",
@@ -57,147 +57,161 @@
     },
  
  
- "1":{
+ "7":{
      "verb":"dar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
- "30":{
+ "8":{
      "verb":"permitir",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"30":{
+"9":{
      "verb":"recibir",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     }, 
-"25":{
+"10":{
+     "verb":"impedir",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    }, 
+"11":{
      "verb":"pedir",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },     
-"2":{
+"12":{
      "verb":"mandar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"3":{
+"13":{
      "verb":"andar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"4":{
+"14":{
      "verb":"ver",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
- "30":{
+ "15":{
      "verb":"ubicar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"5":{
+"16":{
      "verb":"oir",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"6":{
+"17":{
      "verb":"tocar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"7":{
+"18":{
      "verb":"sentir",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"8":{
+"19":{
      "verb":"observar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"9":{
+"20":{
      "verb":"intuir",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
- "30":{
+ "21":{
      "verb":"buscar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
- "30":{
+ "22":{
      "verb":"encontrar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
- "30":{
+ "23":{
      "verb":"sacar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
- "30":{
+ "24":{
      "verb":"obtener",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
- "30":{
+ "25":{
      "verb":"distinguir",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
- "30":{
+ "26":{
      "verb":"distribuir",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
- "30":{
+ "27":{
+     "verb":"obstruir",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+ "28":{
      "verb":"separar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
- "30":{
+ "29":{
      "verb":"repartir",
      "value":"",
      "frecuency":"",
@@ -211,69 +225,70 @@
      "direction":"",
      "way":""
     },
-"11":{
+"31":{
      "verb":"escoger",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     }, 
- "11":{
+ "32":{
      "verb":"elegir",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"10":{
+"33":{
      "verb":"definir",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
- "11":{
+ "34":{
      "verb":"otorgar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
- "30":{
+ "35":{
      "verb":"organizar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
- "29":{
+ "36":{
+     "verb":"desorganizar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
- "23":{
+ "37":{
      "verb":"asignar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"11":{
+"38":{
      "verb":"proponer",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
- "11":{
+ "39":{
      "verb":"posponer",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
- "30":{
+ "40":{
      "verb":"hacer",
      "value":"",
      "frecuency":"",
@@ -480,6 +495,13 @@
      "direction":"",
      "way":""
     },
+ "29":{
+     "verb":"posponer",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
 "30":{
      "verb":"agregar",
      "value":"",
@@ -496,6 +518,34 @@
     },
 "30":{
      "verb":"quitar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+ "29":{
+     "verb":"desaparecer",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+ "29":{
+     "verb":"mover",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+ "29":{
+     "verb":"acercar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+ "29":{
+     "verb":"alejar",
      "value":"",
      "frecuency":"",
      "direction":"",
