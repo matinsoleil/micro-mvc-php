@@ -471,6 +471,20 @@
      "direction":"",
      "way":""
     },
+  "29":{
+     "verb":"recolectar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+  "29":{
+     "verb":"coleccionar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
 "24":{
      "verb":"ordenar",
      "value":"",
@@ -787,6 +801,13 @@
     },
 "44":{
      "verb":"solucionar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+ "29":{
+     "verb":"complicar",
      "value":"",
      "frecuency":"",
      "direction":"",
