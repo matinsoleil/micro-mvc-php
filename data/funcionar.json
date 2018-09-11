@@ -21,7 +21,13 @@
      "direction":"",
      "way":""
     },
- 
+ "29":{
+     "verb":"soportar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
  "3":{
      "verb":"aguantar",
      "value":"",
@@ -523,6 +529,15 @@
      "direction":"",
      "way":""
     },
+ 
+  "29":{
+     "verb":"repetir",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+ 
 "30":{
      "verb":"quitar",
      "value":"",
@@ -658,7 +673,13 @@
      "direction":"",
      "way":""
     },
-
+"41":{
+     "verb":"reprobar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
 "35":{
      "verb":"probar",
      "value":"",
@@ -722,15 +743,15 @@
      "direction":"",
      "way":""
     },
- "29":{
-     "verb":"obligar",
+ 41":{
+     "verb":"intervenir",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"41":{
-     "verb":"reprobar",
+ "29":{
+     "verb":"obligar",
      "value":"",
      "frecuency":"",
      "direction":"",
