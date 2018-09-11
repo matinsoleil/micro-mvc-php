@@ -1,44 +1,44 @@
 {
 "0":{
      "verb":"nacer",
-     "value":"",
-     "frecuency":"",
-     "direction":"",
+     "value":"1",
+     "frecuency":"0.1",
+     "direction":["sentir"],
      "way":""
     },
 "1":{
      "verb":"sentir",
      "value":"",
-     "frecuency":"",
-     "direction":"",
-     "way":""
+     "frecuency":"0.8",
+     "direction":["doler","alimentar"],
+     "way":"+"
     },
 "1":{
      "verb":"alimentar",
      "value":"",
-     "frecuency":"",
-     "direction":"",
+     "frecuency":"0.5",
+     "direction":["sentir","doler"],
      "way":""
     },
 "2":{
      "verb":"crecer",
      "value":"",
      "frecuency":"",
-     "direction":"",
+     "direction":["vivir","envejecer"],
      "way":""
     },
 "2":{
      "verb":"doler",
      "value":"",
      "frecuency":"",
-     "direction":"",
+     "direction":["crecer","morir"],
      "way":""
     },
 "3":{
      "verb":"vivir",
-     "value":"",
-     "frecuency":"",
-     "direction":"",
+     "value":"0.5",
+     "frecuency":"1",
+     "direction":["estar","hacer","andar"],
      "way":""
     },
 
@@ -46,21 +46,21 @@
      "verb":"estar",
      "value":"",
      "frecuency":"",
-     "direction":"",
+     "direction":["accidentar","andar","hacer"],
      "way":""
     },
 "5":{
      "verb":"hacer",
      "value":"",
      "frecuency":"",
-     "direction":"",
+     "direction":["accidentar","estar","andar","reproducir"],
      "way":""
     },
 "6":{
      "verb":"andar",
      "value":"",
      "frecuency":"",
-     "direction":"",
+     "direction":["accidentar","relacionar"],
      "way":""
     },
 "7":{
@@ -74,41 +74,41 @@
      "verb":"accidentar",
      "value":"",
      "frecuency":"",
-     "direction":"",
+     "direction":["enfermar","morir"],
      "way":""
     },
 "9":{
      "verb":"reproducir",
      "value":"",
-     "frecuency":"",
-     "direction":"",
+     "frecuency":"0.3",
+     "direction":[""],
      "way":""
     },
 "10":{
      "verb":"enfermar",
      "value":"",
-     "frecuency":"",
-     "direction":"",
-     "way":""
+     "frecuency":"0.4",
+     "direction":["morir","curar"],
+     "way":"-"
     },
 "11":{
      "verb":"curar",
      "value":"",
-     "frecuency":"",
-     "direction":"",
+     "frecuency":"0.3",
+     "direction":["vivir"],
      "way":""
     },
 "1":{
      "verb":"evejecer",
-     "value":"",
+     "value":"0.3",
      "frecuency":"",
-     "direction":"",
+     "direction":["enfermar","crecer","morir"],
      "way":""
     },
 "12":{
      "verb":"morir",
-     "value":"",
-     "frecuency":"",
+     "value":"0",
+     "frecuency":"0.1",
      "direction":"",
      "way":""
      }

@@ -6,78 +6,85 @@
      "direction":"",
      "way":""
     },
-"1":{
-     "verb":"andar",
-     "value":"",
-     "frecuency":"",
-     "direction":"",
-     "way":""
-    },
-
- "1":{
+ "2":{
      "verb":"soñar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"3":{
      "verb":"pasar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
- "0":{
+"4":{
      "verb":"estar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
-    }
-"1":{
+    },
+"5":{
+     "verb":"pasar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"5":{
      "verb":"recordar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"5":{
+     "verb":"olvidar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+
+"6":{
      "verb":"pensar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"7":{
      "verb":"confundir",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"8":{
      "verb":"visualizar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"9":{
      "verb":"imaginar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"10":{
      "verb":"idear",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"11":{
      "verb":"razonar",
      "value":"",
      "frecuency":"",
@@ -85,7 +92,7 @@
      "way":""
     },
 
-"1":{
+"12":{
      "verb":"comprender",
      "value":"",
      "frecuency":"",
@@ -93,42 +100,63 @@
      "way":""
     },
 
-"1":{
+"13":{
      "verb":"aprender",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"14":{
      "verb":"entender",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"15":{
      "verb":"probar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"16":{
+     "verb":"conocer",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"17":{
+     "verb":"desconocer",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"18":{
      "verb":"opinar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"19":{
+     "verb":"debatir",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"20":{
      "verb":"decicir",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"21":{
      "verb":"gustar",
      "value":"",
      "frecuency":"",
@@ -136,7 +164,7 @@
      "way":""
     },
 
-"1":{
+"22":{
      "verb":"disgustar",
      "value":"",
      "frecuency":"",
@@ -144,35 +172,42 @@
      "way":""
     },
 
-"1":{
+"23":{
      "verb":"hacer",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"24":{
+     "verb":"experimentar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"25":{
      "verb":"realizar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"26":{
      "verb":"emocionar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"27":{
      "verb":"disfrutar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"28":{
      "verb":"reir",
      "value":"",
      "frecuency":"",
@@ -180,20 +215,27 @@
      "way":""
     },
 "1":{
+     "verb":"olvidar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"29":{
      "verb":"enfadar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"30":{
      "verb":"odiar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"31":{
      "verb":"entristecer",
      "value":"",
      "frecuency":"",

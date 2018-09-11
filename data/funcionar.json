@@ -7,77 +7,77 @@
      "way":""
     },
 
-"1":{
+"2":{
      "verb":"dar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"0":{
+"3":{
      "verb":"andar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"4":{
      "verb":"ver",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"5":{
      "verb":"oir",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"6":{
      "verb":"tocar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"7":{
      "verb":"sentir",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"8":{
      "verb":"observar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"2":{
+"9":{
      "verb":"intuir",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"10":{
      "verb":"definir",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"11":{
      "verb":"proponer",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"3":{
+"12":{
      "verb":"componer",
      "value":"",
      "frecuency":"",
@@ -85,7 +85,7 @@
      "way":""
     },
 
-"1":{
+"13":{
      "verb":"tomar",
      "value":"",
      "frecuency":"",
@@ -93,7 +93,7 @@
      "way":""
     },
 
-"1":{
+"14":{
      "verb":"agarrar",
      "value":"",
      "frecuency":"",
@@ -101,106 +101,127 @@
      "way":""
     },
 
-"4":{
-     "verb":"manejar",
-     "value":"",
-     "frecuency":"",
-     "direction":"",
-     "way":""
-    },
-"5":{
-     "verb":"controlar",
-     "value":"",
-     "frecuency":"",
-     "direction":"",
-     "way":""
-    },
-"6":{
-     "verb":"conducir",
-     "value":"",
-     "frecuency":"",
-     "direction":"",
-     "way":""
-    },
-"7":{
-     "verb":"dirigir",
-     "value":"",
-     "frecuency":"",
-     "direction":"",
-     "way":""
-    },
-"8":{
-     "verb":"llevar",
-     "value":"",
-     "frecuency":"",
-     "direction":"",
-     "way":""
-    },
-"1":{
-     "verb":"ordenar",
-     "value":"",
-     "frecuency":"",
-     "direction":"",
-     "way":""
-    },
-
-"9":{
-     "verb":"dejar",
-     "value":"",
-     "frecuency":"",
-     "direction":"",
-     "way":""
-    },
-"10":{
-     "verb":"poner",
-     "value":"",
-     "frecuency":"",
-     "direction":"",
-     "way":""
-    },
-"11":{
-     "verb":"cambiar",
-     "value":"",
-     "frecuency":"",
-     "direction":"",
-     "way":""
-    },
-"12":{
-     "verb":"sustituir",
-     "value":"",
-     "frecuency":"",
-     "direction":"",
-     "way":""
-    },
-"13":{
-     "verb":"recuperar",
-     "value":"",
-     "frecuency":"",
-     "direction":"",
-     "way":""
-    },
-"14":{
-     "verb":"reponer",
-     "value":"",
-     "frecuency":"",
-     "direction":"",
-     "way":""
-    },
 "15":{
-     "verb":"comenzar",
+     "verb":"hablar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
 "16":{
+     "verb":"escuchar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+
+"17":{
+     "verb":"manejar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"18":{
+     "verb":"controlar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"19":{
+     "verb":"conducir",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"20":{
+     "verb":"dirigir",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"21":{
+     "verb":"llevar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"22":{
+     "verb":"ordenar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"23":{
+     "verb":"pedir",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"24":{
+     "verb":"dejar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"25":{
+     "verb":"poner",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"26":{
+     "verb":"cambiar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"27":{
+     "verb":"sustituir",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"28":{
+     "verb":"recuperar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"29":{
+     "verb":"reponer",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"30":{
+     "verb":"comenzar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+"31":{
      "verb":"parar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"17":{
+"32":{
      "verb":"reparar",
      "value":"",
      "frecuency":"",
@@ -208,98 +229,98 @@
      "way":""
     },
 
-"18":{
+"33":{
      "verb":"probar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"19":{
+"34":{
      "verb":"repetir",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"35":{
      "verb":"volver",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"36":{
      "verb":"regresar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"20":{
+"37":{
      "verb":"intentar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"21":{
+"38":{
      "verb":"reprobar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"39":{
      "verb":"verificar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"22":{
+"40":{
      "verb":"solucionar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"23":{
+"41":{
      "verb":"continuar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"24":{
+"42":{
      "verb":"funcionar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"1":{
+"43":{
      "verb":"solventar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"11":{
+"44":{
      "verb":"descomponer",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     }
-"1":{
+"45":{
      "verb":"fallar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"7":{
+"46":{
      "verb":"errar",
      "value":"",
      "frecuency":"",
