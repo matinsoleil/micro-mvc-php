@@ -22,7 +22,7 @@ class entity extends data {
        $object = $parameters['request']['object'];
        $parameters['request']['data'];
        
-      $totalParameters = count($parameters['request']['parameters']);
+        $totalParameters = count($parameters['request']['parameters']);
        
     }elseif($type=='GET'){
         $totalParameters = count($parameters['request']);
