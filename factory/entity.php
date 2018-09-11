@@ -10,64 +10,50 @@ class entity extends data {
 
     $parameters=$this->net['action']->parameters;
     
-    $totalParameters = count($parameters['request']);
+    $totalParameters= 0;
+ 
+    
+    $type = count($parameters['request'])['type'];
 
+    if($type=='POST'){
+        
+       $parameter = $parameters['request']['parameters'];
+       $body =  $parameters['request']['body'];
+       $object = $parameters['request']['object'];
+       $parameters['request']['data'];
+       
+      $totalParameters = count($parameters['request']['parameters']);
+       
+    }elseif($type=='GET'){
+        $totalParameters = count($parameters['request']);
+    }
+    
    
     $_value = array();
     
-   
-    
-    $attribute='';
-    $entity = '';
-    $collection = '';
-    $full = 0;        
-    
+
     if($totalParameters!=0){
     
     $values= $parameters['request'];
-    
-   
-        
+
     foreach($values as $key=>$value){
         
         $k = explode(':',$key);
-        
-        
-     
-        
-    
 
         $n = $k[0];    
         $v= $k[1].':'.$k[2];
   
         $_value[$n][$v]=$value;
- 
-   
-        
-       
-           
-    
- 
-    
- 
 
-        
-     
-       
-    
         
     }
     
      $collection = 'default';
 
      $result=$this->SET_EAV($collection,$_value); 
-    
-    
+      
     }
 
-    
-   
-    
     //$variables=$this->GET_VARIABLE("variable");
     
 

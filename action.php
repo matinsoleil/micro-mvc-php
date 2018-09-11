@@ -181,6 +181,7 @@ public function write($entity,$object){
  public function data(){
 
    $method = $_SERVER['REQUEST_METHOD'];
+   
 $request = explode("/", substr(@$_SERVER['PATH_INFO'], 1));
 $dataPOST = $_POST;
 $inputJSON = file_get_contents('php://input');
