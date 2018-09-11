@@ -29,6 +29,34 @@
      "direction":"",
      "way":""
     },
+ 
+ "30":{
+     "verb":"quitar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+ 
+ 
+ 
+ "30":{
+     "verb":"querer",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+ 
+  "30":{
+     "verb":"requerir",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+ 
+ 
  "1":{
      "verb":"dar",
      "value":"",
@@ -78,6 +106,13 @@
      "direction":"",
      "way":""
     },
+ "30":{
+     "verb":"ubicar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
 "5":{
      "verb":"oir",
      "value":"",
@@ -108,6 +143,69 @@
     },
 "9":{
      "verb":"intuir",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+ "30":{
+     "verb":"buscar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+ "30":{
+     "verb":"encontrar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+ "30":{
+     "verb":"sacar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+ "30":{
+     "verb":"obtener",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+ "30":{
+     "verb":"distinguir",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+ "30":{
+     "verb":"distribuir",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+ "30":{
+     "verb":"separar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+ "30":{
+     "verb":"repartir",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+ "30":{
+     "verb":"seleccionar",
      "value":"",
      "frecuency":"",
      "direction":"",
@@ -162,6 +260,13 @@
      "direction":"",
      "way":""
     },
+ "30":{
+     "verb":"hacer",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
  "11":{
      "verb":"ejecutar",
      "value":"",
@@ -169,6 +274,14 @@
      "direction":"",
      "way":""
     },
+ "30":{
+     "verb":"rehacer",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+ 
 "12":{
      "verb":"componer",
      "value":"",
@@ -260,6 +373,13 @@
      "way":""
     },
 
+ "30":{
+     "verb":"concluir",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
 
 "19":{
      "verb":"manejar",
@@ -302,7 +422,14 @@
      "frecuency":"",
      "direction":"",
      "way":""
-    }
+    },
+ "30":{
+     "verb":"devolver",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
 "24":{
      "verb":"ordenar",
      "value":"",
@@ -425,7 +552,13 @@
      "direction":"",
      "way":""
     }, 
-     
+ "30":{
+     "verb":"ajustar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
 "36":{
      "verb":"repetir",
      "value":"",
@@ -435,6 +568,13 @@
     },
 "37":{
      "verb":"establecer",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
+ "30":{
+     "verb":"reestablecer",
      "value":"",
      "frecuency":"",
      "direction":"",
@@ -481,7 +621,14 @@
      "frecuency":"",
      "direction":"",
      "way":""
-    },     
+    },
+ "30":{
+     "verb":"efectuar",
+     "value":"",
+     "frecuency":"",
+     "direction":"",
+     "way":""
+    },
 "44":{
      "verb":"solucionar",
      "value":"",
