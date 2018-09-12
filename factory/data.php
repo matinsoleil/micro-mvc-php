@@ -366,9 +366,14 @@ class data {
 
     public function SET_EAV($collection,$values){
         
+       
+        
     if($this->mongoActive){
         
         $EAV = array();
+        
+        $collection = '';
+        $lastCollection ='';
         
         foreach($values as $value){
         
@@ -376,10 +381,14 @@ class data {
             
         //$exist = $this->GET_EAV($collection, $entity, $attribute);
         
+            
+        $collection= $value['collection:default'];
+        
+        
+        unset($value['collection:default']); 
        
         
        $eav = array(
-        "collection:default"=>'',
         "value:default"=>'',
         "label:en:us"=>'', 
         "type:default"=>'sample',
@@ -401,8 +410,7 @@ class data {
        
         }
        
-
-  
+    
         $result = $this->PUSH($collection,$EAV);
        
      }

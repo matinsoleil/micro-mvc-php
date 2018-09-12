@@ -1,4 +1,8 @@
 {
     "type": "GET",
-    "request": []
+    "request": {
+        "0:collection:default": "default",
+        "0:entity:default": "api",
+        "0:attribute:default": "standard"
+    }
 }

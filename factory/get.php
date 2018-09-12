@@ -1,6 +1,6 @@
 <?php
 include('data.php');
-class entity extends data {
+class get extends data {
     public $net;
     public $data;
     function __construct($net) {
@@ -10,8 +10,6 @@ class entity extends data {
 
     $parameters=$this->net['action']->parameters;
     
-     $_value= array();
-    
     $totalParameters= 0;
  
     
@@ -20,60 +18,60 @@ class entity extends data {
    
     if($type=='POST'){
         
-       $parameter = $parameters['request']['parameters'];
-       $body =  $parameters['request']['body'];
-       $object = $parameters['request']['object'];
-       $parameters['request']['data'];
-       
-        $totalParameters = count($parameters['request']['parameters']);
-        
+  
        
     }elseif($type=='GET'){
-        $totalParameters = count($parameters['request']);
+      
         
-      if($totalParameters!=0){
+    $totalParameters =count($parameters['request']);
+    
+   
+   
+    $_value = array();
+    
+
+
+    if($totalParameters!=0){
     
     $values= $parameters['request'];
 
     foreach($values as $key=>$value){
         
         $k = explode(':',$key);
-
+        
         $n = $k[0];  
+
         if(isset($k[1]) && isset($k[2])){
         $v= $k[1].':'.$k[2];
   
         $_value[$n][$v]=$value;
         }elseif(isset($k[1])){
         $v = $k[1];    
-         $_value[$n][$v]=$value;      
+        $_value[$n][$v]=$value;    
         }
+
         
     }
     
      $collection = 'default';
-
+    $_result = array();
      
-     $result=$this->SET_EAV($collection,$_value); 
+     foreach ($_value as $val) {
+         
+          $result=$this->GET_EAV($val['collection:default'],$val['entity:default'],$val['attribute:default']); 
      
-     
+          array_push($_result,$result);
+          
+          
+     }
+    
       
     }
-        
-    }else{
-        
-        $_value= array();
-        
+
     }
     
-    
-    $this->net['action']->data = array("eav"=>$_value,"parameters"=>$parameters);
  
     
-
-
-
-
     //$variables=$this->GET_VARIABLE("variable");
     
 
@@ -87,8 +85,8 @@ class entity extends data {
     
   
     //$databases = $this->GET_COLLECTION();
-
- 
+     
+     $this->net['action']->data = array("eav"=>$_result,"parammeters"=>$parameters);
 
      //array('databases'=>$databases,'soft'=>$this->mongoActive);
 

@@ -141,7 +141,7 @@
              }
  },
 "13":{
-  "id":"input",
+  "id":"in",
   "type":"200",
   "module":"system.entity.json"
 
@@ -170,6 +170,12 @@
    "id":"yo",
   "type":"200",
   "module":"system.yo.json"
-}
+},
+"19":{
+  "id":"out",
+  "type":"200",
+  "module":"system.get.json"
+
+ }
 }
 
