@@ -17,7 +17,6 @@ $whatss = $parammeters['request']['data'];
 
 $event = $whatss['event'];
 $token = $whatss['token'];
-$ack   = $whatss['ack'];
 
 if($event=='message'){
 $contact = $whatss['contact'];
@@ -43,7 +42,6 @@ $messageImageSize = $Message['body']['size'];
 $messageImageUrl = $Message['body']['url'];
 $messageImageThumb = $Message['body']['thumb'];
 }else{
-$messageText ='';
 $messageImageCaption ='';
 $messageImageType = '';
 $messageImageSize = '';
