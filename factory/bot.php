@@ -20,7 +20,7 @@ $this->entity="";
 function Service($quest){
 
 $question = urlencode($quest);
-$this->net['action']->data = $this->get_get("https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/b471ac60-49d4-403f-add5-f6fe9ff47c57?subscription-key=c96369646cc543f1b9ff7249f1802ff3&verbose=true&timezoneOffset=0&q=".$question);
+$this->net['action']->data = $this->get_get("https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/b471ac60-49d4-403f-add5-f6fe9ff47c57?subscription-key=c96369646cc543f1b9ff7249f1802ff3&timezoneOffset=-360&q=".$question);
 
 }
 
