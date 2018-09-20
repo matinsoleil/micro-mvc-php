@@ -64,7 +64,7 @@ $whatss = array('event'=>'none');
 if($type=='chat'){
 $this->net['action']->data= array('conversation'=>$messageUID,'type'=>'chat','message'=>$messageText,'parammeters'=>$parammeters);
 }elseif($type=='image'){
-$this->net['action']->data= array('conversation'=>$messageUID,'type'=>'image','caption'=>$messageImageCaption,'url'=>$messageImageUrl,'type'=>$messageImageType,'parammeters'=>$parammeters);
+$this->net['action']->data= array('conversation'=>$messageUID,'type'=>'image','caption'=>$messageImageCaption,'url'=>$messageImageUrl,'mime'=>$messageImageType,'parammeters'=>$parammeters);
 }elseif($type=='received'){
 $this->net['action']->data= array('conversation'=>$messageUID,'type'=>'received','message'=>$messageText,'parammeters'=>$parammeters);
 }else{
