@@ -19,7 +19,7 @@ $token = $whatss['token'];
 
 if($event=='message'){
 $contact = $whatss['contact'];
-
+$Message = $whatss['message'];
 if($Message['type']=='chat'){
 $Message = $whatss['message'];
 $messageText = $Message['body']['text'];
@@ -48,6 +48,7 @@ $meesageImageThumb = '';
 }
 }
 else{
+$messageText = '00';
 $messageUID = $whatss['muid'];
 $messageCUID = $whatss['cuid'];
 }
