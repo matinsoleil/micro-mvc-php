@@ -38,7 +38,7 @@ $messageText = $Message['body']['caption'];
 $messageImageType = $Message['body']['mimetype'];
 $messageImageSize = $Message['body']['size'];
 $messageImageUrl = $Message['body']['url'];
-$meesageImageThumb = $whatss['body']['thumb'];
+
 }else{
 $messageImageCaption ='';
 $messageImageType = '';
@@ -52,13 +52,12 @@ $messageText = '00';
 $messageUID = $whatss['muid'];
 $messageCUID = $whatss['cuid'];
 }
-$ack = $whatss['ack'];
 
 }else{
 $whatss = array('event'=>'none');
 }
 
-$this->net['action']->data= array('conversation'=>$messageUID,'message'=>$messageText);
+$this->net['action']->data= array('conversation'=>$messageUID,'message'=>$messageText,'parammeters'=>$parammeters);
 
 $this->entity="";
 }
