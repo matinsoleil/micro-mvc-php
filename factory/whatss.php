@@ -11,8 +11,53 @@ function __construct($net) {
 $this->net = $net;
 $parammeters = $this->net['action']->parameters;
 
+if(isset($parammeters['request']['data'])){
+$whatss = $parammeters['request']['data'];
 
-$this->net['action']->data= array('parammeter'=>$parammeters);
+$event = $whatss['event'];
+$token = $whatss['token'];
+
+if($event=='message'){
+$contact = $whatss['contact'];
+
+if($Message['type']=='chat'){
+$Message = $whatss['message'];
+$messageText = $Message['body']['text'];
+$messageCUID = $Message['cuid'];
+$messageUID =  $Message['uid'];
+$messageDTM =  $Message['dtm'];
+}else{
+$messageText = '';
+}
+if($Message['type']=='image'){
+$messageText = '';
+$messageCUID = $Message['cuid'];
+$messageUID =  $Message['uid'];
+$messageDTM =  $Message['dtm'];
+$messageText = $Message['body']['caption'];
+$messageImageType = $Message['body']['mimetype'];
+$messageImageSize = $Message['body']['size'];
+$messageImageUrl = $Message['body']['url'];
+$meesageImageThumb = $whatss['body']['thumb'];
+}else{
+$messageImageCaption ='';
+$messageImageType = '';
+$messageImageSize = '';
+$messageImageUrl = '';
+$meesageImageThumb = '';
+}
+}
+else{
+$messageUID = $whatss['muid'];
+$messageCUID = $whatss['cuid'];
+}
+$ack = $whatss['ack'];
+
+}else{
+$whatss = array('event'=>'none');
+}
+
+$this->net['action']->data= array('conversation'=>$messageUID,'message'=>$messageText);
 
 $this->entity="";
 }
