@@ -10,17 +10,20 @@ public $data;
 function __construct($net) {
 $this->net = $net;
 $parammeters = $this->net['action']->parameters;
+$type='';
 
 if(isset($parammeters['request']['data'])){
 $whatss = $parammeters['request']['data'];
 
 $event = $whatss['event'];
 $token = $whatss['token'];
+$ack   = $whatss['ack'];
 
 if($event=='message'){
 $contact = $whatss['contact'];
 $Message = $whatss['message'];
-if($Message['type']=='chat'){
+$type = $Message['type'];
+if($type=='chat'){
 $Message = $whatss['message'];
 $messageText = $Message['body']['text'];
 $messageCUID = $Message['cuid'];
@@ -29,26 +32,28 @@ $messageDTM =  $Message['dtm'];
 }else{
 $messageText = '';
 }
-if($Message['type']=='image'){
+if($type=='image'){
 $messageText = '';
 $messageCUID = $Message['cuid'];
 $messageUID =  $Message['uid'];
 $messageDTM =  $Message['dtm'];
-$messageText = $Message['body']['caption'];
+$messageImageCaption = $Message['body']['caption'];
 $messageImageType = $Message['body']['mimetype'];
 $messageImageSize = $Message['body']['size'];
 $messageImageUrl = $Message['body']['url'];
-
+$messageImageThumb = $Message['body']['thumb'];
 }else{
+$messageText ='';
 $messageImageCaption ='';
 $messageImageType = '';
 $messageImageSize = '';
 $messageImageUrl = '';
-$meesageImageThumb = '';
+$mesageImageThumb = '';
 }
 }
 else{
-$messageText = '00';
+$type = 'received';
+$messageText = '';
 $messageUID = $whatss['muid'];
 $messageCUID = $whatss['cuid'];
 }
@@ -57,7 +62,17 @@ $messageCUID = $whatss['cuid'];
 $whatss = array('event'=>'none');
 }
 
-$this->net['action']->data= array('conversation'=>$messageUID,'message'=>$messageText,'parammeters'=>$parammeters);
+
+if($type=='chat'){
+$this->net['action']->data= array('conversation'=>$messageUID,'type'=>'chat','message'=>$messageText,'parammeters'=>$parammeters);
+}elseif($type=='image'){
+$this->net['action']->data= array('conversation'=>$messageUID,'type'=>'image','caption'=>$messageImageCaption,'url'=>$messageImageUrl,'type'=>$messageImageType,'parammeters'=>$parammeters);
+}elseif($type=='received'){
+$this->net['action']->data= array('conversation'=>$messageUID,'type'=>'received','message'=>$messageText,'parammeters'=>$parammeters);
+}else{
+$this->net['action']->data= array('conversation'=>$messageUID,'type'=>'none','message'=>$messageText,'parammeters'=>$parammeters);
+}
+
 
 $this->entity="";
 }
