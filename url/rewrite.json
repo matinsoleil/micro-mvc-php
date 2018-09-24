@@ -172,10 +172,15 @@
   "module":"system.yo.json"
 },
 "19":{
+  "id":"closed",
+  "type":"200",
+  "module":"system.closed.json"
+
+ },
+"20":{
   "id":"out",
   "type":"200",
   "module":"system.get.json"
-
  }
 }
 

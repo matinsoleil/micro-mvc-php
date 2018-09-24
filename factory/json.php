@@ -9,6 +9,7 @@ public $net;
     function render($entity){
 
      $action=$this->net['action']->uri;
+     $this->net['action']->cookie($action);
      $data =  $this->net['action']->data;
      header('Content-Type: application/json');
      $this->log();

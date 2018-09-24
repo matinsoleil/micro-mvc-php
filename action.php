@@ -162,26 +162,33 @@ public function write($entity,$object){
                 session_start();
                 $cookie_name = "key";
                 $key = $this->generateRandomString(12);
-                setcookie($cookie_name,$key,NULL, "/"); // 86400 = 1 day
-                $_SESSION['key'] = $key;
+                $time =NULL;
+                if(!isset($_COOKIE["key"])){
+                setcookie($cookie_name,$key,$time, "/"); // 86400 = 1 day
+                }
+                $_SESSION[$key] = "key";
                 }
             }else{
                 if (session_status() == PHP_SESSION_NONE) {
                 session_start();
                 $cookie_name = "key";
+                $time = NULL;
                 $key = $this->generateRandomString(12);
-                setcookie($cookie_name,$key,NULL, "/"); // 86400 = 1 day
-                $_SESSION['key'] = $key;
+                if(!isset($_COOKIE['key'])){
+                setcookie($cookie_name,$key,$time, "/"); // 86400 = 1 day
+                $_SESSION[$key] = "key";
+                }
                 }
 
             }
+
 }
 
 
  public function data(){
 
    $method = $_SERVER['REQUEST_METHOD'];
-   
+
 $request = explode("/", substr(@$_SERVER['PATH_INFO'], 1));
 $dataPOST = $_POST;
 $inputJSON = file_get_contents('php://input');
