@@ -1,6 +1,4 @@
 {
     "type": "GET",
-    "request": {
-        "q": "cuantos a\u00f1os tienes"
-    }
+    "request": []
 }

@@ -19,9 +19,14 @@ $this->entity="";
 
 function Service($quest){
 
+$ser=$this->read('data.estar');
+
+
+
+
 $question = urlencode($quest);
 $random = $this->random();
-$this->net['action']->data =array("random"=>$random);
+$this->net['action']->data =array("random"=>$random,"estar"=>$ser);
 
 }
 
