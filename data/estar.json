@@ -1,33 +1,33 @@
 {
- "1":{
+ "0":{
      "verb":"ser",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
- "2":{
+ "1":{
      "verb":"soñar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"3":{
+"2":{
      "verb":"pasar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"4":{
+"3":{
      "verb":"estar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"5":{
+"4":{
      "verb":"pasar",
      "value":"",
      "frecuency":"",
@@ -41,7 +41,7 @@
      "direction":"",
      "way":""
     },
-"5":{
+"6":{
      "verb":"olvidar",
      "value":"",
      "frecuency":"",
@@ -49,28 +49,28 @@
      "way":""
     },
 
-"6":{
+"7":{
      "verb":"pensar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"7":{
+"8":{
      "verb":"confundir",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"8":{
+"9":{
      "verb":"visualizar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"9":{
+"10":{
      "verb":"imaginar",
      "value":"",
      "frecuency":"",
@@ -214,32 +214,39 @@
      "direction":"",
      "way":""
     },
-"1":{
+"29":{
      "verb":"olvidar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"29":{
+"30":{
      "verb":"enfadar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"30":{
+"31":{
      "verb":"odiar",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
     },
-"31":{
+"32":{
      "verb":"entristecer",
      "value":"",
      "frecuency":"",
      "direction":"",
      "way":""
-    }
+    },
+"33":{
+    "verb":"temer",
+    "value":"",
+    "frecuency":"",
+    "direction":"",
+    "way":""
+}
 }
