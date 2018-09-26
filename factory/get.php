@@ -5,13 +5,15 @@ class get extends data {
     public $data;
     function __construct($net) {
     $this->net = $net;
+    $_result = array();
     
     $this->startDataBase();
 
     $parameters=$this->net['action']->parameters;
     
     $totalParameters= 0;
- 
+  
+    
     
     $type = $parameters['type'];
     
@@ -25,16 +27,19 @@ class get extends data {
         
     $totalParameters =count($parameters['request']);
     
-   
+ 
    
     $_value = array();
     
 
 
     if($totalParameters!=0){
+       
     
     $values= $parameters['request'];
 
+ 
+    
     foreach($values as $key=>$value){
         
         $k = explode(':',$key);
@@ -53,15 +58,17 @@ class get extends data {
         
     }
     
+  
+    
      $collection = 'default';
-    $_result = array();
-     
+ 
      foreach ($_value as $val) {
          
+         if(isset($val['collection:default'])){
           $result=$this->GET_EAV($val['collection:default'],$val['entity:default'],$val['attribute:default']); 
      
           array_push($_result,$result);
-          
+         }
           
      }
     

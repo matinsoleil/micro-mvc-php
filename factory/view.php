@@ -18,7 +18,7 @@ public $uri;
 
     $html = $this->get_post($this->url.'blockViewDefault',array('nothing'));
     $doc = new DOMDocument();
-    //libxml_use_internal_errors(true);
+    libxml_use_internal_errors(true);
     $doc->preserveWhiteSpace = true; // needs to be before loading, to have any effect
     $doc->loadHTML((string)$html);
     $doc->formatOutput = true;
